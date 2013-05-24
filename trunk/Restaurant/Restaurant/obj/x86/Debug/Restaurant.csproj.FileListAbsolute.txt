@@ -18,23 +18,3 @@ C:\Users\QN\Desktop\New folder\Restaurant\Restaurant\obj\x86\Debug\GenerateResou
 C:\Users\QN\Desktop\New folder\Restaurant\Restaurant\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\QN\Desktop\New folder\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
 C:\Users\QN\Desktop\New folder\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\Restaurant.exe
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\BUS.dll
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\DTO.dll
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\DAO.dll
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\BUS.pdb
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\DTO.pdb
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\DataGridViewNumericUpDownElements.pdb
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\bin\Debug\DAO.pdb
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoDoanhThu.resources
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongke_Ban.resources
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongKe_MonAn.resources
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Form1.resources
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Properties.Resources.resources
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\GenerateResource.write.1.tlog

@@ -22,5 +22,13 @@ namespace BUS
         {
             return banDAO.LayDSBan(tenBan);
         }
+        public bool UpdateTrangThaiBan(int trangThai, int maBan)
+        {
+            return banDAO.UpdateTrangThaiBan(trangThai, maBan);
+        }
+        public bool KiemTraBanCoKhach(int trangThai, int maBan)
+        {
+            return banDAO.KiemTraBanCoKhach(trangThai, maBan);
+        }
     }
 }

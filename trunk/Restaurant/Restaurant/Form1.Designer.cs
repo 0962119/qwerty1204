@@ -31,12 +31,12 @@ namespace Restaurant
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
@@ -100,13 +100,6 @@ namespace Restaurant
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.dtgvFrm1ThucDon = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
@@ -180,6 +173,14 @@ namespace Restaurant
             this.metroTileItem23 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.metroTileItem24 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFrm1TaoBanDatTruoc = new DevComponents.DotNetBar.ButtonX();
             this.metroShell1.SuspendLayout();
             this.metroTabPanel1.SuspendLayout();
             this.groupPanel5.SuspendLayout();
@@ -238,10 +239,10 @@ namespace Restaurant
             this.metroShell1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.metroShell1.CaptionVisible = true;
             this.metroShell1.Controls.Add(this.metroTabPanel1);
-            this.metroShell1.Controls.Add(this.metroTabPanel3);
-            this.metroShell1.Controls.Add(this.metroTabPanel4);
-            this.metroShell1.Controls.Add(this.metroTabPanel5);
             this.metroShell1.Controls.Add(this.metroTabPanel2);
+            this.metroShell1.Controls.Add(this.metroTabPanel4);
+            this.metroShell1.Controls.Add(this.metroTabPanel3);
+            this.metroShell1.Controls.Add(this.metroTabPanel5);
             this.metroShell1.Controls.Add(this.metroTabPanel6);
             this.metroShell1.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroShell1.ForeColor = System.Drawing.Color.Black;
@@ -483,7 +484,7 @@ namespace Restaurant
             this.buttonX1.Size = new System.Drawing.Size(89, 33);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 13;
-            this.buttonX1.Text = "Tính Tiền";
+            this.buttonX1.Text = "buttonX1";
             // 
             // buttonX6
             // 
@@ -494,7 +495,7 @@ namespace Restaurant
             this.buttonX6.Size = new System.Drawing.Size(89, 33);
             this.buttonX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX6.TabIndex = 12;
-            this.buttonX6.Text = "Hủy Bàn";
+            this.buttonX6.Text = "buttonX6";
             // 
             // buttonX5
             // 
@@ -505,7 +506,7 @@ namespace Restaurant
             this.buttonX5.Size = new System.Drawing.Size(89, 33);
             this.buttonX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX5.TabIndex = 11;
-            this.buttonX5.Text = "Tách Món";
+            this.buttonX5.Text = "buttonX5";
             // 
             // buttonX4
             // 
@@ -516,7 +517,7 @@ namespace Restaurant
             this.buttonX4.Size = new System.Drawing.Size(89, 33);
             this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX4.TabIndex = 10;
-            this.buttonX4.Text = "Đổi Bàn";
+            this.buttonX4.Text = "buttonX4";
             // 
             // buttonX3
             // 
@@ -527,7 +528,7 @@ namespace Restaurant
             this.buttonX3.Size = new System.Drawing.Size(89, 33);
             this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX3.TabIndex = 9;
-            this.buttonX3.Text = "In Hóa Đơn";
+            this.buttonX3.Text = "buttonX3";
             // 
             // buttonX2
             // 
@@ -538,7 +539,7 @@ namespace Restaurant
             this.buttonX2.Size = new System.Drawing.Size(89, 33);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX2.TabIndex = 8;
-            this.buttonX2.Text = "In Trước HD";
+            this.buttonX2.Text = "buttonX2";
             // 
             // groupPanel5
             // 
@@ -696,10 +697,10 @@ namespace Restaurant
             this.lbFrm1VAT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbFrm1VAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFrm1VAT.ForeColor = System.Drawing.Color.Black;
-            this.lbFrm1VAT.Location = new System.Drawing.Point(140, 57);
+            this.lbFrm1VAT.Location = new System.Drawing.Point(155, 57);
             this.lbFrm1VAT.Name = "lbFrm1VAT";
             this.lbFrm1VAT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbFrm1VAT.Size = new System.Drawing.Size(113, 23);
+            this.lbFrm1VAT.Size = new System.Drawing.Size(98, 23);
             this.lbFrm1VAT.TabIndex = 34;
             // 
             // lbFrm1GiamGia
@@ -711,10 +712,10 @@ namespace Restaurant
             this.lbFrm1GiamGia.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lbFrm1GiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFrm1GiamGia.ForeColor = System.Drawing.Color.Black;
-            this.lbFrm1GiamGia.Location = new System.Drawing.Point(140, 28);
+            this.lbFrm1GiamGia.Location = new System.Drawing.Point(155, 28);
             this.lbFrm1GiamGia.Name = "lbFrm1GiamGia";
             this.lbFrm1GiamGia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbFrm1GiamGia.Size = new System.Drawing.Size(113, 23);
+            this.lbFrm1GiamGia.Size = new System.Drawing.Size(98, 23);
             this.lbFrm1GiamGia.TabIndex = 33;
             // 
             // labelX37
@@ -1127,14 +1128,14 @@ namespace Restaurant
             this.dtgvFrm1ThucDon.AllowUserToResizeColumns = false;
             this.dtgvFrm1ThucDon.AllowUserToResizeRows = false;
             this.dtgvFrm1ThucDon.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvFrm1ThucDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvFrm1ThucDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvFrm1ThucDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvFrm1ThucDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -1144,74 +1145,31 @@ namespace Restaurant
             this.Column5,
             this.Column9,
             this.Column7});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvFrm1ThucDon.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvFrm1ThucDon.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvFrm1ThucDon.EnableHeadersVisualStyles = false;
             this.dtgvFrm1ThucDon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dtgvFrm1ThucDon.Location = new System.Drawing.Point(264, 120);
             this.dtgvFrm1ThucDon.Margin = new System.Windows.Forms.Padding(20);
             this.dtgvFrm1ThucDon.Name = "dtgvFrm1ThucDon";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvFrm1ThucDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvFrm1ThucDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvFrm1ThucDon.RowHeadersVisible = false;
             this.dtgvFrm1ThucDon.Size = new System.Drawing.Size(566, 318);
             this.dtgvFrm1ThucDon.TabIndex = 3;
             this.dtgvFrm1ThucDon.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvFrm1ThucDon_CellValueChanged);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "STT";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Món Ăn";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 151;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "SL";
-            this.Column8.Name = "Column8";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "ĐVT";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 50;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column5.HeaderText = "Đơn Giá";
-            this.Column5.Name = "Column5";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Giảm Giá %";
-            this.Column9.Name = "Column9";
-            // 
-            // Column7
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column7.HeaderText = "Tổng (VND)";
-            this.Column7.Name = "Column7";
             // 
             // groupPanel3
             // 
@@ -1318,6 +1276,7 @@ namespace Restaurant
             // 
             this.grFrm1ThongTin.BackColor = System.Drawing.Color.White;
             this.grFrm1ThongTin.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.grFrm1ThongTin.Controls.Add(this.btnFrm1TaoBanDatTruoc);
             this.grFrm1ThongTin.Controls.Add(this.txtFrmThoiGian);
             this.grFrm1ThongTin.Controls.Add(this.cbxFrm1KhuVuc);
             this.grFrm1ThongTin.Controls.Add(this.txtFrm1NhapGhiChu);
@@ -1396,7 +1355,7 @@ namespace Restaurant
             this.txtFrm1NhapGhiChu.Location = new System.Drawing.Point(108, 69);
             this.txtFrm1NhapGhiChu.Multiline = true;
             this.txtFrm1NhapGhiChu.Name = "txtFrm1NhapGhiChu";
-            this.txtFrm1NhapGhiChu.Size = new System.Drawing.Size(449, 30);
+            this.txtFrm1NhapGhiChu.Size = new System.Drawing.Size(371, 30);
             this.txtFrm1NhapGhiChu.TabIndex = 7;
             this.txtFrm1NhapGhiChu.Text = "Nhập Ghi Chú Của Bàn.......";
             this.txtFrm1NhapGhiChu.Click += new System.EventHandler(this.txtFrm1NhapGhiChu_Click);
@@ -1642,7 +1601,7 @@ namespace Restaurant
             // 
             this.metroTabItem4.Name = "metroTabItem4";
             this.metroTabItem4.Panel = this.metroTabPanel2;
-            this.metroTabItem4.Text = "&THỰC ĐƠN \\& BÀN GHẾ";
+            this.metroTabItem4.Text = "&THỰC ĐƠN";
             // 
             // metroTabItem5
             // 
@@ -1689,8 +1648,8 @@ namespace Restaurant
             // 
             // Column6
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column6.HeaderText = "Giảm Giá (%)";
             this.Column6.Name = "Column6";
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -2215,6 +2174,62 @@ namespace Restaurant
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "STT";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Món Ăn";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 163;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "SL";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 40;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "ĐVT";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 50;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column5.HeaderText = "Đơn Giá";
+            this.Column5.Name = "Column5";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Giảm Giá %";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 80;
+            // 
+            // Column7
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column7.HeaderText = "Tổng (VND)";
+            this.Column7.Name = "Column7";
+            // 
+            // btnFrm1TaoBanDatTruoc
+            // 
+            this.btnFrm1TaoBanDatTruoc.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnFrm1TaoBanDatTruoc.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnFrm1TaoBanDatTruoc.Location = new System.Drawing.Point(485, 69);
+            this.btnFrm1TaoBanDatTruoc.Name = "btnFrm1TaoBanDatTruoc";
+            this.btnFrm1TaoBanDatTruoc.Size = new System.Drawing.Size(73, 30);
+            this.btnFrm1TaoBanDatTruoc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnFrm1TaoBanDatTruoc.TabIndex = 11;
+            this.btnFrm1TaoBanDatTruoc.Text = "Tạo Bàn Đặt Trước";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2392,6 +2407,7 @@ namespace Restaurant
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private DevComponents.DotNetBar.ButtonX btnFrm1TaoBanDatTruoc;
     }
 }
 
