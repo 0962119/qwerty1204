@@ -21,6 +21,8 @@ namespace Restaurant
         KHUVUC_BUS khuVucBus = new KHUVUC_BUS();
         DSMONAN_BUS dsMonAnBus = new DSMONAN_BUS();
         public int MaBanDangChon = -1;
+        public int TrangThaiBanDangChon = -1;
+        public NguoiDung nhanVienDangNhap = new NguoiDung();
         public Form1()
         {
             InitializeComponent();
@@ -155,32 +157,47 @@ namespace Restaurant
             int index=int.Parse( lvShowBan.SelectedItems[0].Tag.ToString());
             MaBanDangChon = index;
             //MessageBox.Show(index.ToString());
-            if(lvShowBan.Items[index-1].ImageIndex == 2)
+            if(lvShowBan.Items[index-1].ImageIndex == 2)//ban da co khách
             {
                 DialogResult result =MessageBox.Show("Chọn Yes Nếu Bạn Mốn Hủy Bàn Hay Chọn No Chuyển Sang Trạng Thái Đặt Trước", "Thông Bao", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    lvShowBan.Items[index - 1].ImageIndex = 1;
+                    lvShowBan.Items[index - 1].ImageIndex = 1;// bàn trong
+                    banBUS.UpdateTrangThaiBan(1, index);
+                    TrangThaiBanDangChon = 1;
+                    //MessageBox.Show("da cap nhat ban: " + index.ToString());
                 }
                 else if (result == DialogResult.No)
                 {
-                    lvShowBan.Items[index - 1].ImageIndex = 0;
+                    lvShowBan.Items[index - 1].ImageIndex = 0; //dat truoc
+                    banBUS.UpdateTrangThaiBan(3, index);
+                    TrangThaiBanDangChon = 3;
                 }
             }
-            else if (lvShowBan.Items[index - 1].ImageIndex == 1)
+            else if (lvShowBan.Items[index - 1].ImageIndex == 1)// trong
             {
                 lvShowBan.Items[index - 1].ImageIndex = 0;
+                banBUS.UpdateTrangThaiBan(3, index);
+                TrangThaiBanDangChon = 3;
             }
-            else
+            else// dat truoc
             {
                 lvShowBan.Items[index - 1].ImageIndex = 1;
+                banBUS.UpdateTrangThaiBan(1, index);
+                TrangThaiBanDangChon = 1;
             }
+            lvShowBan.Clear();
+            LoadBan(khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
         }
         private void lvShowBan_Click(object sender, EventArgs e)
         {
-            MaBanDangChon = -1;
-            //MessageBox.Show("-1");
             int index = int.Parse(lvShowBan.SelectedItems[0].Tag.ToString());
+            if (lvShowBan.Items[index - 1].ImageIndex != 1)
+            {
+                MaBanDangChon = index;
+            }
+            else
+                MaBanDangChon = -1;
             string tenBan = lvShowBan.SelectedItems[0].Text.ToString();
             lbFrm1TenBanAn.Text=tenBan;
         }
@@ -223,6 +240,38 @@ namespace Restaurant
                 int gg = int.Parse(txtFrm1GiaGia.Text);
                 int vat = int.Parse(txtFrm1VAT.Text);
                 BaoGia(gg, vat);
+                if (TrangThaiBanDangChon == 3)//dat truoc
+                {
+                    banBUS.UpdateTrangThaiBan(2, MaBanDangChon);
+                    TrangThaiBanDangChon = 2;//co khách
+                    foreach (ListViewItem lvi in lvShowBan.Items)
+                    {
+                        if (lvi.Tag.ToString() == MaBanDangChon.ToString())
+                            lvi.ImageIndex = 2;
+                    }
+                    if (banBUS.KiemTraBanCoKhach(2, MaBanDangChon))//ban bai co hoa don
+                    {
+
+                    }
+                    else//ban chua co hoa don
+                    {
+                        PhieuTinhTien phieuTinhTien = new PhieuTinhTien();
+                        phieuTinhTien.Ban = MaBanDangChon;
+                        phieuTinhTien.GhiChu = txtFrm1NhapGhiChu.Text;
+                        phieuTinhTien.NhanVien = nhanVienDangNhap.TaiKhoan;
+                        phieuTinhTien.TongTien = thanhToan;
+                        phieuTinhTien.NgayLapPhieu = DateTime.Now;
+                        phieuTinhTien.KhachDuaTruoc = 0;
+                        phieuTinhTien.GiamGia = giamGia;
+                        phieuTinhTien.VAT = vAT;
+                        phieuTinhTien.TinhTrang = 1;
+
+                    }
+                }
+                else//co khách
+                {
+
+                }
             }
             else
             {
@@ -231,6 +280,9 @@ namespace Restaurant
         }
         double tongTien = 0;
         double thanhToan = 0;
+        /// <summary>
+        /// thue gia tri gia tang 
+        /// </summary>
         double vAT = 0;
         double giamGia = 0;
         int giamGiaPT = 0;

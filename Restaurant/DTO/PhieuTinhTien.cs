@@ -10,11 +10,32 @@ namespace DTO
         #region Atrributes
         private int _maPhieuTT;
         private int _ban;        
-        private int _nhanVien;
+        private string _nhanVien;
         private double _tongTien;
         private DateTime _ngayLapPhieu;
-        private String _khachDuaTruoc;
+        private double _khachDuaTruoc;
         private String _ghiChu;
+        private double _giamGia;
+
+        public double GiamGia
+        {
+            get { return _giamGia; }
+            set { _giamGia = value; }
+        }
+        private double _vAT;
+
+        public double VAT
+        {
+            get { return _vAT; }
+            set { _vAT = value; }
+        }
+        private int _tinhTrang;
+
+        public int TinhTrang
+        {
+            get { return _tinhTrang; }
+            set { _tinhTrang = value; }
+        }
                              
         #endregion
         #region Default Constructor
@@ -22,14 +43,18 @@ namespace DTO
         {
             _maPhieuTT = 0;
             _ban = 0;
-            _nhanVien = 0;
+            _nhanVien = "-1";
             _tongTien = 0;
             _ngayLapPhieu = DateTime.Now;
-            _khachDuaTruoc = String.Empty;
+            _khachDuaTruoc = 0 ;
             _ghiChu = String.Empty;
+            _giamGia = 0;
+            _vAT = 0;
+            _tinhTrang = - 1;
         }
         #endregion
         #region Properties
+
         public int MaPhieuTT
         {
             get { return _maPhieuTT; }
@@ -40,7 +65,7 @@ namespace DTO
             get { return _ban; }
             set { _ban = value; }
         }
-        public int NhanVien
+        public string NhanVien
         {
             get { return _nhanVien; }
             set { _nhanVien = value; }
@@ -55,7 +80,7 @@ namespace DTO
             get { return _ngayLapPhieu; }
             set { _ngayLapPhieu = value; }
         }
-        public String KhachDuaTruoc
+        public double KhachDuaTruoc
         {
             get { return _khachDuaTruoc; }
             set { _khachDuaTruoc = value; }
