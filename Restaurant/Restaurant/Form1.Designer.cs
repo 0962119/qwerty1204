@@ -112,7 +112,7 @@ namespace Restaurant
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.pctLoGo = new System.Windows.Forms.PictureBox();
-            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.grFrm1ThongTin = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtFrmThoiGian = new System.Windows.Forms.TextBox();
             this.cbxFrm1KhuVuc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtFrm1NhapGhiChu = new System.Windows.Forms.TextBox();
@@ -186,7 +186,7 @@ namespace Restaurant
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFrm1ThucDon)).BeginInit();
             this.groupPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLoGo)).BeginInit();
-            this.groupPanel2.SuspendLayout();
+            this.grFrm1ThongTin.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -298,7 +298,7 @@ namespace Restaurant
             this.metroTabPanel1.Controls.Add(this.comboBoxEx1);
             this.metroTabPanel1.Controls.Add(this.dtgvFrm1ThucDon);
             this.metroTabPanel1.Controls.Add(this.groupPanel3);
-            this.metroTabPanel1.Controls.Add(this.groupPanel2);
+            this.metroTabPanel1.Controls.Add(this.grFrm1ThongTin);
             this.metroTabPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabPanel1.Location = new System.Drawing.Point(0, 51);
             this.metroTabPanel1.Name = "metroTabPanel1";
@@ -1314,52 +1314,52 @@ namespace Restaurant
             this.pctLoGo.TabIndex = 6;
             this.pctLoGo.TabStop = false;
             // 
-            // groupPanel2
+            // grFrm1ThongTin
             // 
-            this.groupPanel2.BackColor = System.Drawing.Color.White;
-            this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel2.Controls.Add(this.txtFrmThoiGian);
-            this.groupPanel2.Controls.Add(this.cbxFrm1KhuVuc);
-            this.groupPanel2.Controls.Add(this.txtFrm1NhapGhiChu);
-            this.groupPanel2.Controls.Add(this.lbFrm1TenBanAn);
-            this.groupPanel2.Controls.Add(this.labelX27);
-            this.groupPanel2.Controls.Add(this.labelX4);
-            this.groupPanel2.Controls.Add(this.labelX5);
-            this.groupPanel2.Controls.Add(this.labelX3);
-            this.groupPanel2.Controls.Add(this.labelX2);
-            this.groupPanel2.Controls.Add(this.labelX1);
-            this.groupPanel2.Location = new System.Drawing.Point(264, 7);
-            this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(566, 108);
-            // 
-            // 
-            // 
-            this.groupPanel2.Style.BackColor = System.Drawing.Color.White;
-            this.groupPanel2.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel2.Style.BackColorGradientAngle = 90;
-            this.groupPanel2.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderBottomWidth = 1;
-            this.groupPanel2.Style.BorderColor = System.Drawing.Color.Black;
-            this.groupPanel2.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderLeftWidth = 1;
-            this.groupPanel2.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderRightWidth = 1;
-            this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel2.Style.BorderTopWidth = 1;
-            this.groupPanel2.Style.CornerDiameter = 4;
-            this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.grFrm1ThongTin.BackColor = System.Drawing.Color.White;
+            this.grFrm1ThongTin.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.grFrm1ThongTin.Controls.Add(this.txtFrmThoiGian);
+            this.grFrm1ThongTin.Controls.Add(this.cbxFrm1KhuVuc);
+            this.grFrm1ThongTin.Controls.Add(this.txtFrm1NhapGhiChu);
+            this.grFrm1ThongTin.Controls.Add(this.lbFrm1TenBanAn);
+            this.grFrm1ThongTin.Controls.Add(this.labelX27);
+            this.grFrm1ThongTin.Controls.Add(this.labelX4);
+            this.grFrm1ThongTin.Controls.Add(this.labelX5);
+            this.grFrm1ThongTin.Controls.Add(this.labelX3);
+            this.grFrm1ThongTin.Controls.Add(this.labelX2);
+            this.grFrm1ThongTin.Controls.Add(this.labelX1);
+            this.grFrm1ThongTin.Location = new System.Drawing.Point(264, 7);
+            this.grFrm1ThongTin.Name = "grFrm1ThongTin";
+            this.grFrm1ThongTin.Size = new System.Drawing.Size(566, 108);
             // 
             // 
             // 
-            this.groupPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.grFrm1ThongTin.Style.BackColor = System.Drawing.Color.White;
+            this.grFrm1ThongTin.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.grFrm1ThongTin.Style.BackColorGradientAngle = 90;
+            this.grFrm1ThongTin.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grFrm1ThongTin.Style.BorderBottomWidth = 1;
+            this.grFrm1ThongTin.Style.BorderColor = System.Drawing.Color.Black;
+            this.grFrm1ThongTin.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grFrm1ThongTin.Style.BorderLeftWidth = 1;
+            this.grFrm1ThongTin.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grFrm1ThongTin.Style.BorderRightWidth = 1;
+            this.grFrm1ThongTin.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grFrm1ThongTin.Style.BorderTopWidth = 1;
+            this.grFrm1ThongTin.Style.CornerDiameter = 4;
+            this.grFrm1ThongTin.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.grFrm1ThongTin.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.grFrm1ThongTin.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.grFrm1ThongTin.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel2.TabIndex = 1;
+            this.grFrm1ThongTin.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.grFrm1ThongTin.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.grFrm1ThongTin.TabIndex = 1;
             // 
             // txtFrmThoiGian
             // 
@@ -2238,8 +2238,8 @@ namespace Restaurant
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFrm1ThucDon)).EndInit();
             this.groupPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctLoGo)).EndInit();
-            this.groupPanel2.ResumeLayout(false);
-            this.groupPanel2.PerformLayout();
+            this.grFrm1ThongTin.ResumeLayout(false);
+            this.grFrm1ThongTin.PerformLayout();
             this.expandablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -2303,7 +2303,7 @@ namespace Restaurant
         private DevComponents.DotNetBar.Metro.MetroTabPanel metroTabPanel1;
         private DevComponents.DotNetBar.Controls.DataGridViewX dtgvFrm1ThucDon;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
+        private DevComponents.DotNetBar.Controls.GroupPanel grFrm1ThongTin;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX6;
         private DevComponents.DotNetBar.ButtonX buttonX5;
