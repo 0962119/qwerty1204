@@ -1,0 +1,5 @@
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\obj\Debug\DTO.pdb
