@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevComponents.DotNetBar;
+using DevComponents.DotNetBar.Metro;
 
 namespace Restaurant
 {
-    public partial class frmBaoCaoDoanhThu : Form
+    public partial class frmBaoCaoDoanhThu : MetroAppForm
     {
         public frmBaoCaoDoanhThu()
         {

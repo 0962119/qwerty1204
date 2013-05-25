@@ -56,10 +56,11 @@ namespace DAO
             else
                 return true;
         }
-        public bool KiemTraBanCoKhach(int tinhTrang, int maBan)
+       
+        public int KiemTraBanCoKhach(int tinhTrang, int maBan)
         {
             int kq = -1;
-            string sql = "select Ban From PHIEUTINHTIEN where  (TinhTrang=@trangThai and MaBan=@maBan)";
+            string sql = "select MaPhieuTT From PHIEUTINHTIEN where  (TinhTrang=@trangThai and MaBan=@maBan)";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             OleDbParameter paratrangthai = new OleDbParameter("@trangThai", OleDbType.Integer);
             paratrangthai.Value = tinhTrang;
@@ -75,12 +76,12 @@ namespace DAO
             }
             catch
             {
-                return false;
+                return -1;
             }
-                if (kq < 0)
-                return false;
+            if (kq < 0)
+                return -1;
             else
-                return true;
+                return kq;
         }
     }
 }

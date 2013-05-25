@@ -26,7 +26,15 @@ namespace BUS
         {
             return banDAO.UpdateTrangThaiBan(trangThai, maBan);
         }
-        public bool KiemTraBanCoKhach(int trangThai, int maBan)
+        /// <summary>
+        /// Kiểm tra bàn với maBan và trang thái đã có hóa đơn hay chưa?
+        /// =-1 với maBan và trangThai này thì chưa có phieutinhtien nao.
+        /// #-1 return mã phiếu tính tiền.
+        /// </summary>
+        /// <param name="tinhTrang">một số int là trạng thái của hóa đơn có thể là chưa tính tiền hoặc là tính rồi....</param>
+        /// <param name="maBan">một số int là mã của bàn đang được chọn để kiểm tra</param>
+        /// <returns>return mã phiếu tính tiền.</returns>
+        public int KiemTraBanCoKhach(int trangThai, int maBan)
         {
             return banDAO.KiemTraBanCoKhach(trangThai, maBan);
         }

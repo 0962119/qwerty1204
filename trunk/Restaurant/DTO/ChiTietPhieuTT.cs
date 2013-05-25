@@ -18,6 +18,7 @@ namespace DTO
         private int _soLuong;
         private int _giamGia;
         private double _thanhTien;
+        private double _donGia;
               
         #endregion
         #region Default Constructor
@@ -30,6 +31,7 @@ namespace DTO
             _soLuong = 0;
             _giamGia = 0;
             _thanhTien = 0;
+            _donGia = 0;
         }
         #endregion
         #region Properties
@@ -38,7 +40,11 @@ namespace DTO
             get { return _thanhTien; }
             set { _thanhTien = value; }
         }
-
+        public double DonGia
+        {
+            get { return _donGia; }
+            set { _donGia = value; }
+        }
         public int GiamGia
         {
             get { return _giamGia; }

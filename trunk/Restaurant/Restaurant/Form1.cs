@@ -20,6 +20,13 @@ namespace Restaurant
         BAN_BUS banBUS = new BAN_BUS();
         KHUVUC_BUS khuVucBus = new KHUVUC_BUS();
         DSMONAN_BUS dsMonAnBus = new DSMONAN_BUS();
+        PHIEUTINHTIEN_BUS phieuTT_Bus = new PHIEUTINHTIEN_BUS();
+        CHITIETPHIEUTT_BUS ctPhieuTT_BUS = new CHITIETPHIEUTT_BUS();
+        /// <summary>
+        /// mã của bàn hiện đang được chọn:
+        /// =-1 là chưa chọn bàn
+        /// # -1 là đã chọn bàn
+        /// </summary>
         public int MaBanDangChon = -1;
         public int TrangThaiBanDangChon = -1;
         public NguoiDung nhanVienDangNhap = new NguoiDung();
@@ -151,55 +158,91 @@ namespace Restaurant
             frmBaoCaoDoanhThu frmbaoCaoDT = new frmBaoCaoDoanhThu();
             frmbaoCaoDT.Show();
         }
-
+        //image =0 dat truoc; image =1 trong ; image =2 co khách
+        //tinhtrang= 3 dat truoc; tinhtrang= 2 da tinh; tinhtrang=1 chưa tinh
         private void lvShowBan_DoubleClick(object sender, EventArgs e)
         {
             int index=int.Parse( lvShowBan.SelectedItems[0].Tag.ToString());
             MaBanDangChon = index;
             //MessageBox.Show(index.ToString());
-            if(lvShowBan.Items[index-1].ImageIndex == 2)//ban da co khách
+            if (lvShowBan.SelectedItems[0].ImageIndex == 2)//ban da co khách
             {
                 DialogResult result =MessageBox.Show("Chọn Yes Nếu Bạn Mốn Hủy Bàn Hay Chọn No Chuyển Sang Trạng Thái Đặt Trước", "Thông Bao", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    lvShowBan.Items[index - 1].ImageIndex = 1;// bàn trong
+                    int ma = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon, 1);
+                    lvShowBan.SelectedItems[0].ImageIndex = 1;// bàn trong
                     banBUS.UpdateTrangThaiBan(1, index);
                     TrangThaiBanDangChon = 1;
-                    //MessageBox.Show("da cap nhat ban: " + index.ToString());
+                    ctPhieuTT_BUS.XoaCTPhieuTinhTien(ma);
+                    phieuTT_Bus.XoaPhieuTinhTien(MaBanDangChon, 1);
+                    MaBanDangChon = -1;
+                    TrangThaiBanDangChon = -1;
                 }
                 else if (result == DialogResult.No)
                 {
-                    lvShowBan.Items[index - 1].ImageIndex = 0; //dat truoc
-                    banBUS.UpdateTrangThaiBan(3, index);
-                    TrangThaiBanDangChon = 3;
+                    if (phieuTT_Bus.CapNhatTrangThaiPhieuTT(MaBanDangChon, 3) == true)
+                    {
+                        lvShowBan.SelectedItems[0].ImageIndex = 0; //dat truoc
+                        banBUS.UpdateTrangThaiBan(3, index);
+                        TrangThaiBanDangChon = 3;
+                    }
                 }
             }
-            else if (lvShowBan.Items[index - 1].ImageIndex == 1)// trong
+            else if (lvShowBan.SelectedItems[0].ImageIndex == 1)// trong
             {
-                lvShowBan.Items[index - 1].ImageIndex = 0;
-                banBUS.UpdateTrangThaiBan(3, index);
-                TrangThaiBanDangChon = 3;
+                lvShowBan.SelectedItems[0].ImageIndex = 2;
+                banBUS.UpdateTrangThaiBan(2, index);
+                TrangThaiBanDangChon = 2;
+
+                PhieuTinhTien phieuTinhTien_DTO = new PhieuTinhTien();
+                phieuTinhTien_DTO.Ban = MaBanDangChon;
+                phieuTinhTien_DTO.GhiChu = txtFrm1NhapGhiChu.Text;
+                phieuTinhTien_DTO.NhanVien = "admin";//nhanVienDangNhap.TaiKhoan;
+                phieuTinhTien_DTO.TongTien = thanhToan;
+                phieuTinhTien_DTO.NgayLapPhieu = DateTime.Now;
+                phieuTinhTien_DTO.KhachDuaTruoc = 0;
+                phieuTinhTien_DTO.GiamGia = giamGia;
+                phieuTinhTien_DTO.VAT = vAT;
+                phieuTinhTien_DTO.TinhTrang = 1;
+                phieuTT_Bus.ThemPhieuTinhTien(phieuTinhTien_DTO);
+                //int maPhieuTT = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon, 1);
             }
             else// dat truoc
             {
-                lvShowBan.Items[index - 1].ImageIndex = 1;
-                banBUS.UpdateTrangThaiBan(1, index);
-                TrangThaiBanDangChon = 1;
+                lvShowBan.SelectedItems[0].ImageIndex = 2;
+                banBUS.UpdateTrangThaiBan(2, index);
+                TrangThaiBanDangChon = 2;
+                phieuTT_Bus.CapNhatTrangThaiPhieuTT(MaBanDangChon, 1);
             }
             lvShowBan.Clear();
             LoadBan(khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+            labelX16.Text = MaBanDangChon.ToString();
+            labelX34.Text = TrangThaiBanDangChon.ToString();
         }
         private void lvShowBan_Click(object sender, EventArgs e)
         {
             int index = int.Parse(lvShowBan.SelectedItems[0].Tag.ToString());
-            if (lvShowBan.Items[index - 1].ImageIndex != 1)
+            if (lvShowBan.SelectedItems[0].ImageIndex != 1)
             {
                 MaBanDangChon = index;
+                if (lvShowBan.SelectedItems[0].ImageIndex == 2)
+                {
+                    TrangThaiBanDangChon = 1;
+                }
+                else
+                    TrangThaiBanDangChon = 3;
+
             }
             else
+            {
                 MaBanDangChon = -1;
+                TrangThaiBanDangChon = -1;
+            }
             string tenBan = lvShowBan.SelectedItems[0].Text.ToString();
             lbFrm1TenBanAn.Text=tenBan;
+            labelX34.Text = TrangThaiBanDangChon.ToString();
+            labelX16.Text = MaBanDangChon.ToString();
         }
         private void lvShowMonAn_DoubleClick(object sender, EventArgs e)
         {
@@ -240,38 +283,15 @@ namespace Restaurant
                 int gg = int.Parse(txtFrm1GiaGia.Text);
                 int vat = int.Parse(txtFrm1VAT.Text);
                 BaoGia(gg, vat);
-                if (TrangThaiBanDangChon == 3)//dat truoc
-                {
-                    banBUS.UpdateTrangThaiBan(2, MaBanDangChon);
-                    TrangThaiBanDangChon = 2;//co khách
-                    foreach (ListViewItem lvi in lvShowBan.Items)
-                    {
-                        if (lvi.Tag.ToString() == MaBanDangChon.ToString())
-                            lvi.ImageIndex = 2;
-                    }
-                    if (banBUS.KiemTraBanCoKhach(2, MaBanDangChon))//ban bai co hoa don
-                    {
-
-                    }
-                    else//ban chua co hoa don
-                    {
-                        PhieuTinhTien phieuTinhTien = new PhieuTinhTien();
-                        phieuTinhTien.Ban = MaBanDangChon;
-                        phieuTinhTien.GhiChu = txtFrm1NhapGhiChu.Text;
-                        phieuTinhTien.NhanVien = nhanVienDangNhap.TaiKhoan;
-                        phieuTinhTien.TongTien = thanhToan;
-                        phieuTinhTien.NgayLapPhieu = DateTime.Now;
-                        phieuTinhTien.KhachDuaTruoc = 0;
-                        phieuTinhTien.GiamGia = giamGia;
-                        phieuTinhTien.VAT = vAT;
-                        phieuTinhTien.TinhTrang = 1;
-
-                    }
-                }
-                else//co khách
-                {
-
-                }
+                int maPTT= phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon);
+                ChiTietPhieuTT ctPhieuTT_DTO = new ChiTietPhieuTT();
+                ctPhieuTT_DTO.MaPhieuTT = maPTT;
+                ctPhieuTT_DTO.MonAn = index;
+                ctPhieuTT_DTO.SoLuong = 1;
+                ctPhieuTT_DTO.GiamGia = giamGia;
+                ctPhieuTT_DTO.DonGia = donGia;
+                ctPhieuTT_DTO.ThanhTien = donGia - (donGia * giamGia) / 100;
+                ctPhieuTT_BUS.ThemCTPhieuTinhTien(ctPhieuTT_DTO);
             }
             else
             {
@@ -284,6 +304,9 @@ namespace Restaurant
         /// thue gia tri gia tang 
         /// </summary>
         double vAT = 0;
+        /// <summary>
+        /// Bien toan cuc giảm giá tổng trên hóa đơn
+        /// </summary>
         double giamGia = 0;
         int giamGiaPT = 0;
         int giamGiavat = 0;

@@ -16,6 +16,20 @@ namespace DTO
         private double _khachDuaTruoc;
         private String _ghiChu;
         private double _giamGia;
+        private DateTime _giovao;
+
+        public DateTime Giovao
+        {
+            get { return _giovao; }
+            set { _giovao = value; }
+        }
+        private DateTime _giora;
+
+        public DateTime Giora
+        {
+            get { return _giora; }
+            set { _giora = value; }
+        }
 
         public double GiamGia
         {
@@ -51,6 +65,8 @@ namespace DTO
             _giamGia = 0;
             _vAT = 0;
             _tinhTrang = - 1;
+            _giovao = DateTime.Now;
+            _giora = DateTime.Now;
         }
         #endregion
         #region Properties

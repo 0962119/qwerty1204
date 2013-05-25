@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BAN_DAO.cs" />
+    <Compile Include="CHITIETPHIEUTT_DAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DSMONAN_DAO.cs" />
     <Compile Include="KHUVUC_DAO.cs" />
+    <Compile Include="PHIEUTINHTIEN_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
