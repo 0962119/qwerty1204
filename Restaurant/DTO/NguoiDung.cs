@@ -18,11 +18,11 @@ namespace DTO
         #region Default Constructor
         public NguoiDung()
         {
-            _taiKhoan = String.Empty;
-            _matKhau = String.Empty;
+            _taiKhoan = "-1";
+            _matKhau = "-1";
             _boPhan = 0;
-            _tenNguoiDung = String.Empty;
-            _sDT = String.Empty;
+            _tenNguoiDung = "-1";
+            _sDT = "-1";
             _tinhTrang = 0;
         }
         #endregion

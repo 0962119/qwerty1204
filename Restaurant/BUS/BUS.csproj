@@ -41,9 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BAN_BUS.cs" />
+    <Compile Include="CHITIETPHIEUTT_BUS.cs" />
     <Compile Include="data.cs" />
     <Compile Include="DSMONAN_BUS.cs" />
     <Compile Include="KHUVUC_BUS.cs" />
+    <Compile Include="PHIEUTINHTIEN_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
