@@ -7,7 +7,7 @@ using DAO;
 using System.Data;
 namespace BUS
 {
-    class DONVITINH_BUS
+    public class DONVITINH_BUS
     {
     }
 }

@@ -9,7 +9,7 @@ using DTO;
 
 namespace DAO
 {
-    class DonViTinh_DAO
+    public class DonViTinh_DAO
     {
     }
 }

@@ -11,7 +11,7 @@ using DTO;
 
 namespace DAO
 {
-    class BoPhan_DAO
+    public class BoPhan_DAO
     {
         
     }

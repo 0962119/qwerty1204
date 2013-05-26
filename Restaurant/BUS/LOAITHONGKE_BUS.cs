@@ -8,7 +8,7 @@ using System.Data;
 
 namespace BUS
 {
-    class LOAITHONGKE_BUS
+    public class LOAITHONGKE_BUS
     {
     }
 }

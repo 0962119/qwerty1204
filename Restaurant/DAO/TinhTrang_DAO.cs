@@ -8,7 +8,7 @@ using NETDataProviders;
 using DTO;
 namespace DAO
 {
-    class TinhTrang_DAO
+    public class TinhTrang_DAO
     {
     }
 }

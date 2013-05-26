@@ -9,7 +9,7 @@ using DTO;
 
 namespace DAO
 {
-    class TrangThaiBan_DAO
+    public class TrangThaiBan_DAO
     {
     }
 }

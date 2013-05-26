@@ -9,7 +9,7 @@ using DTO;
 
 namespace DAO
 {
-    class LoaiMonAn_DAO
+    public class LoaiMonAn_DAO
     {
     }
 }

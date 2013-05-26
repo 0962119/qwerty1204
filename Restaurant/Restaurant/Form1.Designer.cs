@@ -58,7 +58,6 @@ namespace Restaurant
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.metroStatusBar1 = new DevComponents.DotNetBar.Metro.MetroStatusBar();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
             this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
@@ -113,7 +112,6 @@ namespace Restaurant
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.pctLoGo = new System.Windows.Forms.PictureBox();
             this.grFrm1ThongTin = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnFrm1TaoBanDatTruoc = new DevComponents.DotNetBar.ButtonX();
             this.txtFrmThoiGian = new System.Windows.Forms.TextBox();
@@ -126,10 +124,10 @@ namespace Restaurant
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.metroTabPanel2 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.metroTabPanel3 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.metroTabPanel5 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.metroTabPanel4 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.metroTabPanel5 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.metroTabPanel3 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.metroTabPanel2 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.metroTabPanel6 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.metroAppButton2 = new DevComponents.DotNetBar.Metro.MetroAppButton();
             this.metroTabItem3 = new DevComponents.DotNetBar.Metro.MetroTabItem();
@@ -159,6 +157,20 @@ namespace Restaurant
             this.propertySettings3 = new DevComponents.DotNetBar.PropertySettings();
             this.propertySettings4 = new DevComponents.DotNetBar.PropertySettings();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.expan_DangNhap = new DevComponents.DotNetBar.ExpandablePanel();
+            this.txtMatKhau = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTaiKhoan = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX40 = new DevComponents.DotNetBar.LabelX();
+            this.labelX41 = new DevComponents.DotNetBar.LabelX();
+            this.labelX42 = new DevComponents.DotNetBar.LabelX();
+            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lbThongBaoDangNhap = new DevComponents.DotNetBar.LabelX();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
+            this.btnDangNhap = new DevComponents.DotNetBar.ButtonX();
+            this.labelX39 = new DevComponents.DotNetBar.LabelX();
+            this.labelX38 = new DevComponents.DotNetBar.LabelX();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
             this.labelX26 = new DevComponents.DotNetBar.LabelX();
             this.labelX25 = new DevComponents.DotNetBar.LabelX();
@@ -183,16 +195,25 @@ namespace Restaurant
             this.metroTileItem22 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.metroTileItem23 = new DevComponents.DotNetBar.Metro.MetroTileItem();
             this.metroTileItem24 = new DevComponents.DotNetBar.Metro.MetroTileItem();
+            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pctLoGo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.metroShell1.SuspendLayout();
             this.metroTabPanel1.SuspendLayout();
             this.groupPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFrm1ThucDon)).BeginInit();
             this.groupPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctLoGo)).BeginInit();
             this.grFrm1ThongTin.SuspendLayout();
+            this.expan_DangNhap.SuspendLayout();
+            this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.expandablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLoGo)).BeginInit();
             this.SuspendLayout();
             // 
             // styleManager1
@@ -241,10 +262,10 @@ namespace Restaurant
             this.metroShell1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.metroShell1.CaptionVisible = true;
             this.metroShell1.Controls.Add(this.metroTabPanel1);
-            this.metroShell1.Controls.Add(this.metroTabPanel2);
-            this.metroShell1.Controls.Add(this.metroTabPanel3);
-            this.metroShell1.Controls.Add(this.metroTabPanel5);
             this.metroShell1.Controls.Add(this.metroTabPanel4);
+            this.metroShell1.Controls.Add(this.metroTabPanel5);
+            this.metroShell1.Controls.Add(this.metroTabPanel3);
+            this.metroShell1.Controls.Add(this.metroTabPanel2);
             this.metroShell1.Controls.Add(this.metroTabPanel6);
             this.metroShell1.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroShell1.ForeColor = System.Drawing.Color.Black;
@@ -478,13 +499,6 @@ namespace Restaurant
             this.metroStatusBar1.TabIndex = 14;
             this.metroStatusBar1.Text = "metroStatusBar1";
             this.metroStatusBar1.MouseHover += new System.EventHandler(this.metroStatusBar1_MouseHover);
-            // 
-            // buttonItem3
-            // 
-            this.buttonItem3.FixedSize = new System.Drawing.Size(1, 0);
-            this.buttonItem3.Image = global::Restaurant.Properties.Resources.Folders_OS_Windows_8_Metro_icon;
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click);
             // 
             // labelItem1
             // 
@@ -1252,6 +1266,7 @@ namespace Restaurant
             // 
             this.groupPanel3.BackColor = System.Drawing.Color.White;
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel3.Controls.Add(this.groupPanel1);
             this.groupPanel3.Controls.Add(this.labelX8);
             this.groupPanel3.Controls.Add(this.labelX7);
             this.groupPanel3.Controls.Add(this.labelX6);
@@ -1335,19 +1350,6 @@ namespace Restaurant
             this.labelX6.Size = new System.Drawing.Size(145, 23);
             this.labelX6.TabIndex = 7;
             this.labelX6.Text = "TÊN NHÀ HÀNG";
-            // 
-            // pctLoGo
-            // 
-            this.pctLoGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctLoGo.BackColor = System.Drawing.Color.White;
-            this.pctLoGo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pctLoGo.ForeColor = System.Drawing.Color.Black;
-            this.pctLoGo.Image = ((System.Drawing.Image)(resources.GetObject("pctLoGo.Image")));
-            this.pctLoGo.Location = new System.Drawing.Point(2, 3);
-            this.pctLoGo.Name = "pctLoGo";
-            this.pctLoGo.Size = new System.Drawing.Size(140, 96);
-            this.pctLoGo.TabIndex = 6;
-            this.pctLoGo.TabStop = false;
             // 
             // grFrm1ThongTin
             // 
@@ -1552,51 +1554,28 @@ namespace Restaurant
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Thời Gian:";
             // 
-            // metroTabPanel2
+            // metroTabPanel4
             // 
-            this.metroTabPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.metroTabPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabPanel2.Location = new System.Drawing.Point(0, 0);
-            this.metroTabPanel2.Name = "metroTabPanel2";
-            this.metroTabPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.metroTabPanel2.Size = new System.Drawing.Size(1204, 707);
-            // 
-            // 
-            // 
-            this.metroTabPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.metroTabPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabPanel4.Location = new System.Drawing.Point(0, 0);
+            this.metroTabPanel4.Name = "metroTabPanel4";
+            this.metroTabPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.metroTabPanel4.Size = new System.Drawing.Size(1204, 707);
             // 
             // 
             // 
-            this.metroTabPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.metroTabPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.metroTabPanel2.TabIndex = 2;
-            this.metroTabPanel2.Visible = false;
-            // 
-            // metroTabPanel3
-            // 
-            this.metroTabPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.metroTabPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabPanel3.Location = new System.Drawing.Point(0, 0);
-            this.metroTabPanel3.Name = "metroTabPanel3";
-            this.metroTabPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.metroTabPanel3.Size = new System.Drawing.Size(1204, 707);
+            this.metroTabPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.metroTabPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.metroTabPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.metroTabPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.metroTabPanel3.TabIndex = 3;
-            this.metroTabPanel3.Visible = false;
+            this.metroTabPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel4.TabIndex = 4;
+            this.metroTabPanel4.Visible = false;
             // 
             // metroTabPanel5
             // 
@@ -1621,28 +1600,51 @@ namespace Restaurant
             this.metroTabPanel5.TabIndex = 5;
             this.metroTabPanel5.Visible = false;
             // 
-            // metroTabPanel4
+            // metroTabPanel3
             // 
-            this.metroTabPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.metroTabPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabPanel4.Location = new System.Drawing.Point(0, 51);
-            this.metroTabPanel4.Name = "metroTabPanel4";
-            this.metroTabPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.metroTabPanel4.Size = new System.Drawing.Size(1204, 656);
-            // 
-            // 
-            // 
-            this.metroTabPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.metroTabPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabPanel3.Location = new System.Drawing.Point(0, 0);
+            this.metroTabPanel3.Name = "metroTabPanel3";
+            this.metroTabPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.metroTabPanel3.Size = new System.Drawing.Size(1204, 707);
             // 
             // 
             // 
-            this.metroTabPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.metroTabPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.metroTabPanel4.TabIndex = 4;
-            this.metroTabPanel4.Visible = false;
+            this.metroTabPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.metroTabPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel3.TabIndex = 3;
+            this.metroTabPanel3.Visible = false;
+            // 
+            // metroTabPanel2
+            // 
+            this.metroTabPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.metroTabPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabPanel2.Location = new System.Drawing.Point(0, 0);
+            this.metroTabPanel2.Name = "metroTabPanel2";
+            this.metroTabPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.metroTabPanel2.Size = new System.Drawing.Size(1204, 707);
+            // 
+            // 
+            // 
+            this.metroTabPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.metroTabPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.metroTabPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel2.TabIndex = 2;
+            this.metroTabPanel2.Visible = false;
             // 
             // metroTabPanel6
             // 
@@ -1915,6 +1917,252 @@ namespace Restaurant
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // expan_DangNhap
+            // 
+            this.expan_DangNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.expan_DangNhap.CollapseDirection = DevComponents.DotNetBar.eCollapseDirection.RightToLeft;
+            this.expan_DangNhap.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.expan_DangNhap.Controls.Add(this.label1);
+            this.expan_DangNhap.Controls.Add(this.pictureBox5);
+            this.expan_DangNhap.Controls.Add(this.lbThongBaoDangNhap);
+            this.expan_DangNhap.Controls.Add(this.btnThoat);
+            this.expan_DangNhap.Controls.Add(this.btnDangNhap);
+            this.expan_DangNhap.Controls.Add(this.txtMatKhau);
+            this.expan_DangNhap.Controls.Add(this.txtTaiKhoan);
+            this.expan_DangNhap.Controls.Add(this.labelX39);
+            this.expan_DangNhap.Controls.Add(this.labelX38);
+            this.expan_DangNhap.Controls.Add(this.pictureBox3);
+            this.expan_DangNhap.Location = new System.Drawing.Point(0, 5);
+            this.expan_DangNhap.Name = "expan_DangNhap";
+            this.expan_DangNhap.Size = new System.Drawing.Size(1210, 703);
+            this.expan_DangNhap.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.expan_DangNhap.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.expan_DangNhap.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.expan_DangNhap.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expan_DangNhap.Style.GradientAngle = 90;
+            this.expan_DangNhap.TabIndex = 19;
+            this.expan_DangNhap.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
+            this.expan_DangNhap.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.expan_DangNhap.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
+            this.expan_DangNhap.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.expan_DangNhap.TitleStyle.GradientAngle = 90;
+            this.expan_DangNhap.TitleText = "Đăng Nhập";
+            // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtMatKhau.Border.Class = "TextBoxBorder";
+            this.txtMatKhau.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
+            this.txtMatKhau.Location = new System.Drawing.Point(512, 345);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(212, 20);
+            this.txtMatKhau.TabIndex = 10;
+            // 
+            // txtTaiKhoan
+            // 
+            this.txtTaiKhoan.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtTaiKhoan.Border.Class = "TextBoxBorder";
+            this.txtTaiKhoan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTaiKhoan.ForeColor = System.Drawing.Color.Black;
+            this.txtTaiKhoan.Location = new System.Drawing.Point(512, 291);
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.Size = new System.Drawing.Size(212, 20);
+            this.txtTaiKhoan.TabIndex = 9;
+            // 
+            // labelX40
+            // 
+            this.labelX40.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.labelX40.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX40.ForeColor = System.Drawing.Color.Black;
+            this.labelX40.Location = new System.Drawing.Point(149, 45);
+            this.labelX40.Name = "labelX40";
+            this.labelX40.Size = new System.Drawing.Size(207, 35);
+            this.labelX40.TabIndex = 9;
+            this.labelX40.Text = "Địa chỉ: 727 trần hưng đạo, phường 1, quận 5, TP HCM";
+            this.labelX40.WordWrap = true;
+            // 
+            // labelX41
+            // 
+            this.labelX41.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.labelX41.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX41.ForeColor = System.Drawing.Color.Black;
+            this.labelX41.Location = new System.Drawing.Point(149, 25);
+            this.labelX41.Name = "labelX41";
+            this.labelX41.Size = new System.Drawing.Size(134, 23);
+            this.labelX41.TabIndex = 8;
+            this.labelX41.Text = "SDT: 0908943745";
+            this.labelX41.WordWrap = true;
+            // 
+            // labelX42
+            // 
+            this.labelX42.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.labelX42.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX42.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX42.ForeColor = System.Drawing.Color.Black;
+            this.labelX42.Location = new System.Drawing.Point(182, 3);
+            this.labelX42.Name = "labelX42";
+            this.labelX42.Size = new System.Drawing.Size(145, 23);
+            this.labelX42.TabIndex = 7;
+            this.labelX42.Text = "TÊN NHÀ HÀNG";
+            // 
+            // groupPanel1
+            // 
+            this.groupPanel1.BackColor = System.Drawing.Color.White;
+            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.labelX40);
+            this.groupPanel1.Controls.Add(this.labelX41);
+            this.groupPanel1.Controls.Add(this.labelX42);
+            this.groupPanel1.Controls.Add(this.pictureBox4);
+            this.groupPanel1.Location = new System.Drawing.Point(-3, -3);
+            this.groupPanel1.Name = "groupPanel1";
+            this.groupPanel1.Size = new System.Drawing.Size(365, 108);
+            // 
+            // 
+            // 
+            this.groupPanel1.Style.BackColor = System.Drawing.Color.White;
+            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel1.Style.BackColorGradientAngle = 90;
+            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderBottomWidth = 1;
+            this.groupPanel1.Style.BorderColor = System.Drawing.Color.Black;
+            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderLeftWidth = 1;
+            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderRightWidth = 1;
+            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderTopWidth = 1;
+            this.groupPanel1.Style.CornerDiameter = 4;
+            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel1.TabIndex = 10;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox5.Image = global::Restaurant.Properties.Resources.house_icon;
+            this.pictureBox5.Location = new System.Drawing.Point(77, 21);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(307, 337);
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
+            // 
+            // lbThongBaoDangNhap
+            // 
+            this.lbThongBaoDangNhap.BackColor = System.Drawing.Color.White;
+            this.lbThongBaoDangNhap.BackgroundImage = global::Restaurant.Properties.Resources.backgroup_dangnhap;
+            // 
+            // 
+            // 
+            this.lbThongBaoDangNhap.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbThongBaoDangNhap.ForeColor = System.Drawing.Color.Black;
+            this.lbThongBaoDangNhap.Location = new System.Drawing.Point(480, 373);
+            this.lbThongBaoDangNhap.Name = "lbThongBaoDangNhap";
+            this.lbThongBaoDangNhap.Size = new System.Drawing.Size(328, 23);
+            this.lbThongBaoDangNhap.TabIndex = 15;
+            this.lbThongBaoDangNhap.Text = " ";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = global::Restaurant.Properties.Resources.thoat;
+            this.btnThoat.Location = new System.Drawing.Point(628, 409);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(136, 52);
+            this.btnThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThoat.TabIndex = 14;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDangNhap.BackgroundImage = global::Restaurant.Properties.Resources.Folders_OS_Windows_8_Metro_icon;
+            this.btnDangNhap.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.Image = global::Restaurant.Properties.Resources.dangnhap;
+            this.btnDangNhap.Location = new System.Drawing.Point(451, 409);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.PressedImage = global::Restaurant.Properties.Resources.backgroup_dangnhap;
+            this.btnDangNhap.Size = new System.Drawing.Size(132, 52);
+            this.btnDangNhap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnDangNhap.TabIndex = 13;
+            this.btnDangNhap.Text = "Đăng Nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click_1);
+            // 
+            // labelX39
+            // 
+            this.labelX39.BackColor = System.Drawing.Color.White;
+            this.labelX39.BackgroundImage = global::Restaurant.Properties.Resources.backgroup_dangnhap;
+            // 
+            // 
+            // 
+            this.labelX39.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX39.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX39.ForeColor = System.Drawing.Color.Black;
+            this.labelX39.Location = new System.Drawing.Point(512, 319);
+            this.labelX39.Name = "labelX39";
+            this.labelX39.Size = new System.Drawing.Size(128, 23);
+            this.labelX39.TabIndex = 11;
+            this.labelX39.Text = "Mật Khẩu:";
+            // 
+            // labelX38
+            // 
+            this.labelX38.BackColor = System.Drawing.Color.White;
+            this.labelX38.BackgroundImage = global::Restaurant.Properties.Resources.backgroup_dangnhap;
+            // 
+            // 
+            // 
+            this.labelX38.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX38.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX38.ForeColor = System.Drawing.Color.Black;
+            this.labelX38.Location = new System.Drawing.Point(512, 262);
+            this.labelX38.Name = "labelX38";
+            this.labelX38.Size = new System.Drawing.Size(128, 23);
+            this.labelX38.TabIndex = 12;
+            this.labelX38.Text = "Tài khoản:";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox3.Image = global::Restaurant.Properties.Resources.backgroup_dangnhap;
+            this.pictureBox3.Location = new System.Drawing.Point(30, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1155, 701);
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
             // expandablePanel1
             // 
             this.expandablePanel1.ButtonImageCollapse = global::Restaurant.Properties.Resources.Folders_OS_Windows_8_Metro_icon;
@@ -2161,7 +2409,7 @@ namespace Restaurant
             this.metroTileItem15.ImageIndent = new System.Drawing.Point(10, 10);
             this.metroTileItem15.Name = "metroTileItem15";
             this.metroTileItem15.Text = "<br/>\r\n<font size=\"+4\">Quản Lý Khách Hàng</font><br/>\r\n <div>  - Quản lý bán hàng" +
-                "</div>\r\n<div>    - Quản lý khu vực</div>  \r\n- Quản lý bàn ghế";
+    "</div>\r\n<div>    - Quản lý khu vực</div>  \r\n- Quản lý bàn ghế";
             this.metroTileItem15.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Default;
             this.metroTileItem15.TileSize = new System.Drawing.Size(250, 110);
             // 
@@ -2262,6 +2510,50 @@ namespace Restaurant
             // 
             this.metroTileItem24.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // buttonItem3
+            // 
+            this.buttonItem3.FixedSize = new System.Drawing.Size(1, 0);
+            this.buttonItem3.Image = global::Restaurant.Properties.Resources.Folders_OS_Windows_8_Metro_icon;
+            this.buttonItem3.Name = "buttonItem3";
+            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.ForeColor = System.Drawing.Color.Black;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(-4, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(140, 96);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pctLoGo
+            // 
+            this.pctLoGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctLoGo.BackColor = System.Drawing.Color.White;
+            this.pctLoGo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pctLoGo.ForeColor = System.Drawing.Color.Black;
+            this.pctLoGo.Image = ((System.Drawing.Image)(resources.GetObject("pctLoGo.Image")));
+            this.pctLoGo.Location = new System.Drawing.Point(2, 3);
+            this.pctLoGo.Name = "pctLoGo";
+            this.pctLoGo.Size = new System.Drawing.Size(140, 96);
+            this.pctLoGo.TabIndex = 6;
+            this.pctLoGo.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = global::Restaurant.Properties.Resources.backgroup_dangnhap;
+            this.label1.Location = new System.Drawing.Point(793, 640);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(373, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Quản lý nhà hàng ăn - nhóm 31 F - 12HCA2 - KHTN";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2269,6 +2561,7 @@ namespace Restaurant
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1205, 712);
             this.ControlBox = true;
+            this.Controls.Add(this.expan_DangNhap);
             this.Controls.Add(this.expandablePanel1);
             this.Controls.Add(this.metroShell1);
             this.DoubleBuffered = true;
@@ -2284,12 +2577,18 @@ namespace Restaurant
             this.groupPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFrm1ThucDon)).EndInit();
             this.groupPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctLoGo)).EndInit();
             this.grFrm1ThongTin.ResumeLayout(false);
             this.grFrm1ThongTin.PerformLayout();
+            this.expan_DangNhap.ResumeLayout(false);
+            this.expan_DangNhap.PerformLayout();
+            this.groupPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.expandablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLoGo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2442,6 +2741,22 @@ namespace Restaurant
         private DevComponents.DotNetBar.ButtonX btnFrm1TaoBanDatTruoc;
         private DevComponents.DotNetBar.LabelX labelX34;
         private DevComponents.DotNetBar.LabelX labelX16;
+        private DevComponents.DotNetBar.ExpandablePanel expan_DangNhap;
+        private DevComponents.DotNetBar.LabelX lbThongBaoDangNhap;
+        private DevComponents.DotNetBar.ButtonX btnThoat;
+        private DevComponents.DotNetBar.ButtonX btnDangNhap;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMatKhau;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTaiKhoan;
+        private DevComponents.DotNetBar.LabelX labelX39;
+        private DevComponents.DotNetBar.LabelX labelX38;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+        private DevComponents.DotNetBar.LabelX labelX40;
+        private DevComponents.DotNetBar.LabelX labelX41;
+        private DevComponents.DotNetBar.LabelX labelX42;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label1;
     }
 }
 

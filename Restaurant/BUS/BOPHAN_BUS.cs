@@ -8,7 +8,7 @@ using System.Data;
 
 namespace BUS
 {
-    class BOPHAN_BUS
+    public class BOPHAN_BUS
     {
     }
 }
