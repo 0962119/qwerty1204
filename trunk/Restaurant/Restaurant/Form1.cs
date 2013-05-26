@@ -431,5 +431,91 @@ namespace Restaurant
         {
 
         }
+
+
+
+        //2 event button thất lạc --
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            NguoiDung dto = new NguoiDung();
+            dto.TaiKhoan = txtTaiKhoan.Text;
+            dto.MatKhau = txtMatKhau.Text;
+            NGUOIDUNG_BUS bus = new NGUOIDUNG_BUS();
+            if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
+            {
+                lbThongBaoDangNhap.Text = "Tên Tài khoản và Mật Khẩu không được bỏ trống!!!";
+            }
+            else
+            {
+
+                try
+                {
+                    int temp = bus.KiemTraDangNhap(dto).Rows.Count;
+                    if (temp > 0)
+                    {
+                        expan_DangNhap.Hide();                        
+
+                    }
+                    else
+                    {
+                        lbThongBaoDangNhap.Text = "sai Tài khoản hoặc Mật khẩu. vui lòng kiểm tra!!!";
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("lỗi hệ thống");
+                }
+
+                
+
+            }
+           
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //--./.
+        
+
+        private void btnDangNhap_Click_1(object sender, EventArgs e)
+        {
+            NguoiDung dto = new NguoiDung();
+            dto.TaiKhoan = txtTaiKhoan.Text;
+            dto.MatKhau = txtMatKhau.Text;
+            NGUOIDUNG_BUS bus = new NGUOIDUNG_BUS();
+            if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
+            {
+                lbThongBaoDangNhap.Text = "Tên Tài khoản và Mật Khẩu không được bỏ trống!!!";
+            }
+            else
+            {
+                try
+                {
+                    int temp = bus.KiemTraDangNhap(dto).Rows.Count;
+                    if (temp > 0)
+                    {
+                        expan_DangNhap.Hide();
+                    }
+                    else{
+                        lbThongBaoDangNhap.Text = "sai Tài khoản hoặc Mật khẩu. vui lòng kiểm tra!!!";
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("lỗi hệ thống");
+                }
+            }
+        }
+
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
+
+       
     }
 }

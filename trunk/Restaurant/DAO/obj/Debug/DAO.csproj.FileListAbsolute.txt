@@ -14,3 +14,11 @@ C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Debug\DTO.dll
 C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Debug\NETDataProviders.dll
 C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Debug\DTO.pdb
 C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\bien\Desktop\nha hang\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\nha hang\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\nha hang\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\nha hang\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\DAO\obj\Debug\DAO.pdb

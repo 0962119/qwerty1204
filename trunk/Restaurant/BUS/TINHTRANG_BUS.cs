@@ -8,7 +8,7 @@ using System.Data;
 
 namespace BUS
 {
-    class TINHTRANG_BUS
+    public class TINHTRANG_BUS
     {
     }
 }

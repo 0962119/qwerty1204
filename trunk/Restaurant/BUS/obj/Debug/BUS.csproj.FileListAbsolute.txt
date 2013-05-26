@@ -18,3 +18,13 @@ C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\bin\Debug\DTO.pdb
 C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\obj\Debug\BUS.dll
 C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\bien\Desktop\nha hang\Restaurant\BUS\obj\Debug\BUS.pdb

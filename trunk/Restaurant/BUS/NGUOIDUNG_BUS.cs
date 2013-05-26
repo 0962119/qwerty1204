@@ -8,7 +8,14 @@ using System.Data;
 
 namespace BUS
 {
-    class NGUOIDUNG_BUS
+    public class NGUOIDUNG_BUS
     {
+        public  DataTable KiemTraDangNhap(NguoiDung dto)
+        {
+            NguoiDung_DAO dao = new NguoiDung_DAO();
+            DataTable dt = new DataTable();
+            dt = dao.KiemTraDangNhap(dto);
+            return dt;
+        }
     }
 }
