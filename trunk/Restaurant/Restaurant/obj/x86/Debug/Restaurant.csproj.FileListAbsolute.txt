@@ -39,3 +39,6 @@ C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Prop
 C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Debug\Restaurant.UserControl1.resources
+C:\Users\bien\Desktop\nha hang\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\bien\Desktop\nha hang\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
+C:\Users\bien\Desktop\nha hang\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb

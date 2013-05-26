@@ -41,12 +41,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BAN_BUS.cs" />
+    <Compile Include="BOPHAN_BUS.cs" />
     <Compile Include="CHITIETPHIEUTT_BUS.cs" />
     <Compile Include="data.cs" />
+    <Compile Include="DONVITINH_BUS.cs" />
     <Compile Include="DSMONAN_BUS.cs" />
     <Compile Include="KHUVUC_BUS.cs" />
+    <Compile Include="LOAIBAOCAO_BUS.cs" />
+    <Compile Include="LOAIMONAN_BUS.cs" />
+    <Compile Include="LOAITHONGKE_BUS.cs" />
+    <Compile Include="NGUOIDUNG_BUS.cs" />
     <Compile Include="PHIEUTINHTIEN_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TINHTRANG_BUS.cs" />
+    <Compile Include="TRANGTHAIBAN_BUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
