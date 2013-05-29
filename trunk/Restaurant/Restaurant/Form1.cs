@@ -106,7 +106,6 @@ namespace Restaurant
             
             //<br/><font size="+30">22h</font><font size="15">18</font>
             LoadConTrol();
-            nhanVienDangNhap.TenNguoiDung = "Nguyễn Anh Quốc";
             this.HOADONRPTableAdapter.Fill(this.QUANLYNHAHANGDataSet.HOADONRP);
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
@@ -180,7 +179,7 @@ namespace Restaurant
                 int ma = int.Parse(dtr[0].ToString());
                 ListViewItem lvi = new ListViewItem();
                 string pathImage = path + "\\imageThucDon\\" + dtr[5].ToString();
-                imageList2.Images.Add(ma.ToString(), Image.FromFile(pathImage));
+                imgFrm1Ban.Images.Add(ma.ToString(), Image.FromFile(pathImage));
 
                 //rexIndex[ma-1] = nIndex;
                 lvi.Tag = ma;
@@ -279,7 +278,7 @@ namespace Restaurant
                 PhieuTinhTien phieuTinhTien_DTO = new PhieuTinhTien();
                 phieuTinhTien_DTO.Ban = MaBanDangChon;
                 phieuTinhTien_DTO.GhiChu = txtFrm1NhapGhiChu.Text;
-                phieuTinhTien_DTO.NhanVien = "admin";//nhanVienDangNhap.TaiKhoan;
+                //phieuTinhTien_DTO.NhanVien = "admin";//nhanVienDangNhap.TaiKhoan;
                 phieuTinhTien_DTO.TongTien = thanhToan;
                 phieuTinhTien_DTO.NgayLapPhieu = DateTime.Now;
                 phieuTinhTien_DTO.KhachDuaTruoc = 0;
@@ -1971,32 +1970,32 @@ namespace Restaurant
 
         private void labelX8_Click(object sender, EventArgs e)
         {
-            expandablePanel2.Expanded = true;
+            exPanFrm1DoiThongTin.Expanded = true;
         }
 
         private void labelX7_Click(object sender, EventArgs e)
         {
-            expandablePanel2.Expanded = true;
+            exPanFrm1DoiThongTin.Expanded = true;
         }
 
         private void labelX6_Click(object sender, EventArgs e)
         {
-            expandablePanel2.Expanded = true;
+            exPanFrm1DoiThongTin.Expanded = true;
         }
 
         private void groupPanel3_Click(object sender, EventArgs e)
         {
-            expandablePanel2.Expanded = true;
+            exPanFrm1DoiThongTin.Expanded = true;
         }
 
         private void expandablePanel2_Click(object sender, EventArgs e)
         {
-            expandablePanel2.Expanded = false;
+            exPanFrm1DoiThongTin.Expanded = false;
         }
 
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
-            expandablePanel2.Expanded = false;
+            exPanFrm1DoiThongTin.Expanded = false;
         }
 
         private void btnFrm1LuuThongTinNhaHang_Click(object sender, EventArgs e)
@@ -2016,7 +2015,7 @@ namespace Restaurant
                 UpdateValueToConfigFile("lbFrm1DiachiNhaHang", txtFrm1DiaChiNhaHang.Text);
                 lbFrm1SDTNhaHang.Text = txtFrm1SDTNhaHang.Text;
             }
-            expandablePanel2.Expanded = false;
+            exPanFrm1DoiThongTin.Expanded = false;
         }
 
         private void btnFrm1XemTruocHD_Click(object sender, EventArgs e)
@@ -2034,6 +2033,42 @@ namespace Restaurant
             ExeReport();
             this.HOADONRPTableAdapter.Fill(this.QUANLYNHAHANGDataSet.HOADONRP);
             this.reportViewer1.RefreshReport();
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            
+            nhanVienDangNhap.TaiKhoan = txtTaiKhoan.Text;
+            nhanVienDangNhap.MatKhau = txtMatKhau.Text;
+            NGUOIDUNG_BUS bus = new NGUOIDUNG_BUS();
+            if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
+            {
+                lbThongBaoDangNhap.Text = "Tên Tài khoản và Mật Khẩu không được bỏ trống!!!";
+            }
+            else
+            {
+                try
+                {
+                    int temp = bus.KiemTraDangNhap(nhanVienDangNhap).Rows.Count;
+                    if (temp > 0)
+                    {
+                        expan_DangNhap.Hide();
+                    }
+                    else
+                    {
+                        lbThongBaoDangNhap.Text = "sai Tài khoản hoặc Mật khẩu. vui lòng kiểm tra!!!";
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("lỗi hệ thống");
+                }
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         
     }
