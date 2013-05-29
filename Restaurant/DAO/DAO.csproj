@@ -44,12 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BAN_DAO.cs" />
+    <Compile Include="BoPhan_DAO.cs" />
     <Compile Include="CHITIETPHIEUTT_DAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DonViTinh_DAO.cs" />
     <Compile Include="DSMONAN_DAO.cs" />
     <Compile Include="KHUVUC_DAO.cs" />
+    <Compile Include="LoaiBaoCao_DAO.cs" />
+    <Compile Include="LoaiMonAn_DAO.cs" />
+    <Compile Include="LoaiThongKe_DAO.cs" />
+    <Compile Include="NguoiDung_DAO.cs" />
     <Compile Include="PHIEUTINHTIEN_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TinhTrang_DAO.cs" />
+    <Compile Include="TrangThaiBan_DAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
