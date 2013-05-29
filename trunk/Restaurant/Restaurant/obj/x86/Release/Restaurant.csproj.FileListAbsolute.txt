@@ -1,0 +1,11 @@
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\Restaurant.frmBaoCaoDoanhThu.resources
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\Restaurant.frmBaoCaoThongke_Ban.resources
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\Restaurant.frmBaoCaoThongKe_MonAn.resources
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\Restaurant.Form1.resources
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\Restaurant.Properties.Resources.resources
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\Restaurant.UserControl1.resources
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\RdlCompile.cache
+C:\Users\QN\Desktop\doanCNPM\Restaurant\Restaurant\obj\x86\Release\RdlCompile.compiled

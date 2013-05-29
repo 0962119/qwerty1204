@@ -19,6 +19,7 @@ namespace DTO
         private int _giamGia;
         private double _thanhTien;
         private double _donGia;
+        
               
         #endregion
         #region Default Constructor

@@ -14,5 +14,13 @@ namespace BUS
         {
             return dsMonAnDAO.LayDSMonAn();
         }
+        public string LayHinhMonAn(int maMonAn)
+        {
+            return dsMonAnDAO.LayHinhMonAn(maMonAn);
+        }
+        public DataTable LayDSMonAn(string tenBan)
+        {
+            return dsMonAnDAO.LayDSMonAn(tenBan);
+        }
     }
 }

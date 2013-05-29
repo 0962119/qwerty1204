@@ -1,0 +1,10 @@
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\bin\Release\BUS.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\bin\Release\BUS.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\bin\Release\DAO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\bin\Release\DTO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\bin\Release\NETDataProviders.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\bin\Release\DAO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\bin\Release\DTO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\obj\Release\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\obj\Release\BUS.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\BUS\obj\Release\BUS.pdb

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DTO;
 using DAO;
+using System.Data;
 namespace BUS
 {
     public class CHITIETPHIEUTT_BUS
@@ -13,9 +14,54 @@ namespace BUS
         {
             return ctPhieuTT_DAO.ThemCTPhieuTinhTien(ctPhieuTT_DTO);
         }
+        /// <summary>
+        /// xoa tat ca cac chi tiet co maPhieuTT
+        /// </summary>
+        /// <param name="maPhieuTT"></param>
+        /// <returns></returns>
         public bool XoaCTPhieuTinhTien(int maPhieuTT)
         {
             return ctPhieuTT_DAO.XoaCTPhieuTinhTien(maPhieuTT);
+        }
+        /// <summary>
+        /// xoa nhung chi tiết có MaPhieuTT và có MaMonAn
+        /// </summary>
+        /// <param name="maPhieuTT"></param>
+        /// <param name="maMonAn"></param>
+        /// <returns></returns>
+        public bool XoaCTPhieuTinhTien(int maPhieuTT, int maMonAn)
+        {
+            return ctPhieuTT_DAO.XoaCTPhieuTinhTien(maPhieuTT, maMonAn);
+        }
+        /// <summary>
+        /// cập nhật lại Mã Phiếu Tính Tiền <=> tách món
+        /// </summary>
+        /// <param name="maPhieuTT"></param>
+        /// <param name="maMonAn"></param>
+        /// <returns></returns>
+        public bool XoaCTPhieuTinhTien(int maPhieuTT, int maMonAn, int maPhieuTTNew)
+        {
+            return ctPhieuTT_DAO.XoaCTPhieuTinhTien(maPhieuTT, maMonAn, maPhieuTTNew);
+        }
+        public DataTable LayDSCTPhieuTT(int maPhieuTT, int maBan)
+        {
+            return ctPhieuTT_DAO.LayDSCTPhieuTT(maPhieuTT, maBan);
+        }
+        public bool CapNhatCTPhieuTT(int maPhieuTT, int maMonAn, int soLuong, int giamGia, double thanhTien)
+        {
+            return ctPhieuTT_DAO.CapNhatCTPhieuTT(maPhieuTT, maMonAn, soLuong, giamGia, thanhTien);
+        }
+        public bool GhepBan(int maPhieuTTOld, int maPhieuTTNew)
+        {
+            return ctPhieuTT_DAO.GhepBan(maPhieuTTOld, maPhieuTTNew);
+        }
+        public bool AttackDatainHoaDonRP(DataTable tbHoaDon)
+        {
+            return ctPhieuTT_DAO.AttackDatainHoaDonRP(tbHoaDon);
+        }
+        public void DeleteDatainHoaDonRP()
+        {
+            ctPhieuTT_DAO.DeleteDatainHoaDonRP();
         }
     }
 }

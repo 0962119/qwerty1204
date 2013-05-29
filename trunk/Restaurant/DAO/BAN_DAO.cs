@@ -19,6 +19,7 @@ namespace DAO
         }
         public DataTable LayDSBan(int maKhuVuc)
         {
+            
             string sql = "select * from BAN where MaKhuVuc=@maKhuVuc";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             OleDbParameter para = new OleDbParameter("@maKhuVuc", OleDbType.Integer);
@@ -29,9 +30,10 @@ namespace DAO
         }
         public DataTable LayDSBan(string tenBan)
         {
+            //SELECT MaBan, TenBan, TrangThai, MaKhuVuc, SoKhach FROM BAN WHERE (TenBan like '%2%' or TenBan like '%%')
             string sql = "SELECT MaBan, TenBan, TrangThai, MaKhuVuc, SoKhach FROM BAN WHERE (TenBan like '%"+tenBan+"%')";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
-            OleDbParameter paratrangthai = new OleDbParameter("@tenBan", OleDbType.VarChar);
+            OleDbParameter paratrangthai = new OleDbParameter("@tenBan", OleDbType.LongVarChar);
             paratrangthai.Value = tenBan;
             ListParam.Add(paratrangthai);
             NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
