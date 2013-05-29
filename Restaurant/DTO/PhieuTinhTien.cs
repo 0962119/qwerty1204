@@ -57,7 +57,7 @@ namespace DTO
         {
             _maPhieuTT = 0;
             _ban = 0;
-            _nhanVien = "-1";
+            _nhanVien = "admin";
             _tongTien = 0;
             _ngayLapPhieu = DateTime.Now;
             _khachDuaTruoc = 0 ;

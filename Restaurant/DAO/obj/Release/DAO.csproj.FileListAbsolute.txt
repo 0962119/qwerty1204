@@ -1,0 +1,8 @@
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Release\DAO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Release\DAO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Release\DTO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Release\NETDataProviders.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Release\DTO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\obj\Release\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\obj\Release\DAO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\obj\Release\DAO.pdb

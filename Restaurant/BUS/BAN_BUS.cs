@@ -5,7 +5,6 @@ using System.Text;
 using System.Data;
 using DAO;
 
-
 namespace BUS
 {
     public class BAN_BUS

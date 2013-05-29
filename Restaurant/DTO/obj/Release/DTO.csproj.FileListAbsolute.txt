@@ -1,0 +1,5 @@
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\bin\Release\DTO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\bin\Release\DTO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\obj\Release\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\obj\Release\DTO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\obj\Release\DTO.pdb
