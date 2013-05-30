@@ -33,7 +33,6 @@ namespace Restaurant
             DevComponents.DotNetBar.Metro.MetroTileFrame metroTileFrame1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             DevComponents.DotNetBar.Metro.MetroTileFrame metroTileFrame2;
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -49,11 +48,22 @@ namespace Restaurant
             this.metroTabItem1 = new DevComponents.DotNetBar.Metro.MetroTabItem();
             this.metroAppButton1 = new DevComponents.DotNetBar.Metro.MetroAppButton();
             this.metroShell1 = new DevComponents.DotNetBar.Metro.MetroShell();
+            this.metroTabPanel6 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.btnXoaNV = new DevComponents.DotNetBar.ButtonX();
+            this.btnThemNV = new DevComponents.DotNetBar.ButtonX();
+            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.TenNguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaBoPhan2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabPanel1 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.grbFrm1Report = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.picFrm1MiniSize = new System.Windows.Forms.PictureBox();
             this.picFrm1Close = new System.Windows.Forms.PictureBox();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnFrm1InHoaDon = new DevComponents.DotNetBar.ButtonX();
             this.btnFrm1XemBanIn = new DevComponents.DotNetBar.ButtonItem();
             this.btnXuatExCel = new DevComponents.DotNetBar.ButtonItem();
@@ -136,18 +146,17 @@ namespace Restaurant
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.metroTabPanel2 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.metroTabPanel3 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.metroTabPanel5 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.metroTabPanel4 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
-            this.metroTabPanel6 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.metroTabPanel2 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
+            this.metroTabPanel5 = new DevComponents.DotNetBar.Metro.MetroTabPanel();
             this.metroAppButton2 = new DevComponents.DotNetBar.Metro.MetroAppButton();
-            this.metroTabItem3 = new DevComponents.DotNetBar.Metro.MetroTabItem();
-            this.metroTabItem4 = new DevComponents.DotNetBar.Metro.MetroTabItem();
-            this.metroTabItem5 = new DevComponents.DotNetBar.Metro.MetroTabItem();
-            this.metroTabItem6 = new DevComponents.DotNetBar.Metro.MetroTabItem();
-            this.metroTabItem7 = new DevComponents.DotNetBar.Metro.MetroTabItem();
-            this.metroTabItem8 = new DevComponents.DotNetBar.Metro.MetroTabItem();
+            this.TabPhucVu = new DevComponents.DotNetBar.Metro.MetroTabItem();
+            this.TabThucDon = new DevComponents.DotNetBar.Metro.MetroTabItem();
+            this.TabHoaDon = new DevComponents.DotNetBar.Metro.MetroTabItem();
+            this.TabKhoHang = new DevComponents.DotNetBar.Metro.MetroTabItem();
+            this.TabThongKe = new DevComponents.DotNetBar.Metro.MetroTabItem();
+            this.TabNhanVien = new DevComponents.DotNetBar.Metro.MetroTabItem();
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem2 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.Column3 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
@@ -222,11 +231,15 @@ namespace Restaurant
             this.txtTaiKhoan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX39 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.lbShow = new System.Windows.Forms.Label();
+            this.lbLogOut = new System.Windows.Forms.Label();
             metroTileFrame1 = new DevComponents.DotNetBar.Metro.MetroTileFrame();
             metroTileFrame2 = new DevComponents.DotNetBar.Metro.MetroTileFrame();
             ((System.ComponentModel.ISupportInitialize)(this.HOADONRPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QUANLYNHAHANGDataSet)).BeginInit();
             this.metroShell1.SuspendLayout();
+            this.metroTabPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.metroTabPanel1.SuspendLayout();
             this.grbFrm1Report.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFrm1MiniSize)).BeginInit();
@@ -251,7 +264,7 @@ namespace Restaurant
             metroTileFrame1.Image = ((System.Drawing.Image)(resources.GetObject("metroTileFrame1.Image")));
             metroTileFrame1.ImageIndent = new System.Drawing.Point(10, 10);
             metroTileFrame1.Text = "<br/>\r\n<font size=\"+4\">Màn Hình Phục Vụ</font><br/>\r\n <div>  - Tách Ghé Đổi Bàn</" +
-                "div>\r\n<div>    - Tính Tiền</div>  \r\n- Quản lý bàn ghế";
+    "div>\r\n<div>    - Tính Tiền</div>  \r\n- Quản lý bàn ghế";
             metroTileFrame1.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Default;
             // 
             // 
@@ -326,22 +339,22 @@ namespace Restaurant
             this.metroShell1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.metroShell1.CaptionVisible = true;
             this.metroShell1.Controls.Add(this.metroTabPanel1);
-            this.metroShell1.Controls.Add(this.metroTabPanel2);
-            this.metroShell1.Controls.Add(this.metroTabPanel3);
-            this.metroShell1.Controls.Add(this.metroTabPanel5);
-            this.metroShell1.Controls.Add(this.metroTabPanel4);
             this.metroShell1.Controls.Add(this.metroTabPanel6);
+            this.metroShell1.Controls.Add(this.metroTabPanel3);
+            this.metroShell1.Controls.Add(this.metroTabPanel4);
+            this.metroShell1.Controls.Add(this.metroTabPanel2);
+            this.metroShell1.Controls.Add(this.metroTabPanel5);
             this.metroShell1.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroShell1.ForeColor = System.Drawing.Color.Black;
             this.metroShell1.HelpButtonText = null;
             this.metroShell1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.metroAppButton2,
-            this.metroTabItem3,
-            this.metroTabItem4,
-            this.metroTabItem5,
-            this.metroTabItem6,
-            this.metroTabItem7,
-            this.metroTabItem8});
+            this.TabPhucVu,
+            this.TabThucDon,
+            this.TabHoaDon,
+            this.TabKhoHang,
+            this.TabThongKe,
+            this.TabNhanVien});
             this.metroShell1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.metroShell1.Location = new System.Drawing.Point(0, 1);
             this.metroShell1.Name = "metroShell1";
@@ -364,6 +377,132 @@ namespace Restaurant
             this.metroShell1.TabIndex = 0;
             this.metroShell1.TabStripFont = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroShell1.Text = "metroShell1";
+            // 
+            // metroTabPanel6
+            // 
+            this.metroTabPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.metroTabPanel6.Controls.Add(this.btnXoaNV);
+            this.metroTabPanel6.Controls.Add(this.btnThemNV);
+            this.metroTabPanel6.Controls.Add(this.dgvNhanVien);
+            this.metroTabPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabPanel6.Location = new System.Drawing.Point(0, 51);
+            this.metroTabPanel6.Name = "metroTabPanel6";
+            this.metroTabPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.metroTabPanel6.Size = new System.Drawing.Size(1204, 656);
+            // 
+            // 
+            // 
+            this.metroTabPanel6.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.metroTabPanel6.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.metroTabPanel6.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel6.TabIndex = 6;
+            this.metroTabPanel6.Visible = false;
+            // 
+            // btnXoaNV
+            // 
+            this.btnXoaNV.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnXoaNV.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.Image")));
+            this.btnXoaNV.Location = new System.Drawing.Point(631, 576);
+            this.btnXoaNV.Name = "btnXoaNV";
+            this.btnXoaNV.Size = new System.Drawing.Size(85, 59);
+            this.btnXoaNV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnXoaNV.TabIndex = 6;
+            this.btnXoaNV.Text = "Xoá Nhân Viên";
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
+            // 
+            // btnThemNV
+            // 
+            this.btnThemNV.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThemNV.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThemNV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNV.Image")));
+            this.btnThemNV.Location = new System.Drawing.Point(367, 576);
+            this.btnThemNV.Name = "btnThemNV";
+            this.btnThemNV.Size = new System.Drawing.Size(97, 59);
+            this.btnThemNV.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThemNV.TabIndex = 4;
+            this.btnThemNV.Text = "Thêm Nhân Viên";
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
+            // 
+            // dgvNhanVien
+            // 
+            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenNguoiDung,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column11,
+            this.MaBoPhan2,
+            this.dataGridViewTextBoxColumn1});
+            this.dgvNhanVien.Location = new System.Drawing.Point(28, 18);
+            this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNhanVien.Size = new System.Drawing.Size(1174, 529);
+            this.dgvNhanVien.TabIndex = 1;
+            this.dgvNhanVien.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNhanVien_CellMouseClick);
+            this.dgvNhanVien.DoubleClick += new System.EventHandler(this.dgvNhanVien_DoubleClick);
+            // 
+            // TenNguoiDung
+            // 
+            this.TenNguoiDung.DataPropertyName = "TenNguoiDung";
+            this.TenNguoiDung.HeaderText = "Tên Nhân Viên";
+            this.TenNguoiDung.Name = "TenNguoiDung";
+            this.TenNguoiDung.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.TenNguoiDung.Width = 280;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "TaiKhoan";
+            this.Column12.HeaderText = "Tài Khoản";
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 220;
+            // 
+            // Column13
+            // 
+            this.Column13.DataPropertyName = "MatKhau";
+            this.Column13.HeaderText = "Mật Khẩu";
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 200;
+            // 
+            // Column14
+            // 
+            this.Column14.DataPropertyName = "TenBoPhan";
+            this.Column14.HeaderText = "Bộ Phận";
+            this.Column14.Name = "Column14";
+            this.Column14.Width = 220;
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "SDT";
+            this.Column15.HeaderText = "SĐT";
+            this.Column15.Name = "Column15";
+            this.Column15.Width = 200;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "BoPhan";
+            this.Column11.HeaderText = "MaBoPhan";
+            this.Column11.Name = "Column11";
+            // 
+            // MaBoPhan2
+            // 
+            this.MaBoPhan2.DataPropertyName = "MaBoPhan";
+            this.MaBoPhan2.HeaderText = "MaBoPhan2";
+            this.MaBoPhan2.Name = "MaBoPhan2";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TinhTrang";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Tình Trạng";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // metroTabPanel1
             // 
@@ -407,7 +546,6 @@ namespace Restaurant
             this.grbFrm1Report.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.grbFrm1Report.Controls.Add(this.picFrm1MiniSize);
             this.grbFrm1Report.Controls.Add(this.picFrm1Close);
-            this.grbFrm1Report.Controls.Add(this.reportViewer1);
             this.grbFrm1Report.Controls.Add(this.btnFrm1InHoaDon);
             this.grbFrm1Report.Location = new System.Drawing.Point(959, 13);
             this.grbFrm1Report.Name = "grbFrm1Report";
@@ -480,22 +618,6 @@ namespace Restaurant
             this.picFrm1Close.MouseEnter += new System.EventHandler(this.picFrm1Close_MouseEnter);
             this.picFrm1Close.MouseLeave += new System.EventHandler(this.picFrm1Close_MouseLeave);
             this.picFrm1Close.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.ForeColor = System.Drawing.Color.Black;
-            reportDataSource1.Name = "HoaDon";
-            reportDataSource1.Value = this.HOADONRPBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Restaurant.InHoaDon.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-1, 27);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(235, 549);
-            this.reportViewer1.TabIndex = 19;
-            this.reportViewer1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.reportViewer1_MouseDown);
-            this.reportViewer1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.reportViewer1_MouseMove);
-            this.reportViewer1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.reportViewer1_MouseUp);
             // 
             // btnFrm1InHoaDon
             // 
@@ -1755,37 +1877,14 @@ namespace Restaurant
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Thời Gian:";
             // 
-            // metroTabPanel2
-            // 
-            this.metroTabPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.metroTabPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabPanel2.Location = new System.Drawing.Point(0, 51);
-            this.metroTabPanel2.Name = "metroTabPanel2";
-            this.metroTabPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.metroTabPanel2.Size = new System.Drawing.Size(1204, 656);
-            // 
-            // 
-            // 
-            this.metroTabPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.metroTabPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.metroTabPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.metroTabPanel2.TabIndex = 2;
-            this.metroTabPanel2.Visible = false;
-            // 
             // metroTabPanel3
             // 
             this.metroTabPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.metroTabPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabPanel3.Location = new System.Drawing.Point(0, 0);
+            this.metroTabPanel3.Location = new System.Drawing.Point(0, 51);
             this.metroTabPanel3.Name = "metroTabPanel3";
             this.metroTabPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.metroTabPanel3.Size = new System.Drawing.Size(1204, 707);
+            this.metroTabPanel3.Size = new System.Drawing.Size(1204, 656);
             // 
             // 
             // 
@@ -1800,29 +1899,6 @@ namespace Restaurant
             this.metroTabPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.metroTabPanel3.TabIndex = 3;
             this.metroTabPanel3.Visible = false;
-            // 
-            // metroTabPanel5
-            // 
-            this.metroTabPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.metroTabPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabPanel5.Location = new System.Drawing.Point(0, 0);
-            this.metroTabPanel5.Name = "metroTabPanel5";
-            this.metroTabPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.metroTabPanel5.Size = new System.Drawing.Size(1204, 707);
-            // 
-            // 
-            // 
-            this.metroTabPanel5.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.metroTabPanel5.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.metroTabPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.metroTabPanel5.TabIndex = 5;
-            this.metroTabPanel5.Visible = false;
             // 
             // metroTabPanel4
             // 
@@ -1847,28 +1923,51 @@ namespace Restaurant
             this.metroTabPanel4.TabIndex = 4;
             this.metroTabPanel4.Visible = false;
             // 
-            // metroTabPanel6
+            // metroTabPanel2
             // 
-            this.metroTabPanel6.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.metroTabPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabPanel6.Location = new System.Drawing.Point(0, 51);
-            this.metroTabPanel6.Name = "metroTabPanel6";
-            this.metroTabPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.metroTabPanel6.Size = new System.Drawing.Size(1153, 656);
-            // 
-            // 
-            // 
-            this.metroTabPanel6.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.metroTabPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabPanel2.Location = new System.Drawing.Point(0, 51);
+            this.metroTabPanel2.Name = "metroTabPanel2";
+            this.metroTabPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.metroTabPanel2.Size = new System.Drawing.Size(1204, 656);
             // 
             // 
             // 
-            this.metroTabPanel6.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.metroTabPanel6.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.metroTabPanel6.TabIndex = 6;
-            this.metroTabPanel6.Visible = false;
+            this.metroTabPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.metroTabPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel2.TabIndex = 2;
+            this.metroTabPanel2.Visible = false;
+            // 
+            // metroTabPanel5
+            // 
+            this.metroTabPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.metroTabPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabPanel5.Location = new System.Drawing.Point(0, 51);
+            this.metroTabPanel5.Name = "metroTabPanel5";
+            this.metroTabPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.metroTabPanel5.Size = new System.Drawing.Size(1204, 656);
+            // 
+            // 
+            // 
+            this.metroTabPanel5.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.metroTabPanel5.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.metroTabPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.metroTabPanel5.TabIndex = 5;
+            this.metroTabPanel5.Visible = false;
             // 
             // metroAppButton2
             // 
@@ -1881,43 +1980,43 @@ namespace Restaurant
             this.metroAppButton2.ShowSubItems = false;
             this.metroAppButton2.Text = "&File";
             // 
-            // metroTabItem3
+            // TabPhucVu
             // 
-            this.metroTabItem3.Checked = true;
-            this.metroTabItem3.Name = "metroTabItem3";
-            this.metroTabItem3.Panel = this.metroTabPanel1;
-            this.metroTabItem3.Text = "&PHỤC VỤ";
+            this.TabPhucVu.Checked = true;
+            this.TabPhucVu.Name = "TabPhucVu";
+            this.TabPhucVu.Panel = this.metroTabPanel1;
+            this.TabPhucVu.Text = "&PHỤC VỤ";
             // 
-            // metroTabItem4
+            // TabThucDon
             // 
-            this.metroTabItem4.Name = "metroTabItem4";
-            this.metroTabItem4.Panel = this.metroTabPanel2;
-            this.metroTabItem4.Text = "&THỰC ĐƠN";
+            this.TabThucDon.Name = "TabThucDon";
+            this.TabThucDon.Panel = this.metroTabPanel2;
+            this.TabThucDon.Text = "&THỰC ĐƠN";
             // 
-            // metroTabItem5
+            // TabHoaDon
             // 
-            this.metroTabItem5.Name = "metroTabItem5";
-            this.metroTabItem5.Panel = this.metroTabPanel3;
-            this.metroTabItem5.Text = "&HÓA ĐƠN";
+            this.TabHoaDon.Name = "TabHoaDon";
+            this.TabHoaDon.Panel = this.metroTabPanel3;
+            this.TabHoaDon.Text = "&HÓA ĐƠN";
             // 
-            // metroTabItem6
+            // TabKhoHang
             // 
-            this.metroTabItem6.Name = "metroTabItem6";
-            this.metroTabItem6.Panel = this.metroTabPanel4;
-            this.metroTabItem6.Text = "&KHO HÀNG";
+            this.TabKhoHang.Name = "TabKhoHang";
+            this.TabKhoHang.Panel = this.metroTabPanel4;
+            this.TabKhoHang.Text = "&KHO HÀNG";
             // 
-            // metroTabItem7
+            // TabThongKe
             // 
-            this.metroTabItem7.Name = "metroTabItem7";
-            this.metroTabItem7.Panel = this.metroTabPanel5;
-            this.metroTabItem7.Text = "&THỐNG KÊ";
-            this.metroTabItem7.Click += new System.EventHandler(this.metroTabItem7_Click);
+            this.TabThongKe.Name = "TabThongKe";
+            this.TabThongKe.Panel = this.metroTabPanel5;
+            this.TabThongKe.Text = "&THỐNG KÊ";
+            this.TabThongKe.Click += new System.EventHandler(this.metroTabItem7_Click);
             // 
-            // metroTabItem8
+            // TabNhanVien
             // 
-            this.metroTabItem8.Name = "metroTabItem8";
-            this.metroTabItem8.Panel = this.metroTabPanel6;
-            this.metroTabItem8.Text = "NHÂN VIÊN";
+            this.TabNhanVien.Name = "TabNhanVien";
+            this.TabNhanVien.Panel = this.metroTabPanel6;
+            this.TabNhanVien.Text = "NHÂN VIÊN";
             // 
             // buttonItem2
             // 
@@ -2366,8 +2465,8 @@ namespace Restaurant
             this.metroTileItem14.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTileItem14.Name = "metroTileItem14";
             this.metroTileItem14.Text = " <font size=\'+30\'>24h</font>\r\n<font size=\'15\'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp" +
-                ";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18:12</" +
-                "font>";
+    ";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18:12</" +
+    "font>";
             this.metroTileItem14.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Azure;
             this.metroTileItem14.TileSize = new System.Drawing.Size(140, 90);
             // 
@@ -2410,7 +2509,7 @@ namespace Restaurant
             this.metroTileItem15.ImageIndent = new System.Drawing.Point(10, 10);
             this.metroTileItem15.Name = "metroTileItem15";
             this.metroTileItem15.Text = "<br/>\r\n<font size=\"+4\">Màn Hình Phục Vụ</font><br/>\r\n <div>  - Tách Ghé Đổi Bàn</" +
-                "div>\r\n<div>    - Tính Tiền</div>  \r\n- Quản lý bàn ghế";
+    "div>\r\n<div>    - Tính Tiền</div>  \r\n- Quản lý bàn ghế";
             this.metroTileItem15.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Default;
             this.metroTileItem15.TileSize = new System.Drawing.Size(250, 110);
             // 
@@ -2686,7 +2785,7 @@ namespace Restaurant
             this.expan_DangNhap.Controls.Add(this.txtTaiKhoan);
             this.expan_DangNhap.Controls.Add(this.labelX39);
             this.expan_DangNhap.Controls.Add(this.labelX6);
-            this.expan_DangNhap.Location = new System.Drawing.Point(-30, 26);
+            this.expan_DangNhap.Location = new System.Drawing.Point(-17, 27);
             this.expan_DangNhap.Name = "expan_DangNhap";
             this.expan_DangNhap.Size = new System.Drawing.Size(1234, 682);
             this.expan_DangNhap.Style.Alignment = System.Drawing.StringAlignment.Center;
@@ -2786,6 +2885,7 @@ namespace Restaurant
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(212, 20);
             this.txtMatKhau.TabIndex = 10;
+            this.txtMatKhau.UseSystemPasswordChar = true;
             // 
             // txtTaiKhoan
             // 
@@ -2833,6 +2933,31 @@ namespace Restaurant
             this.labelX6.TabIndex = 12;
             this.labelX6.Text = "Tài khoản:";
             // 
+            // lbShow
+            // 
+            this.lbShow.AutoSize = true;
+            this.lbShow.BackColor = System.Drawing.Color.White;
+            this.lbShow.Font = new System.Drawing.Font("Broadway", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShow.ForeColor = System.Drawing.Color.Black;
+            this.lbShow.Location = new System.Drawing.Point(750, 9);
+            this.lbShow.Name = "lbShow";
+            this.lbShow.Size = new System.Drawing.Size(82, 14);
+            this.lbShow.TabIndex = 22;
+            this.lbShow.Text = "Check.....";
+            // 
+            // lbLogOut
+            // 
+            this.lbLogOut.AutoSize = true;
+            this.lbLogOut.BackColor = System.Drawing.Color.White;
+            this.lbLogOut.Font = new System.Drawing.Font("Broadway", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLogOut.ForeColor = System.Drawing.Color.Black;
+            this.lbLogOut.Location = new System.Drawing.Point(1005, 9);
+            this.lbLogOut.Name = "lbLogOut";
+            this.lbLogOut.Size = new System.Drawing.Size(49, 14);
+            this.lbLogOut.TabIndex = 22;
+            this.lbLogOut.Text = "Thoát";
+            this.lbLogOut.Click += new System.EventHandler(this.lbLogOut_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2840,6 +2965,8 @@ namespace Restaurant
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1205, 712);
             this.ControlBox = true;
+            this.Controls.Add(this.lbLogOut);
+            this.Controls.Add(this.lbShow);
             this.Controls.Add(this.expan_DangNhap);
             this.Controls.Add(this.expFrm1MenuMeTro);
             this.Controls.Add(this.exPanFrm1DoiThongTin);
@@ -2855,6 +2982,8 @@ namespace Restaurant
             ((System.ComponentModel.ISupportInitialize)(this.QUANLYNHAHANGDataSet)).EndInit();
             this.metroShell1.ResumeLayout(false);
             this.metroShell1.PerformLayout();
+            this.metroTabPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.metroTabPanel1.ResumeLayout(false);
             this.grbFrm1Report.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFrm1MiniSize)).EndInit();
@@ -2875,6 +3004,7 @@ namespace Restaurant
             this.expan_DangNhap.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2888,8 +3018,8 @@ namespace Restaurant
         private DevComponents.DotNetBar.Metro.MetroAppButton metroAppButton1;
         private DevComponents.DotNetBar.Metro.MetroShell metroShell1;
         private DevComponents.DotNetBar.Metro.MetroAppButton metroAppButton2;
-        private DevComponents.DotNetBar.Metro.MetroTabItem metroTabItem3;
-        private DevComponents.DotNetBar.Metro.MetroTabItem metroTabItem4;
+        private DevComponents.DotNetBar.Metro.MetroTabItem TabPhucVu;
+        private DevComponents.DotNetBar.Metro.MetroTabItem TabThucDon;
         private DevComponents.DotNetBar.ButtonItem buttonItem2;
         private DevComponents.DotNetBar.QatCustomizeItem qatCustomizeItem2;
         private DevComponents.DotNetBar.StyleManager styleManager2;
@@ -2927,10 +3057,10 @@ namespace Restaurant
         private DevComponents.DotNetBar.Metro.MetroTabPanel metroTabPanel6;
         private DevComponents.DotNetBar.Metro.MetroTabPanel metroTabPanel4;
         private DevComponents.DotNetBar.Metro.MetroTabPanel metroTabPanel3;
-        private DevComponents.DotNetBar.Metro.MetroTabItem metroTabItem5;
-        private DevComponents.DotNetBar.Metro.MetroTabItem metroTabItem6;
-        private DevComponents.DotNetBar.Metro.MetroTabItem metroTabItem7;
-        private DevComponents.DotNetBar.Metro.MetroTabItem metroTabItem8;
+        private DevComponents.DotNetBar.Metro.MetroTabItem TabHoaDon;
+        private DevComponents.DotNetBar.Metro.MetroTabItem TabKhoHang;
+        private DevComponents.DotNetBar.Metro.MetroTabItem TabThongKe;
+        private DevComponents.DotNetBar.Metro.MetroTabItem TabNhanVien;
         private DevComponents.DotNetBar.Metro.MetroTabPanel metroTabPanel1;
         private DevComponents.DotNetBar.Controls.DataGridViewX dtgvFrm1ThucDon;
         private DevComponents.DotNetBar.Controls.GroupPanel grFrm1ChuaThongTinNH;
@@ -3063,6 +3193,19 @@ namespace Restaurant
         private DevComponents.DotNetBar.Controls.TextBoxX txtTaiKhoan;
         private DevComponents.DotNetBar.LabelX labelX39;
         private DevComponents.DotNetBar.LabelX labelX6;
+        private System.Windows.Forms.Label lbShow;
+        private System.Windows.Forms.DataGridView dgvNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNguoiDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaBoPhan2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DevComponents.DotNetBar.ButtonX btnXoaNV;
+        private DevComponents.DotNetBar.ButtonX btnThemNV;
+        private System.Windows.Forms.Label lbLogOut;
     }
 }
 

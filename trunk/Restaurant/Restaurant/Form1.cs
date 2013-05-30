@@ -32,6 +32,8 @@ namespace Restaurant
         DSMONAN_BUS dsMonAnBus = new DSMONAN_BUS();
         PHIEUTINHTIEN_BUS phieuTT_Bus = new PHIEUTINHTIEN_BUS();
         CHITIETPHIEUTT_BUS ctPhieuTT_BUS = new CHITIETPHIEUTT_BUS();
+
+        NGUOIDUNG_BUS NguoiDungBUS = new NGUOIDUNG_BUS();
         MonneyClass mn = new MonneyClass();
         /// <summary>
         /// mã của bàn hiện đang được chọn:
@@ -39,6 +41,9 @@ namespace Restaurant
         /// # -1 là đã chọn bàn
         /// </summary>
         /// 
+        //biến static
+        public static string TenNVS, ChucVuS, TaiKhoanS, MatKhauS, SDTS;
+        public int Quyen;
 
         public int MaBanDangChon = -1;
         public int TrangThaiBanDangChon = -1;
@@ -110,14 +115,54 @@ namespace Restaurant
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
             LoadKhuVuc(dsKhuVuc);
+            LoadNhanVien();
             lvShowBan.Clear();
             LoadBan(dsKhuVuc, banBUS.LayDSBan());
             LoadThucDon(dsMonAnBus.LayDSMonAn());
             balloonTip2.SetBalloonCaption(dtgvFrm1ThucDon, "Kéo Món Ăn Vào Danh Sách Thực Đơn Để Hủy Món\n Kéo Vào Bàn Để Chuyển Món Ăn Qua Bàn Đó");
             balloonTip1.SetBalloonCaption(lvShowBan, "Nhấp Đôi Vào Bàn Để Sử Dụng hoăc để hủy bàn");
             balloonTip3.SetBalloonCaption(pctLoGo, "Nhấp Đôi Để Thây Đôi LoGo Cho Nhà Hàng");
+            //PhanQuyen(Quyen);
+        }
+
+        public void PhanQuyen(int quyen)
+        {
+            TabPhucVu.Visible = false;
+            TabThucDon.Visible = false;
+            TabHoaDon.Visible = false;
+            TabKhoHang.Visible = false;
+            TabThongKe.Visible = false;
+            TabNhanVien.Visible = false;
+            if (quyen == 1)
+            {
+                TabPhucVu.Visible = true;
+                TabThucDon.Visible = true;
+                TabHoaDon.Visible = true;
+                TabKhoHang.Visible = true;
+                TabThongKe.Visible = true;
+                TabNhanVien.Visible = true;
+            }
+            if (quyen == 2)
+            {
+                TabPhucVu.Visible = true;
+                TabThucDon.Visible = true;
+                TabHoaDon.Visible = true;                
+            }
+            if (quyen == 3)
+            {
+                TabThucDon.Visible = true;
+                TabKhoHang.Visible = true;
+            }
+
             
         }
+
+        public void LoadNhanVien()
+        {
+            DataTable dsNhanVien = NguoiDungBUS.LoadNguoiDung();
+            dgvNhanVien.DataSource = dsNhanVien;
+        }
+
         public void LoadKhuVuc(DataTable dsKhuVuc)
         {
             cbxFrm1KhuVuc.DataSource = dsKhuVuc;
@@ -208,7 +253,7 @@ namespace Restaurant
         {
             expFrm1MenuMeTro.Expanded = false;
             expFrm1MenuMeTro.TitleHeight = 1;
-            metroTabItem3.Select();
+            TabPhucVu.Select();
         }
 
         private void buttonX7_Click(object sender, EventArgs e)
@@ -2041,6 +2086,9 @@ namespace Restaurant
             nhanVienDangNhap.TaiKhoan = txtTaiKhoan.Text;
             nhanVienDangNhap.MatKhau = txtMatKhau.Text;
             NGUOIDUNG_BUS bus = new NGUOIDUNG_BUS();
+
+            BoPhan BoPhanDTO = new BoPhan();
+            BOPHAN_BUS BoPhanBUS = new BOPHAN_BUS();
             if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "")
             {
                 lbThongBaoDangNhap.Text = "Tên Tài khoản và Mật Khẩu không được bỏ trống!!!";
@@ -2049,19 +2097,31 @@ namespace Restaurant
             {
                 try
                 {
-                    int temp = bus.KiemTraDangNhap(nhanVienDangNhap).Rows.Count;
-                    if (temp > 0)
-                    {
-                        expan_DangNhap.Hide();
-                    }
-                    else
-                    {
-                        lbThongBaoDangNhap.Text = "sai Tài khoản hoặc Mật khẩu. vui lòng kiểm tra!!!";
-                    }
+                DataTable dt = new DataTable();
+                dt = bus.KiemTraDangNhap(nhanVienDangNhap);
+                int temp = dt.Rows.Count;
+                if (temp > 0)
+                {
+                    expan_DangNhap.Hide();
+                    DataRow dr = dt.Rows[0];
+                    string TenNV = dr["TenNguoiDung"].ToString();
+                    string BoPhan = dr["BoPhan"].ToString();
+                    //MessageBox.Show(BoPhan);
+                    BoPhanDTO.MaBoPhan = int.Parse(dr["BoPhan"].ToString());
+                    Quyen = int.Parse(dr["BoPhan"].ToString());
+                    PhanQuyen(Quyen);
+                    Form1_Load(sender, e);
+                    string x = BoPhanBUS.FilterBoPhan_String(BoPhanDTO);
+                    lbShow.Text = "Chào: " + TenNV +" | " + x;
+                }
+                else
+                {
+                    lbThongBaoDangNhap.Text = "sai Tài khoản hoặc Mật khẩu. vui lòng kiểm tra!!!";
+                }
                 }
                 catch
                 {
-                    MessageBox.Show("lỗi hệ thống");
+                    //MessageBox.Show();
                 }
             }
         }
@@ -2070,6 +2130,59 @@ namespace Restaurant
         {
             this.Close();
         }
+
+        private void btnThemNV_Click(object sender, EventArgs e)
+        {
+            frmThemNhanVien frm = new frmThemNhanVien();
+            frm.ShowDialog();
+            LoadNhanVien();
+        }
+
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+            NguoiDung NguoiDungDTO = new NguoiDung();
+            DialogResult DR = MessageBox.Show("Bạn muốn xóa? \n Tài khoản: " + TaiKhoanS, "Thông Báo Xóa", MessageBoxButtons.OKCancel);
+            NguoiDungDTO.TaiKhoan = TaiKhoanS;
+            if (DialogResult.OK == DR)
+            {
+                try
+                {
+                    
+                    NguoiDungBUS.XoaNguoiDung_void(NguoiDungDTO);
+                    Form1_Load(sender, e);
+                }
+                catch
+                {
+                    return;//MessageBox.Show("mời chọn nhân viên cần xoá!");
+                }
+            }
+            else
+                return;
+        }
+
+        private void dgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            TaiKhoanS = dgvNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void dgvNhanVien_DoubleClick(object sender, EventArgs e)
+        {
+            TenNVS = dgvNhanVien.SelectedRows[0].Cells[3].Value.ToString();
+            TaiKhoanS = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString();
+            MatKhauS = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
+            ChucVuS = dgvNhanVien.SelectedRows[0].Cells[7].Value.ToString();
+            SDTS = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();        
+            frmSuaNhanVien frm = new frmSuaNhanVien();
+            frm.ShowDialog();
+            LoadNhanVien();
+        }
+
+        private void lbLogOut_Click(object sender, EventArgs e)
+        {
+            expan_DangNhap.Show();
+        }
+
+        
         
     }
 }
