@@ -72,6 +72,7 @@ namespace Restaurant
         private void frmThemNhanVien_Load(object sender, EventArgs e)
         {
             LoadCmbBoPhan();
+            
         }
 
         private void btnHuyThemNV_Click(object sender, EventArgs e)
