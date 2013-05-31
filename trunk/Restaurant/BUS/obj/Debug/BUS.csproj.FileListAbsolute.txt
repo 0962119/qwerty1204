@@ -38,3 +38,13 @@ C:\Users\bien\Desktop\test\Restaurant\BUS\bin\Debug\DTO.pdb
 C:\Users\bien\Desktop\test\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\bien\Desktop\test\Restaurant\BUS\obj\Debug\BUS.dll
 C:\Users\bien\Desktop\test\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\obj\Debug\BUS.pdb

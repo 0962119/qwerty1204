@@ -30,3 +30,11 @@ C:\Users\bien\Desktop\test\Restaurant\DAO\bin\Debug\DTO.pdb
 C:\Users\bien\Desktop\test\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\bien\Desktop\test\Restaurant\DAO\obj\Debug\DAO.dll
 C:\Users\bien\Desktop\test\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\obj\Debug\DAO.pdb
