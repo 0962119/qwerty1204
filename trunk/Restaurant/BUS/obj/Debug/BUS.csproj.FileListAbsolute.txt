@@ -28,13 +28,53 @@ C:\Users\QN\Desktop\New folder (2)\Restaurant\BUS\bin\Debug\DTO.pdb
 C:\Users\QN\Desktop\New folder (2)\Restaurant\BUS\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\QN\Desktop\New folder (2)\Restaurant\BUS\obj\Debug\BUS.dll
 C:\Users\QN\Desktop\New folder (2)\Restaurant\BUS\obj\Debug\BUS.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\bin\Debug\BUS.dll
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\bin\Debug\BUS.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\bin\Debug\DAO.dll
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\bin\Debug\DTO.dll
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\bin\Debug\NETDataProviders.dll
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\bin\Debug\DAO.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\bin\Debug\DTO.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\obj\Debug\BUS.dll
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\bien\Desktop\test\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\test\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\test\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\test\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\test\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\test\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\test\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\test\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\test\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\bien\Desktop\test\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\obj\Debug\BUS.pdb

@@ -66,28 +66,151 @@ C:\Users\QN\Desktop\New folder (2)\Restaurant\Restaurant\obj\x86\Debug\GenerateR
 C:\Users\QN\Desktop\New folder (2)\Restaurant\Restaurant\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\QN\Desktop\New folder (2)\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.cache
 C:\Users\QN\Desktop\New folder (2)\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csprojResolveAssemblyReference.cache
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoDoanhThu.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongke_Ban.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongKe_MonAn.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Form1.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Properties.Resources.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.UserControl1.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csproj.GenerateResource.Cache
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.cache
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\Restaurant.exe
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\BUS.dll
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\DTO.dll
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\DAO.dll
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\BUS.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\DTO.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\bin\Debug\DAO.pdb
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormThemLoaiThucDon.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormWarningThemLoaiTD.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmSuaNhanVien.resources
-C:\Users\12414_000\Documents\SVN_QLNH\SourceCode_QLNH\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmThemNhanVien.resources
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoDoanhThu.resources
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongke_Ban.resources
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongKe_MonAn.resources
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Form1.resources
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Properties.Resources.resources
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.UserControl1.resources
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csproj.GenerateResource.Cache
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.cache
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmSuaNhanVien.resources
+C:\Users\bien\Desktop\test\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmThemNhanVien.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\BUS.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\NETDataProviders.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\BUS.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\bin\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoDoanhThu.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongke_Ban.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongKe_MonAn.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Form1.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmSuaNhanVien.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmThemNhanVien.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Properties.Resources.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\Restaurant.UserControl1.resources
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.cache
+C:\Users\QN\Desktop\New folder (3)\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoDoanhThu.resources
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongke_Ban.resources
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongKe_MonAn.resources
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Form1.resources
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmSuaNhanVien.resources
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmThemNhanVien.resources
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Properties.Resources.resources
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.UserControl1.resources
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csproj.GenerateResource.Cache
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.cache
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoDoanhThu.resources
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongke_Ban.resources
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongKe_MonAn.resources
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Form1.resources
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmSuaNhanVien.resources
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmThemNhanVien.resources
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Properties.Resources.resources
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.UserControl1.resources
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csproj.GenerateResource.Cache
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.cache
+C:\Users\bien\Desktop\vs 14.tai lieu_2\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoDoanhThu.resources
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongke_Ban.resources
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongKe_MonAn.resources
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Form1.resources
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmSuaNhanVien.resources
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmThemNhanVien.resources
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Properties.Resources.resources
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.UserControl1.resources
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csproj.GenerateResource.Cache
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.cache
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled
+C:\Users\bien\Desktop\vs16.edit\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmChiTietHoaDon.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\Restaurant.exe
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoDoanhThu.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongke_Ban.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmBaoCaoThongKe_MonAn.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Form1.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmChiTietHoaDon.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmSuaNhanVien.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.frmThemNhanVien.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.Properties.Resources.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.UserControl1.resources
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.csproj.GenerateResource.Cache
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.cache
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled

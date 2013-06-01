@@ -108,7 +108,7 @@ namespace Restaurant
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+               
             //<br/><font size="+30">22h</font><font size="15">18</font>
             LoadConTrol();
             this.HOADONRPTableAdapter.Fill(this.QUANLYNHAHANGDataSet.HOADONRP);
@@ -122,6 +122,7 @@ namespace Restaurant
             balloonTip2.SetBalloonCaption(dtgvFrm1ThucDon, "Kéo Món Ăn Vào Danh Sách Thực Đơn Để Hủy Món\n Kéo Vào Bàn Để Chuyển Món Ăn Qua Bàn Đó");
             balloonTip1.SetBalloonCaption(lvShowBan, "Nhấp Đôi Vào Bàn Để Sử Dụng hoăc để hủy bàn");
             balloonTip3.SetBalloonCaption(pctLoGo, "Nhấp Đôi Để Thây Đôi LoGo Cho Nhà Hàng");
+            ballon_hoadon.SetBalloonCaption(dgvHoaDonPhucVu, "Nhấp đôi để xem chi tiết");
             //PhanQuyen(Quyen);
 
             LoadControlDOnGia();
@@ -2228,9 +2229,12 @@ namespace Restaurant
         {
             LoadThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString());
 
-            lbHoaDon_TongCOng.Text = (dgvHoaDonPhucVu.RowCount-1).ToString(); 
+            lbHoaDon_TongCOng.Text = (dgvHoaDonPhucVu.RowCount-1).ToString();
+
+            lbHoaDong_TongTien.Text = phieuTT_Bus.TongTienThongKeHoaDon(dateTBatDau.Value.ToShortDateString(),dateTKetThuc.Value.ToShortDateString())+" VNĐ";
         }
 
+       
 
         public void LoadThongKeHoaDon(string NgayBatDau, string NgayKetThuc)
         {
@@ -2243,6 +2247,57 @@ namespace Restaurant
             DataTable dt = (DataTable)dgvHoaDonPhucVu.DataSource;
             string title = "THỐNG KÊ HOÁ ĐƠN";
             excel.Export(dt,"ABC", title);
+        }
+
+        private void metroTabPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void expFrm1MenuMeTro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TabHoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void dgvHoaDonPhucVu_DoubleClick(object sender, EventArgs e)
+        {
+            //for (int i = 0; i < 6; i++)
+            //{
+            //MessageBox.Show(dgvHoaDonPhucVu.SelectedRows[0].Cells[0].Value.ToString());
+            //}
+            
+            //MessageBox.Show(dgvHoaDonPhucVu.Rows[e.index]
+
+            //TenNVS = dgvNhanVien.SelectedRows[0].Cells[3].Value.ToString();
+            //TaiKhoanS = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString();
+            //MatKhauS = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
+            //ChucVuS = dgvNhanVien.SelectedRows[0].Cells[7].Value.ToString();
+            //SDTS = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();
+            //frmSuaNhanVien frm = new frmSuaNhanVien();
+            //frm.ShowDialog();
+            //LoadNhanVien();
+        }
+
+        public static string MaPhieuTT_DG, NhanVien_DG, ThoiGian_DG, Ban_DG;
+
+        private void dgvHoaDonPhucVu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+              //MessageBox.Show(i + ": " + dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[i].Value.ToString());
+                MaPhieuTT_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[0].Value.ToString();
+                Ban_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[1].Value.ToString();
+                NhanVien_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[2].Value.ToString();
+                ThoiGian_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                frmChiTietHoaDon frm = new frmChiTietHoaDon();
+                frm.ShowDialog();
+            
+
         }
         
         

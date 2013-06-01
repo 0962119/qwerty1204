@@ -63,5 +63,21 @@ namespace BUS
         {
             ctPhieuTT_DAO.DeleteDatainHoaDonRP();
         }
+
+        //NHD
+        public DataTable LoadChiTietPhieuTT(int MaPhieu)
+        {
+            return ctPhieuTT_DAO.LoadChiTietPhieuTT_datatable(MaPhieu);
+        }
+
+        public string ThanhTien_string(int MaPhieu)
+        {
+            return ctPhieuTT_DAO.ThanhTien_string(MaPhieu);
+        }
+
+        public string DonGia_string(int MaPhieu)
+        {
+            return ctPhieuTT_DAO.DonGia_string(MaPhieu);
+        }
     }
 }

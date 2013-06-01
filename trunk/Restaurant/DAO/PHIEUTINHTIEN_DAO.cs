@@ -297,5 +297,16 @@ namespace DAO
             conn.Close();
             return dt;
         }
+
+        public string TongTienThongKeHoaDon(string NgayDau, string NgayCuoi)
+        {
+            OleDbConnection conn = DataProvider.ConnectDB();
+            string sql = "SELECT sum(TongTien) as TongTienAll from PhieuTinhTien Where NgayLapPhieu between #" + NgayDau + "# and #" + NgayCuoi + "#";
+            DataTable dt = new DataTable();
+            OleDbCommand cmd = new OleDbCommand(sql, conn);            
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dt);
+            return dt.Rows[0][0].ToString();
+        }
     }
 }

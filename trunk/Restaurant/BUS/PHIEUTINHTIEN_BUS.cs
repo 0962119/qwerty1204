@@ -77,5 +77,12 @@ namespace BUS
         {
             return phieuTinhTienDAO.FilterPhieuTT_Datatable(NgayDau, NgayCuoi);
         }
+
+        public string TongTienThongKeHoaDon(string NgayDau, string NgayCuoi)
+        {
+            return phieuTinhTienDAO.TongTienThongKeHoaDon(NgayDau, NgayCuoi);
+        }
+
+        
     }
 }
