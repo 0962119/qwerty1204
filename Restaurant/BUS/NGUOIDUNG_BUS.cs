@@ -18,6 +18,12 @@ namespace BUS
             return dt;
         }
 
+        public DataTable TimNguoiDung_Datatable(NguoiDung dto)
+        {
+            return dao.TimNguoiDung_Datatable(dto);
+        }
+
+
         public DataTable LoadNguoiDung()
         {
             return dao.LoadNguoiDung();

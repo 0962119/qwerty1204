@@ -72,5 +72,10 @@ namespace BUS
         {
             return phieuTinhTienDAO.CapNhatBanChoPhieuTT(maPhieu, maBan);
         }
+
+        public DataTable FilterPhieuTT_Datatable(string NgayDau, string NgayCuoi)
+        {
+            return phieuTinhTienDAO.FilterPhieuTT_Datatable(NgayDau, NgayCuoi);
+        }
     }
 }

@@ -23,6 +23,18 @@ namespace DAO
             return dt;
         }
 
+        public DataTable TimNguoiDung_Datatable(NguoiDung dto)
+        {
+            OleDbConnection conn = DataProvider.ConnectDB();
+            string sql = "SELECT * from NGUOIDUNG nd,BOPHAN bp where nd.BoPhan = bp.MaBoPhan AND nd.TenNguoiDung like '%" + dto.TenNguoiDung + "%' order by nd.TenNguoiDung ASC";
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+
         public DataTable KiemTraDangNhap(NguoiDung dto)
         {
             OleDbConnection conn = DataProvider.ConnectDB();
