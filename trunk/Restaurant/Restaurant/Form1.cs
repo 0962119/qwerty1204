@@ -123,6 +123,18 @@ namespace Restaurant
             balloonTip1.SetBalloonCaption(lvShowBan, "Nhấp Đôi Vào Bàn Để Sử Dụng hoăc để hủy bàn");
             balloonTip3.SetBalloonCaption(pctLoGo, "Nhấp Đôi Để Thây Đôi LoGo Cho Nhà Hàng");
             //PhanQuyen(Quyen);
+
+            LoadControlDOnGia();
+            this.reportViewer1.RefreshReport();
+        }
+
+
+        //load control trong tab Don Giá
+        public void LoadControlDOnGia()
+        {
+            dateTKetThuc.Value = DateTime.Today;
+            dateTKetThuc.Text = DateTime.Today.ToString();
+
         }
 
         public void PhanQuyen(int quyen)
@@ -2082,9 +2094,14 @@ namespace Restaurant
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            
-            nhanVienDangNhap.TaiKhoan = txtTaiKhoan.Text;
-            nhanVienDangNhap.MatKhau = txtMatKhau.Text;
+
+            NguoiDung dto = new NguoiDung();
+            //nhanVienDangNhap.TaiKhoan = txtTaiKhoan.Text;
+            //nhanVienDangNhap.MatKhau = txtMatKhau.Text;
+
+            dto.TaiKhoan = txtTaiKhoan.Text;
+            dto.MatKhau = txtMatKhau.Text;
+
             NGUOIDUNG_BUS bus = new NGUOIDUNG_BUS();
 
             BoPhan BoPhanDTO = new BoPhan();
@@ -2098,7 +2115,8 @@ namespace Restaurant
                 try
                 {
                 DataTable dt = new DataTable();
-                dt = bus.KiemTraDangNhap(nhanVienDangNhap);
+                dt = bus.KiemTraDangNhap(dto);
+
                 int temp = dt.Rows.Count;
                 if (temp > 0)
                 {
@@ -2106,13 +2124,25 @@ namespace Restaurant
                     DataRow dr = dt.Rows[0];
                     string TenNV = dr["TenNguoiDung"].ToString();
                     string BoPhan = dr["BoPhan"].ToString();
-                    //MessageBox.Show(BoPhan);
+                    
                     BoPhanDTO.MaBoPhan = int.Parse(dr["BoPhan"].ToString());
+
                     Quyen = int.Parse(dr["BoPhan"].ToString());
                     PhanQuyen(Quyen);
                     Form1_Load(sender, e);
                     string x = BoPhanBUS.FilterBoPhan_String(BoPhanDTO);
                     lbShow.Text = "Chào: " + TenNV +" | " + x;
+
+                    //gán giá trị cho nhanvienDangNhap
+                    nhanVienDangNhap.BoPhan = int.Parse(dt.Rows[0][2].ToString());
+                    nhanVienDangNhap.MatKhau = dt.Rows[0][1].ToString();
+                    nhanVienDangNhap.SDT = dt.Rows[0][4].ToString();
+                    nhanVienDangNhap.TaiKhoan = dt.Rows[0][0].ToString();
+                    nhanVienDangNhap.TenNguoiDung = dt.Rows[0][3].ToString();
+                    nhanVienDangNhap.TinhTrang = int.Parse(dt.Rows[0][5].ToString());
+                   // test
+                   
+                    //
                 }
                 else
                 {
@@ -2132,7 +2162,7 @@ namespace Restaurant
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
-        {
+        {          
             frmThemNhanVien frm = new frmThemNhanVien();
             frm.ShowDialog();
             LoadNhanVien();
@@ -2182,6 +2212,38 @@ namespace Restaurant
             expan_DangNhap.Show();
         }
 
+        public void TimNhanVien(string x)
+        {
+            NguoiDung dto = new NguoiDung();
+            dto.TenNguoiDung = x;
+            dgvNhanVien.DataSource = NguoiDungBUS.TimNguoiDung_Datatable(dto);
+        }
+
+        private void txtTimNhanVien_TextChanged(object sender, EventArgs e)
+        {
+            TimNhanVien(txtTimNhanVien.Text);
+        }
+
+        private void btnTimKiemHoaDon_Click(object sender, EventArgs e)
+        {
+            LoadThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString());
+
+            lbHoaDon_TongCOng.Text = (dgvHoaDonPhucVu.RowCount-1).ToString(); 
+        }
+
+
+        public void LoadThongKeHoaDon(string NgayBatDau, string NgayKetThuc)
+        {
+            dgvHoaDonPhucVu.DataSource = phieuTT_Bus.FilterPhieuTT_Datatable(NgayBatDau, NgayKetThuc);
+        }
+
+        private void btnInThongKeHD_Click(object sender, EventArgs e)
+        {
+            XuatFileExcel excel = new XuatFileExcel();
+            DataTable dt = (DataTable)dgvHoaDonPhucVu.DataSource;
+            string title = "THỐNG KÊ HOÁ ĐƠN";
+            excel.Export(dt,"ABC", title);
+        }
         
         
     }

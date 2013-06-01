@@ -283,6 +283,19 @@ namespace DAO
             else
                 return true;
         }
-        
+
+        public DataTable FilterPhieuTT_Datatable(string NgayDau, string NgayCuoi)
+        {
+            OleDbConnection conn = DataProvider.ConnectDB();
+            string sql = "SELECT MaPhieuTT,Ban,NhanVien,TongTien,NgayLapPhieu,Giovao, Giora from PhieuTinhTien Where NgayLapPhieu between #" + NgayDau + "# and #" + NgayCuoi + "#";
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            ////OleDbParameter para = cmd.Parameters.AddWithValue("@NgayDau", NgayDau);
+            ////para = cmd.Parameters.AddWithValue("@NgayCuoi", NgayCuoi);
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
     }
 }
