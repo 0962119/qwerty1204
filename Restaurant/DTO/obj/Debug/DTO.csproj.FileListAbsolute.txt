@@ -28,3 +28,8 @@ C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\bin\Debug\DTO.pdb
 C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\obj\Debug\DTO.dll
 C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\obj\Debug\DTO.pdb

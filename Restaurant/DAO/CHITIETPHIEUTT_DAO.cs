@@ -304,5 +304,46 @@ namespace DAO
             NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
             int kq = dt.ExecuteNoneQuery(sql);
         }
+
+
+        //NHD 
+        public DataTable LoadChiTietPhieuTT_datatable(int MaPhieu)
+        {
+            OleDbConnection conn = DataProvider.ConnectDB();
+            string sql = "SELECT * from CHITIETPHIEUTT  where MaPhieuTT = "+MaPhieu;
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+
+       
+
+        //tổng thành tiền sau khi +- khuyen mai
+        public string ThanhTien_string(int MaPhieu)
+        {
+            OleDbConnection conn = DataProvider.ConnectDB();
+            string sql = "SELECT sum(ThanhTien) as ThanhTien from CHITIETPHIEUTT Where MaPhieuTT = " + MaPhieu;
+            DataTable dt = new DataTable();
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dt);
+            return dt.Rows[0][0].ToString();
+        }
+
+        //tổng đơn giá chuẩn        
+        public string DonGia_string(int MaPhieu)
+        {
+            OleDbConnection conn = DataProvider.ConnectDB();
+            string sql = "SELECT sum(DonGia) as DonGia from CHITIETPHIEUTT Where MaPhieuTT = " + MaPhieu;
+            DataTable dt = new DataTable();
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dt);
+            return dt.Rows[0][0].ToString();
+        }
+
     }
 }
