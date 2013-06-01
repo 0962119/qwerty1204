@@ -42,10 +42,10 @@
   <ItemGroup>
     <Compile Include="BANKT_DTO.cs" />
     <Compile Include="BAN_DTO.cs" />
+    <Compile Include="DonViTinhDTO.cs" />
     <Compile Include="DSMONAN_DTO.cs" />
     <Compile Include="BoPhan.cs" />
     <Compile Include="ChiTietPhieuTT.cs" />
-    <Compile Include="DonViTinh.cs" />
     <Compile Include="KhuVuc_DTO.cs" />
     <Compile Include="LaoiMonAn.cs" />
     <Compile Include="LoaiBaoCao.cs" />
