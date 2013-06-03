@@ -62,3 +62,11 @@ C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\bin\Debug\DTO.pdb
 C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\obj\Debug\DAO.dll
 C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\obj\Debug\DAO.pdb

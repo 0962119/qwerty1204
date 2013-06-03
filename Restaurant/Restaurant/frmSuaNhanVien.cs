@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 
 namespace Restaurant
 {
-    public partial class frmSuaNhanVien : Form
+    public partial class frmSuaNhanVien : MetroForm
     {
         public frmSuaNhanVien()
         {
