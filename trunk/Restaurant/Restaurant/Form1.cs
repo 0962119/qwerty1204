@@ -23,6 +23,7 @@ using System.Reflection;
 using System.Configuration;
 using System.Xml;
 
+
 namespace Restaurant
 {
     public partial class Form1 : MetroAppForm
@@ -32,6 +33,7 @@ namespace Restaurant
         DSMONAN_BUS dsMonAnBus = new DSMONAN_BUS();
         PHIEUTINHTIEN_BUS phieuTT_Bus = new PHIEUTINHTIEN_BUS();
         CHITIETPHIEUTT_BUS ctPhieuTT_BUS = new CHITIETPHIEUTT_BUS();
+        LOAIMONAN_BUS dsLoaiMAbus = new LOAIMONAN_BUS();
 
         NGUOIDUNG_BUS NguoiDungBUS = new NGUOIDUNG_BUS();
         MonneyClass mn = new MonneyClass();
@@ -143,7 +145,6 @@ namespace Restaurant
             TabPhucVu.Visible = false;
             TabThucDon.Visible = false;
             TabHoaDon.Visible = false;
-            TabKhoHang.Visible = false;
             TabThongKe.Visible = false;
             TabNhanVien.Visible = false;
             if (quyen == 1)
@@ -151,7 +152,6 @@ namespace Restaurant
                 TabPhucVu.Visible = true;
                 TabThucDon.Visible = true;
                 TabHoaDon.Visible = true;
-                TabKhoHang.Visible = true;
                 TabThongKe.Visible = true;
                 TabNhanVien.Visible = true;
             }
@@ -164,7 +164,6 @@ namespace Restaurant
             if (quyen == 3)
             {
                 TabThucDon.Visible = true;
-                TabKhoHang.Visible = true;
             }
 
             
@@ -236,8 +235,8 @@ namespace Restaurant
             {
                 int ma = int.Parse(dtr[0].ToString());
                 ListViewItem lvi = new ListViewItem();
-                string pathImage = path + "\\imageThucDon\\" + dtr[5].ToString();
-                imgFrm1Ban.Images.Add(ma.ToString(), Image.FromFile(pathImage));
+                //string pathImage = path + "\\imageThucDon\\" + dtr[5].ToString();
+                //imgFrm1Ban.Images.Add(ma.ToString(), Image.FromFile(pathImage));
 
                 //rexIndex[ma-1] = nIndex;
                 lvi.Tag = ma;
@@ -2132,7 +2131,7 @@ namespace Restaurant
                     PhanQuyen(Quyen);
                     Form1_Load(sender, e);
                     string x = BoPhanBUS.FilterBoPhan_String(BoPhanDTO);
-                    lbShow.Text = "Chào: " + TenNV +" | " + x;
+                    //lbShow.Text = "Chào: " + TenNV +" | " + x;
 
                     //gán giá trị cho nhanvienDangNhap
                     nhanVienDangNhap.BoPhan = int.Parse(dt.Rows[0][2].ToString());
@@ -2296,10 +2295,51 @@ namespace Restaurant
 
                 frmChiTietHoaDon frm = new frmChiTietHoaDon();
                 frm.ShowDialog();
-            
 
         }
-        
+
+        private void txtTimKiemTD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public int idNode;
+        private void advTreeLTD_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
+        {
+            idNode = int.Parse(e.Node.TagString.ToString());
+            DataTable dtb = new DataTable();
+            dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
+            dtgirdViewTD.DataSource = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);  
+        }
+        public void ShowTreeview_LoaiTD()
+        {
+            advTreeLTD.Nodes.Clear();
+            DataTable nodeCha = dsLoaiMAbus.LayDSLoaiMonAn();
+            foreach (DataRow dtr in nodeCha.Rows)
+            {
+                DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node(dtr[1].ToString());
+                node1.TagString = dtr[0].ToString();
+                advTreeLTD.Nodes.Add(node1);
+            }
+        }
+        private void btnThemLoaiTD_Click(object sender, EventArgs e)
+        {
+            FormThemLoaiThucDon frmTLTD = new FormThemLoaiThucDon();
+            frmTLTD.ShowDialog();
+            ShowTreeview_LoaiTD();
+        } 
+        private void txtTimKiemTD_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiemTD.Text == "Tìm Kiếm Thực Đơn...")
+            {
+                txtTimKiemTD.Text = "";
+            }
+        }
+
+        private void txtTimKiemTD_Validated(object sender, EventArgs e)
+        {
+            if (txtTimKiemTD.Text.Length < 1)
+                txtTimKiemTD.Text = "Tìm Kiếm Thực Đơn...";
+        }
         
     }
 }

@@ -42,5 +42,21 @@ namespace DAO
             dtb = dt.ExecuteQuery(sql);
             return dtb;
         }
+        public DataTable LayDanhSachMonAnTheoLoai(int maLoai)
+        {
+            string sql = "SELECT * FROM DANHSACHMONAN ds, DONVITINH dv, LOAIMONAN lma "+
+                " where ds.DonViTinh= dv.ID and ds.LoaiMonAn= lma.MaLoaiMonAn and lma.MaLoaiMonAn=@maLoai";
+            List<OleDbParameter> ListParam = new List<OleDbParameter>();
+            OleDbParameter paratrangthai = new OleDbParameter("@maLoai", OleDbType.Integer);
+            paratrangthai.Value = maLoai;
+            ListParam.Add(paratrangthai);
+            List<OleDbParameter> listPara = new List<OleDbParameter>();
+            listPara.Add(paratrangthai);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            DataTable dtb = new DataTable();
+            dtb = dt.ExecuteQuery(sql, listPara);
+            return dtb;
+
+        }
     }
 }

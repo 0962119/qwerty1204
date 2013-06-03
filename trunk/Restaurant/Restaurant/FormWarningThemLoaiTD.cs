@@ -15,15 +15,5 @@ namespace Restaurant
         {
             InitializeComponent();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonX1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
