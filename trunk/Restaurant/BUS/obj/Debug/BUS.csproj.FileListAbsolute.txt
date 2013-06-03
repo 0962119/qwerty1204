@@ -78,3 +78,13 @@ C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\bin\Debug\DTO.pdb
 C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\obj\Debug\BUS.dll
 C:\Users\bien\Desktop\vs16.edit_2\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\BUS\obj\Debug\BUS.pdb
