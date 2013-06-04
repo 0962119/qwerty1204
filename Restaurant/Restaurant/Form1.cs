@@ -110,6 +110,8 @@ namespace Restaurant
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            ShowTreeview_ThongKeMon();
+            ShowTreeview_Thongke_Ban_KhuVuc();
                
             //<br/><font size="+30">22h</font><font size="15">18</font>
             ShowTree_LoadTD();
@@ -2389,6 +2391,149 @@ namespace Restaurant
             iconColumn.Name = "Logo";
             //iconColumn.HeaderText = "Nice tree";
             dtgirdViewTD.Columns.Insert(4, iconColumn);
+        }
+
+
+
+        /// <summary>
+        /// PHẦN KHUYÊN LÀM
+        /// </summary>
+        public string tenBan = "";
+        public string tenKhuVuc = "";
+        public string tenMon = "";
+        public string tenLoaiMon = "";
+        // Hiển thị và xử lý danh sách món ăn  treeb AdvTree
+        public void ShowTreeview_ThongKeMon()
+        {
+            DataTable nodeCha = dsLoaiMAbus.LayDSLoaiMonAn();
+            for (int i = 0; i < nodeCha.Rows.Count; i++)
+            {
+                DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node();
+                node1.Text = nodeCha.Rows[i][1].ToString();
+                node1.Tag = int.Parse(nodeCha.Rows[i][0].ToString());
+                node1.TagString = "nodeCha";
+                trwTk_MonAn.Nodes.Add(node1);
+
+                DataTable nodeCon = dsMonAnBus.LayDSMonAnTheoLoai((int)nodeCha.Rows[i][0]);
+                for (int j = 0; j < nodeCon.Rows.Count; j++)
+                {
+                    DevComponents.AdvTree.Node node2 = new DevComponents.AdvTree.Node();
+                    node2.Text = nodeCon.Rows[j][1].ToString();
+                    node2.Tag = int.Parse(nodeCon.Rows[j][0].ToString());
+                    node2.TagString = "nodeCon";
+                    node1.Nodes.Add(node2);
+                }
+            }
+        }
+
+        private void tabthongKeMonAn_Click(object sender, EventArgs e)
+        {
+            trwTk_MonAn.Nodes.Clear();
+            ShowTreeview_ThongKeMon();
+        }
+
+        private void trwTk_MonAn_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
+        {
+            if (e.Node.TagString == "nodeCha")
+            {
+                tenLoaiMon = e.Node.Text;
+            }
+            else
+            {
+                tenMon = e.Node.Text;
+                tenLoaiMon = e.Node.Parent.Text;
+            }
+
+        }
+
+        private void btnBaoCao_TKMon_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = dtpTuNgay_TKMon.Value;
+            DateTime denNgay = dtpDenNgay_TKMon.Value;
+            if (tenLoaiMon == "")
+            {
+                dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
+            }
+            else
+            {
+                dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
+
+            }
+            tenMon = tenLoaiMon = "";
+            // dgvThongKeMonAn.Rows.Clear();
+
+        }
+        // Hiển thị và xử lý danh sách món ăn  treeb AdvTree
+        public void ShowTreeview_Thongke_Ban_KhuVuc()
+        {
+            DataTable nodeCha = khuVucBus.LayDSKHUVUC();
+            for (int i = 0; i < nodeCha.Rows.Count; i++)
+            {
+                DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node();
+                node1.Text = nodeCha.Rows[i][1].ToString();
+                node1.Tag = int.Parse(nodeCha.Rows[i][0].ToString());
+                node1.TagString = "nodeCha";
+                trwThongKe_Ban.Nodes.Add(node1);
+
+                DataTable nodeCon = banBUS.LayDSBan((int)nodeCha.Rows[i][0]);
+                for (int j = 0; j < nodeCon.Rows.Count; j++)
+                {
+                    DevComponents.AdvTree.Node node2 = new DevComponents.AdvTree.Node();
+                    node2.Text = nodeCon.Rows[j][0].ToString();
+                    node2.Tag = int.Parse(nodeCon.Rows[j][0].ToString());
+                    node2.TagString = "nodeCon";
+                    node1.Nodes.Add(node2);
+                }
+            }
+
+        }
+
+        private void tabItem1_Click(object sender, EventArgs e)
+        {
+            trwThongKe_Ban.Nodes.Clear();
+            ShowTreeview_Thongke_Ban_KhuVuc();
+        }
+        private void btnBaoCao_Ban_Click(object sender, EventArgs e)
+        {
+
+            //dgvThongKe_Ban.Rows.Clear();
+            DateTime tuNgay = dtpTuNgay_TKBan.Value;
+            DateTime denNgay = dtpDenNgay_TKBan.Value;
+
+            if (tenKhuVuc == "")
+            {
+                dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
+            }
+            else
+            {
+                dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
+            }
+            tenBan = tenKhuVuc = "";
+        }
+
+        private void trwThongKe_Ban_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
+        {
+            if (e.Node.TagString == "nodeCha")
+            {
+                tenKhuVuc = e.Node.Text;
+
+            }
+            else
+            {
+                tenKhuVuc = e.Node.Parent.Text;
+                tenBan = e.Node.Text;
+            }
+        }
+        private void tabthongKeMonAn_Click_1(object sender, EventArgs e)
+        {
+            trwTk_MonAn.Nodes.Clear();
+            ShowTreeview_ThongKeMon();
+        }
+
+        private void tabThongKe_Ban_Click(object sender, EventArgs e)
+        {
+            trwThongKe_Ban.Nodes.Clear();
+            ShowTreeview_Thongke_Ban_KhuVuc();
         }
     }
 }

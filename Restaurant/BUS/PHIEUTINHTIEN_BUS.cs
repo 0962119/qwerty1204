@@ -82,6 +82,15 @@ namespace BUS
         {
             return phieuTinhTienDAO.TongTienThongKeHoaDon(NgayDau, NgayCuoi);
         }
+        // Thong ke theo khu vuc
+        public DataTable SoPhieuTinhTien_TheoKhuVuc(DateTime tuNgay, DateTime denNgay, string tenKV)
+        {
+            return phieuTinhTienDAO.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKV);
+        }
+        public DataTable SoPhieuTinhTien_TheoBan(DateTime tungay, DateTime denngay, string tenBan, string tenKhuVuc)
+        {
+            return phieuTinhTienDAO.SoPhieuTinhTien_TheoBan(tungay, denngay, tenBan, tenKhuVuc);
+        }
 
         
     }

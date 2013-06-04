@@ -344,6 +344,53 @@ namespace DAO
             da.Fill(dt);
             return dt.Rows[0][0].ToString();
         }
+        ///<summary>
+        /// Lấy tổng tiền, trung bình trên từng loại món ăn
+        ///</summary>
+        /// <param name="tuNgay"></param>
+        ///<param name="denNgay"></param>
+        ///<param name="tenLoaiMonAn"></param>
+        /// <returns></returns>
+        public DataTable ThongKe_TheoTenLoaiMonAn(DateTime tuNgay, DateTime denNgay, string tenLoaiMonAn)
+        {
+            string sql = " SELECT LOAIMONAN.TenLoaiMonAn,DANHSACHMONAN.TenMonAn, sum(CHITIETPHIEUTT.SoLuong) AS SoLuong, count(CHITIETPHIEUTT.MaPhieuTT) as SoHD,sum(CHITIETPHIEUTT.ThanhTien) as TongThanhTien"
+     + " FROM (LOAIMONAN INNER JOIN (DANHSACHMONAN INNER JOIN CHITIETPHIEUTT ON DANHSACHMONAN.MaMonAn = CHITIETPHIEUTT.MonAn) ON LOAIMONAN.MaLoaiMonAn = DANHSACHMONAN.LoaiMonAn) INNER JOIN PHIEUTINHTIEN ON CHITIETPHIEUTT.MaPhieuTT = PHIEUTINHTIEN.MaPhieuTT"
+     + " WHERE LOAIMONAN.TenLoaiMonAn like '%" + tenLoaiMonAn + "%' and PHIEUTINHTIEN.NgayLapPhieu>= @tuNgay and PHIEUTINHTIEN.NgayLapPhieu<=@denNgay"
+     + " GROUP BY LOAIMONAN.TenLoaiMonAn,DANHSACHMONAN.TenMonAn";
+            List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter paratuNgay = new OleDbParameter("@tuNgay", OleDbType.Date);
+            OleDbParameter paraDenNgay = new OleDbParameter("@denNgay", OleDbType.Date);
+            paratuNgay.Value = tuNgay;
+            paraDenNgay.Value = denNgay;
+            listParam.Add(paratuNgay);
+            listParam.Add(paraDenNgay);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, listParam);
+        }
+        ///<summary>
+        /// Lấy tổng tiền, trung bình trên từng món ăn
+        ///</summary>
+        /// <param name="tuNgay"></param>
+        ///<param name="denNgay"></param>
+        ///<param name="tenLoaiMonAn"></param>
+        ///<param name="tenMonAn"></param>
+        /// <returns></returns>
+        public DataTable ThongKe_TheoTenMonAn(DateTime tuNgay, DateTime denNgay, string tenMon, string tenLoaiMon)
+        {
+            string sql = " SELECT LOAIMONAN.TenLoaiMonAn,DANHSACHMONAN.TenMonAn, sum(CHITIETPHIEUTT.SoLuong) AS SoLuong, count(CHITIETPHIEUTT.MaPhieuTT) as SoHD,sum(CHITIETPHIEUTT.ThanhTien) as TongThanhTien"
+                 + " FROM (LOAIMONAN INNER JOIN (DANHSACHMONAN INNER JOIN CHITIETPHIEUTT ON DANHSACHMONAN.MaMonAn = CHITIETPHIEUTT.MonAn) ON LOAIMONAN.MaLoaiMonAn = DANHSACHMONAN.LoaiMonAn) INNER JOIN PHIEUTINHTIEN ON CHITIETPHIEUTT.MaPhieuTT = PHIEUTINHTIEN.MaPhieuTT"
+                 + " WHERE LOAIMONAN.TenLoaiMonAn like '%" + tenLoaiMon + "%' and DANHSACHMONAN.TenMonAn like '%" + tenMon + "%' and PHIEUTINHTIEN.NgayLapPhieu>= @tuNgay and PHIEUTINHTIEN.NgayLapPhieu<=@denNgay"
+                 + " GROUP BY LOAIMONAN.TenLoaiMonAn,DANHSACHMONAN.TenMonAn";
+            List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter paratuNgay = new OleDbParameter("@tuNgay", OleDbType.Date);
+            OleDbParameter paraDenNgay = new OleDbParameter("@denNgay", OleDbType.Date);
+            paratuNgay.Value = tuNgay;
+            paraDenNgay.Value = denNgay;
+            listParam.Add(paratuNgay);
+            listParam.Add(paraDenNgay);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, listParam);
+        }
 
     }
 }

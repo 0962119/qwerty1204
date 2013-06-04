@@ -24,7 +24,11 @@ namespace BUS
         }
         public DataTable LayDanhSachMonAnTheoLoai(int maLoai)
         {
-            return dsMonAnDAO.LayDanhSachMonAnTheoLoai(maLoai);
+            return dsMonAnDAO.LayDSMonAnTheoLoai(maLoai);
+        }
+        public DataTable LayDSMonAnTheoLoai(int maLoai)
+        {
+            return dsMonAnDAO.LayDSMonAnTheoLoai(maLoai);
         }
     }
 }

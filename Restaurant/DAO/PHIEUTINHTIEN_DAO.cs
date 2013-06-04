@@ -308,5 +308,64 @@ namespace DAO
             da.Fill(dt);
             return dt.Rows[0][0].ToString();
         }
+        ///<summary>
+        ///PHAN K LAM THONG KE
+        /// Lấy tổng số phiếu tính tiền trên từng khu vực
+        ///</summary>
+        /// <param name="tuNgay"></param>
+        ///<param name="denNgay"></param>
+        ///<param name="maKhuVuc"></param>
+        /// <returns></returns>
+
+
+        public DataTable SoPhieuTinhTien_TheoKhuVuc(DateTime tuNgay, DateTime denNgay, string tenKhuVuc)
+        {
+
+            string sql = "SELECT KHUVUC.TenKhuVuc,BAN.TenBan,count(PHIEUTINHTIEN.NgayLapPhieu) AS SoPhieu, sum(PHIEUTINHTIEN.TongTien) as TongTien, avg(PHIEUTINHTIEN.TongTien) as TrungBinh"
+     + " FROM (BAN INNER JOIN PHIEUTINHTIEN ON BAN.MaBan=PHIEUTINHTIEN.Ban) INNER JOIN KHUVUC ON BAN.MaKhuVuc=KHUVUC.MaKhuVuc"
+     + " WHERE KHUVUC.TenKhuVuc like '%" + tenKhuVuc + "%' and PHIEUTINHTIEN.NgayLapPhieu>= @tuNgay and PHIEUTINHTIEN.NgayLapPhieu<= @denNgay "
+     + " GROUP BY BAN.TenBan,KHUVUC.TenKhuVuc";
+
+            List<OleDbParameter> ListParam = new List<OleDbParameter>();
+            OleDbParameter paratuNgay = new OleDbParameter("@tuNgay", OleDbType.Date);
+            OleDbParameter paraDenNgay = new OleDbParameter("@denNgay", OleDbType.Date);
+            paratuNgay.Value = tuNgay;
+            paraDenNgay.Value = denNgay;
+            ListParam.Add(paratuNgay);
+            ListParam.Add(paraDenNgay);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, ListParam);
+
+        }
+        ///<summary>
+        /// Lấy tổng số phiếu tính tiền trên từng bàn
+        ///</summary>
+        /// <param name="tuNgay"></param>
+        ///<param name="denNgay"></param>
+        ///<param name="maBan"></param>
+        /// <returns></returns>
+        public DataTable SoPhieuTinhTien_TheoBan(DateTime tuNgay, DateTime denNgay, string tenBan, string tenKhuVuc)
+        {
+            string sql = "SELECT KHUVUC.TenKhuVuc,BAN.TenBan,count(PHIEUTINHTIEN.NgayLapPhieu) AS SoPhieu, sum(PHIEUTINHTIEN.TongTien) as TongTien"
+     + " FROM (BAN INNER JOIN PHIEUTINHTIEN ON BAN.MaBan=PHIEUTINHTIEN.Ban) INNER JOIN KHUVUC ON BAN.MaKhuVuc=KHUVUC.MaKhuVuc"
+     + " WHERE KHUVUC.TenKhuVuc like '%" + tenKhuVuc + "%' and BAN.TenBan like '%" + tenBan + "%' and PHIEUTINHTIEN.NgayLapPhieu>= @tuNgay and PHIEUTINHTIEN.NgayLapPhieu<= @denNgay "
+     + " GROUP BY BAN.TenBan,KHUVUC.TenKhuVuc";
+            List<OleDbParameter> ListParam = new List<OleDbParameter>();
+            OleDbParameter paraTuNgay = new OleDbParameter("@tuNgay", OleDbType.Date);
+            OleDbParameter paraDenNgay = new OleDbParameter("@denNgay", OleDbType.Date);
+            OleDbParameter paratenBan = new OleDbParameter("@tenBan", OleDbType.VarChar);
+            OleDbParameter paratenKhuVuc = new OleDbParameter("@tenKhuVuc", OleDbType.VarChar);
+            paraTuNgay.Value = tuNgay;
+            paraDenNgay.Value = denNgay;
+            paratenBan.Value = tenBan;
+            paratenKhuVuc.Value = tenKhuVuc;
+            ListParam.Add(paraTuNgay);
+            ListParam.Add(paraDenNgay);
+            ListParam.Add(paratenBan);
+            ListParam.Add(paratenKhuVuc);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, ListParam);
+
+        }
     }
 }
