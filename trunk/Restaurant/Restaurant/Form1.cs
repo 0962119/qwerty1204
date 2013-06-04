@@ -2535,6 +2535,50 @@ namespace Restaurant
             trwThongKe_Ban.Nodes.Clear();
             ShowTreeview_Thongke_Ban_KhuVuc();
         }
+
+
+        ThongKe_XuatExcel xuatExcel = new ThongKe_XuatExcel();
+        private void btnXuatEx_TKMon_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = dtpTuNgay_TKMon.Value;
+            DateTime denNgay = dtpDenNgay_TKMon.Value;
+            DataTable dt = (DataTable)dgvThongKeMonAn.DataSource;
+            string title = tabthongKeMonAn.Text;
+            string sheetName = "Thống kê món";
+            if (tenLoaiMon == "")
+            {
+                dt = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
+                xuatExcel.Export_MonAn(dt, sheetName, title);
+            }
+            else
+            {
+                dt = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
+                xuatExcel.Export_MonAn(dt, sheetName, title);
+
+            }
+            tenMon = tenLoaiMon = "";
+        }
+
+        private void btnXuatEx_Bn_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = dtpTuNgay_TKBan.Value;
+            DateTime denNgay = dtpDenNgay_TKBan.Value;
+            DataTable dt = (DataTable)dgvThongKe_Ban.DataSource;
+            string title = tabThongKe_Ban.Text;
+            string sheetName = "Thống kê bàn";
+            if (tenKhuVuc == "")
+            {
+                dt = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
+                xuatExcel.Export_Ban(dt, sheetName, title);
+            }
+            else
+            {
+                dt = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
+                xuatExcel.Export_Ban(dt, sheetName, title);
+            }
+            tenBan = tenKhuVuc = "";
+
+        }
     }
 }
 
