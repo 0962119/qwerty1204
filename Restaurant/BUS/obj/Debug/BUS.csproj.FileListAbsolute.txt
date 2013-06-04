@@ -118,3 +118,13 @@ C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\BUS\bin\Debug\DTO.pdb
 C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\BUS\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\BUS\obj\Debug\BUS.dll
 C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\BUS\obj\Debug\BUS.pdb
