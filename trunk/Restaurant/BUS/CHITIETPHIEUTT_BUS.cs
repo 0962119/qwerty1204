@@ -79,5 +79,14 @@ namespace BUS
         {
             return ctPhieuTT_DAO.DonGia_string(MaPhieu);
         }
+        //Thống kê món ăn (tổng tiền, trung bình)
+        public DataTable ThongKe_TheoTenLoaiMonAn(DateTime tuNgay, DateTime denNgay, string tenMon)
+        {
+            return ctPhieuTT_DAO.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenMon);
+        }
+        public DataTable ThongKe_TheoTenMonAn(DateTime tuNgay, DateTime denNgay, string tenMon, string tenLoaiMon)
+        {
+            return ctPhieuTT_DAO.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
+        }
     }
 }

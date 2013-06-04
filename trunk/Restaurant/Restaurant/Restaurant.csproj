@@ -56,32 +56,23 @@
       <HintPath>..\..\..\..\..\..\Program Files\Business Objects\Common\2.8\managed\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <Private>True</Private>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop">
+      <HintPath>H:\managed\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>H:\managed\CrystalDecisions.ReportSource.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>H:\managed\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Business Objects\Common\2.8\managed\CrystalDecisions.ReportSource.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="CrystalDecisions.VSDesigner">
+      <HintPath>H:\managed\CrystalDecisions.VSDesigner.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\Business Objects\Common\2.8\managed\CrystalDecisions.Shared.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="CrystalDecisions.Web">
+      <HintPath>H:\managed\CrystalDecisions.Web.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.VSDesigner, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <Private>True</Private>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>H:\managed\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="DataGridViewNumericUpDownElements">
       <HintPath>..\..\..\DataGridViewNumericUpDown\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.dll</HintPath>

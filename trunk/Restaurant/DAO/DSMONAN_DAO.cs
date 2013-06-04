@@ -58,5 +58,16 @@ namespace DAO
             return dtb;
 
         }
+        public DataTable LayDSMonAnTheoLoai(int maLoaiMonAn)
+        {
+            string sql = "select * from DANHSACHMONAN where DANHSACHMONAN.LoaiMonAn=@maLoaiMonAn";
+            List<OleDbParameter> ListParam = new List<OleDbParameter>();
+            OleDbParameter para = new OleDbParameter("@maLoaiMonAn", OleDbType.Integer);
+            para.Value = maLoaiMonAn;
+            ListParam.Add(para);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, ListParam);
+
+        }
     }
 }

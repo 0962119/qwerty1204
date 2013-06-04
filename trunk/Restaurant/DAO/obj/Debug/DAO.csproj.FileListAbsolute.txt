@@ -86,3 +86,11 @@ C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\bin\Debug\DTO.pdb
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\obj\Debug\DAO.dll
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\obj\Debug\DAO.pdb
