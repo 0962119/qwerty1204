@@ -20,6 +20,19 @@ namespace BUS
         {
             return lmadao.ThemLoaiMonAn(TenLoaiMA);
         }
+        public bool SuaTenLoaiMonAn(string tenloaimonan, int maloaima)
+        {
+            return lmadao.SuaTenLoaiMonAn(tenloaimonan,maloaima);
+        }
+        public bool XoaLoaiMonAn(string tenlma)
+        {
+            return lmadao.XoaLoaiMonAn(tenlma);
+        }
 
+
+        public DataTable SuaTenLoaiMonAn(int idNode)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

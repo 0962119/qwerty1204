@@ -44,7 +44,7 @@ namespace DAO
         }
         public DataTable LayDanhSachMonAnTheoLoai(int maLoai)
         {
-            string sql = "SELECT * FROM DANHSACHMONAN ds, DONVITINH dv, LOAIMONAN lma "+
+            string sql = "SELECT ds.TenMonAn,dv.TenDonViTinh,ds.DonGia,ds.HinhAnh FROM DANHSACHMONAN ds, DONVITINH dv, LOAIMONAN lma "+
                 " where ds.DonViTinh= dv.ID and ds.LoaiMonAn= lma.MaLoaiMonAn and lma.MaLoaiMonAn=@maLoai";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             OleDbParameter paratrangthai = new OleDbParameter("@maLoai", OleDbType.Integer);

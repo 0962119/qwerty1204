@@ -112,6 +112,7 @@ namespace Restaurant
         {
                
             //<br/><font size="+30">22h</font><font size="15">18</font>
+            ShowTree_LoadTD();
             LoadConTrol();
             this.HOADONRPTableAdapter.Fill(this.QUANLYNHAHANGDataSet.HOADONRP);
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -2302,30 +2303,11 @@ namespace Restaurant
         {
 
         }
-        public int idNode;
-        private void advTreeLTD_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
-        {
-            idNode = int.Parse(e.Node.TagString.ToString());
-            DataTable dtb = new DataTable();
-            dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
-            dtgirdViewTD.DataSource = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);  
-        }
-        public void ShowTreeview_LoaiTD()
-        {
-            advTreeLTD.Nodes.Clear();
-            DataTable nodeCha = dsLoaiMAbus.LayDSLoaiMonAn();
-            foreach (DataRow dtr in nodeCha.Rows)
-            {
-                DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node(dtr[1].ToString());
-                node1.TagString = dtr[0].ToString();
-                advTreeLTD.Nodes.Add(node1);
-            }
-        }
         private void btnThemLoaiTD_Click(object sender, EventArgs e)
         {
             FormThemLoaiThucDon frmTLTD = new FormThemLoaiThucDon();
             frmTLTD.ShowDialog();
-            ShowTreeview_LoaiTD();
+            ShowTree_LoadTD();
         } 
         private void txtTimKiemTD_Click(object sender, EventArgs e)
         {
@@ -2340,7 +2322,75 @@ namespace Restaurant
             if (txtTimKiemTD.Text.Length < 1)
                 txtTimKiemTD.Text = "Tìm Kiếm Thực Đơn...";
         }
-        
+
+        private void advTreeLTD_BeforeNodeInsert(object sender, DevComponents.AdvTree.TreeNodeCollectionEventArgs e)
+        {
+
+        }
+        //public void Update_LoaiMonAn()
+        //{
+        //    //advTreeLTD.Nodes.Clear();
+        //    DataTable nodeCha = dsLoaiMAbus.LayDSLoaiMonAn();
+        //    foreach (DataRow dtr in nodeCha.Rows)
+        //    {
+        //        DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node(dtr[1].ToString());
+        //        node1.TagString = dtr[0].ToString();
+        //        advTreeLTD.Nodes.Add(node1);
+        //    }
+        //}
+        private void btnSuaLoaiTD_Click(object sender, EventArgs e)
+        {
+            FormSuaLoaiMonAn frm = new FormSuaLoaiMonAn();
+            frm.ShowDialog();
+            ShowTree_LoadTD();
+            
+        }
+        private void btnXoaLoaiTD_Click(object sender, EventArgs e)
+        {
+            FormWarningDelete frm = new FormWarningDelete();
+            frm.ShowDialog();
+        }
+        public static int idNode;
+        private void advTreeLTD_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
+        {
+            idNode = int.Parse(e.Node.TagString.ToString());
+            DataTable dtb = new DataTable();
+            //dtb.Columns.Add("STT");
+            dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
+            dtgirdViewTD.DataSource = dtb;
+            int stt = 0;
+            for(int i = 0; i < dtb.Rows.Count; ++i)
+            {
+                stt = stt + 1;
+                //dtb.Rows[i]["STT"] = i + 1;
+                dtgirdViewTD.Rows[i].Cells[0].Value = stt;
+            }
+            //dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
+            //dtgirdViewTD.DataSource = dtb;//dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
+            
+        }
+
+        public void ShowTree_LoadTD()
+        {
+            advTreeLTD.Nodes.Clear();
+            DataTable nodecha = dsLoaiMAbus.LayDSLoaiMonAn();
+            foreach(DataRow dtr in nodecha.Rows)
+            {
+                DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node(dtr[1].ToString());
+                node1.TagString = dtr[0].ToString();
+                advTreeLTD.Nodes.Add(node1);
+            }
+        }
+        private void createGraphicsColumn()
+        {
+            Icon Logo = new Icon(this.GetType(), "Mon an(1).jpg");
+            DataGridViewImageColumn iconColumn = new DataGridViewImageColumn();
+            iconColumn.Image = Logo.ToBitmap();
+            iconColumn.Name = "Logo";
+            //iconColumn.HeaderText = "Nice tree";
+            dtgirdViewTD.Columns.Insert(4, iconColumn);
+        }
     }
 }
+
 

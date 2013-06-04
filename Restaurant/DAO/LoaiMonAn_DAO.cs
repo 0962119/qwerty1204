@@ -33,5 +33,36 @@ namespace DAO
             else
                 return true;
         }
+        public bool SuaTenLoaiMonAn(string tenloaimonan, int maloaima)
+        {
+            string sql = "UPDATE LOAIMONAN SET TenLoaiMonAn = @tenloaimonan WHERE MaLoaiMonAn = @ma";
+            List<OleDbParameter> lis = new List<OleDbParameter>();
+            OleDbParameter para = new OleDbParameter("@tenloaimonan", OleDbType.VarChar);
+            OleDbParameter para1 = new OleDbParameter("@ma", OleDbType.Integer);
+            para.Value = tenloaimonan;
+            para1.Value = maloaima;
+            lis.Add(para);
+            lis.Add(para1);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            int kq = dt.ExecuteNoneQuery(sql, lis);
+            if (kq < 1)
+                return false;
+            else
+                return true;
+        }
+        public bool XoaLoaiMonAn(string tenlma)
+        {
+            string sql = "DELETE FROM LOAIMONAN WHERE TenLoaiMonAn = @tenlma";
+            List<OleDbParameter> lis = new List<OleDbParameter>();
+            OleDbParameter para = new OleDbParameter("@tenlma", OleDbType.VarChar);
+            para.Value = tenlma;
+            lis.Add(para);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            int kq = dt.ExecuteNoneQuery(sql, lis);
+            if (kq < 1)
+                return false;
+            else
+                return true;
+        }
     }
 }

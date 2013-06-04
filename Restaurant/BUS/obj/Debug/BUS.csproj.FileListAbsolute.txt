@@ -98,3 +98,13 @@ C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\BUS\bin\Debug\DTO.pdb
 C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\BUS\obj\Debug\BUS.dll
 C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\BUS\obj\Debug\BUS.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\bin\Debug\BUS.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\bin\Debug\BUS.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\bin\Debug\DAO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\bin\Debug\DAO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\obj\Debug\BUS.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\BUS\obj\Debug\BUS.pdb
