@@ -38,17 +38,15 @@ namespace Restaurant
 
         private void btnHuyboLoaiTD_Click(object sender, EventArgs e)
         {
-
+            txtLoaiThucDon.Text = "";
         }
-
-        private void txtLoaiThucDon_TextChanged(object sender, EventArgs e)
+        private void txtLoaiThucDon_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-        private void labelX1_Click(object sender, EventArgs e)
-        {
-
+            if(e.KeyCode == Keys.Enter)
+            {
+                bool kq = dslmabus.ThemLoaiMonAn(txtLoaiThucDon.Text);
+                this.Close();
+            }
         }
     }
 }

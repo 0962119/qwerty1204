@@ -34,7 +34,6 @@ namespace Restaurant
         PHIEUTINHTIEN_BUS phieuTT_Bus = new PHIEUTINHTIEN_BUS();
         CHITIETPHIEUTT_BUS ctPhieuTT_BUS = new CHITIETPHIEUTT_BUS();
         LOAIMONAN_BUS dsLoaiMAbus = new LOAIMONAN_BUS();
-
         NGUOIDUNG_BUS NguoiDungBUS = new NGUOIDUNG_BUS();
         MonneyClass mn = new MonneyClass();
         /// <summary>
@@ -55,6 +54,51 @@ namespace Restaurant
         {
             InitializeComponent();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            Form1.dtgirdViewTD = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            ((System.ComponentModel.ISupportInitialize)(Form1.dtgirdViewTD)).BeginInit();
+
+            this.metroTabPanel4.Controls.Add(Form1.dtgirdViewTD);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            Form1.dtgirdViewTD.AllowUserToAddRows = false;
+            Form1.dtgirdViewTD.AllowUserToDeleteRows = false;
+            Form1.dtgirdViewTD.AllowUserToResizeColumns = false;
+            Form1.dtgirdViewTD.BackgroundColor = System.Drawing.Color.White;
+            Form1.dtgirdViewTD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            Form1.dtgirdViewTD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;//tam
+            Form1.dtgirdViewTD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Form1.dtgirdViewTD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            dataGridViewTextBoxColumn6});
+            Form1.dtgirdViewTD.DefaultCellStyle = dataGridViewCellStyle10;
+            Form1.dtgirdViewTD.EnableHeadersVisualStyles = false;
+            Form1.dtgirdViewTD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            Form1.dtgirdViewTD.Location = new System.Drawing.Point(317, 0);
+            Form1.dtgirdViewTD.Name = "dtgirdViewTD";
+            Form1.dtgirdViewTD.ReadOnly = true;
+            Form1.dtgirdViewTD.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            Form1.dtgirdViewTD.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Form1.dtgirdViewTD.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            Form1.dtgirdViewTD.Size = new System.Drawing.Size(876, 608);
+            Form1.dtgirdViewTD.TabIndex = 1;
+            ((System.ComponentModel.ISupportInitialize)(Form1.dtgirdViewTD)).EndInit();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -1710,12 +1754,6 @@ namespace Restaurant
             vitrichuotdangbam.X = e.X;
             vitrichuotdangbam.Y = e.Y;
         }
-
-        private void buttonX1_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void groupPanel1_MouseDown(object sender, MouseEventArgs e)
         {
             isMouseDown = true;
@@ -1880,24 +1918,25 @@ namespace Restaurant
         {
             try
             {
-                //saveFileDialog1.DefaultExt = "xls";
-                //saveFileDialog1.Filter = "Text file (*.xls)|*.xls|Arff file |*.arff|XML file (*.xml)|*.xml|All files (*.*)|*.*";
-                //saveFileDialog1.AddExtension = true;
-                //saveFileDialog1.RestoreDirectory = true;
-                //saveFileDialog1.Title = "Bạn Muốn Lưu File Ở Đâu?";
-                //saveFileDialog1.InitialDirectory = @"C:/";
-                //if (saveFileDialog1.ShowDialog() ==  DialogResult.OK)
-                //{
-                    SaveFile(@"C:\Users\QN\Desktop\HoaDon.xls");
+                saveFileDialog1.DefaultExt = "xls";
+                saveFileDialog1.Filter = "Text file (*.xls)|*.xls|Arff file |*.arff|XML file (*.xml)|*.xml|All files (*.*)|*.*";
+                saveFileDialog1.AddExtension = true;
+                saveFileDialog1.RestoreDirectory = true;
+                saveFileDialog1.Title = "Bạn Muốn Lưu File Ở Đâu?";
+                saveFileDialog1.InitialDirectory = @"C:/";
+                if (saveFileDialog1.ShowDialog() ==  DialogResult.OK)
+                {
+                    SaveFile(saveFileDialog1.FileName);
                     MessageBox.Show("Luu Thành Công Tại: " + @"C:\Users\QN\Desktop");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Bạn Chưa Chọn File Lưu.");
-                //}
+                }
+                else
+                {
+                    MessageBox.Show("Bạn Chưa Chọn File Lưu.");
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
             }
         }
         private void SaveFile(string pathname)
@@ -2235,9 +2274,6 @@ namespace Restaurant
 
             lbHoaDong_TongTien.Text = phieuTT_Bus.TongTienThongKeHoaDon(dateTBatDau.Value.ToShortDateString(),dateTKetThuc.Value.ToShortDateString())+" VNĐ";
         }
-
-       
-
         public void LoadThongKeHoaDon(string NgayBatDau, string NgayKetThuc)
         {
             dgvHoaDonPhucVu.DataSource = phieuTT_Bus.FilterPhieuTT_Datatable(NgayBatDau, NgayKetThuc);
@@ -2250,42 +2286,6 @@ namespace Restaurant
             string title = "THỐNG KÊ HOÁ ĐƠN";
             excel.Export(dt,"ABC", title);
         }
-
-        private void metroTabPanel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void expFrm1MenuMeTro_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TabHoaDon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-        private void dgvHoaDonPhucVu_DoubleClick(object sender, EventArgs e)
-        {
-            //for (int i = 0; i < 6; i++)
-            //{
-            //MessageBox.Show(dgvHoaDonPhucVu.SelectedRows[0].Cells[0].Value.ToString());
-            //}
-            
-            //MessageBox.Show(dgvHoaDonPhucVu.Rows[e.index]
-
-            //TenNVS = dgvNhanVien.SelectedRows[0].Cells[3].Value.ToString();
-            //TaiKhoanS = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString();
-            //MatKhauS = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
-            //ChucVuS = dgvNhanVien.SelectedRows[0].Cells[7].Value.ToString();
-            //SDTS = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();
-            //frmSuaNhanVien frm = new frmSuaNhanVien();
-            //frm.ShowDialog();
-            //LoadNhanVien();
-        }
-
         public static string MaPhieuTT_DG, NhanVien_DG, ThoiGian_DG, Ban_DG;
 
         private void dgvHoaDonPhucVu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -2298,11 +2298,6 @@ namespace Restaurant
 
                 frmChiTietHoaDon frm = new frmChiTietHoaDon();
                 frm.ShowDialog();
-
-        }
-
-        private void txtTimKiemTD_TextChanged(object sender, EventArgs e)
-        {
 
         }
         private void btnThemLoaiTD_Click(object sender, EventArgs e)
@@ -2324,22 +2319,6 @@ namespace Restaurant
             if (txtTimKiemTD.Text.Length < 1)
                 txtTimKiemTD.Text = "Tìm Kiếm Thực Đơn...";
         }
-
-        private void advTreeLTD_BeforeNodeInsert(object sender, DevComponents.AdvTree.TreeNodeCollectionEventArgs e)
-        {
-
-        }
-        //public void Update_LoaiMonAn()
-        //{
-        //    //advTreeLTD.Nodes.Clear();
-        //    DataTable nodeCha = dsLoaiMAbus.LayDSLoaiMonAn();
-        //    foreach (DataRow dtr in nodeCha.Rows)
-        //    {
-        //        DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node(dtr[1].ToString());
-        //        node1.TagString = dtr[0].ToString();
-        //        advTreeLTD.Nodes.Add(node1);
-        //    }
-        //}
         private void btnSuaLoaiTD_Click(object sender, EventArgs e)
         {
             FormSuaLoaiMonAn frm = new FormSuaLoaiMonAn();
@@ -2351,50 +2330,57 @@ namespace Restaurant
         {
             FormWarningDelete frm = new FormWarningDelete();
             frm.ShowDialog();
+            ShowTree_LoadTD();
         }
         public static int idNode;
         private void advTreeLTD_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
         {
             idNode = int.Parse(e.Node.TagString.ToString());
             DataTable dtb = new DataTable();
-            //dtb.Columns.Add("STT");
             dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
             dtgirdViewTD.DataSource = dtb;
             int stt = 0;
             for(int i = 0; i < dtb.Rows.Count; ++i)
             {
                 stt = stt + 1;
-                //dtb.Rows[i]["STT"] = i + 1;
                 dtgirdViewTD.Rows[i].Cells[0].Value = stt;
             }
-            //dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
-            //dtgirdViewTD.DataSource = dtb;//dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
-            
         }
 
         public void ShowTree_LoadTD()
         {
             advTreeLTD.Nodes.Clear();
-            DataTable nodecha = dsLoaiMAbus.LayDSLoaiMonAn();
-            foreach(DataRow dtr in nodecha.Rows)
+            DataTable TreeNode = dsLoaiMAbus.LayDSLoaiMonAn();
+            foreach(DataRow dtr in TreeNode.Rows)
             {
                 DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node(dtr[1].ToString());
                 node1.TagString = dtr[0].ToString();
                 advTreeLTD.Nodes.Add(node1);
+
+                //DataTable childnode = dsMonAnBus.LayDanhSachMonAnTheoLoai((int)TreeNode.Rows[idNode][0]);
+                //foreach (DataRow dtr1 in childnode.Rows)
+                //{
+                //    DevComponents.AdvTree.Node node2 = new DevComponents.AdvTree.Node();
+                //    node2.TagString = childnode.Rows[idNode][1].ToString();
+                //    node2.Tag = int.Parse(childnode.Rows[idNode][0].ToString());
+                //    node1.Nodes.Add(node2);
+
+                //}
             }
         }
-        private void createGraphicsColumn()
+        public void LoadDatagirdViewTD()
         {
-            Icon Logo = new Icon(this.GetType(), "Mon an(1).jpg");
-            DataGridViewImageColumn iconColumn = new DataGridViewImageColumn();
-            iconColumn.Image = Logo.ToBitmap();
-            iconColumn.Name = "Logo";
-            //iconColumn.HeaderText = "Nice tree";
-            dtgirdViewTD.Columns.Insert(4, iconColumn);
+            DataTable dtb = new DataTable();
+            dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
+            dtgirdViewTD.DataSource = dtb;
+            int stt = 0;
+            for (int i = 0; i < dtb.Rows.Count; ++i)
+            {
+                stt = stt + 1;
+                dtgirdViewTD.Rows[i].Cells[0].Value = stt;
+            }
         }
-
-
-
+       
         /// <summary>
         /// PHẦN KHUYÊN LÀM
         /// </summary>
@@ -2578,6 +2564,20 @@ namespace Restaurant
             }
             tenBan = tenKhuVuc = "";
 
+        }
+
+        private void btnThemTD_Click(object sender, EventArgs e)
+        {
+            FormThemThucDon frm = new FormThemThucDon();
+            frm.ShowDialog();
+            LoadDatagirdViewTD();
+
+        }
+
+        private void btnImportExcelTD_Click(object sender, EventArgs e)
+        {
+            FormNhapTuExcel frm = new FormNhapTuExcel();
+            frm.ShowDialog();
         }
     }
 }

@@ -22,13 +22,22 @@ namespace BUS
         {
             return dsMonAnDAO.LayDSMonAn(tenBan);
         }
-        public DataTable LayDanhSachMonAnTheoLoai(int maLoai)
+        public DataTable LayDanhSachMonAnTheoLoai(int maloaima)
         {
-            return dsMonAnDAO.LayDSMonAnTheoLoai(maLoai);
+            return dsMonAnDAO.LayDanhSachMonAnTheoLoai(maloaima);
         }
         public DataTable LayDSMonAnTheoLoai(int maLoai)
         {
             return dsMonAnDAO.LayDSMonAnTheoLoai(maLoai);
+        }
+        public bool ThemThucDon(string TenThucDon, int DonGia, int GiamGia)
+        {
+            return dsMonAnDAO.ThemThucDon(TenThucDon, DonGia, GiamGia);
+        }
+
+        public bool ThemThucDon(string p, string p_2, string p_3)
+        {
+            throw new NotImplementedException();
         }
     }
 }

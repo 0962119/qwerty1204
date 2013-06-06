@@ -9,5 +9,10 @@ namespace BUS
 {
     public class DONVITINH_BUS
     {
+        DonViTinh_DAO dvtdao = new DonViTinh_DAO();
+        public DataTable DSDonViTinh()
+        {
+            return dvtdao.DSDonViTinh();
+        }
     }
 }

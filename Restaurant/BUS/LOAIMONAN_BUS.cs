@@ -24,15 +24,14 @@ namespace BUS
         {
             return lmadao.SuaTenLoaiMonAn(tenloaimonan,maloaima);
         }
-        public bool XoaLoaiMonAn(string tenlma)
+        public bool XoaLoaiMonAn(int mlma)
         {
-            return lmadao.XoaLoaiMonAn(tenlma);
+            return lmadao.XoaLoaiMonAn(mlma);
         }
-
-
         public DataTable SuaTenLoaiMonAn(int idNode)
         {
             throw new NotImplementedException();
         }
+        
     }
 }

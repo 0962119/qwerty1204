@@ -83,7 +83,7 @@
             this.txtLoaiThucDon.Name = "txtLoaiThucDon";
             this.txtLoaiThucDon.Size = new System.Drawing.Size(246, 26);
             this.txtLoaiThucDon.TabIndex = 8;
-            this.txtLoaiThucDon.TextChanged += new System.EventHandler(this.txtLoaiThucDon_TextChanged);
+            this.txtLoaiThucDon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoaiThucDon_KeyDown);
             // 
             // labelX1
             // 
@@ -99,7 +99,6 @@
             this.labelX1.Size = new System.Drawing.Size(157, 23);
             this.labelX1.TabIndex = 7;
             this.labelX1.Text = "Nhập Tên Loại Thực Đơn:";
-            this.labelX1.Click += new System.EventHandler(this.labelX1_Click);
             // 
             // FormThemLoaiThucDon
             // 

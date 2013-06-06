@@ -43,10 +43,6 @@ C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\bin\Debug\DTO.pdb
 C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\obj\Debug\DTO.dll
 C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\obj\Debug\DTO.pdb
 C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
-C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\bin\Debug\DTO.dll
-C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\bin\Debug\DTO.pdb
-C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\obj\Debug\DTO.dll
-C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\obj\Debug\DTO.pdb
 C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DTO\bin\Debug\DTO.dll
 C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DTO\bin\Debug\DTO.pdb
 C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DTO\obj\Debug\ResolveAssemblyReference.cache
@@ -57,3 +53,7 @@ C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\bin\Debug\DTO.pdb
 C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\obj\Debug\DTO.dll
 C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\obj\Debug\DTO.pdb

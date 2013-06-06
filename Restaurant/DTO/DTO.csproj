@@ -48,7 +48,7 @@
     <Compile Include="ChiTietPhieuTT.cs" />
     <Compile Include="KhuVuc_DTO.cs" />
     <Compile Include="LoaiBaoCao.cs" />
-    <Compile Include="LoaiMonAnDTOcs.cs" />
+    <Compile Include="LoaiMonAnDTO.cs" />
     <Compile Include="LoaiThongKe.cs" />
     <Compile Include="NguoiDung.cs" />
     <Compile Include="PhieuTinhTien.cs" />
