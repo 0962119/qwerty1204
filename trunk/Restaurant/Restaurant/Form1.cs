@@ -2281,10 +2281,17 @@ namespace Restaurant
 
         private void btnInThongKeHD_Click(object sender, EventArgs e)
         {
-            XuatFileExcel excel = new XuatFileExcel();
+            //XuatFileExcel excel = new XuatFileExcel();
             DataTable dt = (DataTable)dgvHoaDonPhucVu.DataSource;
             string title = "THỐNG KÊ HOÁ ĐƠN";
-            excel.Export(dt,"ABC", title);
+            //excel.Export(dt,"ABC", title);
+
+            xuatExcel.Export_HoaDon(dt, "ABC", title);
+
+            
+
+
+
         }
         public static string MaPhieuTT_DG, NhanVien_DG, ThoiGian_DG, Ban_DG;
 
@@ -2579,6 +2586,8 @@ namespace Restaurant
             FormNhapTuExcel frm = new FormNhapTuExcel();
             frm.ShowDialog();
         }
+
+        
     }
 }
 

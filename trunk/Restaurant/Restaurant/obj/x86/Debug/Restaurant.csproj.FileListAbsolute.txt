@@ -407,3 +407,24 @@ C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\Restaurant\obj\x86\Debug\
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\Restaurant\obj\x86\Debug\RdlCompile.compiled
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar.Keyboard.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar.Schedule.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar.SuperGrid.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.Instrumentation.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.SuperGrid.Design.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.TreeGX.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar.Keyboard.xml
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar.Schedule.xml
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar.SuperGrid.xml
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\bin\Debug\DevComponents.Instrumentation.xml
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormNhapTuExcel.resources
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormSuaLoaiMonAn.resources
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormThemDVT.resources
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormThemLoaiThucDon.resources
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormThemThucDon.resources
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormWarningDelete.resources
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormWarningSuaLoaiTD.resources
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\Restaurant\obj\x86\Debug\Restaurant.FormWarningThemLoaiTD.resources
