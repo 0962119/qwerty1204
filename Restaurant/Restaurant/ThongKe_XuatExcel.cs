@@ -149,5 +149,50 @@ namespace Restaurant
             rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
             ThietLapVungDuLieu(dt);
         }
+
+        public void Export_HoaDon(System.Data.DataTable dt, string sheetName, string title)
+        {
+
+            Excel_Head(title, sheetName);
+            // Tạo tiêu đề cột
+            Range cl1 = oSheet.get_Range("A3", "A3");
+            cl1.Value2 = "Tên loại món ăn";
+            cl1.ColumnWidth = 13.5;
+
+            Range cl2 = oSheet.get_Range("B3", "B3");
+            cl2.Value2 = "Bàn";
+            cl2.ColumnWidth = 13.5;
+
+            Range cl3 = oSheet.get_Range("C3", "C3");
+            cl3.Value2 = "Nhân viên";
+            cl3.ColumnWidth = 13.5;
+
+            Range cl4 = oSheet.get_Range("D3", "D3");
+            cl4.Value2 = "Tổng tiền";
+            cl4.ColumnWidth = 13.5;
+
+            Range cl5 = oSheet.get_Range("E3", "E3");
+            cl5.Value2 = "Ngày lập phiếu";
+            cl5.ColumnWidth = 13.5;
+
+            Range cl6 = oSheet.get_Range("F3", "F3");
+            cl6.Value2 = "Giờ vào";
+            cl6.ColumnWidth = 13.5;
+
+            Range cl7 = oSheet.get_Range("G3", "G3");
+            cl7.Value2 = "Giờ ra";
+            cl7.ColumnWidth = 13.5;
+
+            Range rowHead = oSheet.get_Range("A3", "E3");
+            rowHead.Font.Bold = true;
+            // Kẻ viền
+            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+            // Thiết lập màu nền
+            rowHead.Interior.ColorIndex = 15;
+            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            ThietLapVungDuLieu(dt);
+        }
+
+
     }
 }
