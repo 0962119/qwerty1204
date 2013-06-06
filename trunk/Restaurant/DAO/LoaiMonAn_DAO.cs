@@ -50,12 +50,12 @@ namespace DAO
             else
                 return true;
         }
-        public bool XoaLoaiMonAn(string tenlma)
+        public bool XoaLoaiMonAn(int mlma)
         {
-            string sql = "DELETE FROM LOAIMONAN WHERE TenLoaiMonAn = @tenlma";
+            string sql = "DELETE FROM LOAIMONAN WHERE MaLoaiMonAn = @maloai";
             List<OleDbParameter> lis = new List<OleDbParameter>();
-            OleDbParameter para = new OleDbParameter("@tenlma", OleDbType.VarChar);
-            para.Value = tenlma;
+            OleDbParameter para = new OleDbParameter("@maloai", OleDbType.Integer);
+            para.Value = mlma;
             lis.Add(para);
             NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
             int kq = dt.ExecuteNoneQuery(sql, lis);

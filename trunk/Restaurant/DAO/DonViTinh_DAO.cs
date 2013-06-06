@@ -11,5 +11,12 @@ namespace DAO
 {
     public class DonViTinh_DAO
     {
+        public DataTable DSDonViTinh()
+        {
+            string sql = "SELECT * FROM DonViTinh";
+            List<OleDbParameter> ListParam = new List<OleDbParameter>();
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, ListParam);
+        }
     }
 }

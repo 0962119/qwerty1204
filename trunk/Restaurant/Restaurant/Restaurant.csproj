@@ -150,17 +150,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNhapTuExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhapTuExcel.Designer.cs">
+      <DependentUpon>FormNhapTuExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSuaLoaiMonAn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSuaLoaiMonAn.Designer.cs">
       <DependentUpon>FormSuaLoaiMonAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemDVT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemDVT.Designer.cs">
+      <DependentUpon>FormThemDVT.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThemLoaiThucDon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormThemLoaiThucDon.Designer.cs">
       <DependentUpon>FormThemLoaiThucDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemThucDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemThucDon.Designer.cs">
+      <DependentUpon>FormThemThucDon.cs</DependentUpon>
     </Compile>
     <Compile Include="FormWarningDelete.cs">
       <SubType>Form</SubType>
@@ -226,11 +244,20 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNhapTuExcel.resx">
+      <DependentUpon>FormNhapTuExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSuaLoaiMonAn.resx">
       <DependentUpon>FormSuaLoaiMonAn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormThemDVT.resx">
+      <DependentUpon>FormThemDVT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThemLoaiThucDon.resx">
       <DependentUpon>FormThemLoaiThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemThucDon.resx">
+      <DependentUpon>FormThemThucDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWarningDelete.resx">
       <DependentUpon>FormWarningDelete.cs</DependentUpon>

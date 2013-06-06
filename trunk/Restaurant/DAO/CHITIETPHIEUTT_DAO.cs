@@ -14,7 +14,7 @@ namespace DAO
     {
         public DataTable LayDSCTPhieuTT(int maPhieuTT, int maBan)
         {
-            int kq = -1;
+            //int kq = -1;
             string sql = "SELECT DISTINCT " +
                          " DANHSACHMONAN.TenMonAn, CHITIETPHIEUTT.SoLuong, DONVITINH.TenDonViTinh, CHITIETPHIEUTT.DonGia, CHITIETPHIEUTT.GiamGia, " +
                          " CHITIETPHIEUTT.ThanhTien, CHITIETPHIEUTT.MonAn" +
