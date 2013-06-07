@@ -392,5 +392,15 @@ namespace DAO
             return dt.ExecuteQuery(sql, listParam);
         }
 
+        public void XoaChiTietPhieuTT_void(int maHoaDon)
+        {
+            OleDbConnection conn = DataProvider.ConnectDB();
+            string sql = "DELETE * FROM CHITIETPHIEUTT where MaPhieuTT =" + maHoaDon;
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            //OleDbParameter para = cmd.Parameters.AddWithValue("@TaiKhoan", dto.TaiKhoan);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
     }
 }
