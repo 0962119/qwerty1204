@@ -57,3 +57,8 @@ C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\bin\Debug\DTO.dll
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\bin\Debug\DTO.pdb
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\obj\Debug\DTO.dll
 C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\obj\Debug\DTO.pdb

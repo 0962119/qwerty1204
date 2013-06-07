@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvChiTietPhieuTinhTien = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.MonAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,11 +51,13 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.lbNhanVien = new DevComponents.DotNetBar.LabelX();
             this.balloonTip1 = new DevComponents.DotNetBar.BalloonTip();
+            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuTinhTien)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvChiTietPhieuTinhTien
             // 
+            this.dgvChiTietPhieuTinhTien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dgvChiTietPhieuTinhTien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietPhieuTinhTien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MonAn,
@@ -65,14 +67,14 @@
             this.DonGia,
             this.Column3,
             this.Column2});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChiTietPhieuTinhTien.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChiTietPhieuTinhTien.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiTietPhieuTinhTien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgvChiTietPhieuTinhTien.Location = new System.Drawing.Point(4, 84);
             this.dgvChiTietPhieuTinhTien.Name = "dgvChiTietPhieuTinhTien";
@@ -128,6 +130,7 @@
             // 
             // 
             this.lb.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb.Location = new System.Drawing.Point(1, -4);
             this.lb.Name = "lb";
             this.lb.Size = new System.Drawing.Size(75, 27);
@@ -140,6 +143,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.Location = new System.Drawing.Point(371, -4);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(29, 27);
@@ -152,6 +156,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.Location = new System.Drawing.Point(6, 51);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(75, 27);
@@ -164,6 +169,7 @@
             // 
             // 
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.Location = new System.Drawing.Point(298, 343);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(75, 27);
@@ -176,6 +182,7 @@
             // 
             // 
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX11.Location = new System.Drawing.Point(464, 343);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(75, 27);
@@ -188,6 +195,7 @@
             // 
             // 
             this.lbTongTien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbTongTien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongTien.Location = new System.Drawing.Point(359, 343);
             this.lbTongTien.Name = "lbTongTien";
             this.lbTongTien.Size = new System.Drawing.Size(99, 27);
@@ -200,6 +208,7 @@
             // 
             // 
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX13.Location = new System.Drawing.Point(298, 374);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(114, 27);
@@ -212,6 +221,7 @@
             // 
             // 
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX14.Location = new System.Drawing.Point(464, 398);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(75, 27);
@@ -224,6 +234,7 @@
             // 
             // 
             this.lbTongTienThanhToan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbTongTienThanhToan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTongTienThanhToan.Location = new System.Drawing.Point(359, 398);
             this.lbTongTienThanhToan.Name = "lbTongTienThanhToan";
             this.lbTongTienThanhToan.Size = new System.Drawing.Size(99, 27);
@@ -236,6 +247,7 @@
             // 
             // 
             this.lbThoiGian.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbThoiGian.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbThoiGian.Location = new System.Drawing.Point(73, -4);
             this.lbThoiGian.Name = "lbThoiGian";
             this.lbThoiGian.Size = new System.Drawing.Size(190, 27);
@@ -248,6 +260,7 @@
             // 
             // 
             this.lbBan.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbBan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBan.Location = new System.Drawing.Point(406, -4);
             this.lbBan.Name = "lbBan";
             this.lbBan.Size = new System.Drawing.Size(133, 27);
@@ -260,9 +273,10 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(342, 29);
+            this.labelX1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(328, 29);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(53, 27);
+            this.labelX1.Size = new System.Drawing.Size(67, 27);
             this.labelX1.TabIndex = 1;
             this.labelX1.Text = "Nhân viên:";
             // 
@@ -272,17 +286,34 @@
             // 
             // 
             this.lbNhanVien.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNhanVien.Location = new System.Drawing.Point(406, 29);
             this.lbNhanVien.Name = "lbNhanVien";
             this.lbNhanVien.Size = new System.Drawing.Size(133, 27);
             this.lbNhanVien.TabIndex = 1;
             this.lbNhanVien.Text = "..........";
             // 
+            // btnXoa
+            // 
+            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnXoa.BackColor = System.Drawing.Color.Sienna;
+            this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(40, 362);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(114, 39);
+            this.btnXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnXoa.TabIndex = 10;
+            this.btnXoa.Text = "Xoá Hoá Đơn";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // frmChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 429);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.lbNhanVien);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.lbBan);
@@ -330,5 +361,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private DevComponents.DotNetBar.BalloonTip balloonTip1;
+        private DevComponents.DotNetBar.ButtonX btnXoa;
     }
 }

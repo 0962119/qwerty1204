@@ -47,28 +47,32 @@
             // 
             // btnHuyThemNV
             // 
+            this.btnHuyThemNV.BackColor = System.Drawing.Color.White;
+            this.btnHuyThemNV.ForeColor = System.Drawing.Color.Black;
             this.btnHuyThemNV.Image = global::Restaurant.Properties.Resources.X;
             this.btnHuyThemNV.Location = new System.Drawing.Point(281, 278);
             this.btnHuyThemNV.Name = "btnHuyThemNV";
             this.btnHuyThemNV.Size = new System.Drawing.Size(61, 45);
             this.btnHuyThemNV.TabIndex = 53;
-            this.btnHuyThemNV.Text = "Huỷ bỏ";
-            this.btnHuyThemNV.UseVisualStyleBackColor = true;
+            this.btnHuyThemNV.UseVisualStyleBackColor = false;
             this.btnHuyThemNV.Click += new System.EventHandler(this.btnHuyThemNV_Click);
             // 
             // btnDongYThemNV
             // 
+            this.btnDongYThemNV.BackColor = System.Drawing.Color.White;
+            this.btnDongYThemNV.ForeColor = System.Drawing.Color.Black;
             this.btnDongYThemNV.Image = global::Restaurant.Properties.Resources.check;
             this.btnDongYThemNV.Location = new System.Drawing.Point(160, 278);
             this.btnDongYThemNV.Name = "btnDongYThemNV";
             this.btnDongYThemNV.Size = new System.Drawing.Size(60, 45);
             this.btnDongYThemNV.TabIndex = 52;
-            this.btnDongYThemNV.Text = "Đồng ý";
-            this.btnDongYThemNV.UseVisualStyleBackColor = true;
+            this.btnDongYThemNV.UseVisualStyleBackColor = false;
             this.btnDongYThemNV.Click += new System.EventHandler(this.btnDongYThemNV_Click);
             // 
             // cmbChucVuThemNV
             // 
+            this.cmbChucVuThemNV.BackColor = System.Drawing.Color.White;
+            this.cmbChucVuThemNV.ForeColor = System.Drawing.Color.Black;
             this.cmbChucVuThemNV.FormattingEnabled = true;
             this.cmbChucVuThemNV.Location = new System.Drawing.Point(160, 223);
             this.cmbChucVuThemNV.Name = "cmbChucVuThemNV";
@@ -119,10 +123,12 @@
             // 
             // lbThongBao_ThemNV
             // 
+            this.lbThongBao_ThemNV.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.lbThongBao_ThemNV.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lbThongBao_ThemNV.ForeColor = System.Drawing.Color.Black;
             this.lbThongBao_ThemNV.Location = new System.Drawing.Point(138, 250);
             this.lbThongBao_ThemNV.Name = "lbThongBao_ThemNV";
             this.lbThongBao_ThemNV.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -134,10 +140,12 @@
             // 
             // labelX6
             // 
+            this.labelX6.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.ForeColor = System.Drawing.Color.Black;
             this.labelX6.Location = new System.Drawing.Point(43, 222);
             this.labelX6.Name = "labelX6";
             this.labelX6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -149,10 +157,12 @@
             // 
             // labelX5
             // 
+            this.labelX5.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.ForeColor = System.Drawing.Color.Black;
             this.labelX5.Location = new System.Drawing.Point(43, 184);
             this.labelX5.Name = "labelX5";
             this.labelX5.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -178,10 +188,12 @@
             // 
             // labelX4
             // 
+            this.labelX4.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
             this.labelX4.Location = new System.Drawing.Point(60, 145);
             this.labelX4.Name = "labelX4";
             this.labelX4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -207,10 +219,12 @@
             // 
             // labelX3
             // 
+            this.labelX3.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
             this.labelX3.Location = new System.Drawing.Point(60, 103);
             this.labelX3.Name = "labelX3";
             this.labelX3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -222,10 +236,12 @@
             // 
             // labelX2
             // 
+            this.labelX2.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
             this.labelX2.Location = new System.Drawing.Point(69, 62);
             this.labelX2.Name = "labelX2";
             this.labelX2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -237,10 +253,12 @@
             // 
             // labelX1
             // 
+            this.labelX1.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
             this.labelX1.Location = new System.Drawing.Point(69, 24);
             this.labelX1.Name = "labelX1";
             this.labelX1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -270,6 +288,7 @@
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
+            this.DoubleBuffered = true;
             this.Name = "frmThemNhanVien";
             this.Text = "Thêm nhân viên mới";
             this.Load += new System.EventHandler(this.frmThemNhanVien_Load);

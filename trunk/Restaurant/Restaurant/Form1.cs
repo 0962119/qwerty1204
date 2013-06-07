@@ -172,6 +172,7 @@ namespace Restaurant
             balloonTip1.SetBalloonCaption(lvShowBan, "Nhấp Đôi Vào Bàn Để Sử Dụng hoăc để hủy bàn");
             balloonTip3.SetBalloonCaption(pctLoGo, "Nhấp Đôi Để Thây Đôi LoGo Cho Nhà Hàng");
             ballon_hoadon.SetBalloonCaption(dgvHoaDonPhucVu, "Nhấp đôi để xem chi tiết");
+            ballon_NhanVien.SetBalloonCaption(dgvNhanVien, "Nhấp đôi để sửa thông tin nhân viên");
             //PhanQuyen(Quyen);
 
             LoadControlDOnGia();
@@ -2173,7 +2174,12 @@ namespace Restaurant
                     PhanQuyen(Quyen);
                     Form1_Load(sender, e);
                     string x = BoPhanBUS.FilterBoPhan_String(BoPhanDTO);
-                    //lbShow.Text = "Chào: " + TenNV +" | " + x;
+                    lbShow.Text = "Chào: " + TenNV +" | " + x;
+
+                    lbMetroTenNV.Text = TenNV.ToString();
+                    lbMetroChucVu.Text = x.ToString();
+
+                    pictureMetro.Image = new Bitmap(@"" + int.Parse(dt.Rows[0][2].ToString()) + ".jpg");
 
                     //gán giá trị cho nhanvienDangNhap
                     nhanVienDangNhap.BoPhan = int.Parse(dt.Rows[0][2].ToString());
@@ -2183,6 +2189,12 @@ namespace Restaurant
                     nhanVienDangNhap.TenNguoiDung = dt.Rows[0][3].ToString();
                     nhanVienDangNhap.TinhTrang = int.Parse(dt.Rows[0][5].ToString());
                    // test
+
+                    lbMetroTenNV.Text = TenNV.ToString();
+                    lbMetroChucVu.Text = x.ToString();
+
+                    
+
                    
                     //
                 }
@@ -2305,6 +2317,7 @@ namespace Restaurant
 
                 frmChiTietHoaDon frm = new frmChiTietHoaDon();
                 frm.ShowDialog();
+                LoadThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString());
 
         }
         private void btnThemLoaiTD_Click(object sender, EventArgs e)
@@ -2585,6 +2598,42 @@ namespace Restaurant
         {
             FormNhapTuExcel frm = new FormNhapTuExcel();
             frm.ShowDialog();
+        }
+
+        private void ribbonPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            expan_DangNhap.Visible = true;
+            txtMatKhau.Text = "";
+            expFrm1MenuMeTro.Expanded = true;
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            LoadThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString());
+
+            lbHoaDon_TongCOng.Text = (dgvHoaDonPhucVu.RowCount - 1).ToString();
+
+            lbHoaDong_TongTien.Text = phieuTT_Bus.TongTienThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString()) + " VNĐ";
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            //XuatFileExcel excel = new XuatFileExcel();
+            DataTable dt = (DataTable)dgvHoaDonPhucVu.DataSource;
+            string title = "THỐNG KÊ HOÁ ĐƠN";
+            //excel.Export(dt,"ABC", title);
+
+            xuatExcel.Export_HoaDon(dt, "ABC", title);
+        }
+
+        private void TabNhanVien_Click(object sender, EventArgs e)
+        {
+
         }
 
         

@@ -52,7 +52,6 @@
             this.btnHuySuaNV.Name = "btnHuySuaNV";
             this.btnHuySuaNV.Size = new System.Drawing.Size(75, 35);
             this.btnHuySuaNV.TabIndex = 8;
-            this.btnHuySuaNV.Text = "Huỷ bỏ";
             this.btnHuySuaNV.UseVisualStyleBackColor = true;
             this.btnHuySuaNV.Click += new System.EventHandler(this.btnHuySuaNV_Click);
             // 
@@ -63,7 +62,6 @@
             this.btnDongYSuaNV.Name = "btnDongYSuaNV";
             this.btnDongYSuaNV.Size = new System.Drawing.Size(70, 35);
             this.btnDongYSuaNV.TabIndex = 7;
-            this.btnDongYSuaNV.Text = "Đồng ý";
             this.btnDongYSuaNV.UseVisualStyleBackColor = true;
             this.btnDongYSuaNV.Click += new System.EventHandler(this.btnDongYSuaNV_Click);
             // 
@@ -271,6 +269,7 @@
             this.Controls.Add(this.txtTenNV_SuaNV);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
+            this.DoubleBuffered = true;
             this.Name = "frmSuaNhanVien";
             this.Text = "Thay đổi thông tin nhân viên";
             this.Load += new System.EventHandler(this.frmSuaNhanVien_Load);

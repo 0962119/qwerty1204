@@ -88,5 +88,10 @@ namespace BUS
         {
             return ctPhieuTT_DAO.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
         }
+
+        public void XoaChiTietPhieuTT_void(int maHoaDon)
+        {
+             ctPhieuTT_DAO.XoaChiTietPhieuTT_void(maHoaDon);
+        }
     }
 }
