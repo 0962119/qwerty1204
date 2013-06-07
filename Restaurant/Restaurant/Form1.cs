@@ -49,7 +49,7 @@ namespace Restaurant
         public int MaBanDangChon = -1;
         public int TrangThaiBanDangChon = -1;
         public NguoiDung nhanVienDangNhap = new NguoiDung();
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -105,10 +105,10 @@ namespace Restaurant
             txtFrmThoiGian.Text = String.Format("{0:d/M/yyyy - HH:mm:ss}", DateTime.Now);
             string dt = String.Format("{0:F}", DateTime.Now);
             string[] arrdt = dt.Split(new char[] { ',', ' ' });
-            metroTileItem14.Text = " <font size='+30'>"+ DateTime.Now.Hour.ToString() +"h</font>"+
-            "<font size='15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"+
-            ";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ DateTime.Now.Minute.ToString()+":"+DateTime.Now.Second.ToString()+"</font>";
-            metroTileItem13.Text = "<br/><font size='+15'>"+ arrdt[2].ToString() +"</font><font size='+30'>"+arrdt[3].ToString() +"</font>";
+            metroTileItem14.Text = " <font size='+30'>" + DateTime.Now.Hour.ToString() + "h</font>" +
+            "<font size='15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp" +
+            ";&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + "</font>";
+            metroTileItem13.Text = "<br/><font size='+15'>" + arrdt[2].ToString() + "</font><font size='+30'>" + arrdt[3].ToString() + "</font>";
         }
         public string valuerdFrm1XemBanIn;
         public void UpdateValueToConfigFile(string nameControl, string valueControl)
@@ -133,7 +133,7 @@ namespace Restaurant
             {
                 if (xElement.Attributes[0].Value == nameControl)
                 {
-                    kq= xElement.Attributes[1].Value;
+                    kq = xElement.Attributes[1].Value;
                 }
             }
             return kq;
@@ -156,7 +156,7 @@ namespace Restaurant
         {
             ShowTreeview_ThongKeMon();
             ShowTreeview_Thongke_Ban_KhuVuc();
-               
+
             //<br/><font size="+30">22h</font><font size="15">18</font>
             ShowTree_LoadTD();
             LoadConTrol();
@@ -207,14 +207,14 @@ namespace Restaurant
             {
                 TabPhucVu.Visible = true;
                 TabThucDon.Visible = true;
-                TabHoaDon.Visible = true;                
+                TabHoaDon.Visible = true;
             }
             if (quyen == 3)
             {
                 TabThucDon.Visible = true;
             }
 
-            
+
         }
 
         public void LoadNhanVien()
@@ -338,9 +338,10 @@ namespace Restaurant
 
         private void metroTabItem7_Click(object sender, EventArgs e)
         {
-
-            frmBaoCaoDoanhThu frmbaoCaoDT = new frmBaoCaoDoanhThu();
-            frmbaoCaoDT.Show();
+            trwThongKe_Ban.Nodes.Clear();
+            trwTk_MonAn.Nodes.Clear();
+            ShowTreeview_Thongke_Ban_KhuVuc();
+            ShowTreeview_ThongKeMon();
         }
         //image =0 dat truoc; image =1 trong ; image =2 co khách
         //tinhtrang= 3 dat truoc; tinhtrang= 2 da tinh; tinhtrang=1 chưa tinh
@@ -441,7 +442,7 @@ namespace Restaurant
                         row.Cells[1].Value = dtr[0];
                         row.Cells[2].Value = dtr[1];//sl
                         row.Cells[3].Value = dtr[2];
-                        row.Cells[4].Value = mn.FormatString( dtr[3].ToString());
+                        row.Cells[4].Value = mn.FormatString(dtr[3].ToString());
                         row.Cells[5].Value = dtr[4];
                         row.Cells[6].Value = mn.FormatString(dtr[5].ToString());
                         row.Cells[7].Value = dtr[6];
@@ -623,9 +624,9 @@ namespace Restaurant
                     row.Cells[1].Value = tenMonAn;
                     row.Cells[2].Value = 1;//sl
                     row.Cells[3].Value = dVT;
-                    row.Cells[4].Value = mn.FormatString( donGia.ToString());
+                    row.Cells[4].Value = mn.FormatString(donGia.ToString());
                     row.Cells[5].Value = giamGia;
-                    row.Cells[6].Value = mn.FormatString(( donGia - (donGia * giamGia) / 100).ToString());
+                    row.Cells[6].Value = mn.FormatString((donGia - (donGia * giamGia) / 100).ToString());
                     row.Cells[7].Value = index;
                     dtgvFrm1ThucDon.Rows.Add(row);
                     duyetdtgvThucDon();
@@ -1104,9 +1105,9 @@ namespace Restaurant
                                 row1.Cells[1].Value = tenMonAn1;
                                 row1.Cells[2].Value = 1;//sl
                                 row1.Cells[3].Value = dVT1;
-                                row1.Cells[4].Value =mn.FormatString( donGia1.ToString());
+                                row1.Cells[4].Value = mn.FormatString(donGia1.ToString());
                                 row1.Cells[5].Value = giamGia1;
-                                row1.Cells[6].Value =mn.FormatString(( donGia1 - (donGia1 * giamGia1) / 100).ToString());
+                                row1.Cells[6].Value = mn.FormatString((donGia1 - (donGia1 * giamGia1) / 100).ToString());
                                 row1.Cells[7].Value = index1;
                                 dtgvFrm1ThucDon.Rows.Add(row1);
                                 duyetdtgvThucDon();
@@ -1381,9 +1382,9 @@ namespace Restaurant
                     row.Cells[1].Value = tenMonAn;
                     row.Cells[2].Value = 1;//sl
                     row.Cells[3].Value = dVT;
-                    row.Cells[4].Value =mn.FormatString( donGia.ToString());
+                    row.Cells[4].Value = mn.FormatString(donGia.ToString());
                     row.Cells[5].Value = giamGia;
-                    row.Cells[6].Value =mn.FormatString(( donGia - (donGia * giamGia) / 100).ToString());
+                    row.Cells[6].Value = mn.FormatString((donGia - (donGia * giamGia) / 100).ToString());
                     row.Cells[7].Value = index;
                     dtgvFrm1ThucDon.Rows.Add(row);
                     duyetdtgvThucDon();
@@ -1584,10 +1585,10 @@ namespace Restaurant
 
         private void btnFrm1TinhTien_Click(object sender, EventArgs e)
         {
-            
-            if (TrangThaiBanDangChon >0)
+
+            if (TrangThaiBanDangChon > 0)
             {
-                
+
                 DataTable dthd = SetTableHoaDon();
                 ctPhieuTT_BUS.AttackDatainHoaDonRP(dthd);
                 ExeReport();
@@ -1633,11 +1634,11 @@ namespace Restaurant
                             }
                         }
                     }
-                    
+
                 }
                 ctPhieuTT_BUS.DeleteDatainHoaDonRP();
             }
-            
+
         }
         private DataTable SetTableHoaDon()
         {
@@ -1653,9 +1654,9 @@ namespace Restaurant
                 {
                     DataRow dr = conVertTB.NewRow();
                     dr["TenMonAn"] = dtr.Cells[1].Value.ToString();
-                    dr["SL"] =dtr.Cells[2].Value.ToString();
-                    dr["DonGia"] =mn.FormatString( dtr.Cells[4].Value.ToString()).Replace(",,",",");
-                    dr["GiamGia"] =dtr.Cells[5].Value.ToString();
+                    dr["SL"] = dtr.Cells[2].Value.ToString();
+                    dr["DonGia"] = mn.FormatString(dtr.Cells[4].Value.ToString()).Replace(",,", ",");
+                    dr["GiamGia"] = dtr.Cells[5].Value.ToString();
                     dr["TongCong"] = mn.FormatString(dtr.Cells[6].Value.ToString()).Replace(",,", ",");
                     conVertTB.Rows.Add(dr);
                 }
@@ -1669,11 +1670,11 @@ namespace Restaurant
         {
             List<ReportParameter> Parameters = new List<ReportParameter>();
             ReportParameter param;
-            param = new ReportParameter("TenNhanVien","NV: "+ nhanVienDangNhap.TenNguoiDung);
+            param = new ReportParameter("TenNhanVien", "NV: " + nhanVienDangNhap.TenNguoiDung);
             Parameters.Add(param);
-            param = new ReportParameter("SoHoaDon","Số HD: "+ phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon).ToString());
+            param = new ReportParameter("SoHoaDon", "Số HD: " + phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon).ToString());
             Parameters.Add(param);
-            param = new ReportParameter("TongTien", mn.FormatString( tongTien.ToString())+" VND");
+            param = new ReportParameter("TongTien", mn.FormatString(tongTien.ToString()) + " VND");
             Parameters.Add(param);
             param = new ReportParameter("GiamGia", mn.FormatString(giamGia.ToString()) + " VND");
             Parameters.Add(param);
@@ -1685,7 +1686,7 @@ namespace Restaurant
             Parameters.Add(param);
             param = new ReportParameter("ThoiLai", thoiLai.ToString() + " VND");
             Parameters.Add(param);
-            param = new ReportParameter("BanThanhToan", "Bill Thanh Toán Bàn "+ lbFrm1TenBanAn.Text);
+            param = new ReportParameter("BanThanhToan", "Bill Thanh Toán Bàn " + lbFrm1TenBanAn.Text);
             Parameters.Add(param);
             param = new ReportParameter("phattram", txtFrm1GiaGia.Text + "%");
             Parameters.Add(param);
@@ -1701,10 +1702,10 @@ namespace Restaurant
             this.reportViewer1.LocalReport.SetParameters(Parameters);
             this.reportViewer1.RefreshReport();
             this.reportViewer1.LocalReport.DisplayName = "HoaDon";
-        
+
         }
 
-        
+
         private void btnInTruoc_Click(object sender, EventArgs e)
         {
             grbFrm1Report.Visible = true;
@@ -1806,11 +1807,11 @@ namespace Restaurant
         /// <param name="e"></param>
         private void picFrm1MiniSize_MouseEnter(object sender, EventArgs e)
         {
-            string str="";
+            string str = "";
             if (flagMinMax == 2)
             {
                 str = path.Replace("\\bin\\Debug", "\\") + "Resources\\max3.png";
-                 
+
                 picFrm1MiniSize.ImageLocation = str;
             }
             else
@@ -1925,7 +1926,7 @@ namespace Restaurant
                 saveFileDialog1.RestoreDirectory = true;
                 saveFileDialog1.Title = "Bạn Muốn Lưu File Ở Đâu?";
                 saveFileDialog1.InitialDirectory = @"C:/";
-                if (saveFileDialog1.ShowDialog() ==  DialogResult.OK)
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     SaveFile(saveFileDialog1.FileName);
                     MessageBox.Show("Luu Thành Công Tại: " + @"C:\Users\QN\Desktop");
@@ -1990,7 +1991,7 @@ namespace Restaurant
         {
             if (TrangThaiBanDangChon > 0)
             {
-                if (lbFrm1ThoiLai.Text.IndexOf('-')>=0)
+                if (lbFrm1ThoiLai.Text.IndexOf('-') >= 0)
                 {
                     DataTable dthd = SetTableHoaDon();
                     ctPhieuTT_BUS.AttackDatainHoaDonRP(dthd);
@@ -2011,7 +2012,7 @@ namespace Restaurant
                             TrangThaiBanDangChon = -1;
                             MaBanDangChon = -1;
                             MessageBox.Show("Đã Tính Tiền Xong");
-                            
+
                         }
                     }
                     catch
@@ -2036,7 +2037,7 @@ namespace Restaurant
             if (rdFrm1XemBanIn.Checked == true)
                 UpdateValueToConfigFile("rdFrm1XemBanIn", "true");
             else
-                UpdateValueToConfigFile("rdFrm1XemBanIn", "false"); 
+                UpdateValueToConfigFile("rdFrm1XemBanIn", "false");
         }
         public static Image resizeImage(Image imgToResize, Size size)
         {
@@ -2053,8 +2054,8 @@ namespace Restaurant
             if (openFileDialog1.ShowDialog() != DialogResult.Cancel)
             {
                 Image img = Image.FromFile(openFileDialog1.FileName);
-                Size s =new Size(140, 96);
-                Image imgcv=resizeImage(img, s);
+                Size s = new Size(140, 96);
+                Image imgcv = resizeImage(img, s);
                 File.Delete(path + "\\imageThucDon\\Logo.png");
                 imgcv.Save(path + "\\imageThucDon\\Logo.png", System.Drawing.Imaging.ImageFormat.Png);
                 UpdateValueToConfigFile("pctLoGo", path + "\\imageThucDon\\Logo.png");
@@ -2157,51 +2158,51 @@ namespace Restaurant
             {
                 try
                 {
-                DataTable dt = new DataTable();
-                dt = bus.KiemTraDangNhap(dto);
+                    DataTable dt = new DataTable();
+                    dt = bus.KiemTraDangNhap(dto);
 
-                int temp = dt.Rows.Count;
-                if (temp > 0)
-                {
-                    expan_DangNhap.Hide();
-                    DataRow dr = dt.Rows[0];
-                    string TenNV = dr["TenNguoiDung"].ToString();
-                    string BoPhan = dr["BoPhan"].ToString();
-                    
-                    BoPhanDTO.MaBoPhan = int.Parse(dr["BoPhan"].ToString());
+                    int temp = dt.Rows.Count;
+                    if (temp > 0)
+                    {
+                        expan_DangNhap.Hide();
+                        DataRow dr = dt.Rows[0];
+                        string TenNV = dr["TenNguoiDung"].ToString();
+                        string BoPhan = dr["BoPhan"].ToString();
 
-                    Quyen = int.Parse(dr["BoPhan"].ToString());
-                    PhanQuyen(Quyen);
-                    Form1_Load(sender, e);
-                    string x = BoPhanBUS.FilterBoPhan_String(BoPhanDTO);
-                    lbShow.Text = "Chào: " + TenNV +" | " + x;
+                        BoPhanDTO.MaBoPhan = int.Parse(dr["BoPhan"].ToString());
 
-                    lbMetroTenNV.Text = TenNV.ToString();
-                    lbMetroChucVu.Text = x.ToString();
+                        Quyen = int.Parse(dr["BoPhan"].ToString());
+                        PhanQuyen(Quyen);
+                        Form1_Load(sender, e);
+                        string x = BoPhanBUS.FilterBoPhan_String(BoPhanDTO);
+                        lbShow.Text = "Chào: " + TenNV + " | " + x;
 
-                    pictureMetro.Image = new Bitmap(@"" + int.Parse(dt.Rows[0][2].ToString()) + ".jpg");
+                        lbMetroTenNV.Text = TenNV.ToString();
+                        lbMetroChucVu.Text = x.ToString();
 
-                    //gán giá trị cho nhanvienDangNhap
-                    nhanVienDangNhap.BoPhan = int.Parse(dt.Rows[0][2].ToString());
-                    nhanVienDangNhap.MatKhau = dt.Rows[0][1].ToString();
-                    nhanVienDangNhap.SDT = dt.Rows[0][4].ToString();
-                    nhanVienDangNhap.TaiKhoan = dt.Rows[0][0].ToString();
-                    nhanVienDangNhap.TenNguoiDung = dt.Rows[0][3].ToString();
-                    nhanVienDangNhap.TinhTrang = int.Parse(dt.Rows[0][5].ToString());
-                   // test
+                        pictureMetro.Image = new Bitmap(@"" + int.Parse(dt.Rows[0][2].ToString()) + ".jpg");
 
-                    lbMetroTenNV.Text = TenNV.ToString();
-                    lbMetroChucVu.Text = x.ToString();
+                        //gán giá trị cho nhanvienDangNhap
+                        nhanVienDangNhap.BoPhan = int.Parse(dt.Rows[0][2].ToString());
+                        nhanVienDangNhap.MatKhau = dt.Rows[0][1].ToString();
+                        nhanVienDangNhap.SDT = dt.Rows[0][4].ToString();
+                        nhanVienDangNhap.TaiKhoan = dt.Rows[0][0].ToString();
+                        nhanVienDangNhap.TenNguoiDung = dt.Rows[0][3].ToString();
+                        nhanVienDangNhap.TinhTrang = int.Parse(dt.Rows[0][5].ToString());
+                        // test
 
-                    
+                        lbMetroTenNV.Text = TenNV.ToString();
+                        lbMetroChucVu.Text = x.ToString();
 
-                   
-                    //
-                }
-                else
-                {
-                    lbThongBaoDangNhap.Text = "sai Tài khoản hoặc Mật khẩu. vui lòng kiểm tra!!!";
-                }
+
+
+
+                        //
+                    }
+                    else
+                    {
+                        lbThongBaoDangNhap.Text = "sai Tài khoản hoặc Mật khẩu. vui lòng kiểm tra!!!";
+                    }
                 }
                 catch
                 {
@@ -2216,7 +2217,7 @@ namespace Restaurant
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
-        {          
+        {
             frmThemNhanVien frm = new frmThemNhanVien();
             frm.ShowDialog();
             LoadNhanVien();
@@ -2231,7 +2232,7 @@ namespace Restaurant
             {
                 try
                 {
-                    
+
                     NguoiDungBUS.XoaNguoiDung_void(NguoiDungDTO);
                     Form1_Load(sender, e);
                 }
@@ -2255,7 +2256,7 @@ namespace Restaurant
             TaiKhoanS = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString();
             MatKhauS = dgvNhanVien.SelectedRows[0].Cells[1].Value.ToString();
             ChucVuS = dgvNhanVien.SelectedRows[0].Cells[7].Value.ToString();
-            SDTS = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();        
+            SDTS = dgvNhanVien.SelectedRows[0].Cells[4].Value.ToString();
             frmSuaNhanVien frm = new frmSuaNhanVien();
             frm.ShowDialog();
             LoadNhanVien();
@@ -2282,9 +2283,9 @@ namespace Restaurant
         {
             LoadThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString());
 
-            lbHoaDon_TongCOng.Text = (dgvHoaDonPhucVu.RowCount-1).ToString();
+            lbHoaDon_TongCOng.Text = (dgvHoaDonPhucVu.RowCount - 1).ToString();
 
-            lbHoaDong_TongTien.Text = phieuTT_Bus.TongTienThongKeHoaDon(dateTBatDau.Value.ToShortDateString(),dateTKetThuc.Value.ToShortDateString())+" VNĐ";
+            lbHoaDong_TongTien.Text = phieuTT_Bus.TongTienThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString()) + " VNĐ";
         }
         public void LoadThongKeHoaDon(string NgayBatDau, string NgayKetThuc)
         {
@@ -2300,7 +2301,7 @@ namespace Restaurant
 
             xuatExcel.Export_HoaDon(dt, "ABC", title);
 
-            
+
 
 
 
@@ -2309,15 +2310,15 @@ namespace Restaurant
 
         private void dgvHoaDonPhucVu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-              //MessageBox.Show(i + ": " + dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[i].Value.ToString());
-                MaPhieuTT_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[0].Value.ToString();
-                Ban_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[1].Value.ToString();
-                NhanVien_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[2].Value.ToString();
-                ThoiGian_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[4].Value.ToString();
+            //MessageBox.Show(i + ": " + dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[i].Value.ToString());
+            MaPhieuTT_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[0].Value.ToString();
+            Ban_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[1].Value.ToString();
+            NhanVien_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[2].Value.ToString();
+            ThoiGian_DG = dgvHoaDonPhucVu.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-                frmChiTietHoaDon frm = new frmChiTietHoaDon();
-                frm.ShowDialog();
-                LoadThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString());
+            frmChiTietHoaDon frm = new frmChiTietHoaDon();
+            frm.ShowDialog();
+            LoadThongKeHoaDon(dateTBatDau.Value.ToShortDateString(), dateTKetThuc.Value.ToShortDateString());
 
         }
         private void btnThemLoaiTD_Click(object sender, EventArgs e)
@@ -2325,7 +2326,7 @@ namespace Restaurant
             FormThemLoaiThucDon frmTLTD = new FormThemLoaiThucDon();
             frmTLTD.ShowDialog();
             ShowTree_LoadTD();
-        } 
+        }
         private void txtTimKiemTD_Click(object sender, EventArgs e)
         {
             if (txtTimKiemTD.Text == "Tìm Kiếm Thực Đơn...")
@@ -2344,7 +2345,7 @@ namespace Restaurant
             FormSuaLoaiMonAn frm = new FormSuaLoaiMonAn();
             frm.ShowDialog();
             ShowTree_LoadTD();
-            
+
         }
         private void btnXoaLoaiTD_Click(object sender, EventArgs e)
         {
@@ -2360,7 +2361,7 @@ namespace Restaurant
             dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
             dtgirdViewTD.DataSource = dtb;
             int stt = 0;
-            for(int i = 0; i < dtb.Rows.Count; ++i)
+            for (int i = 0; i < dtb.Rows.Count; ++i)
             {
                 stt = stt + 1;
                 dtgirdViewTD.Rows[i].Cells[0].Value = stt;
@@ -2371,7 +2372,7 @@ namespace Restaurant
         {
             advTreeLTD.Nodes.Clear();
             DataTable TreeNode = dsLoaiMAbus.LayDSLoaiMonAn();
-            foreach(DataRow dtr in TreeNode.Rows)
+            foreach (DataRow dtr in TreeNode.Rows)
             {
                 DevComponents.AdvTree.Node node1 = new DevComponents.AdvTree.Node(dtr[1].ToString());
                 node1.TagString = dtr[0].ToString();
@@ -2400,7 +2401,7 @@ namespace Restaurant
                 dtgirdViewTD.Rows[i].Cells[0].Value = stt;
             }
         }
-       
+
         /// <summary>
         /// PHẦN KHUYÊN LÀM
         /// </summary>
@@ -2456,13 +2457,22 @@ namespace Restaurant
         {
             DateTime tuNgay = dtpTuNgay_TKMon.Value;
             DateTime denNgay = dtpDenNgay_TKMon.Value;
+            DataTable dt = (DataTable)dgvThongKeMonAn.DataSource;
             if (tenLoaiMon == "")
             {
                 dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
+                for (int i = 0; i < dgvThongKeMonAn.Rows.Count - 1; i++)
+                {
+                    dgvThongKeMonAn.Rows[i].Cells["_STT"].Value = i + 1;
+                }
             }
             else
             {
                 dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
+                for (int i = 0; i < dgvThongKeMonAn.Rows.Count - 1; i++)
+                {
+                    dgvThongKeMonAn.Rows[i].Cells["_STT"].Value = i + 1;
+                }
 
             }
             tenMon = tenLoaiMon = "";
@@ -2509,10 +2519,19 @@ namespace Restaurant
             if (tenKhuVuc == "")
             {
                 dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
+                for (int i = 0; i < dgvThongKe_Ban.Rows.Count - 1; i++)
+                {
+                    dgvThongKe_Ban.Rows[i].Cells["STT"].Value = i + 1;
+                }
+
             }
             else
             {
                 dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
+                for (int i = 0; i < dgvThongKe_Ban.Rows.Count - 1; i++)
+                {
+                    dgvThongKe_Ban.Rows[i].Cells["STT"].Value = i + 1;
+                }
             }
             tenBan = tenKhuVuc = "";
         }
@@ -2636,7 +2655,7 @@ namespace Restaurant
 
         }
 
-        
+
     }
 }
 
