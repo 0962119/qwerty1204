@@ -338,8 +338,8 @@ namespace Restaurant
 
         private void metroTabItem7_Click(object sender, EventArgs e)
         {
-            trwThongKe_Ban.Nodes.Clear();
-            trwTk_MonAn.Nodes.Clear();
+            dgvThongKe_Ban.Rows.Clear();
+            dgvThongKeMonAn.Rows.Clear();
             ShowTreeview_Thongke_Ban_KhuVuc();
             ShowTreeview_ThongKeMon();
         }
@@ -539,29 +539,7 @@ namespace Restaurant
         /// <summary>
         /// những món đã được gọi của bàn đang chón sẽ chuyển màu đỏ
         /// </summary>
-        //private void CapNhapMonDuocGoi()
-        //{
-        //    foreach (ListViewItem lvi in lvShowMonAn.Items)
-        //    {
-        //        lvi.ForeColor = Color.Black;
-        //    }
-        //    foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
-        //    {
-        //        foreach (ListViewItem lvi in lvShowMonAn.Items)
-        //        {
-        //            try
-        //            {
-        //                if (lvi.Tag.ToString() == dtr.Cells[7].Value.ToString())
-        //                {
-        //                    lvi.ForeColor = Color.Green;
-        //                }
-        //            }
-        //            catch
-        //            {
-        //            }
-        //        }
-        //    }
-        //}
+
 
         /// <summary>
         /// duyet tung dong datagridview lvshowthucdon de tinh lại cái thong số tiền giam gia vat và cap nhat các label hien thị
@@ -965,10 +943,7 @@ namespace Restaurant
             rowaddedTre = true;
         }
 
-        //private void dtgvFrm1ThucDon_CellValidated(object sender, DataGridViewCellEventArgs e)
-        //{
 
-        //}
         /// <summary>
         /// cho biet so row dc tao ra khi nhap vao ban
         /// </summary>
@@ -1002,18 +977,8 @@ namespace Restaurant
         /// <param name="e"></param>
         private void dtgvFrm1ThucDon_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
-            {
-                DataGridView.HitTestInfo info = dtgvFrm1ThucDon.HitTest(e.X, e.Y);
-                if (info.RowIndex >= 0)
-                {
-                    if (dtgvFrm1ThucDon.Rows[info.RowIndex] != null)
-                        dtgvFrm1ThucDon.DoDragDrop(dtgvFrm1ThucDon.Rows[info.RowIndex], DragDropEffects.Move);
-                }
-            }
-        }
-        ///////////
 
+        }
 
         private void lvShowBan_DragEnter(object sender, DragEventArgs e)
         {
@@ -2457,26 +2422,29 @@ namespace Restaurant
         {
             DateTime tuNgay = dtpTuNgay_TKMon.Value;
             DateTime denNgay = dtpDenNgay_TKMon.Value;
-            DataTable dt = (DataTable)dgvThongKeMonAn.DataSource;
-            if (tenLoaiMon == "")
+            try
             {
-                dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
-                for (int i = 0; i < dgvThongKeMonAn.Rows.Count - 1; i++)
+                if (dtpTuNgay_TKMon.Value <=dtpTuNgay_TKMon.Value)
                 {
-                    dgvThongKeMonAn.Rows[i].Cells["_STT"].Value = i + 1;
-                }
-            }
-            else
-            {
-                dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
-                for (int i = 0; i < dgvThongKeMonAn.Rows.Count - 1; i++)
+                     if (tenLoaiMon == "")
                 {
-                    dgvThongKeMonAn.Rows[i].Cells["_STT"].Value = i + 1;
+                    dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
                 }
+                else
+                {
+                    dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
 
+                }
+                tenMon = tenLoaiMon = "";
+                // dgvThongKeMonAn.Rows.Clear();
+                }
+               
             }
-            tenMon = tenLoaiMon = "";
-            // dgvThongKeMonAn.Rows.Clear();
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Vui long kiem tra lai thong tin den ngay!");
+            }
+           
 
         }
         // Hiển thị và xử lý danh sách món ăn  treeb AdvTree
@@ -2519,19 +2487,10 @@ namespace Restaurant
             if (tenKhuVuc == "")
             {
                 dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
-                for (int i = 0; i < dgvThongKe_Ban.Rows.Count - 1; i++)
-                {
-                    dgvThongKe_Ban.Rows[i].Cells["STT"].Value = i + 1;
-                }
-
             }
             else
             {
                 dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
-                for (int i = 0; i < dgvThongKe_Ban.Rows.Count - 1; i++)
-                {
-                    dgvThongKe_Ban.Rows[i].Cells["STT"].Value = i + 1;
-                }
             }
             tenBan = tenKhuVuc = "";
         }
@@ -2604,6 +2563,30 @@ namespace Restaurant
             tenBan = tenKhuVuc = "";
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void btnThemTD_Click(object sender, EventArgs e)
         {
