@@ -30,11 +30,14 @@ namespace BUS
         {
             return dsMonAnDAO.LayDSMonAnTheoLoai(maLoai);
         }
-        public bool ThemThucDon(string TenThucDon, int DonGia, int GiamGia)
+        public bool ThemThucDon(DSMONAN_DTO DSMA_DTO)
         {
-            return dsMonAnDAO.ThemThucDon(TenThucDon, DonGia, GiamGia);
+            return dsMonAnDAO.ThemThucDon(DSMA_DTO);
         }
-
+        public DataTable TimKiemTD(DSMONAN_DTO dsmadto)
+        {
+            return dsMonAnDAO.TimKiemTD(dsmadto);
+        }
         public bool ThemThucDon(string p, string p_2, string p_3)
         {
             throw new NotImplementedException();

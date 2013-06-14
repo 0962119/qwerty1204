@@ -1,6 +1,6 @@
 ﻿namespace Restaurant
 {
-    partial class FormWarningDelete
+    partial class FormWarningDeleteTD
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWarningDelete));
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.btnYesDelete = new DevComponents.DotNetBar.ButtonX();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWarningDeleteTD));
             this.btnNoDelete = new DevComponents.DotNetBar.ButtonX();
+            this.btnYesDelete = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.SuspendLayout();
+            // 
+            // btnNoDelete
+            // 
+            this.btnNoDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnNoDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnNoDelete.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnNoDelete.Location = new System.Drawing.Point(146, 74);
+            this.btnNoDelete.Name = "btnNoDelete";
+            this.btnNoDelete.Size = new System.Drawing.Size(71, 23);
+            this.btnNoDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.btnNoDelete.TabIndex = 3;
+            this.btnNoDelete.Text = "No";
+            // 
+            // btnYesDelete
+            // 
+            this.btnYesDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnYesDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnYesDelete.Location = new System.Drawing.Point(65, 74);
+            this.btnYesDelete.Name = "btnYesDelete";
+            this.btnYesDelete.Size = new System.Drawing.Size(71, 23);
+            this.btnYesDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.btnYesDelete.TabIndex = 4;
+            this.btnYesDelete.Text = "Yes";
             // 
             // labelX1
             // 
@@ -41,42 +64,16 @@
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(12, 12);
+            this.labelX1.Location = new System.Drawing.Point(-1, 27);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(284, 23);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Bạn có chắc chắn muốn xóa danh mục này không?";
+            this.labelX1.Size = new System.Drawing.Size(307, 23);
+            this.labelX1.TabIndex = 2;
+            this.labelX1.Text = "Bạn có chắc chắn muốn xóa thực đơn đang chọn không?";
             // 
-            // btnYesDelete
+            // FormWarningDeleteTD
             // 
-            this.btnYesDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnYesDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnYesDelete.Location = new System.Drawing.Point(68, 70);
-            this.btnYesDelete.Name = "btnYesDelete";
-            this.btnYesDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnYesDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
-            this.btnYesDelete.TabIndex = 1;
-            this.btnYesDelete.Text = "Yes";
-            this.btnYesDelete.Click += new System.EventHandler(this.btnYesDelete_Click);
-            // 
-            // btnNoDelete
-            // 
-            this.btnNoDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnNoDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnNoDelete.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnNoDelete.Location = new System.Drawing.Point(149, 70);
-            this.btnNoDelete.Name = "btnNoDelete";
-            this.btnNoDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnNoDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
-            this.btnNoDelete.TabIndex = 1;
-            this.btnNoDelete.Text = "No";
-            // 
-            // FormWarningDelete
-            // 
-            this.AcceptButton = this.btnYesDelete;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnNoDelete;
             this.ClientSize = new System.Drawing.Size(310, 99);
             this.Controls.Add(this.btnNoDelete);
             this.Controls.Add(this.btnYesDelete);
@@ -86,7 +83,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormWarningDelete";
+            this.Name = "FormWarningDeleteTD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần Mềm Quản Lý Nhà Hàng QQDKT";
             this.ResumeLayout(false);
@@ -95,10 +92,8 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.ButtonX btnYesDelete;
         private DevComponents.DotNetBar.ButtonX btnNoDelete;
-
-
+        private DevComponents.DotNetBar.ButtonX btnYesDelete;
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }

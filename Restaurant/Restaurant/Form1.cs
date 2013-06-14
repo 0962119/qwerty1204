@@ -69,6 +69,7 @@ namespace Restaurant
             Form1.dtgirdViewTD.AllowUserToAddRows = false;
             Form1.dtgirdViewTD.AllowUserToDeleteRows = false;
             Form1.dtgirdViewTD.AllowUserToResizeColumns = false;
+            Form1.dtgirdViewTD.AllowUserToResizeRows = false;
             Form1.dtgirdViewTD.BackgroundColor = System.Drawing.Color.White;
             Form1.dtgirdViewTD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -94,7 +95,7 @@ namespace Restaurant
             Form1.dtgirdViewTD.ReadOnly = true;
             Form1.dtgirdViewTD.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             Form1.dtgirdViewTD.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             Form1.dtgirdViewTD.RowsDefaultCellStyle = dataGridViewCellStyle8;
             Form1.dtgirdViewTD.Size = new System.Drawing.Size(876, 608);
             Form1.dtgirdViewTD.TabIndex = 1;
@@ -279,32 +280,40 @@ namespace Restaurant
             int n = dtbBan.Rows.Count;
             List<int> rexIndex = new List<int>();
             int nIndex = 0;
+            
             foreach (DataRow dtr in dtbBan.Rows)
             {
-                int ma = int.Parse(dtr[0].ToString());
-                ListViewItem lvi = new ListViewItem();
-                //string pathImage = path + "\\imageThucDon\\" + dtr[5].ToString();
-                //imgFrm1Ban.Images.Add(ma.ToString(), Image.FromFile(pathImage));
+                try
+                {
+                    int ma = int.Parse(dtr[0].ToString());
+                    ListViewItem lvi = new ListViewItem();
+                    //string pathImage = path + "\\imageThucDon\\" + dtr[5].ToString();
+                    //imgFrm1Ban.Images.Add(ma.ToString(), Image.FromFile(pathImage));
 
-                //rexIndex[ma-1] = nIndex;
-                lvi.Tag = ma;
-                lvi.Text = dtr[1].ToString();
+                    //rexIndex[ma-1] = nIndex;
+                    lvi.Tag = ma;
+                    lvi.Text = dtr[1].ToString();
 
-                lvi.ForeColor = Color.Green;
-                FontFamily f = new FontFamily("Forte");
-                lvi.Font = new Font(f, lvi.Font.Size + 3);
+                    lvi.ForeColor = Color.Green;
+                    FontFamily f = new FontFamily("Forte");
+                    lvi.Font = new Font(f, lvi.Font.Size + 3);
 
-                lvi.ImageKey = ma.ToString();
-                int group = int.Parse(dtr[2].ToString()) - 1;
-                lvi.Group = lvShowMonAn.Groups[group];
-                //lvi.UseItemStyleForSubItems = true;
-                //ListViewItem_SetSpacing(lvShowMonAn, 10, 10);
-                lvi.SubItems.Add(dtr[6].ToString());
-                lvi.SubItems.Add(dtr[4].ToString());
-                string tien = mn.FormatString(dtr[3].ToString());
-                lvi.SubItems.Add(tien);
-                lvShowMonAn.Items.Add(lvi);
-                nIndex++;
+                    lvi.ImageKey = ma.ToString();
+                    int group = int.Parse(dtr[2].ToString()) - 1;
+                    lvi.Group = lvShowMonAn.Groups[group];
+                    //lvi.UseItemStyleForSubItems = true;
+                    //ListViewItem_SetSpacing(lvShowMonAn, 10, 10);
+                    lvi.SubItems.Add(dtr[6].ToString());
+                    lvi.SubItems.Add(dtr[4].ToString());
+                    string tien = mn.FormatString(dtr[3].ToString());
+                    lvi.SubItems.Add(tien);
+                    lvShowMonAn.Items.Add(lvi);
+                    nIndex++;
+                }
+                catch
+                {
+
+                }
             }
         }
 
@@ -1431,7 +1440,7 @@ namespace Restaurant
         /// <summary>
         /// 
         /// </summary>
-        public string path = Application.StartupPath;
+        public static string path = Application.StartupPath;
         private void dtgvFrm1ThucDon_GiveFeedback(object sender, GiveFeedbackEventArgs e)
         {
             string pathFeedBack = path + "\\imageThucDon\\" + "dragdrop.png";
@@ -2028,12 +2037,6 @@ namespace Restaurant
             }
             //textBox1.Text = openFileDialog1.FileName;
         }
-
-        private void groupPanel3_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
-
         private void labelX8_Click(object sender, EventArgs e)
         {
             exPanFrm1DoiThongTin.Expanded = true;
@@ -2267,9 +2270,6 @@ namespace Restaurant
             xuatExcel.Export_HoaDon(dt, "ABC", title);
 
 
-
-
-
         }
         public static string MaPhieuTT_DG, NhanVien_DG, ThoiGian_DG, Ban_DG;
 
@@ -2321,9 +2321,11 @@ namespace Restaurant
         public static int idNode;
         private void advTreeLTD_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
         {
+
             idNode = int.Parse(e.Node.TagString.ToString());
             DataTable dtb = new DataTable();
             dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
+
             dtgirdViewTD.DataSource = dtb;
             int stt = 0;
             for (int i = 0; i < dtb.Rows.Count; ++i)
@@ -2354,10 +2356,10 @@ namespace Restaurant
                 //}
             }
         }
-        public void LoadDatagirdViewTD()
+        public void LoadDatagirdViewTD(int inode1)
         {
             DataTable dtb = new DataTable();
-            dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
+            dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(inode1);
             dtgirdViewTD.DataSource = dtb;
             int stt = 0;
             for (int i = 0; i < dtb.Rows.Count; ++i)
@@ -2592,8 +2594,6 @@ namespace Restaurant
         {
             FormThemThucDon frm = new FormThemThucDon();
             frm.ShowDialog();
-            LoadDatagirdViewTD();
-
         }
 
         private void btnImportExcelTD_Click(object sender, EventArgs e)
@@ -2601,12 +2601,6 @@ namespace Restaurant
             FormNhapTuExcel frm = new FormNhapTuExcel();
             frm.ShowDialog();
         }
-
-        private void ribbonPanel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             expan_DangNhap.Visible = true;
@@ -2632,13 +2626,30 @@ namespace Restaurant
 
             xuatExcel.Export_HoaDon(dt, "ABC", title);
         }
-
-        private void TabNhanVien_Click(object sender, EventArgs e)
+        public void TimKiemTD(string st)
         {
-
+            DSMONAN_DTO dsmadto = new DSMONAN_DTO();
+            dsmadto.TenMonAn = st;
+            dtgirdViewTD.DataSource = dsMonAnBus.TimKiemTD(dsmadto);
         }
 
+        private void btnTimKiemTD_Click(object sender, EventArgs e)
+        {
+            TimKiemTD(txtTimKiemTD.Text);
+        }
 
+        private void btnSuaTD_Click(object sender, EventArgs e)
+        {
+            FormSuaThucDon frm = new FormSuaThucDon();
+            frm.ShowDialog();
+        }
+
+        private void btnXoaTD_Click(object sender, EventArgs e)
+        {
+            FormWarningDeleteTD frm = new FormWarningDeleteTD();
+            frm.ShowDialog();
+        }
+        
     }
 }
 

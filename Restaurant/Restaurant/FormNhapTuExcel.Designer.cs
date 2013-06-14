@@ -34,6 +34,8 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.btnOKNhapExcel = new DevComponents.DotNetBar.ButtonX();
             this.btnCancelExcel = new DevComponents.DotNetBar.ButtonX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.txtSheetName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.SuspendLayout();
             // 
             // txtLinkExcel
@@ -44,8 +46,9 @@
             // 
             this.txtLinkExcel.Border.Class = "TextBoxBorder";
             this.txtLinkExcel.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtLinkExcel.FocusHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtLinkExcel.ForeColor = System.Drawing.Color.Black;
-            this.txtLinkExcel.Location = new System.Drawing.Point(89, 127);
+            this.txtLinkExcel.Location = new System.Drawing.Point(42, 127);
             this.txtLinkExcel.Name = "txtLinkExcel";
             this.txtLinkExcel.Size = new System.Drawing.Size(357, 22);
             this.txtLinkExcel.TabIndex = 0;
@@ -54,9 +57,8 @@
             // 
             this.btnBrowser.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnBrowser.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnBrowser.ColorTable = DevComponents.DotNetBar.eButtonColor.Office2007WithBackground;
             this.btnBrowser.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowser.Location = new System.Drawing.Point(453, 126);
+            this.btnBrowser.Location = new System.Drawing.Point(406, 126);
             this.btnBrowser.Name = "btnBrowser";
             this.btnBrowser.Size = new System.Drawing.Size(75, 23);
             this.btnBrowser.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
@@ -74,7 +76,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(89, 97);
+            this.labelX1.Location = new System.Drawing.Point(42, 97);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(75, 23);
             this.labelX1.TabIndex = 2;
@@ -88,7 +90,7 @@
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(89, 168);
+            this.labelX2.Location = new System.Drawing.Point(42, 227);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(469, 36);
             this.labelX2.TabIndex = 3;
@@ -99,30 +101,72 @@
             // btnOKNhapExcel
             // 
             this.btnOKNhapExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnOKNhapExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnOKNhapExcel.Location = new System.Drawing.Point(211, 279);
+            this.btnOKNhapExcel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnOKNhapExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.Blue;
+            this.btnOKNhapExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOKNhapExcel.Location = new System.Drawing.Point(163, 279);
             this.btnOKNhapExcel.Name = "btnOKNhapExcel";
             this.btnOKNhapExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnOKNhapExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnOKNhapExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
             this.btnOKNhapExcel.TabIndex = 4;
             this.btnOKNhapExcel.Text = "OK";
+            this.btnOKNhapExcel.TextColor = System.Drawing.Color.White;
+            this.btnOKNhapExcel.Click += new System.EventHandler(this.btnOKNhapExcel_Click);
             // 
             // btnCancelExcel
             // 
             this.btnCancelExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCancelExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancelExcel.Location = new System.Drawing.Point(318, 279);
+            this.btnCancelExcel.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.Orange;
+            this.btnCancelExcel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelExcel.Location = new System.Drawing.Point(270, 279);
             this.btnCancelExcel.Name = "btnCancelExcel";
             this.btnCancelExcel.Size = new System.Drawing.Size(75, 23);
             this.btnCancelExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCancelExcel.TabIndex = 4;
             this.btnCancelExcel.Text = "Cancel";
+            this.btnCancelExcel.TextColor = System.Drawing.Color.White;
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
+            this.labelX3.Location = new System.Drawing.Point(42, 165);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(75, 23);
+            this.labelX3.TabIndex = 5;
+            this.labelX3.Text = "SheetName:";
+            // 
+            // txtSheetName
+            // 
+            this.txtSheetName.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtSheetName.Border.Class = "TextBoxBorder";
+            this.txtSheetName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSheetName.ForeColor = System.Drawing.Color.Black;
+            this.txtSheetName.Location = new System.Drawing.Point(42, 189);
+            this.txtSheetName.Name = "txtSheetName";
+            this.txtSheetName.Size = new System.Drawing.Size(357, 22);
+            this.txtSheetName.TabIndex = 6;
             // 
             // FormNhapTuExcel
             // 
+            this.AcceptButton = this.btnOKNhapExcel;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 396);
+            this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancelExcel;
+            this.ClientSize = new System.Drawing.Size(509, 320);
+            this.Controls.Add(this.txtSheetName);
+            this.Controls.Add(this.labelX3);
             this.Controls.Add(this.btnCancelExcel);
             this.Controls.Add(this.btnOKNhapExcel);
             this.Controls.Add(this.labelX2);
@@ -149,5 +193,7 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.ButtonX btnOKNhapExcel;
         private DevComponents.DotNetBar.ButtonX btnCancelExcel;
+        private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSheetName;
     }
 }
