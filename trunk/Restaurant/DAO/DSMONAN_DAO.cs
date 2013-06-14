@@ -67,29 +67,50 @@ namespace DAO
             ListParam.Add(para);
             NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
             return dt.ExecuteQuery(sql, ListParam);
-
         }
-        public bool ThemThucDon(string TenThucDon, int DonGia, int GiamGia)
+        public DataTable TimKiemTD(DSMONAN_DTO dsmadto)
         {
-            string sql = "INSERT INTO DANHSACHMONAN (TenMonAn,DonGia,GiamGia) VALUES(@ten,@dg,@giamgia)";
-            List<OleDbParameter> listma = new List<OleDbParameter>();
-            OleDbParameter para = new OleDbParameter("@ten", OleDbType.VarChar);
-            OleDbParameter para1 = new OleDbParameter("@dg", OleDbType.Integer);
-            OleDbParameter para2 = new OleDbParameter("@giamgia", OleDbType.Integer);
-            para.Value = TenThucDon;
-            para1.Value = DonGia;
-            para2.Value = GiamGia;
-            listma.Add(para);
-            listma.Add(para1);
-            listma.Add(para2);
-            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            OleDbConnection conn = DataProvider.ConnectDB();
+            string sql = "SELECT TenMonAn,dvt.TenDonViTinh,DonGia,GiamGia,HinhAnh FROM DANHSACHMONAN ds, DONVITINH dvt, LOAIMONAN lma WHERE ds.LoaiMonAn = lma.MaLoaiMonAn and ds.DonViTinh = dvt.ID and TenMonAn like '%" + dsmadto.TenMonAn + "%'";
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(dt);
+            //conn.Close();
+            return dt;
+        }
+        public bool ThemThucDon(DSMONAN_DTO DSMA_DTO)
+        {
+            string sql = "INSERT INTO DANHSACHMONAN (TenMonAn,LoaiMonAn,DonViTinh,DonGia,GiamGia,HinhAnh)" +
+           "VALUES (@tentd,@lma,@dvt,@dg,@giamgia,@anh) ";
+            List<OleDbParameter> Listma = new List<OleDbParameter>();
+            OleDbParameter tentd = new OleDbParameter("@tentd", OleDbType.VarChar);
+            OleDbParameter lma = new OleDbParameter("@lma", OleDbType.Integer);
+            OleDbParameter dvt = new OleDbParameter("@dvt", OleDbType.Integer);
+            OleDbParameter dg = new OleDbParameter("@dg", OleDbType.Double);
+            OleDbParameter giamgia = new OleDbParameter("@giamgia", OleDbType.Double);
+            OleDbParameter anh = new OleDbParameter("@anh", OleDbType.VarChar);
 
-            int kq = dt.ExecuteNoneQuery(sql, listma);
+            tentd.Value = DSMA_DTO.TenMonAn;
+            lma.Value = DSMA_DTO.LoaiMonAn;
+            dvt.Value = DSMA_DTO.DVT;
+            dg.Value = DSMA_DTO.DonGia;
+            giamgia.Value = DSMA_DTO.GiamGia;
+            anh.Value = DSMA_DTO.HinhAnh;
+
+            Listma.Add(tentd);
+            Listma.Add(lma);
+            Listma.Add(dvt);
+            Listma.Add(dg);
+            Listma.Add(giamgia);
+            Listma.Add(anh);
+
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            int kq = dt.ExecuteNoneQuery(sql, Listma);
             if (kq < 1)
                 return false;
             else
                 return true;
         }
-
     }
 }
