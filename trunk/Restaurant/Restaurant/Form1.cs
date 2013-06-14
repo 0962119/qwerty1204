@@ -280,7 +280,7 @@ namespace Restaurant
             int n = dtbBan.Rows.Count;
             List<int> rexIndex = new List<int>();
             int nIndex = 0;
-            
+
             foreach (DataRow dtr in dtbBan.Rows)
             {
                 try
@@ -2369,6 +2369,13 @@ namespace Restaurant
             }
         }
 
+
+
+
+
+
+
+
         /// <summary>
         /// PHẦN KHUYÊN LÀM
         /// </summary>
@@ -2399,13 +2406,11 @@ namespace Restaurant
                 }
             }
         }
-
         private void tabthongKeMonAn_Click(object sender, EventArgs e)
         {
             trwTk_MonAn.Nodes.Clear();
             ShowTreeview_ThongKeMon();
         }
-
         private void trwTk_MonAn_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
         {
             if (e.Node.TagString == "nodeCha")
@@ -2417,36 +2422,46 @@ namespace Restaurant
                 tenMon = e.Node.Text;
                 tenLoaiMon = e.Node.Parent.Text;
             }
-
+            tenMon = tenLoaiMon = "";
         }
-
         private void btnBaoCao_TKMon_Click(object sender, EventArgs e)
         {
             DateTime tuNgay = dtpTuNgay_TKMon.Value;
             DateTime denNgay = dtpDenNgay_TKMon.Value;
-            try
+            int kq = DateTime.Compare(tuNgay, denNgay);
+            if (kq ==0 ||kq==-1)
             {
-                if (dtpTuNgay_TKMon.Value <=dtpTuNgay_TKMon.Value)
-                {
-                     if (tenLoaiMon == "")
+                if (tenLoaiMon == "")
                 {
                     dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
+                    for (int i = 0; i < dgvThongKeMonAn.Rows.Count - 1; i++)
+                    {
+                        dgvThongKeMonAn.Rows[i].Cells["_STT"].Value = i + 1;
+                    }
+                    if (dgvThongKeMonAn.Rows.Count - 1 == 0)
+                    {
+                        MessageBox.Show("Không có hóa đơn nào của " + trwTk_MonAn.SelectedNode.Text);
+                    }
                 }
                 else
                 {
                     dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
+                    for (int i = 0; i < dgvThongKeMonAn.Rows.Count - 1; i++)
+                    {
+                        dgvThongKeMonAn.Rows[i].Cells["_STT"].Value = i + 1;
+                    }
+                    if (dgvThongKeMonAn.Rows.Count - 1 == 0)
+                    {
+                        MessageBox.Show("Không có hóa đơn nào của " + trwTk_MonAn.SelectedNode.Text);
+                    }
 
                 }
                 tenMon = tenLoaiMon = "";
-                // dgvThongKeMonAn.Rows.Clear();
-                }
-               
             }
-            catch (System.Exception ex)
+            if(kq==1)
             {
-                MessageBox.Show("Vui long kiem tra lai thong tin den ngay!");
+                MessageBox.Show("Vui lòng kiểm tra lại đến ngày", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-           
 
         }
         // Hiển thị và xử lý danh sách món ăn  treeb AdvTree
@@ -2473,7 +2488,6 @@ namespace Restaurant
             }
 
         }
-
         private void tabItem1_Click(object sender, EventArgs e)
         {
             trwThongKe_Ban.Nodes.Clear();
@@ -2482,21 +2496,36 @@ namespace Restaurant
         private void btnBaoCao_Ban_Click(object sender, EventArgs e)
         {
 
-            //dgvThongKe_Ban.Rows.Clear();
             DateTime tuNgay = dtpTuNgay_TKBan.Value;
             DateTime denNgay = dtpDenNgay_TKBan.Value;
-
-            if (tenKhuVuc == "")
+            int kq = DateTime.Compare(tuNgay, denNgay);
+            if (kq == 0 || kq == -1)
             {
-                dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
+                if (tenKhuVuc == "")
+                {
+                    dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
+                    for (int i = 0; i < dgvThongKe_Ban.Rows.Count - 1; i++)
+                    {
+                        dgvThongKe_Ban.Rows[i].Cells["STT"].Value = i + 1;
+                    }
+                }
+                else
+                {
+                    dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
+                    for (int i = 0; i < dgvThongKe_Ban.Rows.Count - 1; i++)
+                    {
+                        dgvThongKe_Ban.Rows[i].Cells["STT"].Value = i + 1;
+                    }
+                }
+                tenBan = tenKhuVuc = "";
             }
+
             else
             {
-                dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
+                MessageBox.Show("Vui lòng kiểm tra lại đến ngày", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-            tenBan = tenKhuVuc = "";
-        }
 
+        }
         private void trwThongKe_Ban_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
         {
             if (e.Node.TagString == "nodeCha")
@@ -2515,56 +2544,56 @@ namespace Restaurant
             trwTk_MonAn.Nodes.Clear();
             ShowTreeview_ThongKeMon();
         }
-
         private void tabThongKe_Ban_Click(object sender, EventArgs e)
         {
             trwThongKe_Ban.Nodes.Clear();
             ShowTreeview_Thongke_Ban_KhuVuc();
         }
-
-
         ThongKe_XuatExcel xuatExcel = new ThongKe_XuatExcel();
         private void btnXuatEx_TKMon_Click(object sender, EventArgs e)
         {
-            DateTime tuNgay = dtpTuNgay_TKMon.Value;
-            DateTime denNgay = dtpDenNgay_TKMon.Value;
             DataTable dt = (DataTable)dgvThongKeMonAn.DataSource;
             string title = tabthongKeMonAn.Text;
             string sheetName = "Thống kê món";
             if (tenLoaiMon == "")
             {
-                dt = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
                 xuatExcel.Export_MonAn(dt, sheetName, title);
             }
             else
             {
-                dt = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
                 xuatExcel.Export_MonAn(dt, sheetName, title);
-
             }
             tenMon = tenLoaiMon = "";
         }
-
         private void btnXuatEx_Bn_Click(object sender, EventArgs e)
         {
-            DateTime tuNgay = dtpTuNgay_TKBan.Value;
-            DateTime denNgay = dtpDenNgay_TKBan.Value;
             DataTable dt = (DataTable)dgvThongKe_Ban.DataSource;
             string title = tabThongKe_Ban.Text;
             string sheetName = "Thống kê bàn";
             if (tenKhuVuc == "")
             {
-                dt = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
                 xuatExcel.Export_Ban(dt, sheetName, title);
             }
             else
             {
-                dt = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
                 xuatExcel.Export_Ban(dt, sheetName, title);
             }
             tenBan = tenKhuVuc = "";
 
         }
+        // Click các tab liên quan.
+        //Click frm MenuMetri chức năng Thống kê
+        private void metroTileItem18_Click(object sender, EventArgs e)
+        {
+            expFrm1MenuMeTro.Expanded = false;
+            expan_DangNhap.Expanded = false;
+            expFrm1MenuMeTro.TitleHeight = 1;
+            TabThongKe.Select();
+        }
+
+
+
+
 
 
 
@@ -2649,7 +2678,7 @@ namespace Restaurant
             FormWarningDeleteTD frm = new FormWarningDeleteTD();
             frm.ShowDialog();
         }
-        
+
     }
 }
 

@@ -51,19 +51,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="crystaldecisions.crystalreports.engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\Video\crystaldecisions.crystalreports.engine.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\managed\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\managed\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.VSDesigner">
       <HintPath>H:\managed\CrystalDecisions.VSDesigner.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\managed\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\managed\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="DataGridViewNumericUpDownElements">
       <HintPath>..\..\..\DataGridViewNumericUpDown\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.dll</HintPath>
     </Reference>
@@ -116,24 +131,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoDoanhThu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCaoDoanhThu.Designer.cs">
-      <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCaoThongke_Ban.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCaoThongke_Ban.Designer.cs">
-      <DependentUpon>BaoCaoThongke_Ban.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCaoThongKe_MonAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCaoThongKe_MonAn.Designer.cs">
-      <DependentUpon>BaoCaoThongKe_MonAn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,18 +228,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QUANLYNHAHANGDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Report\CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Report\Test_report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report\Test_report.Designer.cs">
-      <DependentUpon>Test_report.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThongKe_XuatExcel.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -251,15 +236,6 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="XuatFileExcel.cs" />
-    <EmbeddedResource Include="BaoCaoDoanhThu.resx">
-      <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCaoThongke_Ban.resx">
-      <DependentUpon>BaoCaoThongke_Ban.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCaoThongKe_MonAn.resx">
-      <DependentUpon>BaoCaoThongKe_MonAn.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -318,13 +294,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report\CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Test_report.resx">
-      <DependentUpon>Test_report.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,7 +320,6 @@
     <None Include="QUANLYNHAHANGDataSet.xss">
       <DependentUpon>QUANLYNHAHANGDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Report\ReportThongKeDoanhThu.mht" />
     <None Include="Resources\Do uong %281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
