@@ -101,7 +101,7 @@ namespace BUS
 
         public DataTable ThongKeDoanhThu_TheoThang(DateTime tungay, DateTime denngay)
         {
-            return phieuTinhTienDAO.ThongKeDoanhThu_TheoNgay(tungay, denngay);
+            return phieuTinhTienDAO.ThongKeDoanhThu_TheoThang(tungay, denngay);
         }
         
     }
