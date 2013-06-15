@@ -28,6 +28,17 @@ namespace DAO
             NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
             return dt.ExecuteQuery(sql, ListParam);
         }
+        public DataTable LayDSBanTheoTrangThai(int maTrangThai)
+        {
+
+            string sql = "select * from BAN where TrangThai=@maKhuVuc";
+            List<OleDbParameter> ListParam = new List<OleDbParameter>();
+            OleDbParameter para = new OleDbParameter("@maKhuVuc", OleDbType.VarChar);
+            para.Value = maTrangThai;
+            ListParam.Add(para);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, ListParam);
+        }
         public DataTable LayDSBan(string tenBan)
         {
             //SELECT MaBan, TenBan, TrangThai, MaKhuVuc, SoKhach FROM BAN WHERE (TenBan like '%2%' or TenBan like '%%')

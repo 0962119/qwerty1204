@@ -136,6 +136,23 @@ namespace DAO
             else
                 return true;
         }
+        public void updateMaPTTOfCTPTT(int oldmaPhieuTT, int maMonAn, int newmaPhieuTT)
+        {
+            string sql = "update CHITIETPHIEUTT set MaPhieuTT=@newmaPhieuTT where (MaPhieuTT = @oldmaPhieuTT) " +
+                " and (MonAn=@maMonAn)";
+            List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter newMaPTT = new OleDbParameter("@newmaPhieuTT", OleDbType.Integer);
+            OleDbParameter oldMaPTT = new OleDbParameter("@oldmaPhieuTT", OleDbType.Integer);
+            OleDbParameter mama = new OleDbParameter("@maMonAn", OleDbType.Integer);
+            newMaPTT.Value = newmaPhieuTT;
+            oldMaPTT.Value = oldmaPhieuTT;
+            mama.Value = maMonAn;
+            listParam.Add(newMaPTT);
+            listParam.Add(oldMaPTT);
+            listParam.Add(mama);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            int kq = dt.ExecuteNoneQuery(sql, listParam);//ham sai roi nhin jup tao koy cho nao sai 2 thang nhin cho nhanh
+        }
         public bool CapNhatCTPhieuTT(int maPhieuTT, int maMonAn, int soLuong, int giamGia, double thanhTien)
         {
             string sql = "UPDATE       CHITIETPHIEUTT "+
@@ -400,6 +417,40 @@ namespace DAO
             //OleDbParameter para = cmd.Parameters.AddWithValue("@TaiKhoan", dto.TaiKhoan);
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+        public int KiemTraMonTonTai(int maPhieu, int maMA)
+        {
+            string sql = "select SoLuong From CHITIETPHIEUTT where (MonAn = @maMA) and (MaPhieuTT=@maPhieu)";
+            List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter monAn = new OleDbParameter("@maMA", OleDbType.Integer);
+            OleDbParameter phieu = new OleDbParameter("@maPhieu", OleDbType.Integer);
+            monAn.Value = maMA;
+            phieu.Value = maPhieu;
+            listParam.Add(monAn);
+            listParam.Add(phieu);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            object result  = dt.ExecuteScalar(sql, listParam);
+            return int.Parse(result.ToString());
+        }
+        public int CapNhatSoLuongCT(int maPhieu, int maMA, int soLuong)
+        {//
+            string sql = "update CHITIETPHIEUTT set SoLuong = SoLuong + @soLuong  where MaPhieuTT=@maPhieu and MonAn =@maMA";
+            List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter monAn = new OleDbParameter("@maMA", OleDbType.Integer);
+            OleDbParameter phieu = new OleDbParameter("@maPhieu", OleDbType.Integer);
+            OleDbParameter sl = new OleDbParameter("@soLuong", OleDbType.Integer);
+
+            monAn.Value = maMA;
+            phieu.Value = maPhieu;
+            sl.Value = soLuong;
+
+            listParam.Add(sl);
+            listParam.Add(phieu);
+            listParam.Add(monAn);
+
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            int result = dt.ExecuteNoneQuery(sql, listParam);
+            return result;
         }
 
     }

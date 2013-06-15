@@ -48,6 +48,7 @@ namespace Restaurant
 
         public int MaBanDangChon = -1;
         public int TrangThaiBanDangChon = -1;
+        private int ImgBanDangChon = -1;
         public NguoiDung nhanVienDangNhap = new NguoiDung();
 
         public Form1()
@@ -100,6 +101,10 @@ namespace Restaurant
             Form1.dtgirdViewTD.Size = new System.Drawing.Size(876, 608);
             Form1.dtgirdViewTD.TabIndex = 1;
             ((System.ComponentModel.ISupportInitialize)(Form1.dtgirdViewTD)).EndInit();
+        }
+        private void AutoSizeRowsMode(Object sender, EventArgs es)
+        {
+            dtgirdViewTD.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -161,13 +166,13 @@ namespace Restaurant
             //<br/><font size="+30">22h</font><font size="15">18</font>
             ShowTree_LoadTD();
             LoadConTrol();
-            this.HOADONRPTableAdapter.Fill(this.QUANLYNHAHANGDataSet.HOADONRP);
+            this.HOADONRPTableAdapter.Fill(this.QUANLYNHAHANGDataSet.HOADONRP);// ben may tao bi err dong nay nen khong load dc form1 mah ben may may khong bi
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
             LoadKhuVuc(dsKhuVuc);
             LoadNhanVien();
             lvShowBan.Clear();
-            LoadBan(dsKhuVuc, banBUS.LayDSBan());
+            LoadBan(lvShowBan, dsKhuVuc, banBUS.LayDSBan());
             LoadThucDon(dsMonAnBus.LayDSMonAn());
             balloonTip2.SetBalloonCaption(dtgvFrm1ThucDon, "Kéo Món Ăn Vào Danh Sách Thực Đơn Để Hủy Món\n Kéo Vào Bàn Để Chuyển Món Ăn Qua Bàn Đó");
             balloonTip1.SetBalloonCaption(lvShowBan, "Nhấp Đôi Vào Bàn Để Sử Dụng hoăc để hủy bàn");
@@ -228,14 +233,14 @@ namespace Restaurant
         {
             cbxFrm1KhuVuc.DataSource = dsKhuVuc;
         }
-        public void LoadBan(DataTable dsKhuVuc, DataTable dsBan)
+        public void LoadBan( ListView objlv,  DataTable dsKhuVuc, DataTable dsBan)
         {
-
+            ListViewItem_SetSpacing(objlv, 75, 95);
             foreach (DataRow dtr in dsKhuVuc.Rows)
             {
                 ListViewGroup lvg = new ListViewGroup();
                 lvg.Header = dtr[1].ToString();
-                lvShowBan.Groups.Add(lvg);
+                objlv.Groups.Add(lvg);
             }
             foreach (DataRow dtr in dsBan.Rows)
             {
@@ -253,10 +258,10 @@ namespace Restaurant
                 else
                     lvi.ImageIndex = 0;
                 int group = int.Parse(dtr[3].ToString()) - 1;
-                lvi.Group = lvShowBan.Groups[group];
+                lvi.Group = objlv.Groups[group];
                 //lvi.UseItemStyleForSubItems = true;
                 //ListViewItem_SetSpacing(lvShowBan, 46 + 32, 75 + 16);
-                lvShowBan.Items.Add(lvi);
+                objlv.Items.Add(lvi);
             }
         }
 
@@ -280,7 +285,7 @@ namespace Restaurant
             int n = dtbBan.Rows.Count;
             List<int> rexIndex = new List<int>();
             int nIndex = 0;
-
+            
             foreach (DataRow dtr in dtbBan.Rows)
             {
                 try
@@ -359,6 +364,7 @@ namespace Restaurant
             indexItemliv = lvShowBan.SelectedItems[0].Index;
             int index = int.Parse(lvShowBan.SelectedItems[0].Tag.ToString());
             MaBanDangChon = index;
+            ImgBanDangChon = lvShowBan.SelectedItems[0].ImageIndex;
             //MessageBox.Show(index.ToString());
             if (lvShowBan.SelectedItems[0].ImageIndex == 2)//ban da co khách
             {
@@ -411,7 +417,7 @@ namespace Restaurant
                 phieuTT_Bus.CapNhatTrangThaiPhieuTT(MaBanDangChon, 1);
             }
             lvShowBan.Clear();
-            LoadBan(khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+            LoadBan(lvShowBan, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
         }
         /// <summary>
         /// Cho Biet Đã Click vào Item nào
@@ -419,71 +425,194 @@ namespace Restaurant
         public int indexItemliv;
         private void lvShowBan_Click(object sender, EventArgs e)
         {
-            indexItemliv = lvShowBan.SelectedItems[0].Index;
-            try
+            if (flagTachBan == -1)
             {
-                int index = int.Parse(lvShowBan.SelectedItems[0].Tag.ToString());
-                RefreshDataGridview(dtgvFrm1ThucDon);
-                if (lvShowBan.SelectedItems[0].ImageIndex != 1)
+                indexItemliv = lvShowBan.SelectedItems[0].Index;
+                try
                 {
-                    btnFrm1TinhTien.Enabled = true;
-                    MaBanDangChon = index;
-                    if (lvShowBan.SelectedItems[0].ImageIndex == 2)
+                    int index = int.Parse(lvShowBan.SelectedItems[0].Tag.ToString());
+                    RefreshDataGridview(dtgvFrm1ThucDon);
+                    if (lvShowBan.SelectedItems[0].ImageIndex != 1)
                     {
-                        TrangThaiBanDangChon = 1;
+                        btnTachMon.Enabled = true;
+                        buttonX6.Enabled = true;
+                        buttonX7.Enabled = true;
+                        btnInTruoc.Enabled = true;
+                        btnFrm1TinhTien.Enabled = true;
+
+                        MaBanDangChon = index;
+                        ImgBanDangChon = lvShowBan.SelectedItems[0].ImageIndex;
+                        if (lvShowBan.SelectedItems[0].ImageIndex == 2)
+                        {
+                            TrangThaiBanDangChon = 1;
+                        }
+                        else
+                            TrangThaiBanDangChon = 3;
+                        DataTable dsMonAn = ctPhieuTT_BUS.LayDSCTPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), MaBanDangChon);
+                        //DataGridViewRow row = (DataGridViewRow)dtgvFrm1ThucDon.Rows[0].Clone();
+
+                        foreach (DataRow dtr in dsMonAn.Rows)
+                        {
+                            DataGridViewRow row = (DataGridViewRow)dtgvFrm1ThucDon.Rows[0].Clone();
+                            try
+                            {
+                                row.Cells[0].Value = int.Parse(dtgvFrm1ThucDon.Rows[dtgvFrm1ThucDon.Rows.Count - 2].Cells[0].Value.ToString()) + 1;
+                            }
+                            catch
+                            {
+                                row.Cells[0].Value = 1;
+                            }
+                            row.Cells[1].Value = dtr[0];
+                            row.Cells[2].Value = dtr[1];//sl
+                            row.Cells[3].Value = dtr[2];
+                            row.Cells[4].Value = mn.FormatString(dtr[3].ToString());
+                            row.Cells[5].Value = dtr[4];
+                            row.Cells[6].Value = mn.FormatString(dtr[5].ToString());
+                            row.Cells[7].Value = dtr[6];
+
+                            dtgvFrm1ThucDon.Rows.Add(row);
+                        }
+                        duyetdtgvThucDon();
+                        DataTable maPhieuTT = new DataTable();
+                        maPhieuTT = phieuTT_Bus.LayPhieuTinhTien(MaBanDangChon);
+                        DataRow dataRow;
+                        dataRow = maPhieuTT.NewRow();
+                        dataRow = maPhieuTT.Rows[0];
+                        txtFrm1GiaGia.Text = dataRow["GiamGia"].ToString();
+                        txtFrm1VAT.Text = dataRow["VAT"].ToString();
+                        txtFrm1NhapGhiChu.Text = dataRow[6].ToString();
                     }
                     else
-                        TrangThaiBanDangChon = 3;
-                    DataTable dsMonAn = ctPhieuTT_BUS.LayDSCTPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), MaBanDangChon);
-                    //DataGridViewRow row = (DataGridViewRow)dtgvFrm1ThucDon.Rows[0].Clone();
-
-                    foreach (DataRow dtr in dsMonAn.Rows)
                     {
-                        DataGridViewRow row = (DataGridViewRow)dtgvFrm1ThucDon.Rows[0].Clone();
-                        try
-                        {
-                            row.Cells[0].Value = int.Parse(dtgvFrm1ThucDon.Rows[dtgvFrm1ThucDon.Rows.Count - 2].Cells[0].Value.ToString()) + 1;
-                        }
-                        catch
-                        {
-                            row.Cells[0].Value = 1;
-                        }
-                        row.Cells[1].Value = dtr[0];
-                        row.Cells[2].Value = dtr[1];//sl
-                        row.Cells[3].Value = dtr[2];
-                        row.Cells[4].Value = mn.FormatString(dtr[3].ToString());
-                        row.Cells[5].Value = dtr[4];
-                        row.Cells[6].Value = mn.FormatString(dtr[5].ToString());
-                        row.Cells[7].Value = dtr[6];
-
-                        dtgvFrm1ThucDon.Rows.Add(row);
+                        btnTachMon.Enabled = false;
+                        buttonX6.Enabled = false;
+                        buttonX7.Enabled = false;
+                        btnInTruoc.Enabled = false;
+                        btnFrm1TinhTien.Enabled = false;
+                        MaBanDangChon = -1;
+                        TrangThaiBanDangChon = -1;
+                        reFrestBaoGia();/////////
                     }
-                    duyetdtgvThucDon();
-                    DataTable maPhieuTT = new DataTable();
-                    maPhieuTT = phieuTT_Bus.LayPhieuTinhTien(MaBanDangChon);
-                    DataRow dataRow;
-                    dataRow = maPhieuTT.NewRow();
-                    dataRow = maPhieuTT.Rows[0];
-                    txtFrm1GiaGia.Text = dataRow["GiamGia"].ToString();
-                    txtFrm1VAT.Text = dataRow["VAT"].ToString();
-                    txtFrm1NhapGhiChu.Text = dataRow[6].ToString();
-                }
-                else
-                {
-                    btnFrm1TinhTien.Enabled = false;
-                    MaBanDangChon = -1;
-                    TrangThaiBanDangChon = -1;
-                    reFrestBaoGia();
-                }
 
-                string tenBan = lvShowBan.SelectedItems[0].Text.ToString();
-                lbFrm1TenBanAn.Text = tenBan;
-                //BaoGia(1, 1);
-                soRowCoSan = dtgvFrm1ThucDon.RowCount;
-                //CapNhapMonDuocGoi();
+                    string tenBan = lvShowBan.SelectedItems[0].Text.ToString();
+                    lbFrm1TenBanAn.Text = tenBan;
+                    //BaoGia(1, 1);
+                    soRowCoSan = dtgvFrm1ThucDon.RowCount;
+                    //CapNhapMonDuocGoi();
+                }
+                catch
+                {
+                }
             }
-            catch
+            else
             {
+                DialogResult dal = MessageBox.Show("Các Món Bạn Vừa Chọn Sẽ Được chuyển Qua Bàn: " + lvShowBan.SelectedItems[0].Text, "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dal == DialogResult.OK)
+                {
+                    try
+                    {
+                        //image =0 dat truoc; image =1 trong ; image =2 co khách
+                        //tinhtrang= 3 dat truoc; tinhtrang= 2 da tinh; tinhtrang=1 chưa tinh
+                        int ind = lvShowBan.SelectedItems[0].ImageIndex;
+
+                        if (ind == 1)
+                        {
+                            banBUS.UpdateTrangThaiBan(2, int.Parse(lvShowBan.SelectedItems[0].Tag.ToString()));
+                            lvShowBan.SelectedItems[0].ImageIndex = 2;
+                            PhieuTinhTien ptt = new PhieuTinhTien();
+                            ptt.Ban = int.Parse(lvShowBan.SelectedItems[0].Tag.ToString());
+
+                            ptt.TongTien = 0;
+                            ptt.GhiChu = " được chuyển qua từ bàn: " + tenBan;
+                            ptt.TinhTrang = 1;
+                            phieuTT_Bus.ThemPhieuTinhTien(ptt);
+
+                            //TrangThaiBanDangChon = 2;
+                            lvShowBan.Clear();
+                            LoadBan(lvShowBan, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+                            //MaBanDangChon = ptt.Ban;
+                            double tongMn = 0;
+                            double tongt = phieuTT_Bus.LayTongTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon));
+                            int old = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon);
+                            int new1 = phieuTT_Bus.LayMaPhieuTinhTien(ptt.Ban);
+                            foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
+                            {
+                                if (dtr.Cells[dtgvFrm1ThucDon.Columns.Count - 1].Value != null)
+                                {
+                                    tongMn += double.Parse(dtr.Cells[6].Value.ToString());
+                                    int mama = int.Parse(dtr.Cells[7].Value.ToString());
+                                    double tt = double.Parse(dtr.Cells[6].Value.ToString());
+                                    ctPhieuTT_BUS.updateMaPTTOfCTPTT(old, mama, new1);
+                                }
+                            }
+                            for (int i = dtgvFrm1ThucDon.Rows.Count - 1; i >= 0; i--)
+                            {
+                                if (dtgvFrm1ThucDon.Rows[i].Cells[8].Value != null)
+                                {
+                                    dtgvFrm1ThucDon.Rows.RemoveAt(i);
+                                }
+                            }
+
+                            phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(ptt.Ban), tongMn);
+
+                            phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
+                            ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
+                        }
+                        else// nhap vao ban co khách
+                        {
+                            double tongMn = 0;
+                            double tongt = phieuTT_Bus.LayTongTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon));
+                            int mabanchon = int.Parse(lvShowBan.SelectedItems[0].Tag.ToString());
+
+                            int old = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon);
+                            int new1 = phieuTT_Bus.LayMaPhieuTinhTien(mabanchon);
+                            double tongt1 = phieuTT_Bus.LayTongTienPhieuTT(new1);
+                            foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
+                            {
+                                if (dtr.Cells[dtgvFrm1ThucDon.Columns.Count - 1].Value != null)
+                                {
+                                    tongMn += double.Parse(dtr.Cells[6].Value.ToString());
+                                    int mama = int.Parse(dtr.Cells[7].Value.ToString());
+                                    try
+                                    {
+                                        int ktsl = ctPhieuTT_BUS.KiemTraMonTonTai(new1, mama);
+                                    
+                                        if (ktsl > 0)
+                                        {
+                                            ctPhieuTT_BUS.CapNhatSoLuongCT(new1, mama, ktsl);
+                                            ctPhieuTT_BUS.XoaCTPhieuTinhTien(old, mama);
+                                        }
+                                    }
+                                    catch
+                                    {
+                                        ctPhieuTT_BUS.updateMaPTTOfCTPTT(old, mama, new1);
+                                    }
+                                }
+                            }// doi bung qua may oi!
+                            for (int i = dtgvFrm1ThucDon.Rows.Count - 1; i >= 0; i--)
+                            {
+                                if (dtgvFrm1ThucDon.Rows[i].Cells[8].Value != null)
+                                {
+                                    dtgvFrm1ThucDon.Rows.RemoveAt(i);
+                                }
+                            }
+
+                            phieuTT_Bus.CapNhapTienPhieuTT(new1, tongt1 + tongMn);
+
+                            phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
+                            ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
+                        }
+                        dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
+                        flagTachBan = -1;
+                        btnTachMon.Text = "Tách Món";
+                        expandablePanel1.Visible = false;
+                        dtgvFrm1ThucDon.Columns.RemoveAt(8);
+                    }
+                    catch
+                    {
+                    }
+                }
+                /// 
             }
         }
         /// <summary>
@@ -594,8 +723,13 @@ namespace Restaurant
                 string tenMonAn = lvShowMonAn.SelectedItems[0].Text;//sl dongia giam gia
                 //int sL=int.Parse(lvShowMonAn.SelectedItems[0].SubItems[1].Text.ToString());
                 double donGia = double.Parse(lvShowMonAn.SelectedItems[0].SubItems[3].Text.ToString());
-                int giamGia = int.Parse(lvShowMonAn.SelectedItems[0].SubItems[2].Text.ToString());
-                string dVT = lvShowMonAn.SelectedItems[0].SubItems[1].Text.ToString();
+                int giamGia ;
+                try
+                {
+                    giamGia = int.Parse(lvShowMonAn.SelectedItems[0].SubItems[2].Text.ToString());
+                }
+                catch { giamGia = 0; }
+                    string dVT = lvShowMonAn.SelectedItems[0].SubItems[1].Text.ToString();
                 DataGridViewRow row = (DataGridViewRow)dtgvFrm1ThucDon.Rows[0].Clone();
                 try
                 {
@@ -648,6 +782,17 @@ namespace Restaurant
                         }
                     }
                 }
+                double tongmn = 0.0;
+                foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
+                {
+                    try
+                    {
+                        tongmn += double.Parse(dtr.Cells[6].Value.ToString());
+                    }
+                    catch { }
+                }
+                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn);
+                ClicklvShowBan(MaBanDangChon, ImgBanDangChon, lbFrm1TenBanAn.Text);
             }
             else
             {
@@ -873,20 +1018,20 @@ namespace Restaurant
             int maKhuVuc = cbxFrm1KhuVuc.SelectedIndex;
             //banBUS.LayDSBan(maKhuVuc);
             lvShowBan.Clear();
-            LoadBan(khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan(maKhuVuc + 1));
+            LoadBan(lvShowBan, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan(maKhuVuc + 1));
         }
 
         private void btnFrm1LoadBanAll_Click(object sender, EventArgs e)
         {
             lvShowBan.Clear();
-            LoadBan(khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+            LoadBan(lvShowBan, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
         }
 
         private void txtFrm1TimBan_TextChanged(object sender, EventArgs e)
         {
             lvShowBan.Clear();
             DataTable dtBan = banBUS.LayDSBan(txtFrm1TimBan.Text);
-            LoadBan(khuVucBus.LayDSKHUVUC(), dtBan);
+            LoadBan(lvShowBan ,khuVucBus.LayDSKHUVUC(), dtBan);
         }
 
         private void txtFrm1NhapGhiChu_Click(object sender, EventArgs e)
@@ -909,7 +1054,7 @@ namespace Restaurant
 
                 int column = e.ColumnIndex;
                 int rao = e.RowIndex;
-                if ((rao < soRowCoSan - 1) && (column != 2 && column != 5))
+                if ((rao < soRowCoSan - 1) && (column != 2 && column != 5 && column !=8))
                 {
                     //MessageBox.Show("Bạn Không Được Sữa Giá Trị Này Của Món Ăn");
                     dtgvFrm1ThucDon.Rows[rao].Cells[column].ReadOnly = true;
@@ -1024,8 +1169,9 @@ namespace Restaurant
 
                         TrangThaiBanDangChon = 2;
                         lvShowBan.Clear();
-                        LoadBan(khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+                        LoadBan(lvShowBan,khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
                         MaBanDangChon = ptt.Ban;
+                        ImgBanDangChon = 2;
                     }
                     ctPhieuTT_BUS.XoaCTPhieuTinhTien(maphieu, ma, phieuTT_Bus.LayMaPhieuTinhTien(int.Parse(lvi.Tag.ToString())));
                     lvi.ImageIndex = ind;
@@ -1130,7 +1276,7 @@ namespace Restaurant
                             PhieuTinhTien phieuTinhTien_DTO = new PhieuTinhTien();
                             phieuTinhTien_DTO.Ban = int.Parse(lvi.Tag.ToString());
                             phieuTinhTien_DTO.GhiChu = txtFrm1NhapGhiChu.Text;
-                            phieuTinhTien_DTO.NhanVien = "admin";//nhanVienDangNhap.TaiKhoan;
+                            phieuTinhTien_DTO.NhanVien = nhanVienDangNhap.TaiKhoan;
                             phieuTinhTien_DTO.TongTien = thanhToan;
                             phieuTinhTien_DTO.NgayLapPhieu = DateTime.Now;
                             phieuTinhTien_DTO.KhachDuaTruoc = 0;
@@ -1231,7 +1377,7 @@ namespace Restaurant
                                         banBUS.UpdateTrangThaiBan(1, int.Parse(row.Tag.ToString()));
                                         banBUS.UpdateTrangThaiBan(trangThai, int.Parse(lvi.Tag.ToString()));
                                         lvShowBan.Clear();
-                                        LoadBan(khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+                                        LoadBan(lvShowBan,khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
 
                                         ClicklvShowBan(int.Parse(lvi.Tag.ToString()), 2, lvi.Text);
                                     }
@@ -1252,7 +1398,7 @@ namespace Restaurant
                                         banBUS.UpdateTrangThaiBan(1, int.Parse(lvi.Tag.ToString()));
                                         banBUS.UpdateTrangThaiBan(trangThai, int.Parse(row.Tag.ToString()));
                                         lvShowBan.Clear();
-                                        LoadBan(khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+                                        LoadBan(lvShowBan, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
                                         ClicklvShowBan(int.Parse(row.Tag.ToString()), 2, row.Text);
                                     }
                                 }
@@ -1393,6 +1539,16 @@ namespace Restaurant
                         }
                     }
                 }
+                double tongmn = 0.0;
+                foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
+                {
+                    try
+                    {
+                        tongmn += double.Parse(dtr.Cells[6].Value.ToString());
+                    }
+                    catch { }
+                }
+                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn);
             }
             else
             {
@@ -2308,6 +2464,7 @@ namespace Restaurant
         private void btnSuaLoaiTD_Click(object sender, EventArgs e)
         {
             FormSuaLoaiMonAn frm = new FormSuaLoaiMonAn();
+            //FormSuaLoaiMonAn frmslma = new FormSuaLoaiMonAn();
             frm.ShowDialog();
             ShowTree_LoadTD();
 
@@ -2325,7 +2482,6 @@ namespace Restaurant
             idNode = int.Parse(e.Node.TagString.ToString());
             DataTable dtb = new DataTable();
             dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
-
             dtgirdViewTD.DataSource = dtb;
             int stt = 0;
             for (int i = 0; i < dtb.Rows.Count; ++i)
@@ -2369,13 +2525,6 @@ namespace Restaurant
             }
         }
 
-
-
-
-
-
-
-
         /// <summary>
         /// PHẦN KHUYÊN LÀM
         /// </summary>
@@ -2406,11 +2555,13 @@ namespace Restaurant
                 }
             }
         }
+
         private void tabthongKeMonAn_Click(object sender, EventArgs e)
         {
             trwTk_MonAn.Nodes.Clear();
             ShowTreeview_ThongKeMon();
         }
+
         private void trwTk_MonAn_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
         {
             if (e.Node.TagString == "nodeCha")
@@ -2422,46 +2573,36 @@ namespace Restaurant
                 tenMon = e.Node.Text;
                 tenLoaiMon = e.Node.Parent.Text;
             }
-            tenMon = tenLoaiMon = "";
+
         }
+
         private void btnBaoCao_TKMon_Click(object sender, EventArgs e)
         {
             DateTime tuNgay = dtpTuNgay_TKMon.Value;
             DateTime denNgay = dtpDenNgay_TKMon.Value;
-            int kq = DateTime.Compare(tuNgay, denNgay);
-            if (kq ==0 ||kq==-1)
+            try
             {
-                if (tenLoaiMon == "")
+                if (dtpTuNgay_TKMon.Value <=dtpTuNgay_TKMon.Value)
+                {
+                     if (tenLoaiMon == "")
                 {
                     dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
-                    for (int i = 0; i < dgvThongKeMonAn.Rows.Count - 1; i++)
-                    {
-                        dgvThongKeMonAn.Rows[i].Cells["_STT"].Value = i + 1;
-                    }
-                    if (dgvThongKeMonAn.Rows.Count - 1 == 0)
-                    {
-                        MessageBox.Show("Không có hóa đơn nào của " + trwTk_MonAn.SelectedNode.Text);
-                    }
                 }
                 else
                 {
                     dgvThongKeMonAn.DataSource = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
-                    for (int i = 0; i < dgvThongKeMonAn.Rows.Count - 1; i++)
-                    {
-                        dgvThongKeMonAn.Rows[i].Cells["_STT"].Value = i + 1;
-                    }
-                    if (dgvThongKeMonAn.Rows.Count - 1 == 0)
-                    {
-                        MessageBox.Show("Không có hóa đơn nào của " + trwTk_MonAn.SelectedNode.Text);
-                    }
 
                 }
                 tenMon = tenLoaiMon = "";
+                // dgvThongKeMonAn.Rows.Clear();
+                }
+               
             }
-            if(kq==1)
+            catch (System.Exception)
             {
-                MessageBox.Show("Vui lòng kiểm tra lại đến ngày", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Vui long kiem tra lai thong tin den ngay!");
             }
+           
 
         }
         // Hiển thị và xử lý danh sách món ăn  treeb AdvTree
@@ -2488,6 +2629,7 @@ namespace Restaurant
             }
 
         }
+
         private void tabItem1_Click(object sender, EventArgs e)
         {
             trwThongKe_Ban.Nodes.Clear();
@@ -2496,36 +2638,21 @@ namespace Restaurant
         private void btnBaoCao_Ban_Click(object sender, EventArgs e)
         {
 
+            //dgvThongKe_Ban.Rows.Clear();
             DateTime tuNgay = dtpTuNgay_TKBan.Value;
             DateTime denNgay = dtpDenNgay_TKBan.Value;
-            int kq = DateTime.Compare(tuNgay, denNgay);
-            if (kq == 0 || kq == -1)
-            {
-                if (tenKhuVuc == "")
-                {
-                    dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
-                    for (int i = 0; i < dgvThongKe_Ban.Rows.Count - 1; i++)
-                    {
-                        dgvThongKe_Ban.Rows[i].Cells["STT"].Value = i + 1;
-                    }
-                }
-                else
-                {
-                    dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
-                    for (int i = 0; i < dgvThongKe_Ban.Rows.Count - 1; i++)
-                    {
-                        dgvThongKe_Ban.Rows[i].Cells["STT"].Value = i + 1;
-                    }
-                }
-                tenBan = tenKhuVuc = "";
-            }
 
+            if (tenKhuVuc == "")
+            {
+                dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
+            }
             else
             {
-                MessageBox.Show("Vui lòng kiểm tra lại đến ngày", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                dgvThongKe_Ban.DataSource = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
             }
-
+            tenBan = tenKhuVuc = "";
         }
+
         private void trwThongKe_Ban_NodeClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
         {
             if (e.Node.TagString == "nodeCha")
@@ -2544,56 +2671,56 @@ namespace Restaurant
             trwTk_MonAn.Nodes.Clear();
             ShowTreeview_ThongKeMon();
         }
+
         private void tabThongKe_Ban_Click(object sender, EventArgs e)
         {
             trwThongKe_Ban.Nodes.Clear();
             ShowTreeview_Thongke_Ban_KhuVuc();
         }
+
+
         ThongKe_XuatExcel xuatExcel = new ThongKe_XuatExcel();
         private void btnXuatEx_TKMon_Click(object sender, EventArgs e)
         {
+            DateTime tuNgay = dtpTuNgay_TKMon.Value;
+            DateTime denNgay = dtpDenNgay_TKMon.Value;
             DataTable dt = (DataTable)dgvThongKeMonAn.DataSource;
             string title = tabthongKeMonAn.Text;
             string sheetName = "Thống kê món";
             if (tenLoaiMon == "")
             {
+                dt = ctPhieuTT_BUS.ThongKe_TheoTenLoaiMonAn(tuNgay, denNgay, tenLoaiMon);
                 xuatExcel.Export_MonAn(dt, sheetName, title);
             }
             else
             {
+                dt = ctPhieuTT_BUS.ThongKe_TheoTenMonAn(tuNgay, denNgay, tenMon, tenLoaiMon);
                 xuatExcel.Export_MonAn(dt, sheetName, title);
+
             }
             tenMon = tenLoaiMon = "";
         }
+
         private void btnXuatEx_Bn_Click(object sender, EventArgs e)
         {
+            DateTime tuNgay = dtpTuNgay_TKBan.Value;
+            DateTime denNgay = dtpDenNgay_TKBan.Value;
             DataTable dt = (DataTable)dgvThongKe_Ban.DataSource;
             string title = tabThongKe_Ban.Text;
             string sheetName = "Thống kê bàn";
             if (tenKhuVuc == "")
             {
+                dt = phieuTT_Bus.SoPhieuTinhTien_TheoKhuVuc(tuNgay, denNgay, tenKhuVuc);
                 xuatExcel.Export_Ban(dt, sheetName, title);
             }
             else
             {
+                dt = phieuTT_Bus.SoPhieuTinhTien_TheoBan(tuNgay, denNgay, tenBan, tenKhuVuc);
                 xuatExcel.Export_Ban(dt, sheetName, title);
             }
             tenBan = tenKhuVuc = "";
 
         }
-        // Click các tab liên quan.
-        //Click frm MenuMetri chức năng Thống kê
-        private void metroTileItem18_Click(object sender, EventArgs e)
-        {
-            expFrm1MenuMeTro.Expanded = false;
-            expan_DangNhap.Expanded = false;
-            expFrm1MenuMeTro.TitleHeight = 1;
-            TabThongKe.Select();
-        }
-
-
-
-
 
 
 
@@ -2678,64 +2805,310 @@ namespace Restaurant
             FormWarningDeleteTD frm = new FormWarningDeleteTD();
             frm.ShowDialog();
         }
-
-        private void btnTheoNgayDT_Click(object sender, EventArgs e)
+        int flagTachBan = -1;
+        private void btnTachMon_Click(object sender, EventArgs e)
         {
-            DateTime tuNgay = dtpTuNgayDT.Value;
-            DateTime denNgay = dtpDenNgayDT.Value;
-            int kq = DateTime.Compare(tuNgay, denNgay);
-            if (kq == 0 || kq == -1)
+            expandablePanel1.Expanded = false;
+            groupPanel3.Visible = false;
+            if (btnTachMon.Text == "Tách Món")
             {
-                dgvThongKeDT.DataSource = phieuTT_Bus.ThongKeDoanhThu_TheoNgay(tuNgay, denNgay);
-                for (int i = 0; i < dgvThongKeDT.Rows.Count - 1; i++)
-                {
-                    dgvThongKeDT.Rows[i].Cells["STT_"].Value = i + 1;
-                }
+                labelX23.Text = "";
+                expandablePanel1.Visible = true;
+                flagTachBan = 1;
+                DataGridViewCheckBoxColumn cbcl = new DataGridViewCheckBoxColumn();
+                cbcl.Frozen = true;
+                cbcl.Width = 20;
+                dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width - 30;
+                dtgvFrm1ThucDon.Columns.Add(cbcl);
+                DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
+                comboBoxEx1.DataSource = dsKhuVuc;
+                listView1.Clear();
+                LoadBan(listView1, dsKhuVuc, banBUS.LayDSBan());
+                btnTachMon.Text = "Hủy Bỏ";
+                lvShowBan.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Vui lòng kiểm tra lại Ngày đến", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                lvShowBan.Enabled = true;
+                btnTachMon.Text = "Tách Món";
+                dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
+                flagTachBan = -1;
+                btnTachMon.Enabled = true;
+                try
+                {
+                    dtgvFrm1ThucDon.Columns.RemoveAt(8);/// error
+                    /// 
+                    expandablePanel1.Visible = false;
+                    DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
+                    LoadBan(lvShowBan, dsKhuVuc, banBUS.LayDSBan());
+                }
+                catch { };
             }
         }
 
-        private void btnTheoThangDT_Click(object sender, EventArgs e)
+        private void buttonX4_Click(object sender, EventArgs e)
         {
-
-            DateTime tuNgay = dtpTuThangDT.Value;
-            DateTime denNgay = dtpDenThangDT.Value;
-            int kq = DateTime.Compare(tuNgay, denNgay);
-            if (kq == 0 || kq == -1)
+            dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
+            flagTachBan = -1;
+            btnTachMon.Enabled = true;
+            dtgvFrm1ThucDon.Columns.RemoveAt(8);
+            expandablePanel1.Visible = false;
+        }
+        private int maBanTach;
+        private string tenBanTach;
+        private int imgBanTach;
+        private int flagSW=1;
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            tenBanTach = listView1.SelectedItems[0].Text;
+            labelX23.Text ="Chuyển Qua Bàn:" + listView1.SelectedItems[0].Text;
+            labelX23.Tag = listView1.SelectedItems[0].Tag;
+            maBanTach = int.Parse(listView1.SelectedItems[0].Tag.ToString());
+            imgBanTach = listView1.SelectedItems[0].ImageIndex;
+            flagSW++;
+            if (flagSW % 2 == 0)
             {
-                dgvThongKeDT.DataSource = phieuTT_Bus.ThongKeDoanhThu_TheoThang(tuNgay, denNgay);
-                for (int i = 0; i < dgvThongKeDT.Rows.Count - 1; i++)
-                {
-                    dgvThongKeDT.Rows[i].Cells["STT_"].Value = i + 1;
-                }
+                buttonX8.Text = listView1.SelectedItems[0].Text;
+                buttonX8.Tag = listView1.SelectedItems[0].Tag;
             }
             else
             {
-                MessageBox.Show("Vui lòng kiểm tra lại Ngày đến", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                buttonX11.Text = listView1.SelectedItems[0].Text;
+                buttonX11.Tag = listView1.SelectedItems[0].Tag;
             }
         }
 
-        private void btnXuatEx_DTNgay_Click(object sender, EventArgs e)
+        private void textBoxX1_TextChanged_1(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)dgvThongKeDT.DataSource;
-            string title = "Thống Kê Doanh Thu Theo Ngày";
-            string sheetName = "Doanh Thu";
-            xuatExcel.Export_DoanhThu(dt, sheetName, title);
-           
-         
+            listView1.Clear();
+            DataTable dtBan = banBUS.LayDSBan(textBoxX1.Text);
+            LoadBan(listView1, khuVucBus.LayDSKHUVUC(), dtBan);
         }
 
-        private void btnXuatEx_DTThang_Click(object sender, EventArgs e)
+        private void comboBoxEx1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)dgvThongKeDT.DataSource;
-            string title = "Thống Kê Doanh Thu Theo Tháng";
-            string sheetName = "Doanh Thu";
-            xuatExcel.Export_DoanhThu(dt, sheetName, title);
+            int maKhuVuc = comboBoxEx1.SelectedIndex;
+            //banBUS.LayDSBan(maKhuVuc);
+            listView1.Clear();
+            LoadBan(listView1, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan(maKhuVuc + 1));
         }
 
+        private void buttonX5_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+            LoadBan(listView1, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+        }
+
+        private void buttonX3_Click(object sender, EventArgs e)
+        {
+                try
+                {
+                    //image =0 dat truoc; image =1 trong ; image =2 co khách
+                    //tinhtrang= 3 dat truoc; tinhtrang= 2 da tinh; tinhtrang=1 chưa tinh
+                    int ind = imgBanTach;
+
+                    if (ind == 1)
+                    {
+                        banBUS.UpdateTrangThaiBan(2,maBanTach);
+                        listView1.SelectedItems[0].ImageIndex = 2;
+                        PhieuTinhTien ptt = new PhieuTinhTien();
+                        ptt.Ban = maBanTach;
+
+                        ptt.TongTien = 0;
+                        ptt.GhiChu = " được chuyển qua từ bàn: " + tenBan;
+                        ptt.TinhTrang = 1;
+                        phieuTT_Bus.ThemPhieuTinhTien(ptt);
+
+                        //TrangThaiBanDangChon = 2;
+                        lvShowBan.Clear();
+                        LoadBan(lvShowBan, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
+                        //MaBanDangChon = ptt.Ban;
+                        double tongMn = 0;
+                        double tongt = phieuTT_Bus.LayTongTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon));
+                        int old = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon);
+                        int new1 = phieuTT_Bus.LayMaPhieuTinhTien(ptt.Ban);
+                        foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
+                        {
+                            if (dtr.Cells[dtgvFrm1ThucDon.Columns.Count - 1].Value != null)
+                            {
+                                tongMn += double.Parse(dtr.Cells[6].Value.ToString());
+                                int mama = int.Parse(dtr.Cells[7].Value.ToString());
+                                double tt = double.Parse(dtr.Cells[6].Value.ToString());
+                                ctPhieuTT_BUS.updateMaPTTOfCTPTT(old, mama, new1);
+                            }
+                        }
+                        for (int i = dtgvFrm1ThucDon.Rows.Count - 1; i >= 0; i--)
+                        {
+                            if (dtgvFrm1ThucDon.Rows[i].Cells[8].Value != null)
+                            {
+                                dtgvFrm1ThucDon.Rows.RemoveAt(i);
+                            }
+                        }
+
+                        phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(ptt.Ban), tongMn);
+
+                        phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
+                        ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
+                    }
+                    else// nhap vao ban co khách
+                    {
+                        double tongMn = 0;
+                        double tongt = phieuTT_Bus.LayTongTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon));
+                        int mabanchon = maBanTach;
+                        int old = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon);
+                        int new1 = phieuTT_Bus.LayMaPhieuTinhTien(mabanchon);
+                        double tongt1 = phieuTT_Bus.LayTongTienPhieuTT(new1);
+                        foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
+                        {
+                            if (dtr.Cells[dtgvFrm1ThucDon.Columns.Count - 1].Value != null)
+                            {
+                                tongMn += double.Parse(dtr.Cells[6].Value.ToString());
+                                int mama = int.Parse(dtr.Cells[7].Value.ToString());
+                                try
+                                {
+                                    int ktsl = ctPhieuTT_BUS.KiemTraMonTonTai(new1, mama);
+
+                                    if (ktsl > 0)
+                                    {
+                                        ctPhieuTT_BUS.CapNhatSoLuongCT(new1, mama, ktsl);
+                                        ctPhieuTT_BUS.XoaCTPhieuTinhTien(old, mama);
+                                    }
+                                }
+                                catch
+                                {
+                                    ctPhieuTT_BUS.updateMaPTTOfCTPTT(old, mama, new1);
+                                }
+                            }
+                        }// doi bung qua may oi!
+                        for (int i = dtgvFrm1ThucDon.Rows.Count - 1; i >= 0; i--)
+                        {
+                            if (dtgvFrm1ThucDon.Rows[i].Cells[8].Value != null)
+                            {
+                                dtgvFrm1ThucDon.Rows.RemoveAt(i);
+                            }
+                        }
+
+                        phieuTT_Bus.CapNhapTienPhieuTT(new1, tongt1 + tongMn);
+
+                        phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
+                        ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
+                    }
+                    dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
+                    flagTachBan = -1;
+                    dtgvFrm1ThucDon.Columns.RemoveAt(8);
+                    btnTachMon.Text = "Tách Món";
+                    expandablePanel1.Visible = false;
+                    DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
+                    lvShowBan.Clear();
+                    LoadBan(lvShowBan, dsKhuVuc, banBUS.LayDSBan());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString()); 
+                }
+        }
+
+        private void buttonX6_Click(object sender, EventArgs e)
+        {
+            buttonX12.Visible = false;
+            if (buttonX6.Text == "Ghép Bàn")
+            {
+                buttonX6.Text = "Hủy Bỏ";
+                groupPanel3.Visible = true;
+                expandablePanel1.Visible = true;
+                DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
+                listView1.Clear();
+                LoadBan(listView1, dsKhuVuc, banBUS.LayDSBanTheoTrangThai(2));
+                lvShowBan.Enabled = false;
+                buttonX12.Visible = false;
+            }
+            else
+            {
+                buttonX6.Text = "Ghép Bàn";
+                expandablePanel1.Visible = false;
+                groupPanel3.Visible = false;
+                lvShowBan.Enabled = true;
+                buttonX12.Visible = true;
+            }
+        }
+
+        private void buttonX10_Click(object sender, EventArgs e)
+        {
+            expandablePanel1.Visible = false;
+            groupPanel3.Visible = false;
+        }
+
+        private void buttonX9_Click(object sender, EventArgs e)
+        {
+            buttonX7.Visible = false;
+            int newmaPhieu = phieuTT_Bus.LayMaPhieuTinhTien(int.Parse(labelX23.Tag.ToString()));
+            int mb;
+            if(labelX23.Tag==buttonX8.Tag)
+            {
+                mb =int.Parse( buttonX11.Tag.ToString());
+            }
+            else
+                mb = int.Parse(buttonX8.Tag.ToString());
+            int oldmaPhieu = phieuTT_Bus.LayMaPhieuTinhTien(mb);
+            if (oldmaPhieu != newmaPhieu)
+            {
+                ctPhieuTT_BUS.GhepBan(oldmaPhieu, newmaPhieu);
+                double tongTien = phieuTT_Bus.LayTongTienPhieuTT(newmaPhieu);
+                phieuTT_Bus.CapNhapTienPhieuTT(newmaPhieu, tongTien);
+                banBUS.UpdateTrangThaiBan(1, mb);
+                foreach (ListViewItem listview in lvShowBan.Items)
+                {
+                    if (int.Parse(listview.Tag.ToString()) == mb)
+                    {
+                        listview.ImageIndex = 1;
+                        break;
+                    }
+                }
+                phieuTT_Bus.XoaPhieuTinhTien(oldmaPhieu);
+                RefreshDataGridview(dtgvFrm1ThucDon);
+                reFrestBaoGia();
+                groupPanel3.Visible = false;
+                expandablePanel1.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Không Thể Gép. Bạn Đã Chọn Trùng Bàn Nhau");
+            }
+        }
+
+        private void buttonX7_Click_1(object sender, EventArgs e)
+        {
+            if (buttonX7.Text == "Đổi Bàn")
+            {
+                buttonX12.Visible = true;
+                buttonX7.Text = "Hủy Bỏ";
+                groupPanel3.Visible = true;
+                expandablePanel1.Visible = true;
+                DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
+                listView1.Clear();
+                LoadBan(listView1, dsKhuVuc, banBUS.LayDSBan());
+                lvShowBan.Enabled = false;
+            }
+            else
+            {
+                buttonX12.Visible = false;
+                buttonX7.Text = "Đổi Bàn";
+                groupPanel3.Visible = true;
+                expandablePanel1.Visible = false;
+                lvShowBan.Enabled = true;
+            }
+        }
+
+        private void buttonX12_Click(object sender, EventArgs e)
+        {
+            int newBan = int.Parse(buttonX8.Tag.ToString());
+            int newmaPhieu = phieuTT_Bus.LayMaPhieuTinhTien(newBan);
+            int oldBan = int.Parse(buttonX11.Tag.ToString());
+            int oldmaPhieu = phieuTT_Bus.LayMaPhieuTinhTien(oldBan);
+            phieuTT_Bus.CapNhatBanChoPhieuTT(newmaPhieu, oldBan);
+            phieuTT_Bus.CapNhatBanChoPhieuTT(oldmaPhieu, newBan);
+        }
+        
     }
 }
 

@@ -38,5 +38,9 @@ namespace BUS
         {
             return banDAO.KiemTraBanCoKhach(trangThai, maBan);
         }
+        public DataTable LayDSBanTheoTrangThai(int maTrangThai)
+        {
+            return banDAO.LayDSBanTheoTrangThai(maTrangThai);
+        }
     }
 }
