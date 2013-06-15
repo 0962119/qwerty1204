@@ -2679,6 +2679,45 @@ namespace Restaurant
             frm.ShowDialog();
         }
 
+        private void btnTheoNgayDT_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = dtpTuNgayDT.Value;
+            DateTime denNgay = dtpDenNgayDT.Value;
+            int kq = DateTime.Compare(tuNgay, denNgay);
+            if (kq == 0 || kq == -1)
+            {
+                dgvThongKeDT.DataSource = phieuTT_Bus.ThongKeDoanhThu_TheoNgay(tuNgay, denNgay);
+                for (int i = 0; i < dgvThongKeDT.Rows.Count - 1; i++)
+                {
+                    dgvThongKeDT.Rows[i].Cells["STT_"].Value = i + 1;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại Ngày đến", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTheoThangDT_Click(object sender, EventArgs e)
+        {
+
+            DateTime tuNgay = dtpTuThangDT.Value;
+            DateTime denNgay = dtpDenThangDT.Value;
+            int kq = DateTime.Compare(tuNgay, denNgay);
+            if (kq == 0 || kq == -1)
+            {
+                dgvThongKeDT.DataSource = phieuTT_Bus.ThongKeDoanhThu_TheoThang(tuNgay, denNgay);
+                for (int i = 0; i < dgvThongKeDT.Rows.Count - 1; i++)
+                {
+                    dgvThongKeDT.Rows[i].Cells["STT_"].Value = i + 1;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại Ngày đến", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
 
