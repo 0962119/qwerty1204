@@ -194,5 +194,35 @@ namespace Restaurant
         }
 
 
+
+        public void Export_DoanhThu(System.Data.DataTable dt, string sheetName, string title)
+        {
+            Excel_Head(title, sheetName);
+
+            Range cl1 = oSheet.get_Range("A3", "A3");
+            cl1.Value2 = "Thời gian";
+            cl1.ColumnWidth = 13.5;
+
+            Range cl2 = oSheet.get_Range("B3", "B3");
+            cl2.Value2 = "Tổng tiền";
+            cl2.ColumnWidth = 13.5;
+
+            Range cl3 = oSheet.get_Range("C3", "C3");
+            cl3.Value2 = "Số lượt khách";
+            cl3.ColumnWidth = 20;
+
+           
+
+            Range rowHead = oSheet.get_Range("A3", "C3");
+            rowHead.Font.Bold = true;
+            // Kẻ viền
+            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+            // Thiết lập màu nền
+            rowHead.Interior.ColorIndex = 15;
+            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            ThietLapVungDuLieu(dt);
+        }
+
+
     }
 }
