@@ -49,11 +49,8 @@ namespace Restaurant
                     DSMA_DTO.HinhAnh = "thoat.jpg";
                 }
                 dsmabus.ThemThucDon(DSMA_DTO);
-                Form1 frm = new Form1();
-                frm.ShowTree_LoadTD();
-                //frm.LoadDatagirdViewTD(Form1.idNode);
-                
                 this.Close();
+                //MessageBox.Show("Them Thanh Cong");
             }
             
         }

@@ -118,3 +118,11 @@ C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\bin\Debug\DTO.pdb
 C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\obj\Debug\DAO.dll
 C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\12414_000\Desktop\38\trunk\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\12414_000\Desktop\38\trunk\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\12414_000\Desktop\38\trunk\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\38\trunk\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\12414_000\Desktop\38\trunk\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\38\trunk\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\12414_000\Desktop\38\trunk\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\12414_000\Desktop\38\trunk\Restaurant\DAO\obj\Debug\DAO.pdb

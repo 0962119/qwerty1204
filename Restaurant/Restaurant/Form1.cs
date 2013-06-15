@@ -69,7 +69,7 @@ namespace Restaurant
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             Form1.dtgirdViewTD.AllowUserToAddRows = false;
             Form1.dtgirdViewTD.AllowUserToDeleteRows = false;
-            Form1.dtgirdViewTD.AllowUserToResizeColumns = false;
+            Form1.dtgirdViewTD.AllowUserToResizeColumns = true;
             Form1.dtgirdViewTD.AllowUserToResizeRows = false;
             Form1.dtgirdViewTD.BackgroundColor = System.Drawing.Color.White;
             Form1.dtgirdViewTD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -98,6 +98,7 @@ namespace Restaurant
             Form1.dtgirdViewTD.RowHeadersVisible = false;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             Form1.dtgirdViewTD.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            Form1.dtgirdViewTD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             Form1.dtgirdViewTD.Size = new System.Drawing.Size(876, 608);
             Form1.dtgirdViewTD.TabIndex = 1;
             ((System.ComponentModel.ISupportInitialize)(Form1.dtgirdViewTD)).EndInit();
@@ -2721,35 +2722,19 @@ namespace Restaurant
             tenBan = tenKhuVuc = "";
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void btnThemTD_Click(object sender, EventArgs e)
         {
             FormThemThucDon frm = new FormThemThucDon();
             frm.ShowDialog();
+            DataTable dtb = new DataTable();
+            dtb = dsMonAnBus.LayDanhSachMonAnTheoLoai(idNode);
+            dtgirdViewTD.DataSource = dtb;
+            int stt = 0;
+            for (int i = 0; i < dtb.Rows.Count; ++i)
+            {
+                stt = stt + 1;
+                dtgirdViewTD.Rows[i].Cells[0].Value = stt;
+            }
         }
 
         private void btnImportExcelTD_Click(object sender, EventArgs e)
@@ -2801,9 +2786,26 @@ namespace Restaurant
         }
 
         private void btnXoaTD_Click(object sender, EventArgs e)
-        {
-            FormWarningDeleteTD frm = new FormWarningDeleteTD();
-            frm.ShowDialog();
+         {
+             //if (btnXoaTD.Text == "")
+             //{
+             //    btnXoaTD.Text = "Hoan Thanh";
+             //    DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
+             //    cb.Width = 20;
+             //    dtgirdViewTD.Columns[1].Width = girdViewTD.Columns[1].Width - 30;
+             //    dtgirdViewTD.Columns.Add(cb);
+             //}
+             //else
+             //{
+             //    btnXoaTD.Text = "Xóa Thực Đơn";
+             //    foreach(DataGridViewRow dtr in dtgirdViewTD.Rows)
+             //    {
+             //       //if(dtr.Cells[dtgirdViewTD.C]// vs cua may bi benh ah
+             //    }
+             //}
+
+             FormWarningDeleteTD frm = new FormWarningDeleteTD();
+             frm.ShowDialog();
         }
         int flagTachBan = -1;
         private void btnTachMon_Click(object sender, EventArgs e)

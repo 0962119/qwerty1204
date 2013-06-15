@@ -231,18 +231,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QUANLYNHAHANGDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Report\CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Report\Test_report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report\Test_report.Designer.cs">
-      <DependentUpon>Test_report.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThongKe_XuatExcel.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -318,13 +306,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report\CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Test_report.resx">
-      <DependentUpon>Test_report.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,7 +332,6 @@
     <None Include="QUANLYNHAHANGDataSet.xss">
       <DependentUpon>QUANLYNHAHANGDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Report\ReportThongKeDoanhThu.mht" />
     <None Include="Resources\Do uong %281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
