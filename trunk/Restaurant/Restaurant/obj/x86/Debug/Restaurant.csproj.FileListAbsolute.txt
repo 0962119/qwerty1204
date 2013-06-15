@@ -574,3 +574,6 @@ C:\Users\USER\Desktop\qwerty1204_31\Restaurant\Restaurant\bin\Debug\DevComponent
 C:\Users\USER\Desktop\qwerty1204_31\Restaurant\Restaurant\bin\Debug\DevComponents.DotNetBar2.xml
 C:\Users\USER\Desktop\qwerty1204_31\Restaurant\Restaurant\bin\Debug\DevComponents.Instrumentation.xml
 C:\Users\USER\Desktop\qwerty1204_31\Restaurant\Restaurant\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\New folder\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\bien\Desktop\New folder\Restaurant\Restaurant\obj\x86\Debug\Restaurant.exe
+C:\Users\bien\Desktop\New folder\Restaurant\Restaurant\obj\x86\Debug\Restaurant.pdb
