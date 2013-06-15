@@ -1,0 +1,131 @@
+C:\Users\QN\Desktop\New folder\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\QN\Desktop\New folder\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder\Restaurant\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\bien\Desktop\test\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\test\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\test\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\test\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\test\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\test\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\test\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\bien\Desktop\test\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs16.edit\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\bien\Desktop\vs16.edit\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DAO\obj\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs27\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\bien\Desktop\vs27\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\bien\Desktop\vs27\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs27\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\bien\Desktop\vs27\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs27\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs27\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\bien\Desktop\vs27\Restaurant\DAO\obj\Debug\DAO.pdb
+<<<<<<< .mine
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DAO\obj\Debug\DAO.pdb
+=======
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DAO\bin\Debug\DAO.dll
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DAO\bin\Debug\DAO.pdb
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DAO\bin\Debug\DTO.dll
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DAO\bin\Debug\NETDataProviders.dll
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DAO\bin\Debug\DTO.pdb
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DAO\obj\Debug\DAO.dll
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DAO\obj\Debug\DAO.pdb
+>>>>>>> .r30

@@ -66,14 +66,3 @@ C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\bin\Debug\DTO.dll
 C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\bin\Debug\DTO.pdb
 C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\obj\Debug\DTO.dll
 C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\obj\Debug\DTO.pdb
-C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
-C:\Users\USER\Desktop\qwerty1204_31\Restaurant\DTO\bin\Debug\DTO.dll
-C:\Users\USER\Desktop\qwerty1204_31\Restaurant\DTO\bin\Debug\DTO.pdb
-C:\Users\USER\Desktop\qwerty1204_31\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
-C:\Users\USER\Desktop\qwerty1204_31\Restaurant\DTO\obj\Debug\DTO.dll
-C:\Users\USER\Desktop\qwerty1204_31\Restaurant\DTO\obj\Debug\DTO.pdb
-D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\DTO\bin\Debug\DTO.dll
-D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\DTO\bin\Debug\DTO.pdb
-D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\DTO\obj\Debug\ResolveAssemblyReference.cache
-D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\DTO\obj\Debug\DTO.dll
-D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\DTO\obj\Debug\DTO.pdb

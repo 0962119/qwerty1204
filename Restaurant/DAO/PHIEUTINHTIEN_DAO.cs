@@ -367,45 +367,5 @@ namespace DAO
             return dt.ExecuteQuery(sql, ListParam);
 
         }
-
-
-        //Thong ke doanh thu theo ngay
-        public DataTable ThongKeDoanhThu_TheoNgay(DateTime tuNgay, DateTime denNgay)
-        {
-            string sql = "SELECT day(NgayLapPhieu) as ThoiGian , sum(PHIEUTINHTIEN.TongTien) as TongTien, count(PHIEUTINHTIEN.NgayLapPhieu) AS SoKhach"
-                         + " FROM PHIEUTINHTIEN "
-                         + " WHERE PHIEUTINHTIEN.NgayLapPhieu>= @tuNgay and PHIEUTINHTIEN.NgayLapPhieu<= @denNgay "
-                         + " GROUP BY year(NgayLapPhieu), month(NgayLapPhieu), day(NgayLapPhieu)  ";
-            List<OleDbParameter> ListParam = new List<OleDbParameter>();
-            OleDbParameter paraTuNgay = new OleDbParameter("@tuNgay", OleDbType.Date);
-            OleDbParameter paraDenNgay = new OleDbParameter("@denNgay", OleDbType.Date);
-            paraTuNgay.Value = tuNgay;
-            paraDenNgay.Value = denNgay;
-            ListParam.Add(paraTuNgay);
-            ListParam.Add(paraDenNgay);
-            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
-            return dt.ExecuteQuery(sql, ListParam);
-
-        }
-
-
-        //Thong ke doanh thu theo thang
-        public DataTable ThongKeDoanhThu_TheoThang(DateTime tuNgay, DateTime denNgay)
-        {
-            string sql = "SELECT month(NgayLapPhieu) as ThoiGian , sum(PHIEUTINHTIEN.TongTien) as TongTien, count(PHIEUTINHTIEN.NgayLapPhieu) AS SoKhach"
-                         + " FROM PHIEUTINHTIEN "
-                         + " WHERE PHIEUTINHTIEN.NgayLapPhieu>= @tuNgay and PHIEUTINHTIEN.NgayLapPhieu<= @denNgay "
-                         + " GROUP BY  year(NgayLapPhieu) , month(NgayLapPhieu)";
-            List<OleDbParameter> ListParam = new List<OleDbParameter>();
-            OleDbParameter paraTuNgay = new OleDbParameter("@tuNgay", OleDbType.Date);
-            OleDbParameter paraDenNgay = new OleDbParameter("@denNgay", OleDbType.Date);
-            paraTuNgay.Value = tuNgay;
-            paraDenNgay.Value = denNgay;
-            ListParam.Add(paraTuNgay);
-            ListParam.Add(paraDenNgay);
-            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
-            return dt.ExecuteQuery(sql, ListParam);
-
-        }
     }
 }

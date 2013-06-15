@@ -1,0 +1,76 @@
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\QN\Desktop\doanCNPM\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (2)\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\bien\Desktop\test\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\test\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\test\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\test\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\bien\Desktop\test\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\QN\Desktop\New folder (3)\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\bien\Desktop\vs 14.tai lieu\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\bien\Desktop\vs16.edit_2\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\bien\Desktop\vs19.edit_2\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\SVN_QLNH\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\HTT_NDD\Desktop\qwerty1204_506\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\USER\Desktop\qwerty1204_0506\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\12414_000\Desktop\New folder\trunk\Restaurant\DTO\obj\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\bien\Desktop\vs27\Restaurant\DTO\obj\Debug\DTO.pdb
+<<<<<<< .mine
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\DTO\obj\Debug\DTO.pdb
+=======
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DTO\bin\Debug\DTO.dll
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DTO\bin\Debug\DTO.pdb
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DTO\obj\Debug\DTO.dll
+C:\Users\USER\Desktop\qwerty1204_28\Restaurant\DTO\obj\Debug\DTO.pdb
+>>>>>>> .r30

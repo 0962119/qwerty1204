@@ -51,6 +51,10 @@ namespace BUS
         {
             return ctPhieuTT_DAO.CapNhatCTPhieuTT(maPhieuTT, maMonAn, soLuong, giamGia, thanhTien);
         }
+        public void updateMaPTTOfCTPTT(int oldmaPhieuTT, int maMonAn, int newmaPhieuTT)
+        {
+            ctPhieuTT_DAO.updateMaPTTOfCTPTT(oldmaPhieuTT, maMonAn, newmaPhieuTT);
+        }
         public bool GhepBan(int maPhieuTTOld, int maPhieuTTNew)
         {
             return ctPhieuTT_DAO.GhepBan(maPhieuTTOld, maPhieuTTNew);
@@ -92,6 +96,14 @@ namespace BUS
         public void XoaChiTietPhieuTT_void(int maHoaDon)
         {
              ctPhieuTT_DAO.XoaChiTietPhieuTT_void(maHoaDon);
+        }
+        public int KiemTraMonTonTai(int maPhieu, int maMA)
+        {
+            return ctPhieuTT_DAO.KiemTraMonTonTai(maPhieu, maMA);
+        }
+        public int CapNhatSoLuongCT(int maPhieu, int maMA, int soLuong)
+        {//
+            return ctPhieuTT_DAO.CapNhatSoLuongCT(maPhieu, maMA, soLuong);
         }
     }
 }
