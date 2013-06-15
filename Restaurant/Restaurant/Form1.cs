@@ -2718,6 +2718,24 @@ namespace Restaurant
             }
         }
 
+        private void btnXuatEx_DTNgay_Click(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)dgvThongKeDT.DataSource;
+            string title = "Thống Kê Doanh Thu Theo Ngày";
+            string sheetName = "Doanh Thu";
+            xuatExcel.Export_DoanhThu(dt, sheetName, title);
+           
+         
+        }
+
+        private void btnXuatEx_DTThang_Click(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)dgvThongKeDT.DataSource;
+            string title = "Thống Kê Doanh Thu Theo Tháng";
+            string sheetName = "Doanh Thu";
+            xuatExcel.Export_DoanhThu(dt, sheetName, title);
+        }
+
     }
 }
 
