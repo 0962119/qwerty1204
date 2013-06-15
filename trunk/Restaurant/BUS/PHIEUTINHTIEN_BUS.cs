@@ -92,6 +92,17 @@ namespace BUS
             return phieuTinhTienDAO.SoPhieuTinhTien_TheoBan(tungay, denngay, tenBan, tenKhuVuc);
         }
 
+
+
+        public DataTable ThongKeDoanhThu_TheoNgay(DateTime tungay, DateTime denngay)
+        {
+            return phieuTinhTienDAO.ThongKeDoanhThu_TheoNgay(tungay, denngay);
+        }
+
+        public DataTable ThongKeDoanhThu_TheoThang(DateTime tungay, DateTime denngay)
+        {
+            return phieuTinhTienDAO.ThongKeDoanhThu_TheoNgay(tungay, denngay);
+        }
         
     }
 }

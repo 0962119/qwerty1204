@@ -158,3 +158,13 @@ C:\Users\USER\Desktop\qwerty1204_31\Restaurant\BUS\bin\Debug\DTO.pdb
 C:\Users\USER\Desktop\qwerty1204_31\Restaurant\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\USER\Desktop\qwerty1204_31\Restaurant\BUS\obj\Debug\BUS.dll
 C:\Users\USER\Desktop\qwerty1204_31\Restaurant\BUS\obj\Debug\BUS.pdb
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\bin\Debug\BUS.dll
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\bin\Debug\BUS.pdb
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\bin\Debug\DAO.dll
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\bin\Debug\DTO.dll
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\bin\Debug\NETDataProviders.dll
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\bin\Debug\DAO.pdb
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\bin\Debug\DTO.pdb
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\obj\Debug\ResolveAssemblyReference.cache
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\obj\Debug\BUS.dll
+D:\gay\hcdh\CNPM\Tra no\Do An\Restaurant\BUS\obj\Debug\BUS.pdb
