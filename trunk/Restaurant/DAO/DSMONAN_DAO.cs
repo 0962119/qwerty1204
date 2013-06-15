@@ -112,5 +112,21 @@ namespace DAO
             else
                 return true;
         }
+        public bool XoaMonAn(int mma)
+        {
+            string sql = "DELETE FROM DANHSACHMONAN WHERE MaMonAn =" + id;
+            List<OleDbParameter> lis = new List<OleDbParameter>();
+            OleDbParameter para = new OleDbParameter("@mama", OleDbType.Integer);
+            para.Value = mma;
+            lis.Add(para);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            int kq = dt.ExecuteNoneQuery(sql, lis);
+            if (kq < 1)
+                return false;
+            else
+                return true;
+        }
+
+        public string id { get; set; }
     }
 }

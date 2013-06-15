@@ -56,6 +56,7 @@
             this.btnYesDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
             this.btnYesDelete.TabIndex = 4;
             this.btnYesDelete.Text = "Yes";
+            this.btnYesDelete.Click += new System.EventHandler(this.btnYesDelete_Click);
             // 
             // labelX1
             // 

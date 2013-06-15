@@ -42,5 +42,14 @@ namespace BUS
         {
             throw new NotImplementedException();
         }
+        public bool XoaMonAn(int mma)
+        {
+            return dsMonAnDAO.XoaMonAn(mma);
+        }
+
+         public void XoaMonAn()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
