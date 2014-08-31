@@ -2,8 +2,8 @@
 <!--configfile.xml-->
 <appSettings>
   <add key="rdFrm1XemBanIn" value="true" />
-  <add key="pctLoGo" value="C:\Users\QN\Desktop\QLNH_F31.1.0\Restaurant\Restaurant\bin\Debug\imageThucDon\Logo.png" />
-  <add key="lbFrm1SDTNhaHang" value="SDT: 0908943745" />
-  <add key="lbFrm1DiachiNhaHang" value="7Địa Chỉ: 27 trần hưng đạo, P1, Q5, TP.HCM" />
-  <add key="lbFrm1TenNhaHang" value="Nhà Hàng AQ" />
+  <add key="pctLoGo" value="C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\Restaurant\bin\Debug\imageThucDon\Logo.png" />
+  <add key="lbFrm1SDTNhaHang" value="01665695679" />
+  <add key="lbFrm1DiachiNhaHang" value="Full House" />
+  <add key="lbFrm1TenNhaHang" value="Nhà Hàng Liên Hoa Chay" />
 </appSettings>

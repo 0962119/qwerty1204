@@ -380,6 +380,14 @@ namespace Restaurant
                     phieuTT_Bus.XoaPhieuTinhTien(MaBanDangChon, 1);
                     MaBanDangChon = -1;
                     TrangThaiBanDangChon = -1;
+                    dtgvFrm1ThucDon.Rows.Clear();
+                    reFrestBaoGia();
+                    MaBanDangChon = -1;
+                    btnActionTachMon.Enabled = false;
+                    btnActionGhepBan.Enabled = false;
+                    btnActionDoiBan.Enabled = false;
+                    btnInTruoc.Enabled = false;
+                    btnFrm1TinhTien.Enabled = false;
                 }
                 else if (result == DialogResult.No)
                 {
@@ -436,9 +444,9 @@ namespace Restaurant
                     RefreshDataGridview(dtgvFrm1ThucDon);
                     if (lvShowBan.SelectedItems[0].ImageIndex != 1)
                     {
-                        btnTachMon.Enabled = true;
-                        buttonX6.Enabled = true;
-                        buttonX7.Enabled = true;
+                        btnActionTachMon.Enabled = true;
+                        btnActionGhepBan.Enabled = true;
+                        btnActionDoiBan.Enabled = true;
                         btnInTruoc.Enabled = true;
                         btnFrm1TinhTien.Enabled = true;
 
@@ -486,9 +494,9 @@ namespace Restaurant
                     }
                     else
                     {
-                        btnTachMon.Enabled = false;
-                        buttonX6.Enabled = false;
-                        buttonX7.Enabled = false;
+                        btnActionTachMon.Enabled = false;
+                        btnActionGhepBan.Enabled = false;
+                        btnActionDoiBan.Enabled = false;
                         btnInTruoc.Enabled = false;
                         btnFrm1TinhTien.Enabled = false;
                         MaBanDangChon = -1;
@@ -606,7 +614,7 @@ namespace Restaurant
                         }
                         dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
                         flagTachBan = -1;
-                        btnTachMon.Text = "Tách Món";
+                        btnActionTachMon.Text = "Tách Món";
                         expandablePanel1.Visible = false;
                         dtgvFrm1ThucDon.Columns.RemoveAt(8);
                     }
@@ -1055,7 +1063,14 @@ namespace Restaurant
                 if ((rao < soRowCoSan - 1) && (column != 2 && column != 5 && column != 8))
                 {
                     //MessageBox.Show("Bạn Không Được Sữa Giá Trị Này Của Món Ăn");
-                    dtgvFrm1ThucDon.Rows[rao].Cells[column].ReadOnly = true;
+                    try
+                    {
+                        dtgvFrm1ThucDon.Rows[rao].Cells[column].ReadOnly = true;
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    
                 }
                 else
                 {
@@ -1066,7 +1081,14 @@ namespace Restaurant
                     }
                     catch
                     {
-                        dtgvFrm1ThucDon.Rows[rao].Cells[0].Value = 1;
+                        try
+                        {
+                            dtgvFrm1ThucDon.Rows[rao].Cells[0].Value = 1;
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        
                     }
                 }
             }
@@ -2810,8 +2832,10 @@ namespace Restaurant
         {
             expandablePanel1.Expanded = false;
             groupPanel3.Visible = false;
-            if (btnTachMon.Text == "Tách Món")
+            if (btnActionTachMon.Text == "Tách Món")
             {
+                btnActionDoiBan.Enabled = false;
+                btnActionGhepBan.Enabled = false;
                 labelX23.Text = "";
                 expandablePanel1.Visible = true;
                 flagTachBan = 1;
@@ -2824,22 +2848,25 @@ namespace Restaurant
                 comboBoxEx1.DataSource = dsKhuVuc;
                 lvActionTable.Clear();
                 LoadBan(lvActionTable, dsKhuVuc, banBUS.LayDSBan());
-                btnTachMon.Text = "Hủy Bỏ";
+                btnActionTachMon.Text = "Hủy Bỏ";
                 lvShowBan.Enabled = false;
             }
             else
             {
+                btnActionDoiBan.Enabled = true;
+                btnActionGhepBan.Enabled = true;
                 lvShowBan.Enabled = true;
-                btnTachMon.Text = "Tách Món";
+                btnActionTachMon.Text = "Tách Món";
                 dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
                 flagTachBan = -1;
-                btnTachMon.Enabled = true;
+                btnActionTachMon.Enabled = true;
                 try
                 {
                     dtgvFrm1ThucDon.Columns.RemoveAt(8);/// error
                     /// 
                     expandablePanel1.Visible = false;
                     DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
+                    lvShowBan.Clear();
                     LoadBan(lvShowBan, dsKhuVuc, banBUS.LayDSBan());
                 }
                 catch { };
@@ -2848,16 +2875,27 @@ namespace Restaurant
 
         private void buttonX4_Click(object sender, EventArgs e)
         {
+            btnActionDoiBan.Enabled = true;
+            btnActionGhepBan.Enabled = true;
+            lvShowBan.Enabled = true;
+            btnActionTachMon.Text = "Tách Món";
             dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
             flagTachBan = -1;
-            btnTachMon.Enabled = true;
-            dtgvFrm1ThucDon.Columns.RemoveAt(8);
-            expandablePanel1.Visible = false;
+            btnActionTachMon.Enabled = true;
+            try
+            {
+                dtgvFrm1ThucDon.Columns.RemoveAt(8);/// error
+                /// 
+                expandablePanel1.Visible = false;
+                DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
+                lvShowBan.Clear();
+                LoadBan(lvShowBan, dsKhuVuc, banBUS.LayDSBan());
+            }
+            catch { };
         }
         private int maBanTach;
         private string tenBanTach;
         private int imgBanTach;
-        private int flagSW = 1;
         private void listView1_Click(object sender, EventArgs e)
         {////////////error index///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2866,17 +2904,12 @@ namespace Restaurant
             labelX23.Tag = lvActionTable.SelectedItems[0].Tag;
             maBanTach = int.Parse(lvActionTable.SelectedItems[0].Tag.ToString());
             imgBanTach = lvActionTable.SelectedItems[0].ImageIndex;
-            flagSW++;
-            if (flagSW % 2 == 0)
-            {
-                buttonX8.Text = lvActionTable.SelectedItems[0].Text;
-                buttonX8.Tag = lvActionTable.SelectedItems[0].Tag;
-            }
-            else
-            {
-                buttonX11.Text = lvActionTable.SelectedItems[0].Text;
-                buttonX11.Tag = lvActionTable.SelectedItems[0].Tag;
-            }
+
+            buttonX8.Text = lbFrm1TenBanAn.Text;
+            buttonX8.Tag = lbFrm1TenBanAn.Text;
+
+            buttonX11.Text = lvActionTable.SelectedItems[0].Text;
+            buttonX11.Tag = lvActionTable.SelectedItems[0].Tag;
         }
 
         private void textBoxX1_TextChanged_1(object sender, EventArgs e)
@@ -2994,14 +3027,24 @@ namespace Restaurant
                     phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
                     ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
                 }
+                //end tách món
+                btnActionDoiBan.Enabled = true;
+                btnActionGhepBan.Enabled = true;
+                lvShowBan.Enabled = true;
+                btnActionTachMon.Text = "Tách Món";
                 dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
                 flagTachBan = -1;
-                dtgvFrm1ThucDon.Columns.RemoveAt(8);
-                btnTachMon.Text = "Tách Món";
-                expandablePanel1.Visible = false;
-                DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
-                lvShowBan.Clear();
-                LoadBan(lvShowBan, dsKhuVuc, banBUS.LayDSBan());
+                btnActionTachMon.Enabled = true;
+                try
+                {
+                    dtgvFrm1ThucDon.Columns.RemoveAt(8);/// error
+                    /// 
+                    expandablePanel1.Visible = false;
+                    DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
+                    lvShowBan.Clear();
+                    LoadBan(lvShowBan, dsKhuVuc, banBUS.LayDSBan());
+                }
+                catch { };
             }
             catch (Exception ex)
             {
@@ -3012,11 +3055,12 @@ namespace Restaurant
         private void buttonX6_Click(object sender, EventArgs e)
         {
             btnDoiBan.Visible = false;
-            if (buttonX6.Text == "Ghép Bàn")
+            if (btnActionGhepBan.Text == "Ghép Bàn")
             {
-                buttonX6.Text = "Hủy Bỏ";
+                btnActionGhepBan.Text = "Hủy Bỏ";
                 groupPanel3.Visible = true;
                 expandablePanel1.Visible = true;
+                expandablePanel1.Expanded = true;
                 DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
                 lvActionTable.Clear();
                 LoadBan(lvActionTable, dsKhuVuc, banBUS.LayDSBanTheoTrangThai(2));
@@ -3025,7 +3069,7 @@ namespace Restaurant
             }
             else
             {
-                buttonX6.Text = "Ghép Bàn";
+                btnActionGhepBan.Text = "Ghép Bàn";
                 expandablePanel1.Visible = false;
                 groupPanel3.Visible = false;
                 lvShowBan.Enabled = true;
@@ -3041,7 +3085,7 @@ namespace Restaurant
 
         private void buttonX9_Click(object sender, EventArgs e)
         {
-            buttonX9.Visible = false;
+            //buttonX9.Visible = false;
             int newmaPhieu = phieuTT_Bus.LayMaPhieuTinhTien(int.Parse(labelX23.Tag.ToString()));
             int mb;
             if (labelX23.Tag == buttonX8.Tag)
@@ -3068,8 +3112,12 @@ namespace Restaurant
                 phieuTT_Bus.XoaPhieuTinhTien(oldmaPhieu);
                 RefreshDataGridview(dtgvFrm1ThucDon);
                 reFrestBaoGia();
-                groupPanel3.Visible = false;
+
+                btnActionGhepBan.Text = "Ghép Bàn";
                 expandablePanel1.Visible = false;
+                groupPanel3.Visible = false;
+                lvShowBan.Enabled = true;
+                btnDoiBan.Visible = true;
             }
             else
             {
@@ -3079,10 +3127,10 @@ namespace Restaurant
 
         private void buttonX7_Click_1(object sender, EventArgs e)
         {
-            if (buttonX7.Text == "Đổi Bàn")
+            if (btnActionDoiBan.Text == "Đổi Bàn")
             {
                 btnDoiBan.Visible = true;
-                buttonX7.Text = "Hủy Bỏ";
+                btnActionDoiBan.Text = "Hủy Bỏ";
                 groupPanel3.Visible = true;
                 expandablePanel1.Visible = true;
                 DataTable dsKhuVuc = khuVucBus.LayDSKHUVUC();
@@ -3093,7 +3141,7 @@ namespace Restaurant
             else
             {
                 btnDoiBan.Visible = false;
-                buttonX7.Text = "Đổi Bàn";
+                btnActionDoiBan.Text = "Đổi Bàn";
                 groupPanel3.Visible = true;
                 expandablePanel1.Visible = false;
                 lvShowBan.Enabled = true;
@@ -3103,7 +3151,7 @@ namespace Restaurant
         private void buttonX12_Click(object sender, EventArgs e)
         {
             btnDoiBan.Visible = false;
-            buttonX7.Text = "Đổi Bàn";
+            btnActionDoiBan.Text = "Đổi Bàn";
             groupPanel3.Visible = true;
             expandablePanel1.Visible = false;
             lvShowBan.Enabled = true;
