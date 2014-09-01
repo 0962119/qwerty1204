@@ -241,6 +241,7 @@ namespace Restaurant
             {
                 ListViewGroup lvg = new ListViewGroup();
                 lvg.Header = dtr[1].ToString();
+                lvg.Tag = dtr[0];
                 objlv.Groups.Add(lvg);
             }
             foreach (DataRow dtr in dsBan.Rows)
@@ -258,8 +259,15 @@ namespace Restaurant
                     lvi.ImageIndex = 2;
                 else
                     lvi.ImageIndex = 0;
-                int group = int.Parse(dtr[3].ToString()) - 1;
-                lvi.Group = objlv.Groups[group];
+                int group = int.Parse(dtr[3].ToString()) ;
+                foreach (ListViewGroup lviGR in objlv.Groups)
+                {
+                    if (group == int.Parse(lviGR.Tag.ToString()))
+                    {
+                        lvi.Group = lviGR;
+                    }
+                }
+                
                 //lvi.UseItemStyleForSubItems = true;
                 //ListViewItem_SetSpacing(lvShowBan, 46 + 32, 75 + 16);
                 objlv.Items.Add(lvi);
@@ -269,7 +277,8 @@ namespace Restaurant
         public void LoadThucDon(DataTable dsma)
         {
 
-
+            lvShowMonAn.CheckBoxes = true;
+            
             string sql = "select * from LOAIMONAN";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             DataProvider dt = new DataProvider();
@@ -279,6 +288,7 @@ namespace Restaurant
             {
                 ListViewGroup lvg = new ListViewGroup();
                 lvg.Header = dtr[1].ToString();
+                lvg.Tag = dtr[0];
                 lvShowMonAn.Groups.Add(lvg);
             }
             dtbBan = new DataTable();
@@ -305,8 +315,13 @@ namespace Restaurant
                     lvi.Font = new Font(f, lvi.Font.Size + 3);
 
                     lvi.ImageKey = ma.ToString();
-                    int group = int.Parse(dtr[2].ToString()) - 1;
-                    lvi.Group = lvShowMonAn.Groups[group];
+                    int group = int.Parse(dtr[2].ToString());
+                    foreach(ListViewGroup lviGr in lvShowMonAn.Groups){
+                        if(group==int.Parse(lviGr.Tag.ToString())){
+                            lvi.Group = lviGr;
+                        }
+                    }
+                    // = lvShowMonAn.Groups.[group];
                     //lvi.UseItemStyleForSubItems = true;
                     //ListViewItem_SetSpacing(lvShowMonAn, 10, 10);
                     lvi.SubItems.Add(dtr[6].ToString());
@@ -3231,6 +3246,11 @@ namespace Restaurant
         private void labelX2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupPanel4_Click(object sender, EventArgs e)
+        {
+            
         }
 
     }
