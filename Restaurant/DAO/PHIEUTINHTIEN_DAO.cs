@@ -266,6 +266,30 @@ namespace DAO
             else
                 return true;
         }
+
+        public bool CapNhapTienPhieuTT(int maPhieuTT, double tongTien, double giamGia)
+        {
+            string sql = "UPDATE PHIEUTINHTIEN SET TongTien=@tongTien, GiamGia=@giamGia" +
+                " WHERE MaPhieuTT = @maPhieu";
+            List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter paraTongTien = new OleDbParameter("@tongTien", OleDbType.Double);
+            OleDbParameter paraGiamGia = new OleDbParameter("@giamGia", OleDbType.Double);
+            OleDbParameter paraMaPhieu = new OleDbParameter("@maPhieu", OleDbType.Integer);
+            paraTongTien.Value = tongTien;
+            listParam.Add(paraTongTien);
+
+            paraGiamGia.Value = giamGia;
+            listParam.Add(paraGiamGia);
+
+            paraMaPhieu.Value = maPhieuTT;
+            listParam.Add(paraMaPhieu);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            int obj = dt.ExecuteNoneQuery(sql, listParam);
+            if (obj < 1)
+                return false;
+            else
+                return true;
+        }
         public bool CapNhatBanChoPhieuTT(int maPhieu, int maBan)
         {
             string sql = "UPDATE PHIEUTINHTIEN SET Ban= @maBan WHERE MaPhieuTT = @maPhieu";

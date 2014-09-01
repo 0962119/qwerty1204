@@ -85,7 +85,6 @@ namespace Restaurant
         }
         private void pictureboxTD_Click_1(object sender, EventArgs e)
         {
-            OpenFileDialog imagedialog = new OpenFileDialog();
             imagedialog.Filter = "Bitmaps(*.bmp)|*.jpg|All files(*.*)|*.*";
             imagedialog.Title = "Chọn ảnh thực đơn...";
 

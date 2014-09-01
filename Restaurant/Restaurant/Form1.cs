@@ -691,11 +691,13 @@ namespace Restaurant
         private void duyetdtgvThucDon()
         {
             double tt = 0;
+            double ttgg = 0;
             foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
             {
                 try
                 {
                     tt += double.Parse(dtr.Cells[6].Value.ToString());
+                    //ttgg+=
                 }
                 catch { }
             }
@@ -704,6 +706,11 @@ namespace Restaurant
             int vat = int.Parse(txtFrm1VAT.Text);
             BaoGia(gg, vat);
         }
+        /// <summary>
+        /// Kiểm tra xem món ăn đã chọn có được order chưa
+        /// </summary>
+        /// <param name="maMonAn">nhận vào tham số là mã món ăn cần kiểm tra</param>
+        /// <returns>trùng nhau thì trả về false. return true ngược lại</returns>
         private bool KiemTraTrungDsMonAn(int maMonAn)
         {
             foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
@@ -757,8 +764,7 @@ namespace Restaurant
                     row.Cells[7].Value = index;
                     dtgvFrm1ThucDon.Rows.Add(row);
                     duyetdtgvThucDon();
-
-
+                    
                     ChiTietPhieuTT ctPhieuTT_DTO = new ChiTietPhieuTT();
                     ctPhieuTT_DTO.MaPhieuTT = maPTT;
                     ctPhieuTT_DTO.MonAn = index;
@@ -789,15 +795,17 @@ namespace Restaurant
                     }
                 }
                 double tongmn = 0.0;
+                double tongGG = 0.0;
                 foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
                 {
                     try
                     {
                         tongmn += double.Parse(dtr.Cells[6].Value.ToString());
+                        tongGG += double.Parse(dtr.Cells[5].Value.ToString());
                     }
                     catch { }
                 }
-                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn);
+                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn, tongGG);
                 ClicklvShowBan(MaBanDangChon, ImgBanDangChon, lbFrm1TenBanAn.Text);
             }
             else
@@ -3216,6 +3224,11 @@ namespace Restaurant
         }
 
         private void lvActionTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelX2_Click(object sender, EventArgs e)
         {
 
         }

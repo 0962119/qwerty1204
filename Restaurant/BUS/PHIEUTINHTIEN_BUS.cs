@@ -64,6 +64,10 @@ namespace BUS
         {
             return phieuTinhTienDAO.CapNhapTienPhieuTT(maPhieuTT, tongTien);
         }
+        public bool CapNhapTienPhieuTT(int maPhieuTT, double tongTien, double giamGia)
+        {
+            return phieuTinhTienDAO.CapNhapTienPhieuTT(maPhieuTT, tongTien, giamGia);
+        }
         public bool XoaPhieuTinhTien(int maPhieu)
         {
             return phieuTinhTienDAO.XoaPhieuTinhTien(maPhieu);
