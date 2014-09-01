@@ -39,6 +39,7 @@
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.pictureboxTD = new System.Windows.Forms.PictureBox();
+            this.imagedialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxTD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             this.labelTD.Size = new System.Drawing.Size(112, 37);
             this.labelTD.TabIndex = 0;
             this.labelTD.Text = "Tên Thực Đơn:";
+            // 
             // txtThemThucDon
             // 
             this.txtThemThucDon.BackColor = System.Drawing.Color.White;
@@ -71,6 +73,7 @@
             this.txtThemThucDon.Name = "txtThemThucDon";
             this.txtThemThucDon.Size = new System.Drawing.Size(213, 29);
             this.txtThemThucDon.TabIndex = 1;
+            // 
             // labelX3
             // 
             this.labelX3.BackColor = System.Drawing.Color.White;
@@ -190,6 +193,10 @@
             this.pictureboxTD.TabStop = false;
             this.pictureboxTD.Click += new System.EventHandler(this.pictureboxTD_Click_1);
             // 
+            // imagedialog
+            // 
+            this.imagedialog.FileName = "openFileDialog1";
+            // 
             // FormThemThucDon
             // 
             this.AcceptButton = this.btOK;
@@ -209,7 +216,6 @@
             this.Controls.Add(this.labelGiaBan);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelTD);
-            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -236,5 +242,6 @@
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.PictureBox pictureboxTD;
+        private System.Windows.Forms.OpenFileDialog imagedialog;
     }
 }
