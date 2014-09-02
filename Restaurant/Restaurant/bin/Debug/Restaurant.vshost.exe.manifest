@@ -262,14 +262,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BUS.dll" size="16384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BUS.dll" size="16896">
       <assemblyIdentity name="BUS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>RMnhgn+2PBd/0sWT4l7F4U1iKKc=</dsig:DigestValue>
+        <dsig:DigestValue>4bBXLIsmX/ovVBPJK6eond6uYRk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -293,7 +293,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>pMta9Jw0K6bczewnxdjjnl8ve/Y=</dsig:DigestValue>
+        <dsig:DigestValue>JTNOK/vNSdM3g9b5xXk+mpoy/Y0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -418,14 +418,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Restaurant.exe" size="2366976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Restaurant.exe" size="2369024">
       <assemblyIdentity name="Restaurant" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ldNkiHIQ/KtBoO9IH1AbEC2Pz6A=</dsig:DigestValue>
+        <dsig:DigestValue>Tz3C1roBT3DUrmgqxtoW8AylRH8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
