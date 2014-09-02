@@ -45,9 +45,12 @@
   <ItemGroup>
     <Compile Include="BAN_DAO.cs" />
     <Compile Include="BoPhan_DAO.cs" />
+    <Compile Include="ChiTietKhungGio_DAO.cs" />
+    <Compile Include="ChiTietKMOFMonAn_DAO.cs" />
     <Compile Include="CHITIETPHIEUTT_DAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DonViTinh_DAO.cs" />
+    <Compile Include="DotKhuyenMai_DAO.cs" />
     <Compile Include="DSMONAN_DAO.cs" />
     <Compile Include="KHUVUC_DAO.cs" />
     <Compile Include="LoaiBaoCao_DAO.cs" />

@@ -22,6 +22,8 @@ using CrystalDecisions.Shared;
 using System.Reflection;
 using System.Configuration;
 using System.Xml;
+using DevComponents.Editors.DateTimeAdv;
+using DevComponents.DotNetBar.Controls;
 
 
 namespace Restaurant
@@ -36,6 +38,7 @@ namespace Restaurant
         LOAIMONAN_BUS dsLoaiMAbus = new LOAIMONAN_BUS();
         NGUOIDUNG_BUS NguoiDungBUS = new NGUOIDUNG_BUS();
         MonneyClass mn = new MonneyClass();
+        DotKhuyenMai_BUS dotKMBus = new DotKhuyenMai_BUS();
         /// <summary>
         /// mã của bàn hiện đang được chọn:
         /// =-1 là chưa chọn bàn
@@ -290,6 +293,7 @@ namespace Restaurant
                 lvg.Header = dtr[1].ToString();
                 lvg.Tag = dtr[0];
                 lvShowMonAn.Groups.Add(lvg);
+                lvShowThucDonKhuyenMai.Groups.Add(lvg);
             }
             dtbBan = new DataTable();
             dtbBan = dsma;
@@ -329,6 +333,7 @@ namespace Restaurant
                     string tien = mn.FormatString(dtr[3].ToString());
                     lvi.SubItems.Add(tien);
                     lvShowMonAn.Items.Add(lvi);
+                    lvShowThucDonKhuyenMai.Items.Add(lvi);
                     nIndex++;
                 }
                 catch
@@ -3230,28 +3235,118 @@ namespace Restaurant
                 LoadBan(lvShowBan, khuVucBus.LayDSKHUVUC(), banBUS.LayDSBan());
                 ClicklvShowBan(int.Parse(row.Tag.ToString()), 2, row.Text);
             }
-
-
-
-
-
-
         }
 
-        private void lvActionTable_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnThemKM_Click(object sender, EventArgs e)
         {
+            DotKhuyenMai_DTO dotKMDTO = new DotKhuyenMai_DTO();
+            dotKMDTO.TenDotKM = txtTenDotKM.Text;
+            dotKMDTO.TrangThai = cbxTinhTrangKM.Checked ? 1 : 0;
+            dotKMDTO.TgBatDau = dtpkTGTu.Value;
+            dotKMDTO.TgKetThuc = dtpkTGDen.Value;
+            dotKMDTO.Mua = int.Parse( nUDMua.Value.ToString());
+            dotKMDTO.Tang = int.Parse(nUDTang.Value.ToString());
+            dotKMDTO.Giam = int.Parse(nUDGiamGia.Value.ToString());
+            dotKMDTO.GhiChu = txtGhiChu.Text;
+            dotKMBus.ThemDotKhuyenMai(dotKMDTO);
 
+            for(int i=2;i<9;i++){
+                string thu = "";
+                thu = i < 8 ? i.ToString() : "CN";
+                CheckBox cbxThu = (CheckBox)grKG.Controls.Find("cbxT" + thu, true)[0];//rdbKGCaNgayT2
+                RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];//
+                DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
+                DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
+            }
+            ChiTietKhungGio_DTO ctKhungGioDTO = new ChiTietKhungGio_DTO();
+            //ctKhungGioDTO.
         }
 
-        private void labelX2_Click(object sender, EventArgs e)
+        private void cbxAll_CheckedChanged(object sender, EventArgs e)
         {
+            for (int i = 2; i < 9; i++)
+            {
+                string thu = "";
+                thu = i < 8 ? i.ToString() : "CN";
+                CheckBoxX cbxThu = (CheckBoxX)grKG.Controls.Find("cbxT" + thu, true)[0];
+                cbxThu.Checked = cbxAll.Checked;
+                if (cbxAll.Checked == true)
+                {
+                    RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];
+                    RadioButton rdbKGTuThu = (RadioButton)grKG.Controls.Find("rdbKGTuT" + thu, true)[0];
+                    rdbKGCaNgayThu.Checked = rdbKGCaNgayAll.Checked;
+                    rdbKGTuThu.Checked = rdbKGTuAll.Checked;
 
+                    DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
+                    dtpkKGDenThu.Value = dtpkKGDenAll.Value;
+
+                    DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
+                    dtpkKGTuThu.Value = dtpkKGTuAll.Value;
+                }
+            }
         }
 
-        private void groupPanel4_Click(object sender, EventArgs e)
+        private void rdbKGCaNgayAll_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (cbxAll.Checked == true)
+            {
+                for (int i = 2; i < 9; i++)
+                {
+                    string thu = "";
+                    thu = i < 8 ? i.ToString() : "CN";
+                    RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];
+                    RadioButton rdbKGTuThu = (RadioButton)grKG.Controls.Find("rdbKGTuT" + thu, true)[0];
+                    rdbKGCaNgayThu.Checked = rdbKGCaNgayAll.Checked;
+                    rdbKGTuThu.Checked = rdbKGTuAll.Checked;
+                }
+            }
         }
+
+        private void rdbKGTuAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxAll.Checked == true)
+            {
+                for (int i = 2; i < 9; i++)
+                {
+                    string thu = "";
+                    thu = i < 8 ? i.ToString() : "CN";
+                    RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];
+                    RadioButton rdbKGTuThu = (RadioButton)grKG.Controls.Find("rdbKGTuT" + thu, true)[0];
+                    rdbKGCaNgayThu.Checked = rdbKGCaNgayAll.Checked;
+                    rdbKGTuThu.Checked = rdbKGTuAll.Checked;
+                }
+            }
+        }
+
+        private void dtpkKGTuAll_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbxAll.Checked == true)
+            {
+                for (int i = 2; i < 9; i++)
+                {
+                    string thu = "";
+                    thu = i < 8 ? i.ToString() : "CN";
+                    DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
+                    dtpkKGTuThu.Value = dtpkKGTuAll.Value;
+                }
+            }
+        }
+
+        private void dtpkKGDenAll_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbxAll.Checked == true)
+            {
+                for (int i = 2; i < 9; i++)
+                {
+                    string thu = "";
+                    thu = i < 8 ? i.ToString() : "CN";
+                    DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
+                    dtpkKGDenThu.Value = dtpkKGDenAll.Value;
+                }
+            }
+        }
+
+        
 
     }
 }

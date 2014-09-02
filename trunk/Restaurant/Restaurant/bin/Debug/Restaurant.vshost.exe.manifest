@@ -262,14 +262,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BUS.dll" size="15872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BUS.dll" size="16384">
       <assemblyIdentity name="BUS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>T9dbEE2DoFxZpACnIi7/0tmn6QE=</dsig:DigestValue>
+        <dsig:DigestValue>RMnhgn+2PBd/0sWT4l7F4U1iKKc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -286,14 +286,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAO.dll" size="35840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAO.dll" size="38400">
       <assemblyIdentity name="DAO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>q+nFiWBwLCeNDZw6jSjdlQLxIV8=</dsig:DigestValue>
+        <dsig:DigestValue>pMta9Jw0K6bczewnxdjjnl8ve/Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -394,14 +394,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DTO.dll" size="12800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DTO.dll" size="14848">
       <assemblyIdentity name="DTO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>pVTBN36ntkrusUmZ6TwpRbz466M=</dsig:DigestValue>
+        <dsig:DigestValue>mpaUCr8+/KLsMj8GaWeiUwiFTV0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -418,14 +418,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Restaurant.exe" size="2358272">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Restaurant.exe" size="2366976">
       <assemblyIdentity name="Restaurant" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>xOd4tmCMfuIh8l+EUFhgxCKP+5M=</dsig:DigestValue>
+        <dsig:DigestValue>ldNkiHIQ/KtBoO9IH1AbEC2Pz6A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
