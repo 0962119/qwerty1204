@@ -262,14 +262,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BUS.dll" size="16896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BUS.dll" size="17408">
       <assemblyIdentity name="BUS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>4bBXLIsmX/ovVBPJK6eond6uYRk=</dsig:DigestValue>
+        <dsig:DigestValue>m5coOStnRr7z9xS1gXxxkUZEFLM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -286,14 +286,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAO.dll" size="38400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAO.dll" size="40960">
       <assemblyIdentity name="DAO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>JTNOK/vNSdM3g9b5xXk+mpoy/Y0=</dsig:DigestValue>
+        <dsig:DigestValue>ByUwDZ89cLEIUSQ5HHOfzidJSLU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -418,14 +418,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Restaurant.exe" size="2369024">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Restaurant.exe" size="2373632">
       <assemblyIdentity name="Restaurant" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Tz3C1roBT3DUrmgqxtoW8AylRH8=</dsig:DigestValue>
+        <dsig:DigestValue>zTlt9HHojGZgHO3ajsbvCJ8WjJw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
