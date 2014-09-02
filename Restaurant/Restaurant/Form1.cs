@@ -3239,51 +3239,62 @@ namespace Restaurant
         {
             DotKhuyenMai_DTO dotKMDTO = new DotKhuyenMai_DTO();
             dotKMDTO.TenDotKM = txtTenDotKM.Text;
-            dotKMDTO.TrangThai = cbxTinhTrangKM.Checked ? 1 : 0;
-            dotKMDTO.TgBatDau = dtpkTGTu.Value;
-            dotKMDTO.TgKetThuc = dtpkTGDen.Value;
-            dotKMDTO.Mua = int.Parse( nUDMua.Value.ToString());
-            dotKMDTO.Tang = int.Parse(nUDTang.Value.ToString());
-            dotKMDTO.Giam = int.Parse(nUDGiamGia.Value.ToString());
-            dotKMDTO.GhiChu = txtGhiChu.Text;
-            dotKMBus.ThemDotKhuyenMai(dotKMDTO);
-            int maKM =int.Parse( dotKMBus.LayDotKhuyenMaiTheoTen(txtTenDotKM.Text).Rows[0]["ID"].ToString());
-            ChiTietKhungGio_DTO ctKhungGioDTO;
-            for(int i=2;i<9;i++){
-                ctKhungGioDTO = new ChiTietKhungGio_DTO();
-                string thu = "";
-                thu = i < 8 ? i.ToString() : "CN";
-                CheckBox cbxThu = (CheckBox)grKG.Controls.Find("cbxT" + thu, true)[0];//rdbKGCaNgayT2
-                if (cbxThu.Checked == true)
-                {
-                    RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];
-                    if (rdbKGCaNgayThu.Checked == true)
-                    {
-                        ctKhungGioDTO.HBatDau = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day, 1, 0, 0);
-                        ctKhungGioDTO.HKetThuc = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day, 23, 59, 59);
-                    }
-                    else
-                    {
-                        DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
-                        DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
-                        ctKhungGioDTO.HBatDau = dtpkKGTuThu.Value;
-                        ctKhungGioDTO.HKetThuc = dtpkKGDenThu.Value;
-                    }
-                    ctKhungGioDTO.MaKM = maKM;
-                }
-                chitietKGBus.ThemChiTietKhungGio(ctKhungGioDTO);
-            }
-            ChiTietKMOFMonAn_DTO ctKMofMonAn;
-            foreach (ListViewItem lvi in lvShowThucDonKhuyenMai.Items)
+            if (dotKMBus.LayDotKhuyenMaiTheoTen(txtTenDotKM.Text).Rows.Count < 1)
             {
-                if (lvi.Checked == true)
+                dotKMDTO.TrangThai = cbxTinhTrangKM.Checked ? 1 : 0;
+                dotKMDTO.TgBatDau = dtpkTGTu.Value;
+                dotKMDTO.TgKetThuc = dtpkTGDen.Value;
+                dotKMDTO.Mua = int.Parse(nUDMua.Value.ToString());
+                dotKMDTO.Tang = int.Parse(nUDTang.Value.ToString());
+                dotKMDTO.Giam = int.Parse(nUDGiamGia.Value.ToString());
+                dotKMDTO.GhiChu = txtGhiChu.Text;
+                dotKMBus.ThemDotKhuyenMai(dotKMDTO);
+                int maKM = int.Parse(dotKMBus.LayDotKhuyenMaiTheoTen(txtTenDotKM.Text).Rows[0]["ID"].ToString());
+                ChiTietKhungGio_DTO ctKhungGioDTO;
+                for (int i = 2; i < 9; i++)
                 {
-                    ctKMofMonAn = new ChiTietKMOFMonAn_DTO();
-                    ctKMofMonAn.MaKM = maKM;
-                    ctKMofMonAn.MaMonan=int.Parse(lvi.Tag.ToString());
-                    chitietKMOfMonAnBus.ThemChiTietKMMonAn(ctKMofMonAn);
+                    ctKhungGioDTO = new ChiTietKhungGio_DTO();
+                    string thu = "";
+                    thu = i < 8 ? i.ToString() : "CN";
+                    CheckBoxX cbxThu = (CheckBoxX)grKG.Controls.Find("cbxT" + thu, true)[0];//rdbKGCaNgayT2
+                    if (cbxThu.Checked == true)
+                    {
+                        ctKhungGioDTO.Thu = i;
+                        RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];
+                        if (rdbKGCaNgayThu.Checked == true)
+                        {
+                            ctKhungGioDTO.HBatDau = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day, 1, 0, 0);
+                            ctKhungGioDTO.HKetThuc = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day, 23, 59, 59);
+                        }
+                        else
+                        {
+                            DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
+                            DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
+                            ctKhungGioDTO.HBatDau = dtpkKGTuThu.Value;
+                            ctKhungGioDTO.HKetThuc = dtpkKGDenThu.Value;
+                        }
+                        ctKhungGioDTO.MaKM = maKM;
+                        chitietKGBus.ThemChiTietKhungGio(ctKhungGioDTO);
+                    }
+
                 }
+                ChiTietKMOFMonAn_DTO ctKMofMonAn;
+                foreach (ListViewItem lvi in lvShowThucDonKhuyenMai.Items)
+                {
+                    if (lvi.Checked == true)
+                    {
+                        ctKMofMonAn = new ChiTietKMOFMonAn_DTO();
+                        ctKMofMonAn.MaKM = maKM;
+                        ctKMofMonAn.MaMonan = int.Parse(lvi.Tag.ToString());
+                        chitietKMOfMonAnBus.ThemChiTietKMMonAn(ctKMofMonAn);
+                    }
+                }
+                cbxDotKhuyenMai.DataSource = dotKMBus.LayDotKhuyenMai();
+                lbThongBaoKM.Text = "...";
+                MessageBox.Show("Thêm Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+                lbThongBaoKM.Text = "Tên Chương Trình Khuyến Mãi Đã Có Trước Đó";
         }
 
         private void cbxAll_CheckedChanged(object sender, EventArgs e)
@@ -3373,6 +3384,9 @@ namespace Restaurant
         private void metroTabItem3_Click(object sender, EventArgs e)
         {
             LoadThucDon(dsMonAnBus.LayDSMonAn(), lvShowThucDonKhuyenMai);
+            cbxDotKhuyenMai.DataSource = dotKMBus.LayDotKhuyenMai();
+            dtpkTGTu.Value = DateTime.Now.Date;
+            dtpkTGDen.Value = DateTime.Now.Date;
         }
 
         private void lvShowThucDonKhuyenMai_SelectedIndexChanged(object sender, EventArgs e)
@@ -3399,7 +3413,144 @@ namespace Restaurant
             LoadThucDon(dsMonAnBus.LayDSMonAn(textBoxX3.Text), lvShowThucDonKhuyenMai);
         }
 
-        
+        private void cbxDotKhuyenMai_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cbxAll.Checked = false;
+            RefreshKhuyenMai();
+            DataTable dtDotKhuyenMai = dotKMBus.LayDotKhuyenMaiTheoMa(int.Parse( cbxDotKhuyenMai.SelectedValue.ToString()));
+            txtTenDotKM.Text = dtDotKhuyenMai.Rows[0]["TenDotKM"].ToString();
+            cbxTinhTrangKM.Checked =  int.Parse(dtDotKhuyenMai.Rows[0]["TrangThai"].ToString())==1? true:false;
+            dtpkTGTu.Value =(DateTime) dtDotKhuyenMai.Rows[0]["TGBatDau"];
+            dtpkTGDen.Value = (DateTime)dtDotKhuyenMai.Rows[0]["TGKetThuc"];
+            txtGhiChu.Text = dtDotKhuyenMai.Rows[0]["GhiChu"].ToString();
+            nUDMua.Value = int.Parse(dtDotKhuyenMai.Rows[0]["Mua"].ToString());
+            nUDTang.Value = int.Parse(dtDotKhuyenMai.Rows[0]["Tang"].ToString());
+            nUDGiamGia.Value = int.Parse(dtDotKhuyenMai.Rows[0]["Giam"].ToString());
+            int maKhuyenMai = int.Parse(dtDotKhuyenMai.Rows[0]["ID"].ToString());
+            DataTable dtKhungGio = chitietKGBus.LayChiTietKG(maKhuyenMai);
+            foreach (DataRow dtr in dtKhungGio.Rows)
+            {
+                int i = int.Parse( dtr["Thu"].ToString());
+                string thu = "";
+                thu = i < 8 ? i.ToString() : "CN";
+                CheckBoxX cbxThu = (CheckBoxX)grKG.Controls.Find("cbxT" + thu, true)[0];
+                cbxThu.Checked = true;
+                DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
+                DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
+                dtpkKGTuThu.Value = (DateTime)dtr["HBatDau"];
+                dtpkKGDenThu.Value = (DateTime)dtr["HKetThuc"];
+            }
+            dtKhungGio = new DataTable();
+            dtKhungGio = chitietKMOfMonAnBus.LayChiTietKMMonAn(maKhuyenMai);
+            foreach (ListViewItem lvi in lvShowThucDonKhuyenMai.Items)
+            {
+                foreach (DataRow dtr in dtKhungGio.Rows)
+                {
+                    if (int.Parse(lvi.Tag.ToString()) == int.Parse(dtr["MaMonAn"].ToString()))
+                    {
+                        lvi.Checked = true;
+                    }
+                }
+            }
+        }
+
+        private void RefreshKhuyenMai()
+        {
+            for (int i = 2; i < 9; i++)
+            {
+                string thu = "";
+                thu = i < 8 ? i.ToString() : "CN";
+                CheckBoxX cbxThu = (CheckBoxX)grKG.Controls.Find("cbxT" + thu, true)[0];
+                cbxThu.Checked = false;
+
+                RadioButton rdbKGTuThu = (RadioButton)grKG.Controls.Find("rdbKGTuT" + thu, true)[0];
+                rdbKGTuThu.Checked = true;
+            }
+            foreach (ListViewItem lvi in lvShowThucDonKhuyenMai.Items)
+            {
+                lvi.Checked = false;
+            }
+        }
+
+        private void buttonX6_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Chắc Muốn Xóa Chương Trình Khuyến Mãi "+cbxDotKhuyenMai.Text+" Không", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                int ma = int.Parse(cbxDotKhuyenMai.SelectedValue.ToString());
+                chitietKGBus.XoaChiTietKG(ma);
+                chitietKMOfMonAnBus.XoaChiTietKMMonAn(ma);
+                dotKMBus.XoaDotKhuyenMaiTheoMa(ma);
+                cbxDotKhuyenMai.DataSource = dotKMBus.LayDotKhuyenMai();
+            }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            DotKhuyenMai_DTO dotKMDTO = new DotKhuyenMai_DTO();
+            dotKMDTO.TenDotKM = txtTenDotKM.Text;
+            if (1==1)
+            {
+                dotKMDTO.TrangThai = cbxTinhTrangKM.Checked ? 1 : 0;
+                dotKMDTO.TgBatDau = dtpkTGTu.Value;
+                dotKMDTO.TgKetThuc = dtpkTGDen.Value;
+                dotKMDTO.Mua = int.Parse(nUDMua.Value.ToString());
+                dotKMDTO.Tang = int.Parse(nUDTang.Value.ToString());
+                dotKMDTO.Giam = int.Parse(nUDGiamGia.Value.ToString());
+                dotKMDTO.GhiChu = txtGhiChu.Text;
+                int maKM = int.Parse(cbxDotKhuyenMai.SelectedValue.ToString());
+                dotKMDTO.ID1=maKM;
+                dotKMBus.SuaDotKhuyenMai(dotKMDTO);
+
+                chitietKGBus.XoaChiTietKG(maKM);
+                chitietKMOfMonAnBus.XoaChiTietKMMonAn(maKM);
+
+                ChiTietKhungGio_DTO ctKhungGioDTO;
+                for (int i = 2; i < 9; i++)
+                {
+                    ctKhungGioDTO = new ChiTietKhungGio_DTO();
+                    string thu = "";
+                    thu = i < 8 ? i.ToString() : "CN";
+                    CheckBoxX cbxThu = (CheckBoxX)grKG.Controls.Find("cbxT" + thu, true)[0];//rdbKGCaNgayT2
+                    if (cbxThu.Checked == true)
+                    {
+                        ctKhungGioDTO.Thu = i;
+                        RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];
+                        if (rdbKGCaNgayThu.Checked == true)
+                        {
+                            ctKhungGioDTO.HBatDau = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day, 1, 0, 0);
+                            ctKhungGioDTO.HKetThuc = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day, 23, 59, 59);
+                        }
+                        else
+                        {
+                            DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
+                            DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
+                            ctKhungGioDTO.HBatDau = dtpkKGTuThu.Value;
+                            ctKhungGioDTO.HKetThuc = dtpkKGDenThu.Value;
+                        }
+                        ctKhungGioDTO.MaKM = maKM;
+                        chitietKGBus.ThemChiTietKhungGio(ctKhungGioDTO);
+                    }
+
+                }
+                ChiTietKMOFMonAn_DTO ctKMofMonAn;
+                foreach (ListViewItem lvi in lvShowThucDonKhuyenMai.Items)
+                {
+                    if (lvi.Checked == true)
+                    {
+                        ctKMofMonAn = new ChiTietKMOFMonAn_DTO();
+                        ctKMofMonAn.MaKM = maKM;
+                        ctKMofMonAn.MaMonan = int.Parse(lvi.Tag.ToString());
+                        chitietKMOfMonAnBus.ThemChiTietKMMonAn(ctKMofMonAn);
+                    }
+                }
+                cbxDotKhuyenMai.DataSource = dotKMBus.LayDotKhuyenMai();
+                lbThongBaoKM.Text = "...";
+                MessageBox.Show("Cập Nhật Hoàn Tất", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                lbThongBaoKM.Text = "Tên Chương Trình Khuyến Mãi Đã Có Trước Đó";
+            
+        }
 
     }
 }
