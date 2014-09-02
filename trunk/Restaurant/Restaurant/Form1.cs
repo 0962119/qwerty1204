@@ -39,6 +39,8 @@ namespace Restaurant
         NGUOIDUNG_BUS NguoiDungBUS = new NGUOIDUNG_BUS();
         MonneyClass mn = new MonneyClass();
         DotKhuyenMai_BUS dotKMBus = new DotKhuyenMai_BUS();
+        ChiTietKhungGio_BUS chitietKGBus = new ChiTietKhungGio_BUS();
+        ChiTietKMOFMonAn_BUS chitietKMOfMonAnBus = new ChiTietKMOFMonAn_BUS();
         /// <summary>
         /// mã của bàn hiện đang được chọn:
         /// =-1 là chưa chọn bàn
@@ -177,7 +179,7 @@ namespace Restaurant
             LoadNhanVien();
             lvShowBan.Clear();
             LoadBan(lvShowBan, dsKhuVuc, banBUS.LayDSBan());
-            LoadThucDon(dsMonAnBus.LayDSMonAn());
+            LoadThucDon(dsMonAnBus.LayDSMonAn(), lvShowMonAn);
             balloonTip2.SetBalloonCaption(dtgvFrm1ThucDon, "Kéo Món Ăn Vào Danh Sách Thực Đơn Để Hủy Món\n Kéo Vào Bàn Để Chuyển Món Ăn Qua Bàn Đó");
             balloonTip1.SetBalloonCaption(lvShowBan, "Nhấp Đôi Vào Bàn Để Sử Dụng hoăc để hủy bàn");
             balloonTip3.SetBalloonCaption(pctLoGo, "Nhấp Đôi Để Thây Đôi LoGo Cho Nhà Hàng");
@@ -277,23 +279,18 @@ namespace Restaurant
             }
         }
 
-        public void LoadThucDon(DataTable dsma)
+        public void LoadThucDon(DataTable dsma, ListView lvShowThucDon)
         {
-
-            lvShowMonAn.CheckBoxes = true;
-            
             string sql = "select * from LOAIMONAN";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             DataProvider dt = new DataProvider();
-            DataTable dtbBan = new DataTable();
-            dtbBan = dt.ExecuteQuery(sql, ListParam);
+            DataTable dtbBan = dt.ExecuteQuery(sql, ListParam);
             foreach (DataRow dtr in dtbBan.Rows)
             {
                 ListViewGroup lvg = new ListViewGroup();
                 lvg.Header = dtr[1].ToString();
                 lvg.Tag = dtr[0];
-                lvShowMonAn.Groups.Add(lvg);
-                lvShowThucDonKhuyenMai.Groups.Add(lvg);
+                lvShowThucDon.Groups.Add(lvg);
             }
             dtbBan = new DataTable();
             dtbBan = dsma;
@@ -320,11 +317,13 @@ namespace Restaurant
 
                     lvi.ImageKey = ma.ToString();
                     int group = int.Parse(dtr[2].ToString());
-                    foreach(ListViewGroup lviGr in lvShowMonAn.Groups){
+                    foreach (ListViewGroup lviGr in lvShowThucDon.Groups)
+                    {
                         if(group==int.Parse(lviGr.Tag.ToString())){
                             lvi.Group = lviGr;
                         }
                     }
+                    
                     // = lvShowMonAn.Groups.[group];
                     //lvi.UseItemStyleForSubItems = true;
                     //ListViewItem_SetSpacing(lvShowMonAn, 10, 10);
@@ -332,8 +331,7 @@ namespace Restaurant
                     lvi.SubItems.Add(dtr[4].ToString());
                     string tien = mn.FormatString(dtr[3].ToString());
                     lvi.SubItems.Add(tien);
-                    lvShowMonAn.Items.Add(lvi);
-                    lvShowThucDonKhuyenMai.Items.Add(lvi);
+                    lvShowThucDon.Items.Add(lvi);
                     nIndex++;
                 }
                 catch
@@ -1666,7 +1664,7 @@ namespace Restaurant
         private void textBoxX1_TextChanged(object sender, EventArgs e)
         {
             lvShowMonAn.Items.Clear();
-            LoadThucDon(dsMonAnBus.LayDSMonAn(txtFrm1TimMonAn.Text));
+            LoadThucDon(dsMonAnBus.LayDSMonAn(txtFrm1TimMonAn.Text), lvShowMonAn);
         }
 
         private void textBoxX1_Click(object sender, EventArgs e)
@@ -3249,17 +3247,43 @@ namespace Restaurant
             dotKMDTO.Giam = int.Parse(nUDGiamGia.Value.ToString());
             dotKMDTO.GhiChu = txtGhiChu.Text;
             dotKMBus.ThemDotKhuyenMai(dotKMDTO);
-
+            int maKM =int.Parse( dotKMBus.LayDotKhuyenMaiTheoTen(txtTenDotKM.Text).Rows[0]["ID"].ToString());
+            ChiTietKhungGio_DTO ctKhungGioDTO;
             for(int i=2;i<9;i++){
+                ctKhungGioDTO = new ChiTietKhungGio_DTO();
                 string thu = "";
                 thu = i < 8 ? i.ToString() : "CN";
                 CheckBox cbxThu = (CheckBox)grKG.Controls.Find("cbxT" + thu, true)[0];//rdbKGCaNgayT2
-                RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];//
-                DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
-                DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
+                if (cbxThu.Checked == true)
+                {
+                    RadioButton rdbKGCaNgayThu = (RadioButton)grKG.Controls.Find("rdbKGCaNgayT" + thu, true)[0];
+                    if (rdbKGCaNgayThu.Checked == true)
+                    {
+                        ctKhungGioDTO.HBatDau = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day, 1, 0, 0);
+                        ctKhungGioDTO.HKetThuc = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day, 23, 59, 59);
+                    }
+                    else
+                    {
+                        DateTimeInput dtpkKGTuThu = (DateTimeInput)grKG.Controls.Find("dtpkKGTuT" + thu, true)[0];
+                        DateTimeInput dtpkKGDenThu = (DateTimeInput)grKG.Controls.Find("dtpkKGDenT" + thu, true)[0];
+                        ctKhungGioDTO.HBatDau = dtpkKGTuThu.Value;
+                        ctKhungGioDTO.HKetThuc = dtpkKGDenThu.Value;
+                    }
+                    ctKhungGioDTO.MaKM = maKM;
+                }
+                chitietKGBus.ThemChiTietKhungGio(ctKhungGioDTO);
             }
-            ChiTietKhungGio_DTO ctKhungGioDTO = new ChiTietKhungGio_DTO();
-            //ctKhungGioDTO.
+            ChiTietKMOFMonAn_DTO ctKMofMonAn;
+            foreach (ListViewItem lvi in lvShowThucDonKhuyenMai.Items)
+            {
+                if (lvi.Checked == true)
+                {
+                    ctKMofMonAn = new ChiTietKMOFMonAn_DTO();
+                    ctKMofMonAn.MaKM = maKM;
+                    ctKMofMonAn.MaMonan=int.Parse(lvi.Tag.ToString());
+                    chitietKMOfMonAnBus.ThemChiTietKMMonAn(ctKMofMonAn);
+                }
+            }
         }
 
         private void cbxAll_CheckedChanged(object sender, EventArgs e)
@@ -3344,6 +3368,35 @@ namespace Restaurant
                     dtpkKGDenThu.Value = dtpkKGDenAll.Value;
                 }
             }
+        }
+
+        private void metroTabItem3_Click(object sender, EventArgs e)
+        {
+            LoadThucDon(dsMonAnBus.LayDSMonAn(), lvShowThucDonKhuyenMai);
+        }
+
+        private void lvShowThucDonKhuyenMai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            //ListViewItem lvi = ((ListView)sender).SelectedItems[0];
+            //lvi.Checked = true;
+        }
+
+        private void lvShowThucDonKhuyenMai_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            ListViewItem lvi = e.Item;
+            lvi.Checked = true;
+        }
+
+        private void textBoxX3_Click(object sender, EventArgs e)
+        {
+            textBoxX3.Text = "";
+        }
+
+        private void textBoxX3_TextChanged(object sender, EventArgs e)
+        {
+            lvShowThucDonKhuyenMai.Items.Clear();
+            LoadThucDon(dsMonAnBus.LayDSMonAn(textBoxX3.Text), lvShowThucDonKhuyenMai);
         }
 
         
