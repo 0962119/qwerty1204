@@ -13,12 +13,13 @@ namespace DAO
         public bool ThemPhieuTinhTien(PhieuTinhTien phieuTT_DTO)
         {
             string sql = "INSERT INTO PHIEUTINHTIEN "+
-                "(Ban, NhanVien, TongTien, NgayLapPhieu, KhachDuaTruoc, GhiChu, GiamGia, VAT, TinhTrang, Giovao, Giora)"+
-           "VALUES (@maBan, @tenNhanVien, @tongTien, @ngayLap, @duaTruoc,@ghiChu, @giamGia, @vAT, @tinhTrang, @gioVao, @gioRa)";
+                "(Ban, NhanVien, TongTien, ThanhToan, NgayLapPhieu, KhachDuaTruoc, GhiChu, GiamGia, VAT, TinhTrang, Giovao, Giora)"+
+           "VALUES (@maBan, @tenNhanVien, @tongTien, @thanhToan, @ngayLap, @duaTruoc,@ghiChu, @giamGia, @vAT, @tinhTrang, @gioVao, @gioRa)";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             OleDbParameter maBan = new OleDbParameter("@maBan", OleDbType.Integer);
             OleDbParameter tenNhanVien = new OleDbParameter("@tenNhanVien", OleDbType.VarChar);
             OleDbParameter tongTien = new OleDbParameter("@tongTien", OleDbType.Double);
+            OleDbParameter thanhToan = new OleDbParameter("@thanhToan", OleDbType.Double);
             OleDbParameter ngayLap = new OleDbParameter("@ngayLap", OleDbType.Date);
             OleDbParameter duaTruoc = new OleDbParameter("@duaTruoc", OleDbType.Double);
             OleDbParameter ghiChu = new OleDbParameter("@ghiChu", OleDbType.VarChar);
@@ -31,6 +32,7 @@ namespace DAO
             maBan.Value = phieuTT_DTO.Ban;
             tenNhanVien.Value = phieuTT_DTO.NhanVien;
             tongTien.Value = phieuTT_DTO.TongTien;
+            thanhToan.Value = phieuTT_DTO.ThanhToan;
             ngayLap.Value = phieuTT_DTO.NgayLapPhieu;
             duaTruoc.Value = phieuTT_DTO.KhachDuaTruoc;
             ghiChu.Value = phieuTT_DTO.GhiChu;
@@ -43,6 +45,7 @@ namespace DAO
             ListParam.Add( maBan);
             ListParam.Add( tenNhanVien);
             ListParam.Add( tongTien);
+            ListParam.Add(thanhToan);
             ListParam.Add( ngayLap);
             ListParam.Add( duaTruoc);
             ListParam.Add( ghiChu);
@@ -153,8 +156,6 @@ namespace DAO
                 return true;
         }
 
-
-
         public bool CapNhatTrangThaiPhieuTT(int maBan, int tinhTrang)
         {
             string sql = "UPDATE PHIEUTINHTIEN SET TinhTrang= @tinhTrang WHERE Ban = @maBan";
@@ -177,12 +178,13 @@ namespace DAO
         public bool UpDatePhieuTT(PhieuTinhTien phieuTT_DTO)
         {
             string sql = "UPDATE PHIEUTINHTIEN SET " +
-                "Ban=@maBan, NhanVien=@tenNhanVien, TongTien=@tongTien, NgayLapPhieu= @ngayLap, KhachDuaTruoc=@duaTruoc, GhiChu=@ghiChu, GiamGia=@giamGia, VAT=@vAT, TinhTrang=@tinhTrang, Giovao=@gioVao, Giora= @gioRa " +
+                "Ban=@maBan, NhanVien=@tenNhanVien, TongTien=@tongTien, ThanhToan=@thanhToan NgayLapPhieu= @ngayLap, KhachDuaTruoc=@duaTruoc, GhiChu=@ghiChu, GiamGia=@giamGia, VAT=@vAT, TinhTrang=@tinhTrang, Giovao=@gioVao, Giora= @gioRa " +
            "where MaPhieuTT=@maPhieuTT";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             OleDbParameter maBan = new OleDbParameter("@maBan", OleDbType.Integer);
             OleDbParameter tenNhanVien = new OleDbParameter("@tenNhanVien", OleDbType.VarChar);
             OleDbParameter tongTien = new OleDbParameter("@tongTien", OleDbType.Double);
+            OleDbParameter thanhToan = new OleDbParameter("@thanhToan", OleDbType.Double);
             OleDbParameter ngayLap = new OleDbParameter("@ngayLap", OleDbType.Date);
             OleDbParameter duaTruoc = new OleDbParameter("@duaTruoc", OleDbType.Double);
             OleDbParameter ghiChu = new OleDbParameter("@ghiChu", OleDbType.VarChar);
@@ -196,6 +198,7 @@ namespace DAO
             maBan.Value = phieuTT_DTO.Ban;
             tenNhanVien.Value = phieuTT_DTO.NhanVien;
             tongTien.Value = phieuTT_DTO.TongTien;
+            thanhToan.Value = phieuTT_DTO.ThanhToan;
             ngayLap.Value = phieuTT_DTO.NgayLapPhieu;
             duaTruoc.Value = phieuTT_DTO.KhachDuaTruoc;
             ghiChu.Value = phieuTT_DTO.GhiChu;
@@ -209,6 +212,7 @@ namespace DAO
             ListParam.Add(maBan);
             ListParam.Add(tenNhanVien);
             ListParam.Add(tongTien);
+            ListParam.Add(thanhToan);
             ListParam.Add(ngayLap);
             ListParam.Add(duaTruoc);
             ListParam.Add(ghiChu);
@@ -250,7 +254,7 @@ namespace DAO
         }
         public bool CapNhapTienPhieuTT(int maPhieuTT, double tongTien)
         {
-            string sql = "UPDATE PHIEUTINHTIEN SET TongTien=@tongTien" +
+            string sql = "UPDATE PHIEUTINHTIEN SET ThanhToan=@tongTien" +
                 " WHERE MaPhieuTT = @maPhieu";
             List<OleDbParameter> listParam = new List<OleDbParameter>();
             OleDbParameter paraTongTien = new OleDbParameter("@tongTien", OleDbType.Double);
@@ -325,7 +329,7 @@ namespace DAO
         public string TongTienThongKeHoaDon(string NgayDau, string NgayCuoi)
         {
             OleDbConnection conn = DataProvider.ConnectDB();
-            string sql = "SELECT sum(TongTien) as TongTienAll from PhieuTinhTien Where NgayLapPhieu between #" + NgayDau + "# and #" + NgayCuoi + "#";
+            string sql = "SELECT sum(TongTien) as TongTienAll, sum(ThanhToan) as ThanhToanAll from PhieuTinhTien Where NgayLapPhieu between #" + NgayDau + "# and #" + NgayCuoi + "#";
             DataTable dt = new DataTable();
             OleDbCommand cmd = new OleDbCommand(sql, conn);            
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);

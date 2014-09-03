@@ -19,6 +19,7 @@ namespace DTO
         private int _giamGia;
         private double _thanhTien;
         private double _donGia;
+        private int _dotKM;
         
               
         #endregion
@@ -33,6 +34,7 @@ namespace DTO
             _giamGia = 0;
             _thanhTien = 0;
             _donGia = 0;
+            _dotKM = 0;
         }
         #endregion
         #region Properties
@@ -80,6 +82,11 @@ namespace DTO
         {
             get { return _maPhieuTT; }
             set { _maPhieuTT = value; }
+        }
+        public int DotKhuyenMai
+        {
+            get { return _dotKM; }
+            set { _dotKM = value; }
         }
 #endregion
     }
