@@ -34,8 +34,8 @@ namespace DAO
         public bool ThemCTPhieuTinhTien(ChiTietPhieuTT ctPhieuTT_DTO)
         {
             string sql = "INSERT INTO CHITIETPHIEUTT " +
-                "(MaPhieuTT, MonAn, SoLuong, GiamGia, ThanhTien, DonGia)" +
-           "VALUES (@maPhieuTT, @monAn, @soLuong,@giamGia, @thanhTien, @donGia)";
+                "(MaPhieuTT, MonAn, SoLuong, GiamGia, ThanhTien, DonGia, DotKM, GioGoiDatMon)" +
+           "VALUES (@maPhieuTT, @monAn, @soLuong,@giamGia, @thanhTien, @donGia, @dotKM, @gioGoiDatMon)";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             OleDbParameter maPTT = new OleDbParameter("@maPhieuTT", OleDbType.Integer);
             OleDbParameter monAn = new OleDbParameter("@monAn", OleDbType.Integer);
@@ -43,6 +43,8 @@ namespace DAO
             OleDbParameter GiamGia = new OleDbParameter("@giamGia", OleDbType.Integer);
             OleDbParameter ThanhTien = new OleDbParameter("@thanhTien", OleDbType.Double);
             OleDbParameter DonGia = new OleDbParameter("@donGia", OleDbType.Double);
+            OleDbParameter DotKhuyenMai = new OleDbParameter("@dotKM", OleDbType.Integer);
+            OleDbParameter GioGoiMon = new OleDbParameter("@gioGoiDatMon", OleDbType.Date);
 
             maPTT.Value = ctPhieuTT_DTO.MaPhieuTT;
             monAn.Value = ctPhieuTT_DTO.MonAn;
@@ -50,6 +52,8 @@ namespace DAO
             GiamGia.Value = ctPhieuTT_DTO.GiamGia;
             ThanhTien.Value = ctPhieuTT_DTO.ThanhTien;
             DonGia.Value = ctPhieuTT_DTO.DonGia;
+            DotKhuyenMai.Value = ctPhieuTT_DTO.DotKhuyenMai;
+            GioGoiMon.Value = ctPhieuTT_DTO.GioVao;
 
             ListParam.Add(maPTT);
             ListParam.Add(monAn);
@@ -57,6 +61,8 @@ namespace DAO
             ListParam.Add(GiamGia);
             ListParam.Add(ThanhTien);
             ListParam.Add(DonGia);
+            ListParam.Add(DotKhuyenMai);
+            ListParam.Add(GioGoiMon);
 
             NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
             int kq = dt.ExecuteNoneQuery(sql, ListParam);

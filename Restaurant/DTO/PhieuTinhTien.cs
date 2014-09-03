@@ -12,6 +12,7 @@ namespace DTO
         private int _ban;        
         private string _nhanVien;
         private double _tongTien;
+        private double _thanhToan;
         private DateTime _ngayLapPhieu;
         private double _khachDuaTruoc;
         private String _ghiChu;
@@ -59,6 +60,7 @@ namespace DTO
             _ban = 0;
             _nhanVien = "admin";
             _tongTien = 0;
+            _thanhToan = 0;
             _ngayLapPhieu = DateTime.Now;
             _khachDuaTruoc = 0 ;
             _ghiChu = String.Empty;
@@ -90,6 +92,11 @@ namespace DTO
         {
             get { return _tongTien; }
             set { _tongTien = value; }
+        }
+        public double ThanhToan
+        {
+            get { return _thanhToan; }
+            set { _thanhToan = value; }
         }
         public DateTime NgayLapPhieu
         {

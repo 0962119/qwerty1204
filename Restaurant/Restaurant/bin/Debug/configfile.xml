@@ -2,7 +2,7 @@
 <!--configfile.xml-->
 <appSettings>
   <add key="rdFrm1XemBanIn" value="true" />
-  <add key="pctLoGo" value="C:\Users\12414_000\Desktop\Revesion 26\trunk\Restaurant\Restaurant\bin\Debug\imageThucDon\Logo.png" />
+  <add key="pctLoGo" value="C:\Users\QN\Desktop\QLNH_F31 tot nhat\Restaurant\Restaurant\bin\Debug\imageThucDon\Logo.png" />
   <add key="lbFrm1SDTNhaHang" value="01665695679" />
   <add key="lbFrm1DiachiNhaHang" value="Full House" />
   <add key="lbFrm1TenNhaHang" value="Nhà Hàng Liên Hoa Chay" />
