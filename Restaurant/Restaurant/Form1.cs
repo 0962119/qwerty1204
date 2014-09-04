@@ -500,15 +500,13 @@ namespace Restaurant
 
                             dtgvFrm1ThucDon.Rows.Add(row);
                         }
-                        duyetdtgvThucDon();
                         DataTable maPhieuTT = new DataTable();
                         maPhieuTT = phieuTT_Bus.LayPhieuTinhTien(MaBanDangChon);
-                        DataRow dataRow;
-                        dataRow = maPhieuTT.NewRow();
-                        dataRow = maPhieuTT.Rows[0];
-                        txtFrm1GiaGia.Text = dataRow["GiamGia"].ToString();
-                        txtFrm1VAT.Text = dataRow["VAT"].ToString();
-                        txtFrm1NhapGhiChu.Text = dataRow[6].ToString();
+                        txtFrm1GiamGia.Text = maPhieuTT.Rows[0]["GiamGia"].ToString();
+                        txtFrm1VAT.Text = maPhieuTT.Rows[0]["VAT"].ToString();
+                        duyetdtgvThucDon();
+                        phieuTT_Bus.CapNhapTienPhieuTT(int.Parse(maPhieuTT.Rows[0]["MaPhieuTT"].ToString()), tongTien, thanhToan, true);
+                        txtFrm1NhapGhiChu.Text = maPhieuTT.Rows[0]["GhiChu"].ToString();
                     }
                     else
                     {
@@ -551,7 +549,7 @@ namespace Restaurant
                             ptt.Ban = int.Parse(lvShowBan.SelectedItems[0].Tag.ToString());
 
                             ptt.TongTien = 0;
-                            ptt.GhiChu = " được chuyển qua từ bàn: " + tenBan;
+                            ptt.GhiChu = "\r\nđược chuyển qua từ bàn: " + tenBan;
                             ptt.TinhTrang = 1;
                             phieuTT_Bus.ThemPhieuTinhTien(ptt);
 
@@ -581,9 +579,9 @@ namespace Restaurant
                                 }
                             }
 
-                            phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(ptt.Ban), tongMn);
+                            //phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(ptt.Ban), tongMn);
 
-                            phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
+                            //phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
                             ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
                         }
                         else// nhap vao ban co khách
@@ -625,9 +623,9 @@ namespace Restaurant
                                 }
                             }
 
-                            phieuTT_Bus.CapNhapTienPhieuTT(new1, tongt1 + tongMn);
+                            //phieuTT_Bus.CapNhapTienPhieuTT(new1, tongt1 + tongMn);
 
-                            phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
+                            //phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
                             ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
                         }
                         dtgvFrm1ThucDon.Columns[1].Width = dtgvFrm1ThucDon.Columns[1].Width + 30;
@@ -688,7 +686,7 @@ namespace Restaurant
                 DataRow dataRow;
                 dataRow = maPhieuTT.NewRow();
                 dataRow = maPhieuTT.Rows[0];
-                txtFrm1GiaGia.Text = dataRow[7].ToString();
+                txtFrm1GiamGia.Text = dataRow[7].ToString();
                 txtFrm1VAT.Text = dataRow[8].ToString();
             }
             else
@@ -714,13 +712,14 @@ namespace Restaurant
             {
                 try
                 {
-                    tt += double.Parse(dtr.Cells[6].Value.ToString());
-                    //ttgg+=
+                    tt += double.Parse(dtr.Cells["CLdongia"].Value.ToString()) * int.Parse(dtr.Cells["ClSoLuong"].Value.ToString());
+                    ttgg += double.Parse(dtr.Cells["CLTong"].Value.ToString());
                 }
                 catch { }
             }
-            tongTien = tt;
-            int gg = int.Parse(txtFrm1GiaGia.Text);
+            this.tongTien = tt;
+            this.thanhToan = ttgg;
+            int gg = int.Parse(txtFrm1GiamGia.Text);
             int vat = int.Parse(txtFrm1VAT.Text);
             BaoGia(gg, vat);
         }
@@ -751,17 +750,9 @@ namespace Restaurant
             {
 
                 int index = int.Parse(lvShowMonAn.SelectedItems[0].Tag.ToString());
-                DotKhuyenMai_DTO DotKMCuaMonAn = new DotKhuyenMai_DTO();
-                DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(index);
+                
                 string tenMonAn = lvShowMonAn.SelectedItems[0].Text;//sl dongia giam gia
-                //int sL=int.Parse(lvShowMonAn.SelectedItems[0].SubItems[1].Text.ToString());
                 double donGia = double.Parse(lvShowMonAn.SelectedItems[0].SubItems[3].Text.ToString());
-                int giamGia;
-                try
-                {
-                    giamGia = DotKMCuaMonAn.Giam;// int.Parse(lvShowMonAn.SelectedItems[0].SubItems[2].Text.ToString());
-                }
-                catch { giamGia = 0; }
                 string dVT = lvShowMonAn.SelectedItems[0].SubItems[1].Text.ToString();
                 DataGridViewRow row = (DataGridViewRow)dtgvFrm1ThucDon.Rows[0].Clone();
                 try
@@ -773,6 +764,10 @@ namespace Restaurant
                     row.Cells[0].Value = 1;
                 }
                 int maPTT = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon);
+                DotKhuyenMai_DTO DotKMCuaMonAn = new DotKhuyenMai_DTO();
+                DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(index);
+                int giamGia = DotKMCuaMonAn != null ? DotKMCuaMonAn.Giam : 0;
+
                 if (KiemTraTrungDsMonAn(index))
                 {
                     row.Cells[1].Value = tenMonAn;
@@ -791,7 +786,10 @@ namespace Restaurant
                     ctPhieuTT_DTO.SoLuong = 1;
                     ctPhieuTT_DTO.GiamGia = giamGia;
                     ctPhieuTT_DTO.DonGia = donGia;
-                    ctPhieuTT_DTO.DotKhuyenMai = DotKMCuaMonAn.ID1;
+                    if(DotKMCuaMonAn==null)
+                        ctPhieuTT_DTO.DotKhuyenMai = -1;
+                    else
+                        ctPhieuTT_DTO.DotKhuyenMai = DotKMCuaMonAn.ID1;
                     ctPhieuTT_DTO.ThanhTien = donGia - (donGia * giamGia) / 100;
                     ctPhieuTT_BUS.ThemCTPhieuTinhTien(ctPhieuTT_DTO);
                 }
@@ -804,6 +802,16 @@ namespace Restaurant
                             int ma = int.Parse(dtr.Cells[7].Value.ToString());
                             if (ma == index)
                             {
+                                DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(maPTT, ma);
+                                if (DotKMCuaMonAn != null)
+                                    giamGia = DotKMCuaMonAn.Giam;
+                                else
+                                {
+                                    DotKMCuaMonAn = new DotKhuyenMai_DTO();
+                                    giamGia = 0;
+                                    DotKMCuaMonAn.Mua = 1;
+                                    DotKMCuaMonAn.Tang = 0;
+                                }
                                 int slnew = int.Parse(dtr.Cells[2].Value.ToString()) + 1;
                                 dtr.Cells[2].Value = slnew;
                                 dtr.Cells[5].Value = giamGia;
@@ -813,23 +821,25 @@ namespace Restaurant
                                 ctPhieuTT_BUS.CapNhatCTPhieuTT(maPTT, ma, slnew, int.Parse(dtr.Cells[5].Value.ToString()), thanhtienma);
                             }
                         }
-                        catch
+                        catch(Exception ex)
                         {
                         }
                     }
                 }
                 double tongmn = 0.0;
-                double tongGG = 0.0;
+                double thanhToan =  0.0;
                 foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
                 {
                     try
                     {
-                        tongmn += double.Parse(dtr.Cells[6].Value.ToString());
-                        tongGG += double.Parse(dtr.Cells[5].Value.ToString());
+                        thanhToan+= double.Parse(dtr.Cells["CLTong"].Value.ToString());
+                        tongmn += double.Parse(dtr.Cells["CLdongia"].Value.ToString()) * int.Parse(dtr.Cells["ClSoLuong"].Value.ToString());
                     }
                     catch { }
                 }
-                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn, tongGG);
+                this.thanhToan = thanhToan;
+                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn,int.Parse( txtFrm1GiamGia.Text));
+                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn, thanhToan, true);
                 ClicklvShowBan(MaBanDangChon, ImgBanDangChon, lbFrm1TenBanAn.Text);
             }
             else
@@ -867,7 +877,7 @@ namespace Restaurant
         }
         private void dtgvFrm1ThucDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int gg = int.Parse(txtFrm1GiaGia.Text);
+            int gg = int.Parse(txtFrm1GiamGia.Text);
             int vat = int.Parse(txtFrm1VAT.Text);
 
             if (e.ColumnIndex == 2 || e.ColumnIndex == 6 || e.ColumnIndex == 5)
@@ -877,14 +887,38 @@ namespace Restaurant
                     int sL = int.Parse(dtgvFrm1ThucDon.Rows[e.RowIndex].Cells[2].Value.ToString());
                     double donGia = double.Parse(dtgvFrm1ThucDon.Rows[e.RowIndex].Cells[4].Value.ToString());
                     int giamGia = int.Parse(dtgvFrm1ThucDon.Rows[e.RowIndex].Cells[5].Value.ToString());
-                    double thanhtienCVC = (donGia * sL) - ((donGia * sL * giamGia) / 100);
+                    int  maMonAn = int.Parse( dtgvFrm1ThucDon.Rows[e.RowIndex].Cells["id"].Value.ToString());
+
+                    DataTable maPhieuTT = new DataTable();
+                    maPhieuTT = phieuTT_Bus.LayPhieuTinhTien(MaBanDangChon);
+                    DataRow dataRow;
+                    dataRow = maPhieuTT.NewRow();
+                    dataRow = maPhieuTT.Rows[0];
+
+                    DotKhuyenMai_DTO DotKMCuaMonAn = new DotKhuyenMai_DTO();
+                    DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(int.Parse(dataRow[0].ToString()),maMonAn);
+                    if (DotKMCuaMonAn != null)
+                        giamGia = DotKMCuaMonAn.Giam;
+                    else
+                    {
+                        DotKMCuaMonAn = new DotKhuyenMai_DTO();
+                        giamGia = 0;
+                        DotKMCuaMonAn.Mua = 1;
+                        DotKMCuaMonAn.Tang = 0;
+                    }
+                    int slTinhTien = (sL * DotKMCuaMonAn.Mua) / (DotKMCuaMonAn.Mua + DotKMCuaMonAn.Tang);
+                    slTinhTien += sL % (DotKMCuaMonAn.Mua + DotKMCuaMonAn.Tang);
+                    double thanhtienCVC = (donGia * slTinhTien) - ((donGia * slTinhTien * giamGia) / 100);
                     dtgvFrm1ThucDon.Rows[e.RowIndex].Cells[6].Value = thanhtienCVC;
-                    tongTien = 0;
+                    this.tongTien = 0;
+                    this.thanhToan = 0.0;
                     foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
                     {
                         try
                         {
-                            tongTien += double.Parse(dtr.Cells[6].Value.ToString());
+                            //tongTien += double.Parse(dtr.Cells[6].Value.ToString());
+                            this.thanhToan += double.Parse(dtr.Cells["CLTong"].Value.ToString());
+                            this.tongTien += double.Parse(dtr.Cells["CLdongia"].Value.ToString()) * int.Parse(dtr.Cells["ClSoLuong"].Value.ToString());
                         }
                         catch
                         {
@@ -892,23 +926,19 @@ namespace Restaurant
                     }
 
                     /// update lai phieu tinh tien
-                    DataTable maPhieuTT = new DataTable();
-                    maPhieuTT = phieuTT_Bus.LayPhieuTinhTien(MaBanDangChon);
-                    DataRow dataRow;
-                    dataRow = maPhieuTT.NewRow();
-                    dataRow = maPhieuTT.Rows[0];
-                    int maMonAn = int.Parse(dtgvFrm1ThucDon.Rows[e.RowIndex].Cells[7].Value.ToString());
-                    ctPhieuTT_BUS.CapNhatCTPhieuTT(int.Parse(dataRow[0].ToString()), maMonAn, sL, giamGia, thanhtienCVC);
+                    int maMonAn1 = int.Parse(dtgvFrm1ThucDon.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    ctPhieuTT_BUS.CapNhatCTPhieuTT(int.Parse(dataRow[0].ToString()), maMonAn1, sL, giamGia, thanhtienCVC);
                     PhieuTinhTien chiTietUpdate = new PhieuTinhTien();
                     chiTietUpdate.MaPhieuTT = int.Parse(dataRow[0].ToString());
                     chiTietUpdate.Ban = int.Parse(dataRow[1].ToString());
                     chiTietUpdate.NhanVien = dataRow[2].ToString();
                     chiTietUpdate.TongTien = tongTien;//double.Parse(dataRow[3].ToString());
-
+                    
+                    chiTietUpdate.ThanhToan = BaoGia(int.Parse(txtFrm1GiamGia.Text),int.Parse(txtFrm1VAT.Text));
                     chiTietUpdate.NgayLapPhieu = DateTime.Parse(dataRow[4].ToString());
                     chiTietUpdate.KhachDuaTruoc = double.Parse(dataRow[5].ToString());
                     chiTietUpdate.GhiChu = dataRow[6].ToString();
-                    chiTietUpdate.GiamGia = giamGia;//int.Parse(dataRow[7].ToString());
+                    chiTietUpdate.GiamGia = gg;//int.Parse(dataRow[7].ToString());
 
                     chiTietUpdate.VAT = vat;//int.Parse(dataRow[8].ToString());
                     chiTietUpdate.TinhTrang = int.Parse(dataRow[9].ToString());
@@ -930,21 +960,22 @@ namespace Restaurant
         /// </summary>
         /// <param name="giamgiaphantram"></param>
         /// <param name="vat"></param>
-        private void BaoGia(int giamgiaphantram, int vat)
+        private double BaoGia(int giamgiaphantram, int vat)
         {
-            giamGia = tongTien * giamgiaphantram / 100;
+            giamGia = thanhToan * giamgiaphantram / 100;
             //vAT = tongTien - (tongTien-( tongTien * vat / 100));
-            vAT = (tongTien - giamGia) * vat / 100;
-            thanhToan = tongTien - (giamGia + vAT);
+            vAT = (thanhToan - giamGia) * vat / 100;
+            double thanhToanFinal = thanhToan - (giamGia + vAT);
 
             lbFrm1GiamGia.Text = mn.FormatString(giamGia.ToString());
             lbFrm1VAT.Text = mn.FormatString(vAT.ToString());
-            thoiLai = khachTra - thanhToan;
-            lbFrm1ThoiLai.Text = mn.FormatString(thoiLai.ToString());
+            thoiLai = khachTra - thanhToanFinal;
+            lbFrm1ThoiLai.Text = thoiLai < 0 ? "Chưa Đủ" : mn.FormatString(thoiLai.ToString());
             lbFrm1TongTien.Text = mn.FormatString(tongTien.ToString());
-            lbFrm1ThanhToan.Text = mn.FormatString(thanhToan.ToString());
-            lbFrm1TienBangChu.Text = "* " + mn.So_chu(thanhToan.ToString());
+            lbFrm1ThanhToan.Text = mn.FormatString(thanhToanFinal.ToString());
+            lbFrm1TienBangChu.Text = "* " + mn.So_chu(thanhToanFinal.ToString());
             lbFrm1TienBangChu.ForeColor = Color.Green;
+            return thanhToanFinal;
         }
         private void reFrestBaoGia()
         {
@@ -959,7 +990,7 @@ namespace Restaurant
             lbFrm1TongTien.Text = tongTien.ToString();
             lbFrm1ThanhToan.Text = thanhToan.ToString();
             txtFrm1VAT.Text = "0";
-            txtFrm1GiaGia.Text = "0";
+            txtFrm1GiamGia.Text = "0";
             lbFrm1TienBangChu.Text = "* " + mn.So_chu(thanhToan.ToString());
             lbFrm1TienBangChu.ForeColor = Color.Red;
         }
@@ -971,9 +1002,9 @@ namespace Restaurant
             {
                 if (MaBanDangChon != -1)
                 {
-                    giamGiaPT = int.Parse(txtFrm1GiaGia.Text);
+                    giamGiaPT = int.Parse(txtFrm1GiamGia.Text);
                     int vat = int.Parse(txtFrm1VAT.Text);
-                    BaoGia(giamGiaPT, vat);
+                    double thanhToanFinal = BaoGia(giamGiaPT, vat);
                     /// update lai phieu tinh tien
                     DataTable maPhieuTT = new DataTable();
                     maPhieuTT = phieuTT_Bus.LayPhieuTinhTien(MaBanDangChon);
@@ -982,19 +1013,19 @@ namespace Restaurant
                     dataRow = maPhieuTT.Rows[0];
                     PhieuTinhTien chiTietUpdate = new PhieuTinhTien();
                     chiTietUpdate.MaPhieuTT = int.Parse(dataRow[0].ToString());
-                    chiTietUpdate.Ban = int.Parse(dataRow[1].ToString());
-                    chiTietUpdate.NhanVien = dataRow[2].ToString();
-                    chiTietUpdate.TongTien = thanhToan;//double.Parse(dataRow[3].ToString());
-
-                    chiTietUpdate.NgayLapPhieu = DateTime.Parse(dataRow[4].ToString());
-                    chiTietUpdate.KhachDuaTruoc = double.Parse(dataRow[5].ToString());
-                    chiTietUpdate.GhiChu = dataRow[6].ToString();
+                    chiTietUpdate.Ban = int.Parse(dataRow["Ban"].ToString());
+                    chiTietUpdate.NhanVien = dataRow["NhanVien"].ToString();
+                    chiTietUpdate.TongTien = this.tongTien;//double.Parse(dataRow[3].ToString());
+                    chiTietUpdate.ThanhToan = thanhToanFinal;
+                    chiTietUpdate.NgayLapPhieu = DateTime.Parse(dataRow["NgayLapPhieu"].ToString());
+                    chiTietUpdate.KhachDuaTruoc = double.Parse(dataRow["KhachDuaTruoc"].ToString());
+                    chiTietUpdate.GhiChu = dataRow["GhiChu"].ToString();
                     chiTietUpdate.GiamGia = giamGiaPT;//int.Parse(dataRow[7].ToString());
 
                     chiTietUpdate.VAT = vat;//int.Parse(dataRow[8].ToString());
-                    chiTietUpdate.TinhTrang = int.Parse(dataRow[9].ToString());
-                    chiTietUpdate.Giovao = DateTime.Parse(dataRow[10].ToString());
-                    chiTietUpdate.Giora = DateTime.Parse(dataRow[11].ToString());
+                    chiTietUpdate.TinhTrang = int.Parse(dataRow["TinhTrang"].ToString());
+                    chiTietUpdate.Giovao = DateTime.Parse(dataRow["Giovao"].ToString());
+                    chiTietUpdate.Giora = DateTime.Parse(dataRow["Giora"].ToString());
 
                     phieuTT_Bus.UpDatePhieuTT(chiTietUpdate);
 
@@ -1002,7 +1033,7 @@ namespace Restaurant
             }
             catch
             {
-                txtFrm1GiaGia.Text = "";
+                txtFrm1GiamGia.Text = "";
             }
 
 
@@ -1015,8 +1046,8 @@ namespace Restaurant
                 if (MaBanDangChon != -1)
                 {
                     giamGiavat = int.Parse(txtFrm1VAT.Text);
-                    int gg = int.Parse(txtFrm1GiaGia.Text);
-                    BaoGia(gg, giamGiavat);
+                    int gg = int.Parse(txtFrm1GiamGia.Text);
+                    double thanhToanFinal = BaoGia(gg, giamGiavat);
 
                     /// update lai phieu tinh tien
                     DataTable maPhieuTT = new DataTable();
@@ -1028,8 +1059,8 @@ namespace Restaurant
                     chiTietUpdate.MaPhieuTT = int.Parse(dataRow[0].ToString());
                     chiTietUpdate.Ban = int.Parse(dataRow[1].ToString());
                     chiTietUpdate.NhanVien = dataRow[2].ToString();
-                    chiTietUpdate.TongTien = thanhToan;//double.Parse(dataRow[3].ToString());
-
+                    chiTietUpdate.TongTien = this.tongTien;//double.Parse(dataRow[3].ToString());
+                    chiTietUpdate.ThanhToan = thanhToanFinal;
                     chiTietUpdate.NgayLapPhieu = DateTime.Parse(dataRow[4].ToString());
                     chiTietUpdate.KhachDuaTruoc = double.Parse(dataRow[5].ToString());
                     chiTietUpdate.GhiChu = dataRow[6].ToString();
@@ -1076,13 +1107,14 @@ namespace Restaurant
         {
             if (txtFrm1NhapGhiChu.Text == "Nhập Ghi Chú Của Bàn.......")
                 txtFrm1NhapGhiChu.Text = "";
-
+            txtFrm1NhapGhiChu.Height = 239;
         }
 
         private void txtFrm1NhapGhiChu_Validated(object sender, EventArgs e)
         {
             if (txtFrm1NhapGhiChu.Text.Length < 1)
                 txtFrm1NhapGhiChu.Text = "Nhập Ghi Chú Của Bàn.......";
+            txtFrm1NhapGhiChu.Height = 30;
         }
 
         private void dtgvFrm1ThucDon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1139,6 +1171,7 @@ namespace Restaurant
         }
         private void btnFrm1TaoBanDatTruoc_Click(object sender, EventArgs e)
         {
+
         }
         /// <summary>
         /// xem co chay su kien dtgvFrm1ThucDon_RowsAdded không?
@@ -1213,7 +1246,7 @@ namespace Restaurant
                         PhieuTinhTien ptt = new PhieuTinhTien();
                         ptt.Ban = int.Parse(lvi.Tag.ToString());
                         ptt.TongTien = double.Parse(row.Cells[6].Value.ToString());
-                        ptt.GhiChu = "Món " + row.Cells[1].Value.ToString() + " được chuyển qua từ bàn " + lvi.Text + ",";
+                        ptt.GhiChu = "\r\nMón " + row.Cells[1].Value.ToString() + " được chuyển qua từ bàn " + lvi.Text + ",";
                         ptt.TinhTrang = 1;
                         phieuTT_Bus.ThemPhieuTinhTien(ptt);
 
@@ -1255,10 +1288,15 @@ namespace Restaurant
                             int index1 = int.Parse(row.Tag.ToString());
                             DotKhuyenMai_DTO DotKMCuaMonAn = new DotKhuyenMai_DTO();
                             DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(index1);
+                            int giamGia1 ;
+                            if (DotKMCuaMonAn != null)
+                                giamGia1 = DotKMCuaMonAn.Giam;
+                            else
+                                giamGia1 = 0;
                             string tenMonAn1 = row.Text;//sl dongia giam gia
                             //int sL=int.Parse(lvShowMonAn.SelectedItems[0].SubItems[1].Text.ToString());
                             double donGia1 = double.Parse(row.SubItems[3].Text.ToString());
-                            int giamGia1 = DotKMCuaMonAn.Giam;
+                            
                             string dVT1 = row.SubItems[1].Text.ToString();
                             RefreshDataGridview(dtgvFrm1ThucDon);
                             ClicklvShowBan(int.Parse(lvi.Tag.ToString()), lvi.ImageIndex, lvi.Text);
@@ -1291,11 +1329,15 @@ namespace Restaurant
                                 ctPhieuTT_DTO.SoLuong = 1;
                                 ctPhieuTT_DTO.GiamGia = giamGia1;
                                 ctPhieuTT_DTO.DonGia = donGia1;
-                                ctPhieuTT_DTO.DotKhuyenMai = DotKMCuaMonAn.ID1;
+                                ctPhieuTT_DTO.DotKhuyenMai =DotKMCuaMonAn==null?-1: DotKMCuaMonAn.ID1;
                                 ctPhieuTT_DTO.ThanhTien = donGia1 - (donGia1 * giamGia1) / 100;
                                 ctPhieuTT_BUS.ThemCTPhieuTinhTien(ctPhieuTT_DTO);
                                 double tienCapNhat = phieuTT_Bus.LayTongTienPhieuTT(maPTT);
-                                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tienCapNhat);
+
+                                double thanhToan = tienCapNhat - (int.Parse(txtFrm1GiamGia.Text) * tienCapNhat / 100);
+                                thanhToan -= (int.Parse(txtFrm1VAT.Text) * thanhToan / 100);
+
+                                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tienCapNhat, thanhToan);
                             }
                             else
                             {
@@ -1306,8 +1348,19 @@ namespace Restaurant
                                         int ma = int.Parse(dtr.Cells[7].Value.ToString());
                                         if (ma == index1)
                                         {
+                                            DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(maPTT, ma);
+                                            if (DotKMCuaMonAn != null)
+                                                giamGia1 = DotKMCuaMonAn.Giam;
+                                            else
+                                            {
+                                                DotKMCuaMonAn = new DotKhuyenMai_DTO();
+                                                giamGia1 = 0;
+                                                DotKMCuaMonAn.Mua = 1;
+                                                DotKMCuaMonAn.Tang = 0;
+                                            }
                                             int slnew = int.Parse(dtr.Cells[2].Value.ToString()) + 1;
                                             dtr.Cells[2].Value = slnew;
+                                            dtr.Cells[5].Value = giamGia;
                                             int slTinhTien = (slnew * DotKMCuaMonAn.Mua) / (DotKMCuaMonAn.Mua + DotKMCuaMonAn.Tang);
                                             slTinhTien += slnew % (DotKMCuaMonAn.Mua + DotKMCuaMonAn.Tang);
                                             double thanhtienma = (donGia * slTinhTien) - ((donGia * slTinhTien * giamGia1) / 100);
@@ -1333,10 +1386,10 @@ namespace Restaurant
                             phieuTinhTien_DTO.Ban = int.Parse(lvi.Tag.ToString());
                             phieuTinhTien_DTO.GhiChu = txtFrm1NhapGhiChu.Text;
                             phieuTinhTien_DTO.NhanVien = nhanVienDangNhap.TaiKhoan;
-                            phieuTinhTien_DTO.TongTien = thanhToan;
+                            phieuTinhTien_DTO.TongTien =this.thanhToan;
                             phieuTinhTien_DTO.NgayLapPhieu = DateTime.Now;
                             phieuTinhTien_DTO.KhachDuaTruoc = 0;
-                            phieuTinhTien_DTO.GiamGia = giamGia;
+                            phieuTinhTien_DTO.GiamGia = int.Parse(txtFrm1GiamGia.Text);
                             phieuTinhTien_DTO.VAT = vAT;
                             phieuTinhTien_DTO.TinhTrang = 1;
                             phieuTT_Bus.ThemPhieuTinhTien(phieuTinhTien_DTO);
@@ -1359,10 +1412,14 @@ namespace Restaurant
                             ctPhieuTT_DTO.SoLuong = 1;
                             ctPhieuTT_DTO.GiamGia = giamGia1;
                             ctPhieuTT_DTO.DonGia = donGia1;
-                            ctPhieuTT_DTO.DotKhuyenMai = DotKMCuaMonAn.ID1;
+                            ctPhieuTT_DTO.DotKhuyenMai =DotKMCuaMonAn==null?-1: DotKMCuaMonAn.ID1;
                             ctPhieuTT_DTO.ThanhTien = donGia1 - (donGia1 * giamGia1) / 100;
                             ctPhieuTT_BUS.ThemCTPhieuTinhTien(ctPhieuTT_DTO);
-                            phieuTT_Bus.CapNhapTienPhieuTT(maPTT, ctPhieuTT_DTO.ThanhTien);
+
+                            double thanhToan = ctPhieuTT_DTO.ThanhTien - (int.Parse(txtFrm1GiamGia.Text) * ctPhieuTT_DTO.ThanhTien / 100);
+                            thanhToan -= (int.Parse(txtFrm1VAT.Text) * thanhToan / 100);
+
+                            phieuTT_Bus.CapNhapTienPhieuTT(maPTT, ctPhieuTT_DTO.ThanhTien, thanhToan, true);
                             ClicklvShowBan(int.Parse(lvi.Tag.ToString()), 2, lvi.Text);
 
                         }
@@ -1386,9 +1443,16 @@ namespace Restaurant
                                 {
                                     int newmaPhieu = phieuTT_Bus.LayMaPhieuTinhTien(int.Parse(lvi.Tag.ToString()));
                                     int oldmaPhieu = phieuTT_Bus.LayMaPhieuTinhTien(int.Parse(row.Tag.ToString()));
+
+                                    DataRow pttTaBle = phieuTT_Bus.LayPhieuTinhTienMaPhieu(newmaPhieu).Rows[0];
                                     ctPhieuTT_BUS.GhepBan(oldmaPhieu, newmaPhieu);
                                     double tongTien = phieuTT_Bus.LayTongTienPhieuTT(newmaPhieu);
-                                    phieuTT_Bus.CapNhapTienPhieuTT(newmaPhieu, tongTien);
+                                    
+
+                                    double thanhToan = tongTien - (int.Parse(pttTaBle["GiamGia"].ToString()) * tongTien / 100);
+                                    thanhToan -= (int.Parse(pttTaBle["VAT"].ToString()) * thanhToan / 100);
+
+                                    phieuTT_Bus.CapNhapTienPhieuTT(newmaPhieu, tongTien, thanhToan,true);
                                     banBUS.UpdateTrangThaiBan(1, int.Parse(row.Tag.ToString()));
                                     foreach (ListViewItem listview in lvShowBan.Items)
                                     {
@@ -1399,6 +1463,8 @@ namespace Restaurant
                                         }
                                     }
                                     phieuTT_Bus.XoaPhieuTinhTien(oldmaPhieu);
+                                    txtFrm1GiamGia.Text = pttTaBle["GiamGia"].ToString();
+                                    txtFrm1VAT.Text = pttTaBle["VAT"].ToString();
                                     RefreshDataGridview(dtgvFrm1ThucDon);
                                     reFrestBaoGia();
                                 }
@@ -1412,6 +1478,7 @@ namespace Restaurant
                                     phieuTT_Bus.CapNhatBanChoPhieuTT(oldmaPhieu, newBan);
                                 }
                                 ClicklvShowBan(int.Parse(lvi.Tag.ToString()), lvi.ImageIndex, lvi.Text);
+
                             }
                             else// 1 trong 2 co khách
                             {
@@ -1535,20 +1602,8 @@ namespace Restaurant
                 {
                     return;
                 }
-                DotKhuyenMai_DTO DotKMCuaMonAn = new DotKhuyenMai_DTO();
-                DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(index);
                 string tenMonAn = row1.Text; //sl dongia giam gia
-                //int sL=int.Parse(lvShowMonAn.SelectedItems[0].SubItems[1].Text.ToString());
-                double donGia;
-                try
-                {
-                    donGia = double.Parse(row1.SubItems[3].Text.ToString());
-                }
-                catch
-                {
-                    return;
-                }
-                int giamGia = DotKMCuaMonAn.Giam;
+                double donGia = double.Parse(row1.SubItems[3].Text.ToString());
                 string dVT = lvShowMonAn.SelectedItems[0].SubItems[1].Text.ToString();
                 DataGridViewRow row = (DataGridViewRow)dtgvFrm1ThucDon.Rows[0].Clone();
                 try
@@ -1560,7 +1615,10 @@ namespace Restaurant
                     row.Cells[0].Value = 1;
                 }
                 int maPTT = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon);
-                
+                DotKhuyenMai_DTO DotKMCuaMonAn = new DotKhuyenMai_DTO();
+                DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(index);
+                int giamGia = DotKMCuaMonAn != null ? DotKMCuaMonAn.Giam : 0;
+
                 if (KiemTraTrungDsMonAn(index))
                 {
                     row.Cells[1].Value = tenMonAn;
@@ -1580,7 +1638,7 @@ namespace Restaurant
                     ctPhieuTT_DTO.SoLuong = 1;
                     ctPhieuTT_DTO.GiamGia = giamGia;
                     ctPhieuTT_DTO.DonGia = donGia;
-                    ctPhieuTT_DTO.DotKhuyenMai = DotKMCuaMonAn.ID1;
+                    ctPhieuTT_DTO.DotKhuyenMai = DotKMCuaMonAn == null?-1:DotKMCuaMonAn.ID1;
                     ctPhieuTT_DTO.ThanhTien = donGia - (donGia * giamGia) / 100;
                     ctPhieuTT_BUS.ThemCTPhieuTinhTien(ctPhieuTT_DTO);
                 }
@@ -1593,29 +1651,46 @@ namespace Restaurant
                             int ma = int.Parse(dtr.Cells[7].Value.ToString());
                             if (ma == index)
                             {
+                                DotKMCuaMonAn = dotKMBus.LayKMCuaMonan(maPTT, ma);
+                                if (DotKMCuaMonAn != null)
+                                    giamGia = DotKMCuaMonAn.Giam;
+                                else
+                                {
+                                    DotKMCuaMonAn = new DotKhuyenMai_DTO();
+                                    giamGia = 0;
+                                    DotKMCuaMonAn.Mua = 1;
+                                    DotKMCuaMonAn.Tang = 0;
+                                }
+
                                 int slnew = int.Parse(dtr.Cells[2].Value.ToString()) + 1;
-                                dtr.Cells[2].Value = slnew;
+                                dtr.Cells["ClSoLuong"].Value = slnew;
+                                dtr.Cells[5].Value = giamGia;
                                 int slTinhTien = (slnew * DotKMCuaMonAn.Mua) / (DotKMCuaMonAn.Mua + DotKMCuaMonAn.Tang);
                                 slTinhTien += slnew % (DotKMCuaMonAn.Mua + DotKMCuaMonAn.Tang);
                                 double thanhtienma = (donGia * slTinhTien) - ((donGia * slTinhTien * giamGia) / 100);
                                 ctPhieuTT_BUS.CapNhatCTPhieuTT(maPTT, ma, slnew, int.Parse(dtr.Cells[5].Value.ToString()), thanhtienma);
                             }
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            //MessageBox.Show(ex.ToString());
                         }
                     }
                 }
                 double tongmn = 0.0;
+                double thanhToan = 0.0;
                 foreach (DataGridViewRow dtr in dtgvFrm1ThucDon.Rows)
                 {
                     try
                     {
-                        tongmn += double.Parse(dtr.Cells[6].Value.ToString());
+                        thanhToan += double.Parse(dtr.Cells["CLTong"].Value.ToString());
+                        tongmn += double.Parse(dtr.Cells["CLdongia"].Value.ToString()) * int.Parse(dtr.Cells["ClSoLuong"].Value.ToString());
                     }
                     catch { }
                 }
-                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn);
+                this.thanhToan = thanhToan; //double thanhToan = tongmn - (int.Parse( txtFrm1GiamGia.Text)*tongmn/100 );
+                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn, int.Parse(txtFrm1GiamGia.Text)); //thanhToan-= (int.Parse(txtFrm1VAT.Text)*thanhToan/100);
+                phieuTT_Bus.CapNhapTienPhieuTT(maPTT, tongmn, thanhToan, true);
                 ClicklvShowBan(MaBanDangChon, ImgBanDangChon, lbFrm1TenBanAn.Text);
             }
             else
@@ -1733,14 +1808,14 @@ namespace Restaurant
 
         private void txtFrm1GiaGia_Click(object sender, EventArgs e)
         {
-            if (txtFrm1GiaGia.Text.Trim() == "0")
-                txtFrm1GiaGia.Text = "";
+            if (txtFrm1GiamGia.Text.Trim() == "0")
+                txtFrm1GiamGia.Text = "";
         }
 
         private void txtFrm1GiaGia_Validated(object sender, EventArgs e)
         {
-            if (txtFrm1GiaGia.Text.Trim().Length < 1)
-                txtFrm1GiaGia.Text = "0";
+            if (txtFrm1GiamGia.Text.Trim().Length < 1)
+                txtFrm1GiamGia.Text = "0";
         }
 
         private void txtFrm1VAT_Click(object sender, EventArgs e)
@@ -1759,7 +1834,7 @@ namespace Restaurant
             try
             {
                 khachTra = double.Parse(txtFrm1KhachTra.Text);
-                int gg = int.Parse(txtFrm1GiaGia.Text);
+                int gg = int.Parse(txtFrm1GiamGia.Text);
                 int vat = int.Parse(txtFrm1VAT.Text);
                 BaoGia(gg, vat);
 
@@ -1886,7 +1961,7 @@ namespace Restaurant
             Parameters.Add(param);
             param = new ReportParameter("BanThanhToan", "Bill Thanh Toán Bàn " + lbFrm1TenBanAn.Text);
             Parameters.Add(param);
-            param = new ReportParameter("phattram", txtFrm1GiaGia.Text + "%");
+            param = new ReportParameter("phattram", txtFrm1GiamGia.Text + "%");
             Parameters.Add(param);
             param = new ReportParameter("ptvat", txtFrm1VAT.Text + "%");
             Parameters.Add(param);
@@ -2998,7 +3073,7 @@ namespace Restaurant
                     ptt.Ban = maBanTach;
 
                     ptt.TongTien = 0;
-                    ptt.GhiChu = " được chuyển qua từ bàn: " + tenBan;
+                    ptt.GhiChu = "\r\nđược chuyển qua từ bàn: " + tenBan;
                     ptt.TinhTrang = 1;
                     phieuTT_Bus.ThemPhieuTinhTien(ptt);
 
@@ -3028,9 +3103,9 @@ namespace Restaurant
                         }
                     }
 
-                    phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(ptt.Ban), tongMn);
+                    //phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(ptt.Ban), tongMn);
 
-                    phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
+                    //phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
                     ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
                 }
                 else// nhap vao ban co khách
@@ -3071,9 +3146,9 @@ namespace Restaurant
                         }
                     }
 
-                    phieuTT_Bus.CapNhapTienPhieuTT(new1, tongt1 + tongMn);
+                    //phieuTT_Bus.CapNhapTienPhieuTT(new1, tongt1 + tongMn);
 
-                    phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
+                    //phieuTT_Bus.CapNhapTienPhieuTT(phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon), tongt - tongMn);
                     ClicklvShowBan(MaBanDangChon, 2, lbFrm1TenBanAn.Text);
                 }
                 //end tách món
@@ -3148,7 +3223,12 @@ namespace Restaurant
             {
                 ctPhieuTT_BUS.GhepBan(oldmaPhieu, newmaPhieu);
                 double tongTien = phieuTT_Bus.LayTongTienPhieuTT(newmaPhieu);
-                phieuTT_Bus.CapNhapTienPhieuTT(newmaPhieu, tongTien);
+
+                DataRow pttTaBle = phieuTT_Bus.LayPhieuTinhTienMaPhieu(newmaPhieu).Rows[0];
+                double thanhToan = tongTien - (int.Parse(pttTaBle["GiamGia"].ToString()) * tongTien / 100);
+                thanhToan -= (int.Parse(pttTaBle["VAT"].ToString()) * thanhToan / 100);
+
+                phieuTT_Bus.CapNhapTienPhieuTT(newmaPhieu, tongTien, thanhToan);
                 banBUS.UpdateTrangThaiBan(1, mb);
                 foreach (ListViewItem listview in lvShowBan.Items)
                 {
@@ -3572,6 +3652,34 @@ namespace Restaurant
             }
             else
                 lbThongBaoKM.Text = "Tên Chương Trình Khuyến Mãi Đã Có Trước Đó";
+            
+        }
+
+        private void dtgvFrm1ThucDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int row = ((DataGridView)sender).CurrentRow.Index;
+                DataGridViewRow dtRowClick = ((DataGridView)sender).Rows[row];
+                int maMonAn = int.Parse(dtRowClick.Cells["id"].Value.ToString());
+                string tenMonAn = dtRowClick.Cells["ClTenMA"].Value.ToString();
+                int maPhieuTT = phieuTT_Bus.LayMaPhieuTinhTien(MaBanDangChon);
+                DotKhuyenMai_DTO dotKMDTO = new DotKhuyenMai_DTO();
+                dotKMDTO = dotKMBus.LayKMCuaMonan(maPhieuTT, maMonAn);
+                string ghiChu = "Món " + tenMonAn + " Thuộc " + dotKMDTO.TenDotKM + " Được Giảm " + dotKMDTO.Giam + "%";
+                if (dotKMDTO.Tang > 0)
+                    ghiChu += " Và Mua " + dotKMDTO.Mua + " Tặng " + dotKMDTO.Tang ;
+                ghiChu += "\r\n";
+                if (txtFrm1NhapGhiChu.Text.IndexOf(ghiChu) <= 0)
+                {
+                    txtFrm1NhapGhiChu.Text += ghiChu ;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("dtgvFrm1ThucDon_Click");
+            }
+            
             
         }
 

@@ -44,6 +44,11 @@ namespace BUS
             return phieuTinhTienDAO.LayPhieuTinhTien(maBan);
 
         }
+        public DataTable LayPhieuTinhTienMaPhieu(int maPhieu)
+        {
+            return phieuTinhTienDAO.LayPhieuTinhTienMaPhieu(maPhieu);
+
+        }
         public bool XoaPhieuTinhTien(int maBan, int tinhTrang)
         {
             return phieuTinhTienDAO.XoaPhieuTinhTien(maBan, tinhTrang);
@@ -51,6 +56,10 @@ namespace BUS
         public bool CapNhatTrangThaiPhieuTT(int maBan, int tinhTrang)
         {
             return phieuTinhTienDAO.CapNhatTrangThaiPhieuTT(maBan, tinhTrang);
+        }
+        public bool CapNhatGhiChuPhieuTT(int maBan, string ghiChu)
+        {
+            return phieuTinhTienDAO.CapNhatGhiChuPhieuTT(maBan, ghiChu);
         }
         public bool UpDatePhieuTT(PhieuTinhTien phieuTT_DTO)
         {
@@ -60,9 +69,9 @@ namespace BUS
         {
             return phieuTinhTienDAO.LayTongTienPhieuTT(maPhieu);
         }
-        public bool CapNhapTienPhieuTT(int maPhieuTT, double tongTien)
+        public bool CapNhapTienPhieuTT(int maPhieuTT, double tongTien, double thanhToan, bool flag)
         {
-            return phieuTinhTienDAO.CapNhapTienPhieuTT(maPhieuTT, tongTien);
+            return phieuTinhTienDAO.CapNhapTienPhieuTT(maPhieuTT, tongTien, thanhToan, flag);
         }
         public bool CapNhapTienPhieuTT(int maPhieuTT, double tongTien, double giamGia)
         {
