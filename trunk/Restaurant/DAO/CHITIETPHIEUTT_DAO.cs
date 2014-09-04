@@ -31,6 +31,24 @@ namespace DAO
             NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
             return  dt.ExecuteQuery(sql, ListParam);
         }
+
+        public DataTable LayKMCTPhieuTT(int maPhieuTT, int maMonAn)
+        {
+            //int kq = -1;
+            string sql = "SELECT MaPhieuTT From CHITIETPHIEUTT WHERE MaPhieuTT = @maPhieuTT AND MonAn =@monAn";
+            List<OleDbParameter> ListParam = new List<OleDbParameter>();
+
+            OleDbParameter paraMaPhieuTT = new OleDbParameter("@maPhieuTT", OleDbType.Integer);
+            OleDbParameter paraMaMonAn = new OleDbParameter("@monAn", OleDbType.Integer);
+
+            paraMaPhieuTT.Value = maPhieuTT;
+            paraMaMonAn.Value = maMonAn;
+            ListParam.Add(paraMaPhieuTT);
+            ListParam.Add(paraMaMonAn);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, ListParam);
+        }
+
         public bool ThemCTPhieuTinhTien(ChiTietPhieuTT ctPhieuTT_DTO)
         {
             string sql = "INSERT INTO CHITIETPHIEUTT " +

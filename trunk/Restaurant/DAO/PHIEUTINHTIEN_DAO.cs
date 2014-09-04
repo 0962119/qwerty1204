@@ -124,6 +124,17 @@ namespace DAO
             return dt.ExecuteQuery(sql, listParam);
             
         }
+        public DataTable LayPhieuTinhTienMaPhieu(int maPhieu)
+        {
+            string sql = "select * from PHIEUTINHTIEN where( MaPhieuTT=@maBan and (TinhTrang=1 or TinhTrang = 3))";
+            List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter paramaBan = new OleDbParameter("@maBan", OleDbType.Integer);
+            paramaBan.Value = maPhieu;
+            listParam.Add(paramaBan);
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            return dt.ExecuteQuery(sql, listParam);
+
+        }
         public bool XoaPhieuTinhTien(int maBan, int tinhTrang)
         {
             string sql = "DELETE FROM PHIEUTINHTIEN WHERE  (Ban = @maBan) AND (TinhTrang = @tinhTrang)";
@@ -156,9 +167,10 @@ namespace DAO
                 return true;
         }
 
-        public bool CapNhatTrangThaiPhieuTT(int maBan, int tinhTrang)
+        public bool CapNhatTrangThaiPhieuTT(int maPhieu, int tinhTrang)
         {
-            string sql = "UPDATE PHIEUTINHTIEN SET TinhTrang= @tinhTrang WHERE Ban = @maBan";
+            int maBan = LayMaPhieuTinhTien(maPhieu);
+            string sql = "UPDATE PHIEUTINHTIEN SET TinhTrang= @tinhTrang WHERE MaPhieuTT = @maBan";
             List<OleDbParameter> listParam = new List<OleDbParameter>();
             OleDbParameter paramaBan = new OleDbParameter("@maBan", OleDbType.Integer);
             OleDbParameter paraTinhTrang = new OleDbParameter("@tinhTrang", OleDbType.Integer);
@@ -175,10 +187,30 @@ namespace DAO
             else
                 return true;
         }
+        public bool CapNhatGhiChuPhieuTT(int maBan, string ghiChu)
+        {
+            int maPhieu = LayMaPhieuTinhTien(maBan);
+            string sql = "UPDATE PHIEUTINHTIEN SET GhiChu= @ghiChu WHERE MaPhieuTT = @maPhieu";
+            List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter paraGhiChu = new OleDbParameter("@ghiChu", OleDbType.VarChar);
+            OleDbParameter paraMaPhieu = new OleDbParameter("@maPhieu", OleDbType.Integer);
+            paraGhiChu.Value = ghiChu;
+            paraMaPhieu.Value = maPhieu;
+
+            listParam.Add(paraGhiChu);
+            listParam.Add(paraMaPhieu);
+
+            NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
+            int obj = dt.ExecuteNoneQuery(sql, listParam);
+            if (obj < 1)
+                return false;
+            else
+                return true;
+        }
         public bool UpDatePhieuTT(PhieuTinhTien phieuTT_DTO)
         {
             string sql = "UPDATE PHIEUTINHTIEN SET " +
-                "Ban=@maBan, NhanVien=@tenNhanVien, TongTien=@tongTien, ThanhToan=@thanhToan NgayLapPhieu= @ngayLap, KhachDuaTruoc=@duaTruoc, GhiChu=@ghiChu, GiamGia=@giamGia, VAT=@vAT, TinhTrang=@tinhTrang, Giovao=@gioVao, Giora= @gioRa " +
+                "Ban=@maBan, NhanVien=@tenNhanVien, TongTien=@tongTien, ThanhToan=@thanhToan, NgayLapPhieu= @ngayLap, KhachDuaTruoc=@duaTruoc, GhiChu=@ghiChu, GiamGia=@giamGia, VAT=@vAT, TinhTrang=@tinhTrang, Giovao=@gioVao, Giora= @gioRa " +
            "where MaPhieuTT=@maPhieuTT";
             List<OleDbParameter> ListParam = new List<OleDbParameter>();
             OleDbParameter maBan = new OleDbParameter("@maBan", OleDbType.Integer);
@@ -252,17 +284,23 @@ namespace DAO
             double result =(kq - kq * giamGia / 100) - (kq - kq * giamGia / 100)*vat/100;
             return result;
         }
-        public bool CapNhapTienPhieuTT(int maPhieuTT, double tongTien)
+        public bool CapNhapTienPhieuTT(int maPhieuTT, double tongTien, double thanhToan, bool flag)
         {
-            string sql = "UPDATE PHIEUTINHTIEN SET ThanhToan=@tongTien" +
+            string sql = "UPDATE PHIEUTINHTIEN SET ThanhToan=@thanhToan, TongTien=@tongTien " +
                 " WHERE MaPhieuTT = @maPhieu";
             List<OleDbParameter> listParam = new List<OleDbParameter>();
+            OleDbParameter paraThanhToan = new OleDbParameter("@thanhToan", OleDbType.Double);
             OleDbParameter paraTongTien = new OleDbParameter("@tongTien", OleDbType.Double);
             OleDbParameter paraMaPhieu = new OleDbParameter("@maPhieu", OleDbType.Integer);
+
+            paraThanhToan.Value = thanhToan;
             paraTongTien.Value = tongTien;
-            listParam.Add(paraTongTien);
             paraMaPhieu.Value = maPhieuTT;
+
+            listParam.Add(paraThanhToan);
+            listParam.Add(paraTongTien);
             listParam.Add(paraMaPhieu);
+
             NETDataProviders.DataProvider dt = new NETDataProviders.DataProvider();
             int obj = dt.ExecuteNoneQuery(sql, listParam);
             if (obj < 1)

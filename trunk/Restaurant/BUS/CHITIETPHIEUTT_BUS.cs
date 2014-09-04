@@ -47,6 +47,11 @@ namespace BUS
         {
             return ctPhieuTT_DAO.LayDSCTPhieuTT(maPhieuTT, maBan);
         }
+
+        public DataTable LayKMCTPhieuTT(int maPhieuTT, int maMonAn)
+        {
+            return ctPhieuTT_DAO.LayKMCTPhieuTT(maPhieuTT, maMonAn);
+        }
         public bool CapNhatCTPhieuTT(int maPhieuTT, int maMonAn, int soLuong, int giamGia, double thanhTien)
         {
             return ctPhieuTT_DAO.CapNhatCTPhieuTT(maPhieuTT, maMonAn, soLuong, giamGia, thanhTien);
