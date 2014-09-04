@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--configfile.xml-->
 <appSettings>
-  <add key="rdFrm1XemBanIn" value="true" />
+  <add key="rdFrm1XemBanIn" value="false" />
   <add key="pctLoGo" value="C:\Users\QN\Desktop\QLNH_F31 tot nhat\Restaurant\Restaurant\bin\Debug\imageThucDon\Logo.png" />
   <add key="lbFrm1SDTNhaHang" value="01665695679" />
   <add key="lbFrm1DiachiNhaHang" value="Full House" />
